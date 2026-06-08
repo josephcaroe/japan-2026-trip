@@ -67,7 +67,7 @@ header{position:sticky;top:0;z-index:80;backdrop-filter:blur(14px) saturate(180%
 .cd{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
 .cdb{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:15px;padding:12px 16px;min-width:68px;text-align:center}
 .cdb b{display:block;font-family:"Shippori Mincho";font-size:1.8rem;font-weight:800;color:#fff;line-height:1}
-.cdb s{font-size:.58rem;text-transform:uppercase;letter-spacing:2.5px;color:#e0c8a8;font-style:normal}
+.cdb s{font-size:.58rem;text-transform:uppercase;letter-spacing:2.5px;color:#e0c8a8;font-style:normal;text-decoration:none}
 
 /* ── FX WIDGET ── */
 .fx-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow);margin-top:22px}
@@ -263,7 +263,10 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <button class="tb" data-v="exp">✨ Esperienze</button>
     <button class="tb" data-v="nerd">🎮 Nerd</button>
     <button class="tb" data-v="cult">⛩️ Cultura</button>
+    <button class="tb" data-v="templi">🏯 Templi</button>
+    <button class="tb" data-v="quartieri">🏘 Quartieri</button>
     <button class="tb" data-v="secret">🧊 Segreti</button>
+    <button class="tb" data-v="cambio">💱 Cambio</button>
     <button class="tb" data-v="prat">🎒 Pratica</button>
     <button class="tb" data-v="check">✓ Lista</button>
   </nav>
@@ -277,37 +280,14 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="hero">
     <div class="hero-sun"></div>
     <div class="ey">3 – 21 Luglio 2026 · Tokyo · Fuji · Kyoto · Nara · Osaka</div>
-    <h1><span>わたしたちの旅</span>Joseph &amp; Angelo in Giappone ❤️</h1>
-    <p class="sub">Joseph cerca ogni Pokémon Center nel raggio di 10 km. Angelo vuole un goshuin da ogni tempio. Entrambi vogliono mangiare tutto quello che vedono. <em>Benvenuti nel vostro viaggio.</em></p>
-    <div class="dates">✈ Malpensa 3 Lug → Haneda · Ritorno 20 Lug</div>
+    <h1><span>わたしたちの旅</span>Viaggio in Giappone</h1>
+    <p class="sub">17 giorni tra templi, neon, ramen e Pokémon Center. Dalla frenesia di Tokyo alla quiete di Kyoto, passando per il Monte Fuji e il festival di Gion.</p>
+    <div class="dates">✈ Malpensa 3 Lug → Haneda · Ritorno 20 Lug 16:35</div>
     <div class="cd" id="cd">
       <div class="cdb"><b id="cd-d">–</b><s>Giorni</s></div>
       <div class="cdb"><b id="cd-h">–</b><s>Ore</s></div>
       <div class="cdb"><b id="cd-m">–</b><s>Min</s></div>
       <div class="cdb"><b id="cd-s">–</b><s>Sec</s></div>
-    </div>
-  </div>
-
-  <!-- FX WIDGET -->
-  <div class="fx-card">
-    <div class="fx-top">
-      <div>
-        <div class="fx-label">💱 Cambio EUR → JPY in tempo reale</div>
-        <div class="fx-rate">€1 = ¥<span id="fx-v">…</span></div>
-        <div class="fx-time" id="fx-t">aggiornamento in corso…</div>
-      </div>
-      <button class="fx-btn" onclick="loadFx()">↻ Aggiorna</button>
-    </div>
-    <div class="fx-conv">
-      <span class="fx-sym">€</span>
-      <input class="fx-inp" id="fx-eur" type="number" value="100" min="0" placeholder="Euro">
-      <span class="fx-eq">＝</span>
-      <span class="fx-out">¥<span id="fx-jpy">–</span></span>
-      &nbsp;&nbsp;
-      <span class="fx-sym">¥</span>
-      <input class="fx-inp" id="fx-yen" type="number" placeholder="Yen" min="0">
-      <span class="fx-eq">＝</span>
-      <span class="fx-out">€<span id="fx-eout">–</span></span>
     </div>
   </div>
 
@@ -321,23 +301,20 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   </div>
 
   <div class="facts">
-    <div class="fact"><b>17</b><small>Giorni in Giappone</small></div>
+    <div class="fact"><b>17</b><small>Giorni</small></div>
     <div class="fact"><b>6</b><small>Città</small></div>
     <div class="fact"><b>4</b><small>Prenotazioni fisse</small></div>
-    <div class="fact"><b>∞</b><small>Pokémon da trovare</small></div>
-    <div class="fact"><b>∞</b><small>Goshuin da timbrare</small></div>
+    <div class="fact"><b>3 Jul</b><small>Partenza</small></div>
   </div>
 
-  <h2 class="pg-title" style="margin-top:28px">Come funziona la guida</h2>
-  <p class="pg-sub">Tutto è pensato per voi due. Le etichette su ogni attività indicano "chi ci tiene di più" — ma onestamente, quasi tutto è per entrambi.</p>
-  <div class="legend">
-    <span class="lc">🎮 Joseph ci tiene tantissimo</span>
-    <span class="lc">⛩️ Angelo ci tiene tantissimo</span>
-    <span class="lc">❤️ Entrambi · imperdibile</span>
+  <div class="legend" style="margin-top:22px">
+    <span class="lc">🎮 Joseph</span>
+    <span class="lc">⛩️ Angelo</span>
+    <span class="lc">❤️ Entrambi</span>
     <span class="lc">🍜 Cibo</span>
     <span class="lc">🛍️ Shopping</span>
-    <span class="lc">🧊 Fresco / relax</span>
-    <span class="lc">📷 Foto epica</span>
+    <span class="lc">🧊 Fresco</span>
+    <span class="lc">📷 Foto</span>
   </div>
 
   <h2 class="pg-title" style="margin-top:26px">I voli</h2>
@@ -345,29 +322,12 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <div class="fl"><div class="la">Andata · Venerdì 3 Lug</div><div class="leg"><div class="pt"><b>MXP</b><span>Malpensa · 12:45</span></div><div class="line"></div><div class="pt" style="text-align:right"><b>HND</b><span>Haneda · 15:05 +1g</span></div></div></div>
     <div class="fl"><div class="la">Ritorno · Lunedì 20 Lug</div><div class="leg"><div class="pt"><b>HND</b><span>Haneda · 16:35</span></div><div class="line"></div><div class="pt" style="text-align:right"><b>MXP</b><span>Malpensa · 07:40 +1g</span></div></div></div>
   </div>
-  <div class="note"><b>✅ Volo confermato: 16:35 da Haneda.</b> Più comodi! Il Nozomi Shin-Osaka → Tokyo (~2h27) — partite da Shin-Osaka entro le <b>10:00–10:30</b> e siete ad Haneda comodamente per le 14:00. Margine tranquillo.</div>
+  <div class="note"><b>✅ Volo 20 lug: 16:35 da Haneda.</b> Partite da Shin-Osaka entro le 10:00–10:30 con il Nozomi (~2h27) — siete ad Haneda comodamente per le 14:00.</div>
 
-  <h2 class="pg-title" style="margin-top:28px">Prezzi indicativi 2026</h2>
-  <p class="pg-sub" style="margin-bottom:10px">Tutto in yen. Usa il convertitore qui sopra per la stima in euro. I prezzi possono variare leggermente.</p>
-  <table class="ptable" id="ptable">
-    <tr><th>Cosa</th><th>¥ a testa</th><th>€ stimati</th></tr>
-    <tr><td>teamLab Planets <small>(già prenotato, 5 lug)</small></td><td class="yen">¥3.800–4.200</td><td class="eur" data-yen="4000">–</td></tr>
-    <tr><td>Nintendo Museum <small>(già prenotato, 15 lug)</small></td><td class="yen">¥3.300</td><td class="eur" data-yen="3300">–</td></tr>
-    <tr><td>USJ Studio Pass <small>(già pagato, 18 lug)</small></td><td class="yen">¥8.600–10.400</td><td class="eur" data-yen="9500">–</td></tr>
-    <tr><td>Shinkansen Tokyo → Kyoto (Nozomi)</td><td class="yen">¥14.370</td><td class="eur" data-yen="14370">–</td></tr>
-    <tr><td>Shinkansen Shin-Osaka → Tokyo (Nozomi)</td><td class="yen">¥14.720</td><td class="eur" data-yen="14720">–</td></tr>
-    <tr><td>Bus Shinjuku → Kawaguchiko (solo andata)</td><td class="yen">~¥2.200</td><td class="eur" data-yen="2200">–</td></tr>
-    <tr><td>Funivia Panoramica del Fuji (a/r)</td><td class="yen">¥1.000</td><td class="eur" data-yen="1000">–</td></tr>
-    <tr><td>Shibuya Sky <small>(prenota online)</small></td><td class="yen">¥2.500</td><td class="eur" data-yen="2500">–</td></tr>
-    <tr><td>Tokyo Skytree</td><td class="yen">¥2.100+</td><td class="eur" data-yen="2100">–</td></tr>
-    <tr><td>Todai-ji Nara</td><td class="yen">¥800</td><td class="eur" data-yen="800">–</td></tr>
-    <tr><td>Kinkaku-ji / Kiyomizu-dera / Ginkaku-ji</td><td class="yen">¥500 cad.</td><td class="eur" data-yen="500">–</td></tr>
-    <tr><td>Castello di Nijo</td><td class="yen">¥1.300</td><td class="eur" data-yen="1300">–</td></tr>
-    <tr><td>Castello di Osaka</td><td class="yen">¥600</td><td class="eur" data-yen="600">–</td></tr>
-    <tr><td>Cerimonia del tè (Kyoto/Uji)</td><td class="yen">¥3.000–6.000</td><td class="eur" data-yen="4500">–</td></tr>
-    <tr><td>Senso-ji · Meiji Jingu · Fushimi Inari · Pokémon Center</td><td class="yen">Gratis 🎉</td><td class="eur">–</td></tr>
-  </table>
-  <p style="margin-top:20px;text-align:center"><button class="tb on" style="background:var(--red);padding:11px 24px;font-size:.9rem" onclick="go('days')">Vai all'itinerario giorno per giorno →</button></p>
+  <p style="margin-top:22px;text-align:center">
+    <button class="tb on" style="background:var(--red);padding:11px 24px;font-size:.9rem;margin:4px" onclick="go('days')">📅 Itinerario giorno per giorno →</button>
+    <button class="tb" style="padding:11px 24px;font-size:.9rem;margin:4px" onclick="go('cambio')">💱 Convertitore €/¥ →</button>
+  </p>
 </section>
 
 <!-- GIORNI -->
@@ -438,6 +398,70 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="grid g2"><div class="cl" id="cl-bk"></div><div class="cl" id="cl-pk"></div></div>
 </section>
 
+<!-- CAMBIO -->
+<section class="view" id="cambio">
+  <div class="eyebrow">Quanti yen ho?</div>
+  <h2 class="pg-title">💱 Convertitore EUR ↔ JPY</h2>
+  <p class="pg-sub">Cambio in tempo reale. Aggiorna manualmente se necessario.</p>
+  <div class="fx-card">
+    <div class="fx-top">
+      <div>
+        <div class="fx-label">Cambio live EUR → JPY</div>
+        <div class="fx-rate">€1 = ¥<span id="fx-v">…</span></div>
+        <div class="fx-time" id="fx-t">aggiornamento in corso…</div>
+      </div>
+      <button class="fx-btn" onclick="loadFx()">↻ Aggiorna</button>
+    </div>
+    <div class="fx-conv">
+      <span class="fx-sym">€</span>
+      <input class="fx-inp" id="fx-eur" type="number" value="100" min="0" placeholder="Euro">
+      <span class="fx-eq">＝</span>
+      <span class="fx-out">¥<span id="fx-jpy">–</span></span>
+    </div>
+    <div class="fx-conv" style="margin-top:10px">
+      <span class="fx-sym">¥</span>
+      <input class="fx-inp" id="fx-yen" type="number" placeholder="Yen" min="0">
+      <span class="fx-eq">＝</span>
+      <span class="fx-out">€<span id="fx-eout">–</span></span>
+    </div>
+  </div>
+  <h2 class="pg-title" style="margin-top:28px">Prezzi di riferimento</h2>
+  <p class="pg-sub">A testa, con stima automatica in euro al cambio live.</p>
+  <table class="ptable" id="ptable">
+    <tr><th>Cosa</th><th>¥ a testa</th><th>€ stimati</th></tr>
+    <tr><td>teamLab Planets (prenotato)</td><td class="yen">¥3.800–4.200</td><td class="eur" data-yen="4000">–</td></tr>
+    <tr><td>Nintendo Museum (prenotato)</td><td class="yen">¥3.300</td><td class="eur" data-yen="3300">–</td></tr>
+    <tr><td>USJ Studio Pass (pagato)</td><td class="yen">¥8.600–10.400</td><td class="eur" data-yen="9500">–</td></tr>
+    <tr><td>Shinkansen Tokyo → Kyoto (Nozomi)</td><td class="yen">¥14.370</td><td class="eur" data-yen="14370">–</td></tr>
+    <tr><td>Shinkansen Shin-Osaka → Tokyo (Nozomi)</td><td class="yen">¥14.720</td><td class="eur" data-yen="14720">–</td></tr>
+    <tr><td>Bus Shinjuku → Kawaguchiko</td><td class="yen">~¥2.200</td><td class="eur" data-yen="2200">–</td></tr>
+    <tr><td>Funivia del Fuji (a/r)</td><td class="yen">¥1.000</td><td class="eur" data-yen="1000">–</td></tr>
+    <tr><td>Shibuya Sky</td><td class="yen">¥2.500</td><td class="eur" data-yen="2500">–</td></tr>
+    <tr><td>Todai-ji Nara</td><td class="yen">¥800</td><td class="eur" data-yen="800">–</td></tr>
+    <tr><td>Kinkaku-ji / Kiyomizu-dera / Ginkaku-ji</td><td class="yen">¥500 cad.</td><td class="eur" data-yen="500">–</td></tr>
+    <tr><td>Castello di Nijo</td><td class="yen">¥1.300</td><td class="eur" data-yen="1300">–</td></tr>
+    <tr><td>Castello di Osaka</td><td class="yen">¥600</td><td class="eur" data-yen="600">–</td></tr>
+    <tr><td>Cerimonia del tè</td><td class="yen">¥3.000–6.000</td><td class="eur" data-yen="4500">–</td></tr>
+    <tr><td>Senso-ji · Meiji Jingu · Fushimi Inari</td><td class="yen">Gratis</td><td class="eur">–</td></tr>
+  </table>
+</section>
+
+<!-- TEMPLI -->
+<section class="view" id="templi">
+  <div class="eyebrow">Santuari e templi</div>
+  <h2 class="pg-title">🏯 Templi da Visitare</h2>
+  <p class="pg-sub">La parte più ricca del viaggio. Organizzati per città, con orari, prezzi e consigli sul momento migliore per visitarli. Ricordati il goshuincho — un timbro per ogni tempio.</p>
+  <div class="grid g2" id="templiList"></div>
+</section>
+
+<!-- QUARTIERI -->
+<section class="view" id="quartieri">
+  <div class="eyebrow">Dove andare</div>
+  <h2 class="pg-title">🏘 Quartieri da Esplorare</h2>
+  <p class="pg-sub">Tokyo ha un'anima diversa in ogni quartiere. Kyoto pure. Questa è la guida per orientarsi e capire dove vale la pena passare del tempo.</p>
+  <div class="grid g2" id="quartieriList"></div>
+</section>
+
 </main>
 
 <footer class="wrap">
@@ -498,7 +522,76 @@ document.getElementById('fx-eur').addEventListener('input',updateConv);
 document.getElementById('fx-yen').addEventListener('input',updateConv);
 loadFx();
 
-/* ── COUNTDOWN ── */
+/* ════════ TEMPLI ════════ */
+const TEMPLI=[
+ {ic:"⛩️",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Tokyo — Templi essenziali",sub:"3 da non perdere",
+  p:"Tokyo ha meno templi di Kyoto ma quelli che ha sono tra i più belli del Giappone.",
+  li:["<b>Senso-ji</b> (Asakusa) — fondato nel 628, il più antico di Tokyo. Visita all'alba per averlo quasi deserto. Nakamise-dori per i souvenir. Goshuin qui. Gratis.",
+      "<b>Meiji Jingu</b> (Harajuku) — santuario scintoista immerso in 700.000 alberi dedicato all'Imperatore Meiji (1920). Silenzioso, verde, fresco. Goshuin qui. Gratis.",
+      "<b>Kanda Myojin</b> (Akihabara) — fondato nel 730, protettore di Akihabara. Vende amuleti per pc e dispositivi. Piccolo ma affascinante. Gratis.",
+      "<b>Consiglio:</b> compra il goshuincho al Senso-ji (¥1.500) e timbra ogni tempio del viaggio."]},
+ {ic:"🏯",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Kyoto — I grandi templi",sub:"Patrimonio UNESCO · imperdibili",
+  p:"Kyoto ha 1.600+ templi. Questi sono i più importanti e belli del vostro itinerario.",
+  li:["<b>Kiyomizu-dera</b> ¥500 — il tempio sul palco di legno (senza chiodi) con vista su Kyoto. Apre alle 6:00. UNESCO.",
+      "<b>Kinkaku-ji</b> ¥500 — il Padiglione d'Oro riflesso sul laghetto. Uno dei posti più fotografati al mondo. Mattina presto.",
+      "<b>Ginkaku-ji</b> ¥500 — il Padiglione d'Argento, più sobrio e meditativo del Kinkaku. Collegato al Sentiero della Filosofia.",
+      "<b>Fushimi Inari</b> gratis — migliaia di torii arancioni, aperto 24h. All'alba è magico e fresco.",
+      "<b>Ryoan-ji</b> ¥600 — il giardino di rocce Zen più famoso del mondo. 15 pietre, nessuno le vede tutte insieme.",
+      "<b>Tenryu-ji</b> ¥500 — giardino UNESCO ad Arashiyama con vista sulle colline. Uno dei 10 grandi templi di Kyoto.",
+      "<b>Sanjusangen-do</b> ¥600 — 1.001 statue dorate di Kannon in fila. Uno dei luoghi più impressionanti del viaggio."]},
+ {ic:"🌿",bg:"linear-gradient(135deg,#3a6030,#6a8840)",title:"Kyoto — Templi meno noti",sub:"Le chicche fuori dai tour di massa",
+  p:"Questi li conoscono i locals e i viaggiatori attenti. Molto meno affollati.",
+  li:["<b>Tofuku-ji</b> — tempio Zen con uno dei più bei giardini di Kyoto. Vicino a Fushimi Inari. ¥500.",
+      "<b>Nanzen-ji</b> — tempio con acquedotto romano nel mezzo. Enorme, tranquillo, gratuito (giardini a pagamento).",
+      "<b>Eikan-do</b> — vicino al Sentiero della Filosofia, giardino su più livelli con stagno. ¥600.",
+      "<b>Ninna-ji</b> — tempio-palazzo dell'imperatore con pagoda 5 piani. ¥800. Raramente affollato.",
+      "<b>Daitoku-ji</b> — complesso enorme con tanti sotto-templi, ognuno con giardino unico. Ingresso gratuito all'area principale."]},
+ {ic:"🦌",bg:"linear-gradient(135deg,#5a4820,#a07830)",title:"Nara &amp; Uji — Fuori Kyoto",sub:"Gite imperdibili",
+  p:"Due dei posti più belli del Kansai, a meno di un'ora da Kyoto.",
+  li:["<b>Todai-ji</b> (Nara) ¥800 — l'edificio di legno più grande del mondo con il Buddha di bronzo alto 15 m. UNESCO.",
+      "<b>Kasuga Taisha</b> (Nara) gratuito — santuario nel bosco con 3.000 lanterne di pietra. Mistico e ombreggiato.",
+      "<b>Byodo-in</b> (Uji) ¥700 — il tempio sulla moneta da ¥10. Costruito nel 1053, patrimonio UNESCO.",
+      "<b>Consiglio per Nara:</b> Kintetsu → Kintetsu-Nara è più vicino al parco rispetto a JR Nara."]}
+];
+
+/* ════════ QUARTIERI ════════ */
+const QUARTIERI=[
+ {ic:"🌆",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Tokyo Centro — I quartieri principali",sub:"Dove si passa la maggior parte del tempo",
+  p:"I quartieri che vedrete nell'itinerario — ognuno con un'identità completamente diversa.",
+  li:["<b>Shinjuku</b> — la base. Grattacieli, Omoide Yokocho, Golden Gai, Kabukicho. Viva di giorno e di notte.",
+      "<b>Shibuya</b> — l'incrocio più famoso del mondo, Pokémon Center, Nintendo Tokyo. Giovane e frenetica.",
+      "<b>Harajuku</b> — Meiji Jingu nel bosco + Takeshita-dori moda kawaii. Due mondi a 5 minuti.",
+      "<b>Asakusa</b> — il Senso-ji, Nakamise, rickshaw. La Tokyo più antica e tradizionale.",
+      "<b>Akihabara</b> — elettronica, anime, manga, retrogaming. Il cuore otaku della città.",
+      "<b>Odaiba</b> — isola artificiale nella baia: Gundam, teamLab Planets, Miraikan, spiaggia."]},
+ {ic:"🏘",bg:"linear-gradient(135deg,#3a5080,#6a5090)",title:"Tokyo — I quartieri da scoprire",sub:"Quelli che non trovate in tutte le guide",
+  p:"I locals vivono qui. Meno turisti, più anima vera di Tokyo.",
+  li:["<b>Yanaka</b> (vicino Ueno) — l'unico quartiere sopravvissuto ai bombardamenti. Case basse, gatti, templi, botteghe. La Tokyo del passato.",
+      "<b>Shimokitazawa</b> — vintage, dischi, caffè indie, teatro. Chiamata la 'Shibuya degli anni '70'. A 7 min da Shinjuku (linea Odakyu).",
+      "<b>Nakameguro</b> — canale con i ciliegi, caffè di design, fashion. Elegante e rilassata.",
+      "<b>Daikanyama</b> — bookshop Tsutaya a 3 piani (uno dei più belli del mondo), boutique, caffè. A 10 min a piedi da Shibuya.",
+      "<b>Koenji</b> — musica dal vivo, vintage, controcultura. Molto locale, quasi nessun turista.",
+      "<b>Kichijoji</b> — Parco Inokashira con il laghetto, Museo Ghibli vicino, mercatini. Vivibile e tranquilla."]},
+ {ic:"🏯",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Kyoto — I quartieri storici",sub:"Dove si concentra la magia",
+  p:"Kyoto si esplora a piedi tra un quartiere e l'altro. Ognuno ha un'atmosfera distinta.",
+  li:["<b>Gion</b> — il quartiere delle geiko e maiko. Lanterne di carta, okiya, atmosfera Edo. Sera = perfetta.",
+      "<b>Higashiyama</b> — le colline est: Kiyomizu-dera, Sannenzaka, Ninenzaka, Pagoda Yasaka. La Kyoto da cartolina.",
+      "<b>Pontocho</b> — vicolo gastronomico lungo il fiume Kamo. D'estate: terrazze sull'acqua (noryo-yuka).",
+      "<b>Fushimi</b> — a sud: Fushimi Inari + birrifici sake storici. Vale la deviazione.",
+      "<b>Nishiki Market</b> — il 'mercato di cucina' di Kyoto. 480 m di bancarelle. Imperdibile per il cibo.",
+      "<b>Arashiyama</b> — la foresta di bambù, il fiume, il ryokan. Più un'area che un quartiere urbano."]},
+ {ic:"🍜",bg:"linear-gradient(135deg,#901820,#c03020)",title:"Osaka — Quartieri e zone",sub:"La città del cibo e del divertimento",
+  p:"Osaka si vive per strada, di sera, mangiando.",
+  li:["<b>Dotonbori</b> — il cuore pulsante: neon, l'uomo Glico, takoyaki, okonomiyaki. La sera è il momento giusto.",
+      "<b>Namba</b> — shopping, ristoranti, accesso a USJ e treni per Kyoto. Il centro pratico.",
+      "<b>Den Den Town (Nipponbashi)</b> — l'Akihabara di Osaka: anime, retrogame, figure.",
+      "<b>Umeda</b> — il quartiere dei grattacieli e Umeda Sky Building. Nord di Osaka.",
+      "<b>Shinsekai</b> — quartiere retrò anni '50, kushikatsu, insegne vintage. Autentico e un po' sgangherato."]}
+];
+
+renderFeat('templiList',TEMPLI);
+renderFeat('quartieriList',QUARTIERI);
+
 function tick(){
   const diff=DEPART-new Date();
   if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach((id,i)=>document.getElementById(id).textContent=['✈','si','va','!'][i]);return;}

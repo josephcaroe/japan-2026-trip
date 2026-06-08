@@ -1,654 +1,1233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Japan 2026 · Our Trip</title>
+<title>Joseph &amp; Angelo in Giappone 🇯🇵</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f4ede0;
-  --paper-2:#efe6d6;
-  --card:#fbf6ec;
-  --ink:#20232e;
-  --ink-soft:#4a4d59;
-  --muted:#8a8475;
-  --line:#ddd1bb;
-  --vermilion:#c0402a;
-  --vermilion-dk:#9c2f1f;
-  --indigo:#2c4a6e;
-  --indigo-dk:#21384f;
-  --fuji:#d99aae;
-  --matcha:#7e8a44;
-  --gold:#bd8e36;
-  --shadow:0 18px 40px -22px rgba(33,40,60,.55);
-  --r:18px;
+  --paper:#f5ede0;--paper2:#ede3d2;--card:#fdf8f0;--ink:#1e2130;--soft:#4a4d5c;--muted:#8a8475;--line:#ddd0b8;
+  --red:#c0402a;--red2:#9c2f1f;--blue:#2c4a6e;--blue2:#1e3450;--gold:#c49a2a;--green:#6b8740;
+  --teal:#3a7a82;--plum:#8a4e7a;--pink:#e06888;--fuji:#c89ab0;
+  --shadow:0 20px 48px -20px rgba(30,33,48,.48);--r:20px;
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Manrope",system-ui,sans-serif;font-weight:400;line-height:1.6;
-  -webkit-font-smoothing:antialiased;letter-spacing:.1px;
-  background-image:
-    radial-gradient(1200px 600px at 85% -8%, rgba(192,64,42,.07), transparent 60%),
-    radial-gradient(1000px 700px at -10% 110%, rgba(44,74,110,.08), transparent 55%);
-  background-attachment:fixed;
-}
-/* faint asanoha texture */
-body::before{
-  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'><g fill='none' stroke='%2320232e' stroke-width='1'><path d='M30 0 L60 17 L60 52 L30 69 L0 52 L0 17 Z'/><path d='M30 0 L30 69 M0 17 L60 52 M60 17 L0 52'/></g></svg>");
-  background-size:46px 80px;
-}
-.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 20px}
-h1,h2,h3,.serif{font-family:"Shippori Mincho",serif}
-a{color:var(--vermilion-dk);text-decoration:none}
+body{background:var(--paper);color:var(--ink);font-family:"Manrope",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(900px 500px at 90% 0%,rgba(192,64,42,.06),transparent),radial-gradient(700px 500px at 0% 100%,rgba(44,74,110,.07),transparent);
+  background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56'><circle cx='28' cy='28' r='1' fill='%231e2130'/><path d='M14 0v56M42 0v56M0 14h56M0 42h56' stroke='%231e2130' stroke-width='.4'/></svg>");
+  background-size:56px 56px}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 22px}
+.serif{font-family:"Shippori Mincho",serif}
+a{color:var(--red2);text-decoration:none}
 
-/* ---------- top bar ---------- */
-header.top{
-  position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
-  background:rgba(244,237,224,.86);border-bottom:1px solid var(--line);
-}
-.top-inner{max-width:1080px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:11px;margin-right:auto}
-.brand .kanji{font-family:"Shippori Mincho";font-weight:800;font-size:1.5rem;color:var(--vermilion);line-height:1}
-.brand .b-txt{display:flex;flex-direction:column;line-height:1.05}
-.brand .b-txt b{font-family:"Shippori Mincho";font-weight:700;font-size:.98rem;letter-spacing:.5px}
-.brand .b-txt span{font-size:.66rem;text-transform:uppercase;letter-spacing:2.5px;color:var(--muted)}
-nav.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-nav.tabs::-webkit-scrollbar{display:none}
-.tab{
-  white-space:nowrap;border:0;background:transparent;cursor:pointer;color:var(--ink-soft);
-  font-family:"Manrope";font-weight:600;font-size:.82rem;padding:8px 13px;border-radius:999px;
-  letter-spacing:.3px;transition:.18s;
-}
-.tab:hover{color:var(--ink);background:rgba(44,74,110,.08)}
-.tab.active{background:var(--indigo);color:#f7efe0}
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:80;backdrop-filter:blur(14px) saturate(180%);
+  background:rgba(245,237,224,.88);border-bottom:1px solid var(--line)}
+.hd{max-width:1100px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none}
+.logo-jp{font-family:"Shippori Mincho";font-size:1.65rem;font-weight:800;color:var(--red);line-height:1}
+.logo-txt{line-height:1.1}
+.logo-txt strong{font-family:"Shippori Mincho";font-size:1rem;display:block;color:var(--ink)}
+.logo-txt small{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:3px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.tb{border:0;background:none;cursor:pointer;font-family:"Manrope";font-weight:700;font-size:.8rem;
+  padding:7px 13px;border-radius:999px;color:var(--soft);letter-spacing:.3px;transition:.15s;white-space:nowrap}
+.tb:hover{background:rgba(44,74,110,.09);color:var(--ink)}
+.tb.on{background:var(--blue);color:#f5ede0}
 
-/* ---------- views ---------- */
-.view{display:none;padding:34px 0 70px;animation:fade .5s ease both}
-.view.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.eyebrow{text-transform:uppercase;letter-spacing:3.5px;font-size:.7rem;color:var(--vermilion);font-weight:700}
-.sec-title{font-size:clamp(1.7rem,4vw,2.4rem);margin:.25em 0 .15em;font-weight:700;line-height:1.1}
-.sec-sub{color:var(--ink-soft);max-width:62ch;margin:0 0 26px}
+/* ── VIEWS ── */
+.view{display:none;padding:30px 0 72px;animation:up .45s ease both}
+.view.on{display:block}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.68rem;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;color:var(--red)}
+.pg-title{font-family:"Shippori Mincho";font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:.2em 0 .1em;line-height:1.1}
+.pg-sub{color:var(--soft);max-width:60ch;margin-bottom:26px;font-size:.95rem}
 
-/* ---------- hero ---------- */
-.hero{
-  position:relative;overflow:hidden;border-radius:26px;
-  background:linear-gradient(150deg,var(--indigo-dk),var(--indigo) 55%,#34557c);
-  color:#f4ecdd;padding:48px 38px 44px;box-shadow:var(--shadow);
-}
-.hero::after{
-  content:"富士";position:absolute;right:-8px;bottom:-26px;font-family:"Shippori Mincho";
-  font-weight:800;font-size:13rem;color:rgba(255,255,255,.05);line-height:.8;pointer-events:none;
-}
-/* sun + fuji motif */
-.hero .sun{position:absolute;top:34px;right:46px;width:84px;height:84px;border-radius:50%;
-  background:radial-gradient(circle at 40% 38%,#f6c9b0,var(--vermilion));opacity:.85;
-  box-shadow:0 0 60px rgba(192,64,42,.5)}
-.hero .eyebrow{color:#f0b8a8}
-.hero h1{font-size:clamp(2.4rem,7vw,4.2rem);margin:.12em 0 .1em;font-weight:800;letter-spacing:.5px}
-.hero h1 .jp{display:block;font-size:.42em;letter-spacing:10px;color:#e8c9a0;font-weight:600;margin-bottom:.2em}
-.hero .lede{font-size:1.05rem;max-width:46ch;color:#e7dcc8}
-.hero .dates{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-family:"Shippori Mincho";
-  font-size:1.05rem;background:rgba(255,255,255,.1);padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.18)}
-.countdown{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
-.cd-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;
-  padding:12px 16px;min-width:74px;text-align:center}
-.cd-box b{display:block;font-family:"Shippori Mincho";font-size:1.8rem;font-weight:800;color:#fff;line-height:1}
-.cd-box span{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:#e8c9a0}
+/* ── HERO ── */
+.hero{border-radius:28px;background:linear-gradient(145deg,var(--blue2) 0%,var(--blue) 50%,#3a5f80 100%);
+  color:#f5ede0;padding:50px 40px 46px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-sun{position:absolute;top:30px;right:44px;width:86px;height:86px;border-radius:50%;
+  background:radial-gradient(circle at 38% 36%,#f9d4b6,var(--red));opacity:.82;box-shadow:0 0 70px rgba(192,64,42,.55)}
+.hero::after{content:"旅";position:absolute;right:12px;bottom:-22px;font-family:"Shippori Mincho";font-weight:800;
+  font-size:13rem;color:rgba(255,255,255,.045);line-height:.8;pointer-events:none}
+.hero .ey{color:#f0b0a0;font-size:.68rem;letter-spacing:3.5px;text-transform:uppercase;font-weight:700}
+.hero h1{font-family:"Shippori Mincho";font-size:clamp(2.4rem,7vw,4.2rem);font-weight:800;margin:.15em 0 .08em;line-height:1.05}
+.hero h1 span{display:block;font-size:.38em;letter-spacing:8px;color:#e8c9a0;font-weight:600;margin-bottom:.25em}
+.hero .sub{font-size:1.02rem;max-width:46ch;color:#e0d0b8;line-height:1.6}
+.hero .dates{display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+  font-family:"Shippori Mincho";font-size:.95rem;background:rgba(255,255,255,.1);
+  padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
+.cd{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.cdb{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:15px;padding:12px 16px;min-width:68px;text-align:center}
+.cdb b{display:block;font-family:"Shippori Mincho";font-size:1.8rem;font-weight:800;color:#fff;line-height:1}
+.cdb s{font-size:.58rem;text-transform:uppercase;letter-spacing:2.5px;color:#e0c8a8;font-style:normal}
 
-/* route ribbon */
-.route{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:30px 0 6px}
-.route .stop{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);
-  border-radius:999px;padding:7px 15px;font-weight:600;font-size:.86rem;box-shadow:var(--shadow)}
-.route .stop .dot{width:9px;height:9px;border-radius:50%;background:var(--vermilion)}
-.route .arrow{color:var(--muted);font-size:1.1rem}
+/* ── FX WIDGET ── */
+.fx-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow);margin-top:22px}
+.fx-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.fx-rate{font-family:"Shippori Mincho";font-size:2.4rem;font-weight:800;color:var(--blue);line-height:1}
+.fx-label{font-size:.78rem;color:var(--muted);font-weight:600}
+.fx-time{font-size:.7rem;color:var(--muted);margin-top:2px}
+.fx-conv{display:flex;align-items:center;gap:10px;margin-top:16px;flex-wrap:wrap}
+.fx-inp{border:1.5px solid var(--line);border-radius:12px;padding:9px 14px;font-family:"Manrope";font-size:1rem;
+  font-weight:700;background:var(--paper2);color:var(--ink);width:140px;transition:.15s}
+.fx-inp:focus{outline:none;border-color:var(--blue)}
+.fx-eq{font-size:1.3rem;color:var(--muted)}
+.fx-out{font-family:"Shippori Mincho";font-size:1.4rem;font-weight:800;color:var(--red2)}
+.fx-sym{font-size:.9rem;color:var(--muted);font-weight:700;margin-right:3px}
+.fx-btn{border:0;background:var(--blue);color:#f5ede0;border-radius:999px;padding:8px 16px;cursor:pointer;font-family:"Manrope";font-size:.8rem;font-weight:700;transition:.15s}
+.fx-btn:hover{background:var(--blue2)}
 
-/* quick facts */
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:26px 0}
-.fact{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
-.fact b{display:block;font-family:"Shippori Mincho";font-size:1.9rem;color:var(--indigo);line-height:1}
-.fact span{font-size:.78rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:1.5px}
+/* ── ROUTE / FACTS ── */
+.route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:26px 0 4px}
+.stop{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:7px 15px;font-weight:700;font-size:.83rem;box-shadow:var(--shadow)}
+.stop i{width:8px;height:8px;border-radius:50%;background:var(--red);flex:0 0 auto}
+.arr{color:var(--muted);font-size:.9rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:22px 0}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.fact b{display:block;font-family:"Shippori Mincho";font-size:1.9rem;color:var(--blue);line-height:1}
+.fact small{font-size:.72rem;color:var(--soft);text-transform:uppercase;letter-spacing:1px}
+.flights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.fl{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow)}
+.fl .la{font-size:.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);font-weight:800}
+.fl .leg{display:flex;align-items:center;gap:14px;margin-top:10px}
+.fl .pt b{display:block;font-family:"Shippori Mincho";font-size:1.1rem}
+.fl .pt span{font-size:.74rem;color:var(--muted)}
+.fl .line{flex:1;border-top:2px dotted var(--line);position:relative;height:1px}
+.fl .line::after{content:"✈";position:absolute;right:-3px;top:-11px;color:var(--blue)}
 
-/* flight cards */
-.flights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
-.flight{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--vermilion);
-  border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow)}
-.flight .lab{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--vermilion);font-weight:700}
-.flight .leg{display:flex;align-items:center;gap:12px;margin-top:10px}
-.flight .leg .pt{font-family:"Shippori Mincho"}
-.flight .leg .pt b{display:block;font-size:1.15rem}
-.flight .leg .pt span{font-size:.78rem;color:var(--muted)}
-.flight .plane{flex:1;border-top:2px dotted var(--line);position:relative;height:1px}
-.flight .plane::after{content:"✈";position:absolute;right:-2px;top:-11px;color:var(--indigo)}
+/* ── LEGEND ── */
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 20px}
+.lc{display:inline-flex;align-items:center;gap:5px;background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:700;box-shadow:var(--shadow)}
 
-/* generic card grid */
-.grid{display:grid;gap:16px}
-.grid.two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.grid.three{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+/* ── GRID ── */
+.grid{display:grid;gap:15px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 
-/* day cards */
-.day{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);
-  overflow:hidden;transition:.2s}
-.day:hover{transform:translateY(-2px);box-shadow:0 24px 46px -22px rgba(33,40,60,.6)}
-.day-head{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;cursor:pointer}
-.day-num{flex:0 0 auto;width:52px;height:52px;border-radius:14px;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;background:var(--indigo);color:#f4ecdd;font-family:"Shippori Mincho"}
-.day-num b{font-size:1.3rem;line-height:1}.day-num span{font-size:.55rem;letter-spacing:1px;text-transform:uppercase;opacity:.8}
-.day-meta{flex:1;min-width:0}
-.day-meta .dtag{font-size:.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--vermilion);font-weight:700}
-.day-meta h3{margin:.18em 0 .12em;font-size:1.18rem;font-weight:700;line-height:1.2}
-.day-meta .area{font-size:.84rem;color:var(--ink-soft)}
-.day-toggle{flex:0 0 auto;color:var(--muted);font-size:1.2rem;transition:.25s;margin-top:6px}
-.day.open .day-toggle{transform:rotate(180deg);color:var(--vermilion)}
-.day-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.day.open .day-body{max-height:1400px}
-.day-body-inner{padding:0 20px 20px 20px}
-.acts{list-style:none;margin:6px 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.acts li{background:var(--paper-2);border:1px solid var(--line);border-radius:9px;padding:6px 11px;font-size:.84rem}
-.acts li::before{content:"●";color:var(--matcha);margin-right:7px;font-size:.6rem;vertical-align:middle}
-.tips{background:linear-gradient(180deg,rgba(189,142,54,.09),rgba(189,142,54,.03));
-  border:1px solid rgba(189,142,54,.32);border-radius:14px;padding:14px 16px}
-.tips .tt{font-family:"Shippori Mincho";font-weight:700;font-size:.92rem;color:var(--gold);display:flex;align-items:center;gap:7px;margin-bottom:6px}
-.tips ul{margin:0;padding-left:18px}
-.tips li{margin:5px 0;font-size:.9rem;color:var(--ink-soft)}
+/* ── DAY CARDS ── */
+.day{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;transition:.18s}
+.day:hover{transform:translateY(-2px);box-shadow:0 26px 56px -22px rgba(30,33,48,.55)}
+.day-hd{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;cursor:pointer;user-select:none}
+.day-cal{flex:0 0 auto;width:62px;background:var(--blue);color:#f5ede0;border-radius:14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;font-family:"Shippori Mincho";text-align:center}
+.day-cal .dc-d{font-size:1.65rem;font-weight:800;line-height:1}
+.day-cal .dc-m{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;opacity:.88;margin-top:1px}
+.day-cal .dc-w{font-size:.58rem;letter-spacing:1px;opacity:.7;margin-bottom:2px}
+.day-info{flex:1;min-width:0}
+.day-info .dtag{font-size:.63rem;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:3px}
+.day-info h3{font-family:"Shippori Mincho";font-size:1.18rem;font-weight:700;line-height:1.2;margin-bottom:4px}
+.day-info .darea{font-size:.82rem;color:var(--soft)}
+.day-arrow{flex:0 0 auto;color:var(--muted);font-size:1.1rem;margin-top:8px;transition:.25s}
+.day.open .day-arrow{transform:rotate(180deg);color:var(--red)}
+.day-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.day.open .day-body{max-height:9999px}
+.day-in{padding:2px 18px 22px}
+.badge{display:inline-flex;align-items:center;margin:4px 0 12px;font-size:.67rem;font-weight:800;
+  letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.badge.bk{background:var(--pink);color:#fff}
+.badge.tr{background:var(--blue);color:#f5ede0}
+.badge.fe{background:var(--fuji);color:#4a1f34}
+.slot{margin:12px 0 6px}
+.slot-hd{font-family:"Shippori Mincho";font-weight:700;font-size:.82rem;letter-spacing:1px;text-transform:uppercase;
+  color:var(--blue);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.slot-hd::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex:0 0 auto}
+.it{padding:10px 13px;border:1px solid var(--line);border-radius:13px;background:var(--paper2);margin-bottom:8px}
+.it .row{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.it .nm{font-weight:700;font-size:.94rem}
+.it .nm a{color:var(--ink);border-bottom:1.5px dashed var(--line)}
+.it .nm a:hover{border-color:var(--red);color:var(--red)}
+.it .desc{font-size:.85rem;color:var(--soft);margin-top:5px;line-height:1.55}
+.it .foot{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;align-items:center}
+.who{display:inline-flex;gap:3px}
+.wc{font-size:.8rem;cursor:default}
+.price{font-size:.73rem;font-weight:800;border-radius:999px;padding:3px 10px;white-space:nowrap;margin-left:auto}
+.pf{background:var(--teal);color:#fff}
+.pp{background:var(--gold);color:#fff}
+.pb{background:var(--red);color:#fff}
+.maplink{font-size:.73rem;font-weight:700;color:var(--blue);border:1.5px solid var(--line);
+  border-radius:999px;padding:3px 10px;background:var(--card);text-decoration:none;transition:.15s;white-space:nowrap}
+.maplink:hover{border-color:var(--blue);background:rgba(44,74,110,.08)}
+.tips{margin-top:16px;background:linear-gradient(160deg,rgba(196,154,42,.12),rgba(196,154,42,.03));
+  border:1px solid rgba(196,154,42,.35);border-radius:15px;padding:14px 16px}
+.tips .th{font-family:"Shippori Mincho";font-weight:700;font-size:.9rem;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.tips ul{padding-left:18px;list-style:none}
+.tips li{font-size:.86rem;color:var(--soft);margin:5px 0;position:relative;padding-left:0}
+.tips li::before{content:"→";position:absolute;left:-16px;color:var(--gold)}
 .tips li b{color:var(--ink)}
-.badge{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-  padding:5px 11px;border-radius:999px;background:var(--vermilion);color:#fff}
-.badge.fest{background:var(--fuji);color:#5a2336}
-.badge.travel{background:var(--indigo)}
-.badge.heart{background:#e36588}
+.callout{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;padding:4px 11px;border-radius:999px;margin:2px 0}
+.cj{background:rgba(192,64,42,.1);color:var(--red2)}
+.ca{background:rgba(44,74,110,.1);color:var(--blue)}
 
-/* city cards */
-.city{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-.city-band{padding:20px 22px;color:#f6efe1;position:relative;overflow:hidden}
-.city-band h3{margin:0;font-size:1.5rem;font-weight:800;position:relative}
-.city-band .jp{font-family:"Shippori Mincho";opacity:.55;font-size:.95rem;letter-spacing:4px}
-.city-band .when{font-size:.78rem;opacity:.9;margin-top:2px}
-.city-band .big-kanji{position:absolute;right:-6px;bottom:-34px;font-family:"Shippori Mincho";font-weight:800;font-size:6.5rem;opacity:.14;line-height:.7}
-.city-body{padding:18px 22px 22px}
-.block{margin-bottom:15px}
-.block .bh{font-family:"Shippori Mincho";font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:8px;margin-bottom:7px}
-.block .bh .ic{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff}
-.block ul{margin:0;padding-left:0;list-style:none}
-.block li{position:relative;padding:4px 0 4px 18px;font-size:.9rem;color:var(--ink-soft)}
-.block li::before{content:"";position:absolute;left:0;top:13px;width:7px;height:7px;border-radius:50%;background:var(--line)}
-.block li b{color:var(--ink)}
+/* ── CITY CARDS ── */
+.city-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.city-band{padding:20px 22px;color:#f6efe0;position:relative;overflow:hidden}
+.city-band h3{font-family:"Shippori Mincho";font-size:1.55rem;font-weight:800;position:relative;z-index:1}
+.city-band .cjp{font-family:"Shippori Mincho";opacity:.55;font-size:.9rem;letter-spacing:4px;display:block;margin-bottom:2px}
+.city-band .cwhen{font-size:.76rem;opacity:.9;margin-top:3px;position:relative;z-index:1}
+.city-band .cbg{position:absolute;right:-4px;bottom:-28px;font-family:"Shippori Mincho";font-weight:800;font-size:6.5rem;opacity:.13;line-height:.8}
+.city-body{padding:16px 22px 20px}
+.blk{margin-bottom:14px}
+.blk h4{font-family:"Shippori Mincho";font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.blk h4 .bic{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff}
+.blk ul{list-style:none;padding:0}
+.blk li{font-size:.87rem;color:var(--soft);padding:4px 0 4px 16px;position:relative}
+.blk li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--line)}
+.blk li b{color:var(--ink)}
 
-/* feature (festival) cards */
+/* ── FEAT CARDS ── */
 .feat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-.feat-top{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px}
-.feat-ic{width:48px;height:48px;border-radius:13px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
-.feat-top h3{margin:0;font-size:1.2rem;font-weight:700}
-.feat-top .sub{font-size:.78rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-weight:600}
-.feat-body{padding:16px 20px 18px}
-.feat-body p{margin:0 0 10px;font-size:.92rem;color:var(--ink-soft)}
-.feat-body ul{margin:0;padding-left:18px}
-.feat-body li{font-size:.9rem;color:var(--ink-soft);margin:5px 0}
-.feat-body li b{color:var(--ink)}
+.feat-hd{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:13px}
+.feat-ic{width:50px;height:50px;border-radius:14px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.feat-hd h3{font-family:"Shippori Mincho";font-size:1.15rem;font-weight:700;margin:0}
+.feat-hd .fsub{font-size:.72rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-weight:700}
+.feat-bd{padding:15px 20px 18px}
+.feat-bd p{font-size:.89rem;color:var(--soft);margin-bottom:10px}
+.feat-bd ul{padding-left:18px}
+.feat-bd li{font-size:.87rem;color:var(--soft);margin:5px 0}
+.feat-bd li b{color:var(--ink)}
 
-/* essentials */
-.ess{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
-.ess h3{margin:0 0 6px;font-size:1.12rem;font-weight:700;display:flex;gap:9px;align-items:center}
-.ess h3 .ic{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;flex:0 0 auto}
-.ess p{margin:0 0 8px;font-size:.9rem;color:var(--ink-soft)}
-.ess ul{margin:6px 0 0;padding-left:18px}
-.ess li{font-size:.88rem;color:var(--ink-soft);margin:4px 0}
+/* ── ESS CARDS ── */
+.ess{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:19px;box-shadow:var(--shadow)}
+.ess h3{font-family:"Shippori Mincho";font-size:1.05rem;font-weight:700;display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.ess h3 .ic{width:31px;height:31px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;flex:0 0 auto}
+.ess p{font-size:.87rem;color:var(--soft);margin-bottom:8px}
+.ess ul{padding-left:18px}
+.ess li{font-size:.85rem;color:var(--soft);margin:4px 0}
 .ess li b{color:var(--ink)}
 
-/* checklist */
-.progress-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:20px}
-.progress-wrap .ptop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
-.progress-wrap .ptop b{font-family:"Shippori Mincho";font-size:1.1rem}
-.progress-wrap .ptop span{color:var(--muted);font-size:.85rem}
-.bar{height:11px;background:var(--paper-2);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
-.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--matcha),var(--gold));transition:width .4s ease}
-.clist{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 6px;box-shadow:var(--shadow)}
-.clist h4{font-family:"Shippori Mincho";margin:12px 14px 6px;font-size:1rem;color:var(--indigo)}
-.citem{display:flex;align-items:flex-start;gap:11px;padding:9px 14px;border-radius:11px;cursor:pointer;transition:.15s}
-.citem:hover{background:var(--paper-2)}
-.citem input{appearance:none;width:21px;height:21px;border:2px solid var(--line);border-radius:6px;cursor:pointer;flex:0 0 auto;margin-top:1px;position:relative;transition:.15s}
-.citem input:checked{background:var(--matcha);border-color:var(--matcha)}
-.citem input:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:700}
-.citem label{font-size:.92rem;cursor:pointer;line-height:1.45}
-.citem.done label{text-decoration:line-through;color:var(--muted)}
-.citem small{display:block;color:var(--muted);font-size:.78rem}
+/* ── PRICE TABLE ── */
+.ptable{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);font-size:.85rem}
+.ptable th,.ptable td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+.ptable th{background:var(--blue);color:#f5ede0;font-weight:700;font-size:.77rem;letter-spacing:.5px}
+.ptable tr:last-child td{border-bottom:0}
+.ptable .yen{font-weight:800;color:var(--red2);white-space:nowrap}
+.ptable .eur{font-size:.8rem;color:var(--muted)}
 
-.note{background:rgba(192,64,42,.07);border:1px solid rgba(192,64,42,.3);border-radius:14px;padding:13px 16px;font-size:.88rem;color:var(--ink-soft);margin:18px 0}
-.note b{color:var(--vermilion-dk)}
+/* ── CHECKLIST ── */
+.prog-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow);margin-bottom:18px}
+.prog-wrap .ptop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.prog-wrap .ptop b{font-family:"Shippori Mincho";font-size:1.1rem}
+.prog-wrap .ptop span{color:var(--muted);font-size:.84rem}
+.bar{height:12px;background:var(--paper2);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--gold));transition:width .4s}
+.cl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 6px;box-shadow:var(--shadow)}
+.cl h4{font-family:"Shippori Mincho";margin:12px 14px 6px;font-size:1rem;color:var(--blue)}
+.ci{display:flex;align-items:flex-start;gap:11px;padding:9px 14px;border-radius:12px;cursor:pointer;transition:.14s}
+.ci:hover{background:var(--paper2)}
+.ci input{appearance:none;width:22px;height:22px;border:2px solid var(--line);border-radius:7px;cursor:pointer;flex:0 0 auto;margin-top:1px;position:relative;transition:.15s}
+.ci input:checked{background:var(--green);border-color:var(--green)}
+.ci input:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.82rem;font-weight:800}
+.ci label{font-size:.9rem;cursor:pointer;line-height:1.45}
+.ci.done label{text-decoration:line-through;color:var(--muted)}
+.ci small{display:block;color:var(--muted);font-size:.76rem}
 
-footer{border-top:1px solid var(--line);padding:30px 0 50px;text-align:center;color:var(--muted);font-size:.82rem}
-footer .seal{font-family:"Shippori Mincho";color:var(--vermilion);font-size:1.4rem;display:inline-block;border:2px solid var(--vermilion);border-radius:10px;padding:4px 9px;margin-bottom:10px}
-
+.note{background:rgba(192,64,42,.07);border:1px solid rgba(192,64,42,.28);border-radius:15px;padding:14px 18px;font-size:.88rem;color:var(--soft);margin:18px 0}
+.note b{color:var(--red2)}
+footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;color:var(--muted);font-size:.83rem}
+.seal{font-family:"Shippori Mincho";color:var(--red);font-size:1.5rem;display:inline-block;
+  border:2px solid var(--red);border-radius:11px;padding:5px 11px;margin-bottom:10px}
 @media(max-width:640px){
-  .hero{padding:36px 24px 36px}.hero .sun{width:60px;height:60px;top:26px;right:26px}
+  .hero{padding:36px 22px}
+  .hero-sun{width:60px;height:60px;top:22px;right:22px}
   .flights{grid-template-columns:1fr}
-  .top-inner{padding:10px 16px}.brand{margin-right:6px}
+  .price{margin-left:0}
+  .hd{gap:8px}
 }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="top-inner">
-    <div class="brand">
-      <span class="kanji">日本</span>
-      <span class="b-txt"><b>Japan 2026</b><span>Our Trip</span></span>
-    </div>
-    <nav class="tabs" id="tabs">
-      <button class="tab active" data-v="overview">Overview</button>
-      <button class="tab" data-v="days">Day by Day</button>
-      <button class="tab" data-v="cities">Cities</button>
-      <button class="tab" data-v="festivals">Highlights</button>
-      <button class="tab" data-v="essentials">Essentials</button>
-      <button class="tab" data-v="checklist">Checklist</button>
-    </nav>
-  </div>
+<header>
+<div class="hd">
+  <a class="logo" href="#" onclick="go('home');return false">
+    <span class="logo-jp">旅</span>
+    <span class="logo-txt">
+      <strong>Joseph &amp; Angelo 🇯🇵</strong>
+      <small>Giappone Luglio 2026</small>
+    </span>
+  </a>
+  <nav class="nav" id="nav">
+    <button class="tb on" data-v="home">🏠 Home</button>
+    <button class="tb" data-v="days">📅 Giorni</button>
+    <button class="tb" data-v="cities">🗺 Città</button>
+    <button class="tb" data-v="exp">✨ Esperienze</button>
+    <button class="tb" data-v="nerd">🎮 Nerd</button>
+    <button class="tb" data-v="cult">⛩️ Cultura</button>
+    <button class="tb" data-v="secret">🧊 Segreti</button>
+    <button class="tb" data-v="prat">🎒 Pratica</button>
+    <button class="tb" data-v="check">✓ Lista</button>
+  </nav>
+</div>
 </header>
 
 <main class="wrap">
 
-  <!-- OVERVIEW -->
-  <section class="view active" id="overview">
-    <div class="hero">
-      <div class="sun"></div>
-      <div class="eyebrow">3 – 21 July 2026 · Tokyo · Fuji · Kyoto · Nara · Osaka</div>
-      <h1><span class="jp">わたしたちの旅</span>Our Japan</h1>
-      <p class="lede">Seventeen days across the country, for the two of us — temples and torii, neon and noodles, Mt Fuji, the Gion festival, and a whole lot of Pokémon centres.</p>
-      <div class="dates">✈ Milano Malpensa → Tokyo Haneda</div>
-      <div class="countdown" id="cd">
-        <div class="cd-box"><b id="cd-d">–</b><span>Days</span></div>
-        <div class="cd-box"><b id="cd-h">–</b><span>Hours</span></div>
-        <div class="cd-box"><b id="cd-m">–</b><span>Min</span></div>
-        <div class="cd-box"><b id="cd-s">–</b><span>Sec</span></div>
+<!-- HOME -->
+<section class="view on" id="home">
+  <div class="hero">
+    <div class="hero-sun"></div>
+    <div class="ey">3 – 21 Luglio 2026 · Tokyo · Fuji · Kyoto · Nara · Osaka</div>
+    <h1><span>わたしたちの旅</span>Joseph &amp; Angelo in Giappone ❤️</h1>
+    <p class="sub">Joseph cerca ogni Pokémon Center nel raggio di 10 km. Angelo vuole un goshuin da ogni tempio. Entrambi vogliono mangiare tutto quello che vedono. <em>Benvenuti nel vostro viaggio.</em></p>
+    <div class="dates">✈ Malpensa 3 Lug → Haneda · Ritorno 20 Lug</div>
+    <div class="cd" id="cd">
+      <div class="cdb"><b id="cd-d">–</b><s>Giorni</s></div>
+      <div class="cdb"><b id="cd-h">–</b><s>Ore</s></div>
+      <div class="cdb"><b id="cd-m">–</b><s>Min</s></div>
+      <div class="cdb"><b id="cd-s">–</b><s>Sec</s></div>
+    </div>
+  </div>
+
+  <!-- FX WIDGET -->
+  <div class="fx-card">
+    <div class="fx-top">
+      <div>
+        <div class="fx-label">💱 Cambio EUR → JPY in tempo reale</div>
+        <div class="fx-rate">€1 = ¥<span id="fx-v">…</span></div>
+        <div class="fx-time" id="fx-t">aggiornamento in corso…</div>
       </div>
+      <button class="fx-btn" onclick="loadFx()">↻ Aggiorna</button>
     </div>
-
-    <div class="route">
-      <span class="stop"><span class="dot"></span>Tokyo</span><span class="arrow">→</span>
-      <span class="stop"><span class="dot"></span>Mt Fuji</span><span class="arrow">→</span>
-      <span class="stop"><span class="dot"></span>Kyoto</span><span class="arrow">→</span>
-      <span class="stop"><span class="dot"></span>Arashiyama</span><span class="arrow">→</span>
-      <span class="stop"><span class="dot"></span>Nara</span><span class="arrow">→</span>
-      <span class="stop"><span class="dot"></span>Osaka</span>
+    <div class="fx-conv">
+      <span class="fx-sym">€</span>
+      <input class="fx-inp" id="fx-eur" type="number" value="100" min="0" placeholder="Euro">
+      <span class="fx-eq">＝</span>
+      <span class="fx-out">¥<span id="fx-jpy">–</span></span>
+      &nbsp;&nbsp;
+      <span class="fx-sym">¥</span>
+      <input class="fx-inp" id="fx-yen" type="number" placeholder="Yen" min="0">
+      <span class="fx-eq">＝</span>
+      <span class="fx-out">€<span id="fx-eout">–</span></span>
     </div>
+  </div>
 
-    <div class="facts">
-      <div class="fact"><b>17</b><span>Days on the ground</span></div>
-      <div class="fact"><b>6</b><span>Destinations</span></div>
-      <div class="fact"><b>€485</b><span>Lodging each</span></div>
-      <div class="fact"><b>1,157</b><span>Years of Gion Matsuri</span></div>
-    </div>
+  <div class="route">
+    <span class="stop"><i></i>Tokyo</span><span class="arr">→</span>
+    <span class="stop"><i></i>Monte Fuji</span><span class="arr">→</span>
+    <span class="stop"><i></i>Kyoto</span><span class="arr">→</span>
+    <span class="stop"><i></i>Arashiyama</span><span class="arr">→</span>
+    <span class="stop"><i></i>Nara</span><span class="arr">→</span>
+    <span class="stop"><i></i>Osaka</span>
+  </div>
 
-    <h2 class="sec-title" style="margin-top:30px">The flights</h2>
-    <div class="flights">
-      <div class="flight">
-        <div class="lab">Outbound · 3 July</div>
-        <div class="leg">
-          <div class="pt"><b>MXP</b><span>Malpensa · 12:45</span></div>
-          <div class="plane"></div>
-          <div class="pt" style="text-align:right"><b>HND</b><span>Haneda · 15:05 (+1)</span></div>
-        </div>
-      </div>
-      <div class="flight">
-        <div class="lab">Return · 20 July</div>
-        <div class="leg">
-          <div class="pt"><b>HND</b><span>Haneda · 16:35</span></div>
-          <div class="plane"></div>
-          <div class="pt" style="text-align:right"><b>MXP</b><span>Malpensa · 07:40 (+1)</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="note"><b>Heads up:</b> the return is out of <b>Tokyo</b> Haneda, but our last days are in Osaka. On <b>20 July</b> we ride the Nozomi shinkansen Shin-Osaka → Tokyo (~2h27), then continue to Haneda. To make a 16:35 flight comfortably, aim to leave Osaka by ~10:30–11:00.</div>
+  <div class="facts">
+    <div class="fact"><b>17</b><small>Giorni in Giappone</small></div>
+    <div class="fact"><b>6</b><small>Città</small></div>
+    <div class="fact"><b>4</b><small>Prenotazioni fisse</small></div>
+    <div class="fact"><b>∞</b><small>Pokémon da trovare</small></div>
+    <div class="fact"><b>∞</b><small>Goshuin da timbrare</small></div>
+  </div>
 
-    <h2 class="sec-title" style="margin-top:34px">First things, first day</h2>
-    <p class="sec-sub">A tiny cheat-sheet for the moment we land at Haneda so we hit the ground running.</p>
-    <div class="grid three">
-      <div class="ess"><h3><span class="ic" style="background:var(--matcha)">💴</span>Cash first</h3><p>Japan still loves cash. Withdraw yen at a Haneda 7-Bank / Japan Post ATM (Revolut works well). Carry coins for shrines & vending machines.</p></div>
-      <div class="ess"><h3><span class="ic" style="background:var(--indigo)">🚆</span>Welcome Suica</h3><p>Grab a Welcome Suica at the airport and load ¥3,000–5,000. Tap onto every train, bus and convenience-store till.</p></div>
-      <div class="ess"><h3><span class="ic" style="background:var(--vermilion)">📕</span>Goshuincho</h3><p>Buy a goshuincho (stamp book) at the first big shrine — Meiji Jingu or Senso-ji — then collect a goshuin at every temple after.</p></div>
-    </div>
-  </section>
+  <h2 class="pg-title" style="margin-top:28px">Come funziona la guida</h2>
+  <p class="pg-sub">Tutto è pensato per voi due. Le etichette su ogni attività indicano "chi ci tiene di più" — ma onestamente, quasi tutto è per entrambi.</p>
+  <div class="legend">
+    <span class="lc">🎮 Joseph ci tiene tantissimo</span>
+    <span class="lc">⛩️ Angelo ci tiene tantissimo</span>
+    <span class="lc">❤️ Entrambi · imperdibile</span>
+    <span class="lc">🍜 Cibo</span>
+    <span class="lc">🛍️ Shopping</span>
+    <span class="lc">🧊 Fresco / relax</span>
+    <span class="lc">📷 Foto epica</span>
+  </div>
 
-  <!-- DAYS -->
-  <section class="view" id="days">
-    <div class="eyebrow">The itinerary</div>
-    <h2 class="sec-title">Day by Day</h2>
-    <p class="sec-sub">Tap any day to open the plan and the tips we pulled from Reddit, travel blogs and recent guides. Times are easy to shuffle — the tips tell you what's worth waking up early for.</p>
-    <div class="grid" id="dayList"></div>
-  </section>
+  <h2 class="pg-title" style="margin-top:26px">I voli</h2>
+  <div class="flights">
+    <div class="fl"><div class="la">Andata · Venerdì 3 Lug</div><div class="leg"><div class="pt"><b>MXP</b><span>Malpensa · 12:45</span></div><div class="line"></div><div class="pt" style="text-align:right"><b>HND</b><span>Haneda · 15:05 +1g</span></div></div></div>
+    <div class="fl"><div class="la">Ritorno · Lunedì 20 Lug</div><div class="leg"><div class="pt"><b>HND</b><span>Haneda · 16:35</span></div><div class="line"></div><div class="pt" style="text-align:right"><b>MXP</b><span>Malpensa · 07:40 +1g</span></div></div></div>
+  </div>
+  <div class="note"><b>✅ Volo confermato: 16:35 da Haneda.</b> Più comodi! Il Nozomi Shin-Osaka → Tokyo (~2h27) — partite da Shin-Osaka entro le <b>10:00–10:30</b> e siete ad Haneda comodamente per le 14:00. Margine tranquillo.</div>
 
-  <!-- CITIES -->
-  <section class="view" id="cities">
-    <div class="eyebrow">Where we're going</div>
-    <h2 class="sec-title">The Cities</h2>
-    <p class="sec-sub">A focused guide to each base — what to do, where to eat, and the small things that make the difference.</p>
-    <div class="grid two" id="cityList"></div>
-  </section>
+  <h2 class="pg-title" style="margin-top:28px">Prezzi indicativi 2026</h2>
+  <p class="pg-sub" style="margin-bottom:10px">Tutto in yen. Usa il convertitore qui sopra per la stima in euro. I prezzi possono variare leggermente.</p>
+  <table class="ptable" id="ptable">
+    <tr><th>Cosa</th><th>¥ a testa</th><th>€ stimati</th></tr>
+    <tr><td>teamLab Planets <small>(già prenotato, 5 lug)</small></td><td class="yen">¥3.800–4.200</td><td class="eur" data-yen="4000">–</td></tr>
+    <tr><td>Nintendo Museum <small>(già prenotato, 15 lug)</small></td><td class="yen">¥3.300</td><td class="eur" data-yen="3300">–</td></tr>
+    <tr><td>USJ Studio Pass <small>(già pagato, 18 lug)</small></td><td class="yen">¥8.600–10.400</td><td class="eur" data-yen="9500">–</td></tr>
+    <tr><td>Shinkansen Tokyo → Kyoto (Nozomi)</td><td class="yen">¥14.370</td><td class="eur" data-yen="14370">–</td></tr>
+    <tr><td>Shinkansen Shin-Osaka → Tokyo (Nozomi)</td><td class="yen">¥14.720</td><td class="eur" data-yen="14720">–</td></tr>
+    <tr><td>Bus Shinjuku → Kawaguchiko (solo andata)</td><td class="yen">~¥2.200</td><td class="eur" data-yen="2200">–</td></tr>
+    <tr><td>Funivia Panoramica del Fuji (a/r)</td><td class="yen">¥1.000</td><td class="eur" data-yen="1000">–</td></tr>
+    <tr><td>Shibuya Sky <small>(prenota online)</small></td><td class="yen">¥2.500</td><td class="eur" data-yen="2500">–</td></tr>
+    <tr><td>Tokyo Skytree</td><td class="yen">¥2.100+</td><td class="eur" data-yen="2100">–</td></tr>
+    <tr><td>Todai-ji Nara</td><td class="yen">¥800</td><td class="eur" data-yen="800">–</td></tr>
+    <tr><td>Kinkaku-ji / Kiyomizu-dera / Ginkaku-ji</td><td class="yen">¥500 cad.</td><td class="eur" data-yen="500">–</td></tr>
+    <tr><td>Castello di Nijo</td><td class="yen">¥1.300</td><td class="eur" data-yen="1300">–</td></tr>
+    <tr><td>Castello di Osaka</td><td class="yen">¥600</td><td class="eur" data-yen="600">–</td></tr>
+    <tr><td>Cerimonia del tè (Kyoto/Uji)</td><td class="yen">¥3.000–6.000</td><td class="eur" data-yen="4500">–</td></tr>
+    <tr><td>Senso-ji · Meiji Jingu · Fushimi Inari · Pokémon Center</td><td class="yen">Gratis 🎉</td><td class="eur">–</td></tr>
+  </table>
+  <p style="margin-top:20px;text-align:center"><button class="tb on" style="background:var(--red);padding:11px 24px;font-size:.9rem" onclick="go('days')">Vai all'itinerario giorno per giorno →</button></p>
+</section>
 
-  <!-- FESTIVALS / HIGHLIGHTS -->
-  <section class="view" id="festivals">
-    <div class="eyebrow">Don't-miss moments</div>
-    <h2 class="sec-title">Highlights &amp; Festivals</h2>
-    <p class="sec-sub">The handful of experiences worth planning the rest of the trip around.</p>
-    <div class="grid two" id="featList"></div>
-  </section>
+<!-- GIORNI -->
+<section class="view" id="days">
+  <div class="eyebrow">Il programma</div>
+  <h2 class="pg-title">Giorno per Giorno</h2>
+  <p class="pg-sub">Cliccate su ogni giorno per aprire il piano completo: mattina, pomeriggio, sera — con tante opzioni, prezzi, consigli da Reddit/blog e i link a Google Maps per ogni posto. Rimanete flessibili: se fuori piove o avete voglia di ramen per 3 ore, fate ramen per 3 ore.</p>
+  <div class="legend">
+    <span class="lc">🎮 Joseph</span><span class="lc">⛩️ Angelo</span><span class="lc">❤️ Entrambi</span><span class="lc">🍜 Cibo</span><span class="lc">🛍️ Shop</span><span class="lc">🧊 Fresco</span><span class="lc">📷 Foto</span>
+  </div>
+  <div class="grid" id="dayList"></div>
+</section>
 
-  <!-- ESSENTIALS -->
-  <section class="view" id="essentials">
-    <div class="eyebrow">Good to know</div>
-    <h2 class="sec-title">Essentials</h2>
-    <p class="sec-sub">Money, trains, the July heat, etiquette and the apps that make Japan easy.</p>
-    <div class="grid two" id="essList"></div>
-  </section>
+<!-- CITTÀ -->
+<section class="view" id="cities">
+  <div class="eyebrow">Le basi</div>
+  <h2 class="pg-title">Le Città</h2>
+  <p class="pg-sub">Una scheda per ogni tappa: cosa vedere, dove mangiare e i consigli più utili per muoversi.</p>
+  <div class="grid g2" id="cityList"></div>
+</section>
 
-  <!-- CHECKLIST -->
-  <section class="view" id="checklist">
-    <div class="eyebrow">Before we fly</div>
-    <h2 class="sec-title">Checklist</h2>
-    <p class="sec-sub">Bookings to lock in and what to pack for a hot, humid Japanese summer. Ticks save automatically on this device.</p>
-    <div class="progress-wrap">
-      <div class="ptop"><b>Trip readiness</b><span id="cl-count">0 / 0 done</span></div>
-      <div class="bar"><i id="cl-bar"></i></div>
-    </div>
-    <div class="grid two">
-      <div class="clist" id="cl-book"></div>
-      <div class="clist" id="cl-pack"></div>
-    </div>
-  </section>
+<!-- ESPERIENZE -->
+<section class="view" id="exp">
+  <div class="eyebrow">Il cuore del viaggio</div>
+  <h2 class="pg-title">Le Esperienze che Aspettate</h2>
+  <p class="pg-sub">Le 6 esperienze attorno a cui ruota tutto il resto, incluse le 4 già prenotate.</p>
+  <div class="grid g2" id="expList"></div>
+</section>
+
+<!-- NERD -->
+<section class="view" id="nerd">
+  <div class="eyebrow">Modalità Joseph: ATTIVATA</div>
+  <h2 class="pg-title">🎮 Pokémon, Retrogaming &amp; Cose Nerd</h2>
+  <p class="pg-sub">Tutto quello che Joseph ha in mente da anni. Angelo si accolla volentieri (e in segreto si diverte pure lui).</p>
+  <div class="grid g2" id="nerdList"></div>
+</section>
+
+<!-- CULTURA -->
+<section class="view" id="cult">
+  <div class="eyebrow">Modalità Angelo: ATTIVATA</div>
+  <h2 class="pg-title">⛩️ Templi, Castelli, Tè &amp; Cerimonie</h2>
+  <p class="pg-sub">La parte storica e culturale che Angelo insegue da quando ha prenotato i biglietti. Joseph vuole tutto questo quanto lui, giura.</p>
+  <div class="grid g2" id="cultList"></div>
+</section>
+
+<!-- SEGRETI -->
+<section class="view" id="secret">
+  <div class="eyebrow">Cose che non trovi su Google</div>
+  <h2 class="pg-title">🧊 Fresco d'Estate &amp; Gemme Nascoste</h2>
+  <p class="pg-sub">Luglio in Giappone: 32°C, umidità alle stelle, folla ovunque. Ecco come sopravvivere (e trovare i posti che la gente non conosce).</p>
+  <div class="grid g2" id="secretList"></div>
+</section>
+
+<!-- PRATICA -->
+<section class="view" id="prat">
+  <div class="eyebrow">Prima di partire e in loco</div>
+  <h2 class="pg-title">🎒 Info Pratiche</h2>
+  <p class="pg-sub">Soldi, treni, takkyubin, caldo, app e tutto quello che fa girare il Giappone senza intoppi.</p>
+  <div class="grid g2" id="essList"></div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="view" id="check">
+  <div class="eyebrow">Prima di partire</div>
+  <h2 class="pg-title">✓ Checklist Joseph &amp; Angelo</h2>
+  <p class="pg-sub">Prenotazioni, valigia e cose da fare. Le spunte si salvano su questo dispositivo.</p>
+  <div class="prog-wrap"><div class="ptop"><b>Pronti a partire!</b><span id="cl-n">0 / 0</span></div><div class="bar"><i id="cl-b"></i></div></div>
+  <div class="grid g2"><div class="cl" id="cl-bk"></div><div class="cl" id="cl-pk"></div></div>
+</section>
 
 </main>
 
 <footer class="wrap">
   <div class="seal">旅</div>
-  <div>Built for our July 2026 adventure · いってきます</div>
-  <div style="margin-top:6px;opacity:.8">Tip: open on your phone and "Add to Home Screen" so it's one tap away the whole trip.</div>
+  <p>Fatto con amore per Joseph &amp; Angelo ❤️ · いってきます!</p>
+  <p style="margin-top:6px;opacity:.75">Apri sul telefono → "Aggiungi a schermata Home" per averlo sempre con voi.</p>
+  <p style="margin-top:4px;opacity:.6;font-size:.76rem">Hostabile gratis su GitHub Pages · Netlify · Cloudflare Pages · basta caricare questo file.</p>
 </footer>
 
 <script>
-/* ---------------- data ---------------- */
+/* ── HELPERS ── */
 const DEPART = new Date("2026-07-03T12:45:00+02:00");
+let FX_RATE = 165;
 
-const days = [
-  {n:1,date:"3 Jul",dow:"Fri",tag:"Departure",title:"Milano → Tokyo",area:"Travel day · overnight",badge:{t:"Travel",c:"travel"},
-   acts:["Malpensa T1 · 12:45 departure","Long-haul to Haneda","Sleep on the plane"],
-   tips:["<b>Beat jet-lag:</b> set your watch to Tokyo time the moment you board and try to sleep on Japan's night.","Have your hotel address saved in Japanese + offline maps downloaded before you lose signal.","Pack a power bank and the cooling towel in your carry-on — you'll want both on arrival."]},
-  {n:2,date:"4 Jul",dow:"Sat",tag:"Arrival · Tokyo",title:"Land at Haneda → Shinjuku",area:"Haneda 15:05 · base in Shinjuku",
-   acts:["Welcome Suica + load it","Withdraw yen (Revolut at Haneda)","Check in, drop bags","Evening stroll in Shinjuku"],
-   tips:["Do the boring admin at the airport: <b>Suica, cash, pocket wifi / eSIM</b>. Future-you says thanks.","Ease in gently — wander <b>Omoide Yokocho</b> and Kabukicho's lantern lanes, grab yakitori, don't over-plan a jet-lagged night.","Convenience stores (konbini) are your friend: 7-Eleven, Lawson, FamilyMart for cheap, genuinely good food 24/7."]},
-  {n:3,date:"5 Jul",dow:"Sun",tag:"Tokyo",title:"Meiji Jingu · Harajuku · teamLab",area:"West Tokyo + Toyosu",badge:{t:"teamLab 20:30",c:"fest"},
-   acts:["Meiji Jingu shrine","Harajuku & Takeshita St","Shinjuku Gyoen garden","teamLab Planets · 20:30"],
-   tips:["<b>teamLab Planets:</b> you walk barefoot through ankle-deep water, so wear shorts or trousers you can roll up. Mirror floors are everywhere — skip skirts/dresses or wear something underneath.","Put your phone in a pocket or pouch — hands get wet. Budget ~90–150 min; lockers and free towels are provided.","Download the teamLab app beforehand and screenshot your QR ticket. Arrive a few minutes early for your slot.","Daytime: get your <b>goshuincho</b> at Meiji Jingu, then crepes on Takeshita Street and quiet in Shinjuku Gyoen."]},
-  {n:4,date:"6 Jul",dow:"Mon",tag:"Tokyo",title:"Asakusa &amp; Ueno",area:"Old Tokyo, east side",
-   acts:["Senso-ji temple","Nakamise shopping street","Ueno Park","Tokyo National Museum"],
-   tips:["Hit <b>Senso-ji early</b> (before ~9am) — the temple and Nakamise are magic before the tour buses. Draw an omikuji fortune.","Collect your first temple <b>goshuin</b> here. Try menchi-katsu and ningyo-yaki from Nakamise stalls.","Ueno Park is huge and shaded — good midday refuge. The National Museum is the country's best for samurai armour and Buddhist art."]},
-  {n:5,date:"7 Jul",dow:"Tue",tag:"Tokyo · Tanabata",title:"Akihabara &amp; Pokémon",area:"Electric Town",badge:{t:"Tanabata ☆",c:"fest"},
-   acts:["Mandarake","Radio Kaikan","Pokémon Center Tokyo DX","Kanda Myojin shrine"],
-   tips:["It's <b>Tanabata</b> (Star Festival) — look for bamboo branches hung with paper wish-strips (tanzaku). Write a wish for the two of you.","Akihabara is best floor-by-floor: Radio Kaikan and Mandarake for retro toys, figures and cards. Haggle is not a thing — prices are set.","Pokémon Center DX (Sunshine? no — it's in Akiba's surroundings) + the Pokémon Café next door if you book ahead. Kanda Myojin is the geek-culture shrine — buy a tech-blessing charm."]},
-  {n:6,date:"8 Jul",dow:"Wed",tag:"Day trip",title:"Mt Fuji · Fujikawaguchiko",area:"Highway bus from Shinjuku",badge:{t:"Day trip",c:"travel"},
-   acts:["Lake Kawaguchi","Oishi Park","Chureito Pagoda","Fuji Panoramic Ropeway"],
-   tips:["<b>Go as early as you can.</b> Fuji hides behind cloud as the day warms up — clearest views are early morning. Summer is hazy, so manage expectations and enjoy the lake even if she's shy.","Book the <b>highway bus from Busta Shinjuku</b> in advance; it's faster and comfier than the train for a day trip.","Chureito Pagoda = the postcard shot (≈400 steps up Arakurayama Sengen Park). Oishi Park for lakeside flowers and reflections.","Check a Fuji live-cam / the weather the night before — if it's totally socked in, the day's still lovely but reset your hopes."]},
-  {n:7,date:"9 Jul",dow:"Thu",tag:"Tokyo",title:"Shibuya",area:"Shibuya & Dogenzaka",
-   acts:["Shibuya Crossing","Hachiko statue","Nintendo Tokyo + Pokémon Center","Shibuya Sky"],
-   tips:["<b>Shibuya Sky:</b> book a sunset slot in advance — it sells out, and golden hour over the crossing is unforgettable.","Nintendo Tokyo and Pokémon Center Shibuya are both in <b>Parco</b> (6F) — go on the same trip.","Best free crossing views: the Starbucks at Tsutaya, or the Mag's Park rooftop. Then dive in and cross it yourselves."]},
-  {n:8,date:"10 Jul",dow:"Fri",tag:"Tokyo",title:"Ikebukuro &amp; Nakano",area:"North + west Tokyo",
-   acts:["Pokémon Center Mega Tokyo","Sunshine City","Nakano Broadway"],
-   tips:["<b>Pokémon Center Mega Tokyo</b> (the big one) is inside Sunshine City — pair it with the aquarium or observation deck if you want air-con.","<b>Nakano Broadway</b> is the collector's holy grail: Mandarake's home turf, floors of vintage anime, manga and toys. Quieter and weirder than Akihabara — bring patience and cash.","Last full Tokyo day — knock out any souvenir shopping you've been putting off."]},
-  {n:9,date:"11 Jul",dow:"Sat",tag:"To Kyoto",title:"Shinkansen + Gion by night",area:"Tokyo → Kyoto",badge:{t:"Travel",c:"travel"},
-   acts:["Bullet train Tokyo → Kyoto (~2h15)","Gion district","Yasaka Shrine","Pontocho alley"],
-   tips:["<b>Reserve your shinkansen seats</b> (Nozomi or Hikari) — Saturday + summer = busy. Sit on the right (south) side for a chance at Fuji.","First night in Kyoto is near the station (1 night). Walk Gion at dusk, Yasaka Shrine's lanterns, dinner along <b>Pontocho</b> alley by the river.","Geiko/maiko etiquette: look, smile, don't chase or block them for photos — it's their commute, not a show."]},
-  {n:10,date:"12 Jul",dow:"Sun",tag:"Arashiyama",title:"Bamboo Grove &amp; Ryokan",area:"Arashiyama · onsen night",badge:{t:"Ryokan + onsen",c:"heart"},
-   acts:["Send luggage by takkyubin","Bamboo Grove","Tenryu-ji","Togetsukyo Bridge","Ryokan & onsen"],
-   tips:["<b>Luggage logistics:</b> this morning, forward the big suitcases by takkyubin from Kyoto Station to the 13–17 July hotel. Go to Arashiyama with just a backpack.","<b>Bamboo Grove before 8am</b> — by mid-morning it's shoulder-to-shoulder. Okochi-Sanso garden next door is gorgeous and far quieter.","Onsen etiquette: wash thoroughly at the seated showers <b>before</b> entering the bath, no swimwear, tie up long hair. Tattoos may need covering — check with the ryokan. Then soak and enjoy your kaiseki dinner."]},
-  {n:11,date:"13 Jul",dow:"Mon",tag:"Kyoto",title:"Slow Arashiyama → Kyoto",area:"Back to the city",
-   acts:["Easy Arashiyama morning","Return to Kyoto","Check into 13–17 hotel"],
-   tips:["No rush. Sagano's back lanes, a riverside coffee, maybe the Saga-Toriimoto preserved street before heading back.","Bags should be waiting at the new hotel thanks to yesterday's takkyubin.","Save energy — the next three days are temple-heavy and the festival builds all week."]},
-  {n:12,date:"14 Jul",dow:"Tue",tag:"Day trip · Nara",title:"Nara deer &amp; Great Buddha",area:"Nara + Gion Matsuri eve",badge:{t:"Yoiyama begins",c:"fest"},
-   acts:["Nara Park & bowing deer","Todai-ji (Great Buddha)","Kasuga Taisha","Goshuin"],
-   tips:["<b>Go early (7–9am)</b> — deer are calmer and Todai-ji is cooler before the heat. ¥200 buys ~10 shika-senbei crackers.","Feed deer <b>away</b> from Todai-ji; the temple deer are pushy. Bow and they often bow back. Hide crackers or they'll mob you.","Kasuga Taisha's lantern paths are dreamy and shaded. Todai-ji's Great Buddha Hall is one of the most jaw-dropping buildings in Japan.","Tonight, <b>Gion Matsuri Yoiyama</b> begins back in Kyoto — lit floats, food stalls, festival energy downtown (~6–11pm)."]},
-  {n:13,date:"15 Jul",dow:"Wed",tag:"Kyoto",title:"Fushimi Inari &amp; Uji",area:"Sunrise torii + matcha",badge:{t:"Yoiyama night",c:"fest"},
-   acts:["Fushimi Inari at dawn","Uji town","Matcha & tea ceremony"],
-   tips:["<b>Fushimi Inari at sunrise</b> (~5am in July). It's 24/7 and free — by 8–9am it's packed and roasting. Hike to the Yotsutsuji viewpoint (~30–45 min) for the city panorama; vending machines along the way.","Then to <b>Uji</b>, Japan's matcha capital — Byodo-in temple (the ¥10-coin building), riverside tea houses, a proper tea ceremony, and the best matcha soft-serve of your life.","Evening: another <b>Yoiyama</b> night downtown (15 July has road closures and the biggest crowds building toward the 16th)."]},
-  {n:14,date:"16 Jul",dow:"Thu",tag:"Kyoto",title:"Higashiyama &amp; the big festival eve",area:"Eastern hills + Yoiyama",badge:{t:"Yoiyama (peak)",c:"fest"},
-   acts:["Kiyomizu-dera","Sannenzaka & Ninenzaka","Kodai-ji","Yasaka Pagoda"],
-   tips:["<b>Kiyomizu-dera early</b>, then wander down the preserved slopes of Sannenzaka and Ninenzaka — the most beautiful streets in Kyoto, lined with sweets and craft shops.","Catch the <b>Yasaka Pagoda</b> framed at the top of Hokan-ji lane for the classic Kyoto photo. Kimono rental makes it extra special if you're up for it.","Tonight is the <b>biggest Yoiyama</b> — central Kyoto goes traffic-free, floats are lit, hundreds of food stalls. A perfect last festival night together before the parade."]},
-  {n:15,date:"17 Jul",dow:"Fri",tag:"Festival → Osaka",title:"Gion Matsuri parade → Osaka",area:"Yamahoko Junko + move",badge:{t:"GION MATSURI",c:"fest"},
-   acts:["Yamahoko Junko parade 9:00–13:00","Train to Osaka","Dotonbori by night"],
-   tips:["<b>The big one.</b> The Yamahoko Junko grand float parade runs ~9:00–13:00, starting at the Shijo-Karasuma intersection. The 25m Naginata Hoko leads. The float-turning (tsuji-mawashi) at corners is the moneyshot.","Arrive early for a spot; <b>Oike-dori</b> is roomier than Shijo. Paid grandstand seats exist but book months ahead. Bring water, a hand fan, hat and sunscreen — July heat is no joke.","Afternoon: hop the train to <b>Osaka</b> (~25–45 min). Drop bags, then dive into <b>Dotonbori</b> for neon, the Glico runner, takoyaki and okonomiyaki."]},
-  {n:16,date:"18 Jul",dow:"Sat",tag:"Osaka",title:"Universal Studios Japan",area:"Super Nintendo World",badge:{t:"USJ · paid 🎢",c:"heart"},
-   acts:["Super Nintendo World","Donkey Kong Country","Harry Potter","Mario Kart ride"],
-   tips:["<b>Arrive 60–90 min before opening</b> — USJ often opens the gates early, and this is the single best way to get into Super Nintendo World without an Express Pass.","<b>Download the USJ app before you go</b> and grab a free Area Timed-Entry ticket for Nintendo World the moment you're through the gate.","It's a Saturday in summer = busy. Eat at off-peak times (a 3pm lunch) to dodge 60–90 min food queues. Get a Power-Up Band to play the interactive games and beat Bowser Jr.","Donkey Kong Country (Mine-Cart Madness) is the newest land — ride it or Mario Kart first, before waits balloon."]},
-  {n:17,date:"19 Jul",dow:"Sun",tag:"Osaka",title:"Osaka day",area:"Castle · Den Den · Dotonbori",
-   acts:["Osaka Castle","Den Den Town","Kuromon Market","Dotonbori again"],
-   tips:["<b>Osaka Castle early</b>, then Den Den Town (Nipponbashi) — Osaka's Akihabara, full of anime, retro games and a Pokémon Center nearby.","Graze <b>Kuromon Market</b> for fresh seafood and fruit, then back to Dotonbori for one last round of street food: takoyaki, okonomiyaki, kushikatsu (no double-dipping the sauce!).","Use an ICOCA/Suica everywhere. Buy any final omiyage (souvenir snacks) tonight — easier than at the airport."]},
-  {n:18,date:"20 Jul",dow:"Mon",tag:"Return",title:"Osaka → Haneda → home",area:"Shinkansen + flight",badge:{t:"Travel",c:"travel"},
-   acts:["Nozomi Shin-Osaka → Tokyo (~2h27)","Transfer to Haneda","Flight 16:35"],
-   tips:["<b>Reserve the Nozomi seats</b> and leave Osaka by ~10:30–11:00 to make the 16:35 flight without stress. Right-side seats = a last shot at Fuji.","Grab konbini bento and a final melon-pan for the train. Last-minute souvenirs at Tokyo Station's Character Street or Haneda.","おつかれさま — one incredible trip, done. Sleep on the flight home."]},
-  {n:19,date:"21 Jul",dow:"Tue",tag:"Home",title:"Land in Milano",area:"Malpensa 07:40",badge:{t:"Home",c:"travel"},
-   acts:["Arrive Malpensa 07:40","Reverse jet-lag","Start planning the next one"],
-   tips:["Push through to a normal bedtime tonight to reset faster.","Back up all the photos before you forget which day was which.","Already missing the konbini coffee. (We warned you.)"]}
-];
-
-const cities = [
-  {name:"Tokyo",jp:"東京",when:"4 – 11 July · base in Shinjuku",kanji:"東",grad:"linear-gradient(135deg,#21384f,#34557c)",
-   do:["<b>Neighbourhood-hop:</b> Shinjuku (food alleys), Shibuya (crossing + Sky), Harajuku (fashion), Asakusa (old-town), Akihabara & Nakano (otaku heaven).","<b>teamLab Planets</b> in Toyosu — book ahead, it sells out.","Shrines & calm: Meiji Jingu, Shinjuku Gyoen, Ueno Park."],
-   eat:["Konbini everything — onigiri, egg-salad sando, fried chicken.","Ramen in Shinjuku's back alleys; sushi; tonkatsu; Harajuku crepes.","Themed cafés (Pokémon Café needs reservations weeks out)."],
-   tips:["Carry cash; many small places are cash-only.","No tipping — ever. It can offend.","Stand left on escalators, walk on the right (this flips in Osaka!).","Sightsee before 10am; everything packs out after.","Trains stop around midnight — plan the last one or it's a pricey taxi."]},
-  {name:"Mt Fuji / Fujikawaguchiko",jp:"富士",when:"8 July · day trip",kanji:"富",grad:"linear-gradient(135deg,#3b5a7a,#8a6f9c)",
-   do:["Chureito Pagoda (the iconic red-pagoda-and-Fuji shot, ~400 steps).","Oishi Park lakeside & Lake Kawaguchi.","Fuji Panoramic Ropeway for elevated views."],
-   eat:["Hoto noodles — the local thick-noodle hotpot.","Lakeside cafés with Fuji views.","Fuji-themed sweets and soft-serve."],
-   tips:["<b>Mornings = clearest Fuji.</b> Cloud builds through the day; summer is often hazy.","Book the Shinjuku highway bus in advance.","Have a plan B view in case the summit's hidden — the lake is lovely regardless.","It's cooler up here than central Tokyo, but still bring sun protection."]},
-  {name:"Kyoto",jp:"京都",when:"11 – 17 July · the cultural heart",kanji:"京",grad:"linear-gradient(135deg,#7a2f2a,#b0503f)",
-   do:["Fushimi Inari (dawn), Kiyomizu-dera, Higashiyama lanes, Gion at dusk.","Tea ceremony + matcha day trip to Uji.","<b>Gion Matsuri</b> — Yoiyama nights (14–16) and the parade (17)."],
-   eat:["Kaiseki (multi-course) if you splurge once, do it here.","Nishiki Market stalls; yudofu (tofu); matcha everything.","Pontocho alley for atmospheric riverside dinners."],
-   tips:["Temples open early and close ~17:00 — front-load your day.","Gion is residential; be quiet and respectful, don't photograph geiko without consent.","Buses get jammed during the festival; walk or use the subway/Keihan line.","It's hot and humid — temple-hop in the morning, rest midday, festival at night."]},
-  {name:"Arashiyama",jp:"嵐山",when:"12 – 13 July · ryokan + onsen",kanji:"嵐",grad:"linear-gradient(135deg,#3e5e3a,#7e8a44)",
-   do:["Bamboo Grove (before 8am!), Tenryu-ji's garden, Togetsukyo Bridge.","Okochi-Sanso villa garden — quiet and stunning.","Monkey Park (Iwatayama) for a hilltop view, if you've energy."],
-   eat:["Ryokan kaiseki dinner & breakfast.","Riverside matcha and warabi-mochi.","Soba near the bridge."],
-   tips:["Travel light — forward the big bags by takkyubin first.","Onsen rules: wash before bathing, no swimwear, tattoos may need covering.","The grove is tiny and gets mobbed; early or late is everything."]},
-  {name:"Nara",jp:"奈良",when:"14 July · day trip",kanji:"奈",grad:"linear-gradient(135deg,#6b5a2a,#bd8e36)",
-   do:["Nara Park & the bowing deer.","Todai-ji and the Great Buddha.","Kasuga Taisha's lantern-lined approach."],
-   eat:["Kakinoha-zushi (persimmon-leaf sushi).","Mochi pounded fresh at Nakatanidou.","Shaved ice (kakigori) to beat the heat."],
-   tips:["<b>Arrive early</b> — calmer deer, cooler temple, fewer crowds.","¥200 = ~10 deer crackers; feed away from Todai-ji where deer are pushy.","Fastest route: Kintetsu line to Kintetsu-Nara (closer than JR Nara).","Comfy shoes — lots of walking between park, temple and shrine."]},
-  {name:"Osaka",jp:"大阪",when:"17 – 20 July · food + theme park",kanji:"阪",grad:"linear-gradient(135deg,#9c2f1f,#c0402a)",
-   do:["Universal Studios Japan & Super Nintendo World.","Dotonbori neon + the Glico sign at night.","Osaka Castle; Den Den Town for otaku shopping; Kuromon Market."],
-   eat:["<b>Takoyaki</b> (octopus balls), <b>okonomiyaki</b>, kushikatsu — Osaka is 'kuidaore', eat till you drop.","Kuromon Market seafood & fruit.","Ichiran/Kinryu ramen runs late."],
-   tips:["Osakans stand on the <b>right</b> of escalators (opposite Tokyo).","Kushikatsu rule: <b>never double-dip</b> the communal sauce.","Get an ICOCA card; trains link USJ, castle and Namba easily.","Osaka is louder, friendlier and cheaper than Tokyo — lean into it."]}
-];
-
-const feats = [
-  {ic:"🏮",bg:"linear-gradient(135deg,#c0402a,#bd8e36)",title:"Gion Matsuri",sub:"17 July · Kyoto",
-   p:"Japan's most famous festival, running every July since 869 AD — its 1,157th year. The whole reason the Kyoto dates are timed the way they are.",
-   li:["<b>Yamahoko Junko grand parade:</b> ~9:00–13:00 on 17 July, from Shijo-Karasuma. Towering 25m floats, hand-pulled, turning at corners.","<b>Yoiyama evenings (14–16 July):</b> central Kyoto goes car-free — lit floats, music, hundreds of food stalls. Arguably even better than the parade.","Watch from Oike-dori for more space; paid grandstand seats book months ahead.","Heat survival: water, hand fan, hat, sunscreen, and shade between viewings."]},
-  {ic:"☆",bg:"linear-gradient(135deg,#34557c,#d99aae)",title:"Tanabata",sub:"7 July · Tokyo",
-   p:"The Star Festival — celebrating two lovers (stars) allowed to meet just once a year. Fittingly romantic for the two of you.",
-   li:["Look for bamboo hung with colourful paper wish-strips (tanzaku).","Write a wish each and tie it on — tradition says it may come true.","Falls on our Akihabara day, so keep an eye out for decorations around the city."]},
-  {ic:"💧",bg:"linear-gradient(135deg,#2c4a6e,#7e8a44)",title:"teamLab Planets",sub:"5 July · Toyosu",
-   p:"A barefoot, immersive digital-art world — water you wade through, koi that scatter from your feet, a room of 10,000 living flowers.",
-   li:["Book your timed slot ahead (2–3 weeks); it sells out.","Wear roll-up shorts/trousers; avoid skirts (mirror floors).","~90–150 min. Lockers, towels and loaner shorts provided.","Get the app; keep your phone dry."]},
-  {ic:"🍄",bg:"linear-gradient(135deg,#9c2f1f,#bd8e36)",title:"Universal Studios Japan",sub:"18 July · Osaka",
-   p:"Super Nintendo World, Donkey Kong Country, Harry Potter and Mario Kart — already booked and paid. Treat the morning like a mission.",
-   li:["Be at the gates 60–90 min before opening; they often open early.","Download the USJ app for free Nintendo World timed-entry the second you enter.","Eat off-peak (3pm) to skip the worst food lines.","Power-Up Band unlocks the interactive games across the land."]}
-];
-
-const essentials = [
-  {ic:"💴",bg:"var(--matcha)",h:"Money &amp; cash",p:"Japan is still surprisingly cash-heavy, especially at small restaurants, shrines and markets.",
-   li:["Withdraw yen at <b>7-Bank</b> or <b>Japan Post</b> ATMs (in konbini and post offices) — they take foreign/Revolut cards.","Keep coins for shrines, lockers and vending machines.","IC cards (Suica/ICOCA) cover most transport and konbini.","No tipping, anywhere."]},
-  {ic:"🚆",bg:"var(--indigo)",h:"Trains &amp; transport",p:"World-class, punctual, and easy once you have an IC card and a maps app.",
-   li:["<b>Welcome Suica</b> at Haneda; top up at machines. ICOCA is the Kansai equivalent (both work nationwide).","Reserve <b>shinkansen</b> seats for Tokyo→Kyoto (11th) and Osaka→Tokyo (20th).","Use Google Maps or <b>Japan Travel by Navitime</b> for exact platforms & times.","Last trains run ~midnight — check before late nights out."]},
-  {ic:"🧳",bg:"var(--gold)",h:"Luggage forwarding",p:"Takkyubin lets you send bags ahead so you travel light — essential for the Arashiyama ryokan night.",
-   li:["<b>12 July morning:</b> forward big suitcases from Kyoto Station to the 13–17 hotel.","Yamato (Kuroneko) counters are in stations, konbini and hotels.","Send by early afternoon for next-day delivery; pack an overnight bag for the ryokan.","Hotels happily hold or receive forwarded luggage."]},
-  {ic:"🌡️",bg:"var(--vermilion)",h:"July heat &amp; packing",p:"Expect 30–34°C and 70%+ humidity, plus possible end-of-rainy-season showers. It's intense.",
-   li:["Light, breathable, quick-dry clothes; a hat and strong sunscreen.","A <b>cooling towel</b>, hand fan and refillable water bottle — lifesavers.","A compact umbrella (sun + sudden rain).","Comfy broken-in shoes; you'll walk 15–25k steps daily.","Portable charger — maps + photos drain phones fast."]},
-  {ic:"⛩️",bg:"var(--indigo-dk)",h:"Etiquette &amp; shrines",p:"A little courtesy goes a long way and locals notice the effort.",
-   li:["Bow slightly; a quiet 'arigato' / 'sumimasen' is plenty.","At shrines: bow at the torii, purify hands at the water basin, don't walk the centre of the path (it's for the gods).","Be quiet on trains; no phone calls; no eating while walking.","Don't photograph geiko in Gion without consent.","Carry a small bag for trash — public bins are rare."]},
-  {ic:"📱",bg:"var(--matcha)",h:"Apps &amp; admin",p:"A few downloads before you fly make everything smoother.",
-   li:["<b>Google Maps</b> (offline Tokyo/Kyoto/Osaka maps), Google Translate (camera mode for menus).","<b>USJ app</b> and <b>teamLab app</b> for timed entry.","An eSIM or pocket wifi for constant data.","Save hotel addresses in Japanese; screenshot all tickets/QRs in case of no signal."]}
-];
-
-const booking = [
-  {t:"Reserve shinkansen seats: Tokyo→Kyoto (11 Jul) & Osaka→Tokyo (20 Jul)"},
-  {t:"Book teamLab Planets timed slot (5 Jul, 20:30)",s:"Sells out weeks ahead"},
-  {t:"Book the Shinjuku → Fujikawaguchiko highway bus (8 Jul)"},
-  {t:"Confirm USJ tickets & download the USJ app (18 Jul)",s:"For Nintendo World timed entry"},
-  {t:"Decide on Gion Matsuri paid seats vs free viewing (17 Jul)"},
-  {t:"Arrange takkyubin luggage forwarding plan (12 Jul)"},
-  {t:"Buy a goshuincho early (Meiji Jingu / Senso-ji)"},
-  {t:"Set up eSIM / pocket wifi"},
-  {t:"Pokémon Café reservation, if wanted",s:"Opens weeks in advance"},
-  {t:"Save offline maps + hotel addresses in Japanese"},
-  {t:"Notify Revolut/bank of travel; check ATM limits"},
-  {t:"Travel insurance sorted"}
-];
-const packing = [
-  {t:"Cooling towel + hand fan"},
-  {t:"Refillable water bottle"},
-  {t:"Strong sunscreen + hat"},
-  {t:"Compact umbrella (sun & rain)"},
-  {t:"Comfy broken-in walking shoes"},
-  {t:"Light, breathable, quick-dry clothing"},
-  {t:"Portable charger + cables"},
-  {t:"Power adapter (Japan = Type A, 100V)"},
-  {t:"Small day-backpack + overnight bag for the ryokan"},
-  {t:"Goshuincho (stamp book)"},
-  {t:"Quick-dry shorts for teamLab",s:"Mirror floors — no skirts"},
-  {t:"A little trash bag (bins are rare)"},
-  {t:"Hand sanitiser + tissues"},
-  {t:"Some yen cash on arrival"}
-];
-
-/* ---------------- render ---------------- */
-function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild;}
-
-// days
-const dayList=document.getElementById('dayList');
-days.forEach(d=>{
-  const badge=d.badge?`<span class="badge ${d.badge.c||''}">${d.badge.t}</span>`:'';
-  const acts=d.acts.map(a=>`<li>${a}</li>`).join('');
-  const tips=d.tips.map(t=>`<li>${t}</li>`).join('');
-  dayList.appendChild(el(`
-    <article class="day">
-      <div class="day-head">
-        <div class="day-num"><b>${d.n}</b><span>${d.date.split(' ')[0]} ${d.date.split(' ')[1]}</span></div>
-        <div class="day-meta">
-          <div class="dtag">${d.dow} · ${d.tag}</div>
-          <h3>${d.title}</h3>
-          <div class="area">${d.area}</div>
-        </div>
-        <div class="day-toggle">⌄</div>
-      </div>
-      <div class="day-body"><div class="day-body-inner">
-        <ul class="acts">${acts}</ul>
-        ${badge}
-        <div class="tips"><div class="tt">💡 Tips for the day</div><ul>${tips}</ul></div>
-      </div></div>
-    </article>`));
-});
-dayList.addEventListener('click',e=>{
-  const head=e.target.closest('.day-head');if(!head)return;
-  head.parentElement.classList.toggle('open');
+function M(q){ return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q); }
+function el(h){ const t=document.createElement('template'); t.innerHTML=h.trim(); return t.content.firstChild; }
+function go(v){
+  document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id===v));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.getElementById('nav').addEventListener('click',e=>{
+  const b=e.target.closest('.tb'); if(b) go(b.dataset.v);
 });
 
-// cities
-const cityList=document.getElementById('cityList');
-cities.forEach(c=>{
-  const mk=(arr,bh,ic,bg)=>`<div class="block"><div class="bh"><span class="ic" style="background:${bg}">${ic}</span>${bh}</div><ul>${arr.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
-  cityList.appendChild(el(`
-    <article class="city">
-      <div class="city-band" style="background:${c.grad}">
-        <div class="jp">${c.jp}</div>
-        <h3>${c.name}</h3>
-        <div class="when">${c.when}</div>
-        <span class="big-kanji">${c.kanji}</span>
-      </div>
-      <div class="city-body">
-        ${mk(c.do,'See &amp; Do','◎','var(--vermilion)')}
-        ${mk(c.eat,'Eat','🍜','var(--matcha)')}
-        ${mk(c.tips,'Good to know','✦','var(--indigo)')}
-      </div>
-    </article>`));
-});
-
-// festivals
-const featList=document.getElementById('featList');
-feats.forEach(f=>{
-  featList.appendChild(el(`
-    <article class="feat">
-      <div class="feat-top"><div class="feat-ic" style="background:${f.bg}">${f.ic}</div>
-        <div><div class="sub">${f.sub}</div><h3>${f.title}</h3></div></div>
-      <div class="feat-body"><p>${f.p}</p><ul>${f.li.map(x=>`<li>${x}</li>`).join('')}</ul></div>
-    </article>`));
-});
-
-// essentials
-const essList=document.getElementById('essList');
-essentials.forEach(e=>{
-  essList.appendChild(el(`
-    <div class="ess">
-      <h3><span class="ic" style="background:${e.bg}">${e.ic}</span>${e.h}</h3>
-      <p>${e.p}</p>
-      <ul>${e.li.map(x=>`<li>${x}</li>`).join('')}</ul>
-    </div>`));
-});
-
-/* ---------------- checklist (graceful storage) ---------------- */
-const store={
-  get(k){try{return localStorage.getItem(k)}catch(e){return this._m&&this._m[k]||null}},
-  set(k,v){try{localStorage.setItem(k,v)}catch(e){(this._m=this._m||{})[k]=v}},
-  _m:{}
-};
-function buildList(node,items,group){
-  node.innerHTML=`<h4>${group==='book'?'📋 Bookings & admin':'🎒 Packing'}</h4>`;
-  items.forEach((it,i)=>{
-    const id=`${group}-${i}`;
-    const checked=store.get(id)==='1';
-    const row=el(`<label class="citem ${checked?'done':''}">
-      <input type="checkbox" ${checked?'checked':''} data-id="${id}">
-      <span><label>${it.t}</label>${it.s?`<small>${it.s}</small>`:''}</span></label>`);
-    node.appendChild(row);
+/* ── LIVE FX ── */
+async function loadFx(){
+  document.getElementById('fx-t').textContent='aggiornamento in corso…';
+  try {
+    const r = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.json');
+    const d = await r.json();
+    FX_RATE = Math.round(d.eur.jpy);
+    document.getElementById('fx-v').textContent = FX_RATE;
+    const now = new Date();
+    document.getElementById('fx-t').textContent = `Aggiornato: ${now.toLocaleTimeString('it-IT')} · fonte: open exchange rates`;
+    updatePriceTable();
+    updateConv();
+  } catch(e){
+    document.getElementById('fx-v').textContent = FX_RATE;
+    document.getElementById('fx-t').textContent = 'Cambio indicativo (offline): ¥'+FX_RATE;
+    updatePriceTable();
+    updateConv();
+  }
+}
+function updatePriceTable(){
+  document.querySelectorAll('.ptable .eur[data-yen]').forEach(td=>{
+    const y=parseInt(td.dataset.yen);
+    td.textContent='~€'+(y/FX_RATE).toFixed(0);
   });
 }
-buildList(document.getElementById('cl-book'),booking,'book');
-buildList(document.getElementById('cl-pack'),packing,'pack');
-function refreshProgress(){
-  const boxes=document.querySelectorAll('.citem input');
-  const done=[...boxes].filter(b=>b.checked).length;
-  document.getElementById('cl-count').textContent=`${done} / ${boxes.length} done`;
-  document.getElementById('cl-bar').style.width=(boxes.length?done/boxes.length*100:0)+'%';
+function updateConv(){
+  const ev=parseFloat(document.getElementById('fx-eur').value)||0;
+  document.getElementById('fx-jpy').textContent=Math.round(ev*FX_RATE).toLocaleString('it-IT');
+  const yv=parseFloat(document.getElementById('fx-yen').value)||0;
+  document.getElementById('fx-eout').textContent=(yv/FX_RATE).toFixed(2);
 }
-document.getElementById('checklist').addEventListener('change',e=>{
-  if(e.target.type!=='checkbox')return;
-  store.set(e.target.dataset.id,e.target.checked?'1':'0');
-  e.target.closest('.citem').classList.toggle('done',e.target.checked);
-  refreshProgress();
-});
-refreshProgress();
+document.getElementById('fx-eur').addEventListener('input',updateConv);
+document.getElementById('fx-yen').addEventListener('input',updateConv);
+loadFx();
 
-/* ---------------- tabs ---------------- */
-const tabs=document.getElementById('tabs');
-tabs.addEventListener('click',e=>{
-  const b=e.target.closest('.tab');if(!b)return;
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  b.classList.add('active');
-  document.getElementById(b.dataset.v).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-});
-
-/* ---------------- countdown ---------------- */
+/* ── COUNTDOWN ── */
 function tick(){
   const diff=DEPART-new Date();
-  const set=(id,v)=>document.getElementById(id).textContent=v;
-  if(diff<=0){set('cd-d','✈');set('cd-h','We');set('cd-m','are');set('cd-s','here');return;}
-  const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60,s=Math.floor(diff/1000)%60;
-  set('cd-d',d);set('cd-h',String(h).padStart(2,'0'));set('cd-m',String(m).padStart(2,'0'));set('cd-s',String(s).padStart(2,'0'));
+  if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach((id,i)=>document.getElementById(id).textContent=['✈','si','va','!'][i]);return;}
+  document.getElementById('cd-d').textContent=Math.floor(diff/86400000);
+  document.getElementById('cd-h').textContent=String(Math.floor(diff/3600000)%24).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(diff/60000)%60).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(diff/1000)%60).padStart(2,'0');
 }
-tick();setInterval(tick,1000);
+tick(); setInterval(tick,1000);
+
+/* ── WHO CHIPS ── */
+const W={nerd:"🎮",storia:"⛩️",top:"❤️",food:"🍜",shop:"🛍️",fresco:"🧊",foto:"📷"};
+const WT={nerd:"Joseph ci tiene tantissimo",storia:"Angelo ci tiene tantissimo",top:"Per entrambi, da non perdere",food:"Cibo",shop:"Shopping",fresco:"Fresco/relax",foto:"Foto epica"};
+function whoH(arr){ return arr.length?'<span class="who">'+arr.map(c=>`<span class="wc" title="${WT[c]||c}">${W[c]||c}</span>`).join('')+'</span>':''; }
+function priceH(p){
+  if(!p) return '';
+  if(p==='free') return '<span class="price pf">Gratis</span>';
+  if(p==='book') return '<span class="price pb">Prenotato ✓</span>';
+  if(typeof p==='object'&&p.v) return `<span class="price pp">${p.v}</span>`;
+  return `<span class="price pp">${p}</span>`;
+}
+function itH(it){
+  const ml=it.m?`<a class="maplink" href="${M(it.m)}" target="_blank" rel="noopener">📍 Maps</a>`:'';
+  const nm=it.m?`<a href="${M(it.m)}" target="_blank" rel="noopener">${it.nm}</a>`:it.nm;
+  const jo=it.jo?`<span class="callout cj">🎮 Joseph: ${it.jo}</span>`:'';
+  const an=it.an?`<span class="callout ca">⛩️ Angelo: ${it.an}</span>`:'';
+  return `<div class="it">
+    <div class="row"><span class="nm">${nm}</span>${whoH(it.w||[])}${priceH(it.p)}</div>
+    ${it.d?`<div class="desc">${it.d}${jo?'<br>'+jo:''}${an?'<br>'+an:''}</div>`:''}
+    <div class="foot">${ml}</div>
+  </div>`;
+}
+
+/* ════════════════════════════════
+   DAYS DATA
+   ════════════════════════════════ */
+const DAYS=[
+{dc:"3",dm:"LUG",dw:"VEN",tag:"Partenza",title:"Milano → Tokyo ✈️",area:"In volo · 12 ore verso l'avventura",
+ badge:{t:"Volo",c:"tr"},
+ blocks:[
+  {t:"Giornata",x:[
+    {nm:"Malpensa T1 · partenza 12:45",w:[],d:"Arrivate almeno 2h prima. Impostate subito l'orologio su Tokyo: sono le 19:45 quando decollate."},
+    {nm:"In volo: mettete già il fuso giapponese",w:[],d:"Dormire in aereo sul fuso di Tokyo riduce il jet-lag drasticamente. Sì, anche se è difficile."}
+  ]}
+ ],
+ tips:["Powerbank e cuffie nel bagaglio a mano — le tasche del sedile non bastano mai.","Caricate le mappe offline (Google Maps → area → Scarica) prima di perdere il WiFi.",
+       "Scaricate già: Google Translate (con pacchetto giapponese offline), Google Maps (Tokyo offline).","Joseph, il goshuincho lo compri al primo tempio — non portartelo da casa, in Italia si trovano brutti."]},
+
+{dc:"4",dm:"LUG",dw:"SAB",tag:"Arrivo · Tokyo",title:"Haneda → Shinjuku · Prima notte",area:"Atterraggio 15:05 · base a Shinjuku",
+ blocks:[
+  {t:"Pomeriggio (15:05+) — logistica first",x:[
+    {nm:"Welcome Suica",w:[],p:{v:"~¥5.000 da ricaricare"},m:"Haneda Airport Terminal 3",d:"Compra la Welcome Suica all'aeroporto (carta IC prepagata). Funziona su treni, metro, bus, konbini, distributori. Tienila fino all'ultimo giorno."},
+    {nm:"Preleva yen al bancomat 7-Bank / Japan Post",w:[],d:"Revolut e Wise funzionano benissimo. Prendi ¥30.000–50.000 subito: i primi giorni si spende in contanti.",an:"Angelo, prendi qualche mancia in banconote piccole per il ryokan."},
+    {nm:"Check-in a Shinjuku · lascia i bagagli e respira",w:[],m:"Shinjuku Station",d:"Se l'hotel non fa check-in prima delle 15, lasciate i bagagli e uscite subito."}
+  ]},
+  {t:"Sera — prima impressione di Tokyo",x:[
+    {nm:"Tokyo Metropolitan Government Observatory",w:["foto","fresco"],p:"free",m:"Tokyo Metropolitan Government Building",d:"Vista panoramica GRATIS sulla città a 202 m. Spesso si vede anche il Fuji al tramonto. Climatizzato.",jo:"La Tocho è la vista più sottovalutata di Tokyo — tutti vanno allo Skytree, voi risparmiate."},
+    {nm:"Omoide Yokocho (Vicolo dei Ricordi)",w:["food","foto","top"],m:"Omoide Yokocho Shinjuku",d:"Vicoli stretti di bar minuscoli e yakitori al carbone. Fumo, risate, atmosfera Showa anni '50. Uno dei posti più caratteristici di Tokyo.",an:"Perfetto per lui: storico, atmosferico, pazzesco."},
+    {nm:"Kabukicho · la statua di Godzilla",w:["foto","nerd"],m:"Godzilla Head Shinjuku Toho Cinema",d:"Neon a manetta, Godzilla sul tetto del cinema Toho. Camminate senza meta."}
+  ]}
+ ],
+ tips:["Non pianificate nulla di serio il primo giorno: sono 12h di volo e il jet-lag arriva.",
+       "I konbini (7-Eleven, Lawson, FamilyMart) sono letteralmente i migliori d'Italia — mangiate lì senza vergogna, h24.",
+       "Il WiFi in metro non esiste: scaricate le mappe offline sul telefono adesso.",
+       "Regola d'oro del Giappone: <b>niente mancia mai</b>. Offendete la gente."]},
+
+{dc:"5",dm:"LUG",dw:"DOM",tag:"Tokyo · Prenotato",title:"Odaiba + teamLab Planets 💧",area:"Baia di Tokyo · slot 20:30",
+ badge:{t:"teamLab 20:30 ✓",c:"bk"},
+ blocks:[
+  {t:"Mattina — lato nerd della baia",x:[
+    {nm:"Statua Gundam Unicorn (DiverCity)",w:["nerd","foto"],p:"free",m:"Unicorn Gundam Statue DiverCity Tokyo Plaza",d:"19,7 m di Gundam RX-0 che si trasforma ogni ora. Dentro DiverCity: il Gundam Base (negozio modellini, gunpla, figure).",jo:"Porta borse extra. Seriamente."},
+    {nm:"Miraikan — Museo della Scienza",w:["nerd","fresco"],p:{v:"¥630"},m:"Miraikan National Museum of Emerging Science",d:"Il museo di scienza più bello del Giappone: robot, IA, spazio. Climatizzato e fantastico."}
+  ]},
+  {t:"Pomeriggio — brezza di mare",x:[
+    {nm:"Odaiba Seaside Park",w:["fresco","foto","top"],p:"free",m:"Odaiba Seaside Park",d:"Spiaggia urbana con vista Rainbow Bridge. C'è la (piccola) replica della Statua della Libertà. Brezza di mare = pausa dall'afa.",an:"Perfetto: tramonto, vista, romantico."},
+    {nm:"Aqua City Odaiba · cena anticipata",w:["food","fresco"],m:"Aqua City Odaiba",d:"Centro commerciale con ristoranti e A/C. Mangiate qualcosa di leggero prima di teamLab."}
+  ]},
+  {t:"Sera · 20:30 — questo è il motivo per cui siete qui",x:[
+    {nm:"teamLab Planets TOKYO 🌊",w:["top","foto","nerd"],p:"book",m:"teamLab Planets TOKYO",d:"Arte digitale immersiva a piedi nudi. Attraversate l'acqua, entrate nella foresta di fiori, camminate su specchi infiniti. Una delle esperienze più belle del mondo.",jo:"Joseph: finalmente!",an:"Angelo: vedrai, ti stupisce davvero."}
+  ]}
+ ],
+ tips:["<b>teamLab pratico:</b> i pavimenti sono a specchio — no gonne, mettete shorts o pantaloni arrotolabili. L'acqua è alta fino alle caviglie.",
+       "Arrivate 15 minuti prima del vostro slot. App teamLab sul telefono con lo screenshot del QR (non si sa mai con il segnale).",
+       "Asciugamani e shorts in prestito gratuiti all'ingresso. Borse impermeabili per il telefono.",
+       "Odaiba e Toyosu sono nella stessa zona est/baia: l'incastro è perfetto senza ore di metro.",
+       "Durata reale: 90–150 minuti. Uscite verso le 22:00, cena ramen notturna a Shinjuku."]},
+
+{dc:"6",dm:"LUG",dw:"LUN",tag:"Tokyo",title:"Asakusa, Ueno &amp; storia vecchia Tokyo",area:"Il lato più antico della città",
+ blocks:[
+  {t:"Mattina presto — prima di chiunque altro",x:[
+    {nm:"Senso-ji (Tempio d'Asakusa)",w:["storia","foto","top"],p:"free",m:"Senso-ji Temple Asakusa",d:"Il tempio più antico di Tokyo, fondato 628 d.C. All'alba (prima delle 8:00) è quasi deserto e c'è una luce pazzesca. Primo <b>goshuin</b> per Angelo. Omikuji (fortuna) per tutti e due.",an:"Goshuin obbligatorio. Il primo è sempre il più speciale."},
+    {nm:"Nakamise-dori · snack e souvenir",w:["food","shop"],m:"Nakamise-dori Asakusa",d:"200+ bancarelle: ningyo-yaki (dolcetti a forma di samurai), senbei, souvenir artigianali. Apre alle 9:00."}
+  ]},
+  {t:"Pomeriggio — scegliete in base all'energia",x:[
+    {nm:"Opzione A: Tokyo National Museum ⭐",w:["storia"],p:{v:"¥1.000"},m:"Tokyo National Museum Ueno",d:"Il museo più importante del Giappone: armature di samurai, spade katana, arte buddhista, ceramiche. Angelo: almeno 2 ore.",an:"Il museo di storia più bello che visitiamo — da fare."},
+    {nm:"Opzione B: Parco di Ueno + laghetto Shinobazu",w:["fresco","storia"],p:"free",m:"Ueno Park Shinobazu Pond",d:"Parco enorme e ombreggiato. Il laghetto Shinobazu è pieno di loto rosa. Templi e museo dello Zoo (panda!) tutto intorno."},
+    {nm:"Ameyoko Market",w:["food","shop"],m:"Ameyoko Market Ueno",d:"Mercato storico sotto i binari della metro: street food, frutta fresca tagliata, abbigliamento sportivo a prezzi bassi."}
+  ]},
+  {t:"Sera",x:[
+    {nm:"Tokyo Skytree + Solamachi",w:["foto","nerd"],p:{v:"¥2.100+"},m:"Tokyo Skytree",d:"La torre più alta del Giappone (634 m). Al piano terra del Solamachi trovate negozi tematici: Pokémon, Ghibli, Character Street.",jo:"Character Street sotto lo Skytree: tutto in un posto."}
+  ]}
+ ],
+ tips:["Senso-ji <b>all'alba</b> è un'altra cosa rispetto alle 10:00 con 500 pullman.",
+       "Il National Museum la domenica ha file: lunedì è perfetto e tranquillo.",
+       "Nota per Angelo: compra il goshuincho (libretto per i timbri dei templi) qui al Senso-ji se non ce l'hai già.",
+       "A Ueno c'è anche il museo zoo con i panda giganti se volete qualcosa di diverso."]},
+
+{dc:"7",dm:"LUG",dw:"MAR",tag:"Tokyo · Tanabata ☆",title:"Akihabara — Electric Town",area:"Il cuore nerd di Tokyo",
+ badge:{t:"Tanabata oggi ★",c:"fe"},
+ blocks:[
+  {t:"Mattina · storia e cultura otaku",x:[
+    {nm:"Santuario Kanda Myojin",w:["storia","nerd"],p:"free",m:"Kanda Myojin Shrine Tokyo",d:"Il santuario protettore di Akihabara — esiste dal 730 d.C. Vendono amuleti per pc, server e dispositivi elettronici. Atmosfera incredibile a due passi dal caos digitale.",an:"Angelo: uno dei santuari più belli e meno affollati di Tokyo."},
+    {nm:"Pokémon Center DX + Café (Nihonbashi)",w:["nerd","food"],p:"free",m:"Pokemon Center DX Tokyo Nihonbashi",d:"Il più grande Pokémon Center di Tokyo + il café a tema. <b>Il caffè va prenotato con settimane/mesi di anticipo</b> dal sito ufficiale.",jo:"Joseph: questo è IL posto. Porta le borse più grandi che hai."}
+  ]},
+  {t:"Pomeriggio · Akihabara a tutto schermo",x:[
+    {nm:"Akihabara Radio Kaikan",w:["nerd","shop"],p:"free",m:"Akihabara Radio Kaikan",d:"10 piani di figure, gunpla, carte collezionabili, model kit. Il palazzo simbolo di Akiba."},
+    {nm:"Mandarake Complex",w:["nerd","shop"],p:"free",m:"Mandarake Complex Akihabara",d:"8 piani di second-hand: manga rari, toy vintage, doujinshi, cosplay. Prezzi da usato giapponese (ottimi).",jo:"Mandarake è il vero Akiba. Fatti 4-5 piani."},
+    {nm:"Super Potato (retrogaming leggendario)",w:["nerd"],p:"free",m:"Super Potato Retro-kan Akihabara",d:"Famicom, Super Nintendo, Sega Saturn, cabinati arcade. Tre piani di nostalgia assoluta.",jo:"Joseph, metti il budget prima di entrare. Non scherzare."},
+    {nm:"Yodobashi Camera Akiba",w:["nerd","shop"],p:"free",m:"Yodobashi Camera Akiba",d:"Mega-store di elettronica: anche gachapon, amiibo, modellini, reparto figure."}
+  ]},
+  {t:"Sera · Tanabata",x:[
+    {nm:"Decorazioni di Tanabata in giro per Tokyo",w:["top","foto"],p:"free",d:"Oggi è il Festival delle Stelle: i tanzaku (strisce dei desideri) appendono ai bambù ovunque. Scrivetene uno a testa — la leggenda vuole che due stelle innamorate si incontrino stanotte.",an:"Angelo ci crederà, Joseph fingerà di no ma ci scriverà comunque."}
+  ]}
+ ],
+ tips:["Ad Akiba i prezzi sono fissi: niente trattativa, non si fa.",
+       "<b>Poké Lid</b>: in tutto il Giappone ci sono tombini decorati con i Pokémon locali — cacciateli come se fosse una quest.",
+       "Tanabata è il 7 luglio: troverete bambù e decorazioni speciali.",
+       "Sale di gachapon: cercate quelle vicino a Radio Kaikan — ci si perde.",
+       "Konbini last-minute: il 7-Eleven di fronte all'uscita di Akihabara è aperto 24h."]},
+
+{dc:"8",dm:"LUG",dw:"MER",tag:"Gita al Fuji",title:"Fujikawaguchiko 🗻 — Laghi &amp; Montagna",area:"Bus da Shinjuku · aria di montagna",
+ badge:{t:"Gita in giornata",c:"tr"},
+ blocks:[
+  {t:"Presto (bus da Busta Shinjuku)",x:[
+    {nm:"Bus Shinjuku (Busta) → Kawaguchiko",w:[],p:{v:"~¥2.200"},m:"Busta Shinjuku Expressway Bus Terminal",d:"~1h45. Prenota su <b>highway-buses.jp</b> con almeno qualche giorno di anticipo. Prima corsa utile: ~8:00."}
+  ]},
+  {t:"Mattina — la foto che tutti vogliono",x:[
+    {nm:"Pagoda Chureito (Arakurayama Sengen Park)",w:["storia","foto","top"],p:"free",m:"Chureito Pagoda Fujiyoshida",d:"~400 scalini e vi ritrovate davanti alla pagoda con il Fuji sullo sfondo. La foto più iconica del Giappone. Andate presto: dopo le 9 si riempie.",foto:"Sì, questa è la foto da wallpaper."},
+    {nm:"Oishi Park — Lago Kawaguchi",w:["fresco","foto","top"],p:"free",m:"Oishi Park Lake Kawaguchi",d:"Lungolago con fiori, vento, Fuji riflesso sull'acqua. Aria fresca di montagna — un sollievo rispetto al caldo di Tokyo.",an:"Angelo, è romantico quanto pensi."}
+  ]},
+  {t:"Pomeriggio — salita e riposo",x:[
+    {nm:"Funivia Panoramica del Fuji (Kachi Kachi)",w:["foto"],p:{v:"¥1.000 a/r"},m:"Mt. Fuji Panoramic Ropeway Kawaguchiko",d:"3 minuti di cabinovia fino a Tenjoyama (1.075 m): vista 360° sul Fuji e sui 5 laghi. Santuario del coniglio, kawarake (disco della fortuna da lanciare), dango."},
+    {nm:"Lakeside café + pranzo Hoto",w:["food","fresco"],m:"Hoto Fudou Kawaguchiko",d:"L'hoto è il piatto tipico del Fuji: noodles piatti spessi in zuppa di miso con verdure. Riscalda l'anima (e costa poco)."}
+  ]}
+ ],
+ tips:["<b>D'estate il Fuji è spesso coperto di nuvole</b>: più siete lì presto, meglio è. Controllate la <b>webcam live</b> cercando 'Fuji webcam' la sera prima.",
+       "Portate uno strato leggero: in quota fa fresco anche a luglio.",
+       "Se la vetta è coperta, il lago è bellissimo lo stesso — non è un fallimento.",
+       "Angelo: la pagoda Chureito è anche un santuario — goshuin disponibile lì.",
+       "Ultima corsa del bus verso Shinjuku: controllate sul sito. Non perdetela o taxi salato."]},
+
+{dc:"9",dm:"LUG",dw:"GIO",tag:"Tokyo",title:"Shibuya, Harajuku &amp; Meiji Jingu",area:"Cuore pop + foresta sacra",
+ blocks:[
+  {t:"Mattina presto — foresta e silenzio",x:[
+    {nm:"Meiji Jingu (Santuario)",w:["storia","fresco"],p:"free",m:"Meiji Jingu",d:"Il grande santuario scintoista di Tokyo, costruito nel 1920 in onore dell'Imperatore Meiji. Immerso in 700.000 alberi. Fresco, silenzioso, bellissimo all'alba.",an:"Angelo, questo è uno dei migliori santuari di Tokyo. Goshuin qui."},
+    {nm:"Parco Yoyogi",w:["fresco"],p:"free",m:"Yoyogi Park",d:"Accanto a Meiji Jingu: grande prato ombreggiato. Relaxare, riposarsi, sentire il vento."},
+    {nm:"Takeshita-dori — Harajuku",w:["shop","foto","food"],m:"Takeshita Street Harajuku",d:"Crepes giapponesi, moda kawaii assurda, negozi di abbigliamento anni '90. Harajuku è caotica e divertente.",jo:"La via più fotogenica di tutto il viaggio? Probabile."}
+  ]},
+  {t:"Pomeriggio — mecca del nerd",x:[
+    {nm:"Nintendo Tokyo (Shibuya Parco, 6° piano)",w:["nerd","shop"],p:"free",m:"Nintendo Tokyo Shibuya Parco",d:"Negozio ufficiale Nintendo con merch esclusiva Tokyo. Stesso piano: Pokémon Center Shibuya, Jump Shop, Capcom Store.",jo:"Joseph: 6° piano di Parco è TUTTO IL TUO MONDO in un piano."},
+    {nm:"Statua Hachiko + Shibuya Crossing",w:["foto","top"],p:"free",m:"Hachiko Statue Shibuya",d:"L'incrocio più trafficato del mondo. Fotografatelo dall'alto (Starbucks Tsutaya al 2° piano, o la terrazza Mag's Park) — ma attraversatelo anche a piedi.",an:"Per Angelo: la statua di Hachiko ha una storia che fa venire i brividi."}
+  ]},
+  {t:"Sera — tramonto su Tokyo",x:[
+    {nm:"Shibuya Sky 🌅",w:["foto","top"],p:{v:"¥2.500 online"},m:"Shibuya Sky",d:"Terrazza panoramica all'aperto con vista a 360° su Tokyo. Prenotate lo slot del tramonto sul sito — si esaurisce. Vale ogni yen.",top:"La foto di copertina del viaggio."}
+  ]}
+ ],
+ tips:["Meiji Jingu: arrivateci presto (8:00) prima del caldo e della folla.",
+       "Vista del crossing gratis: 2° piano dello Starbucks nel Tsutaya Books (sul lato della piazza).",
+       "Shibuya Sky: prenotate la mattina per lo slot serale sul sito ufficiale. Non comprate alla cassa: costa di più.",
+       "Se volete vintage: Shimokitazawa è 10 minuti da Shibuya — dischi, vestiti, caffè indie."]},
+
+{dc:"10",dm:"LUG",dw:"VEN",tag:"Tokyo",title:"Ikebukuro &amp; Nakano",area:"Ultimo giorno a Tokyo · nerd finale",
+ blocks:[
+  {t:"Mattina — il Pokémon Center più grande",x:[
+    {nm:"Pokémon Center Mega Tokyo (Sunshine City, Ikebukuro)",w:["nerd","shop"],p:"free",m:"Pokemon Center Mega Tokyo Sunshine City Ikebukuro",d:"Il Mega Center: il più grande e fornito di Tokyo. Stesso complesso: Pikachu Sweets by Pokémon Café, negozio di carte, peluche, merch esclusiva.",jo:"Joseph: questo è il boss finale di Tokyo. Goditi ogni piano."},
+    {nm:"Sunshine Aquarium (facoltativo)",w:["fresco"],p:{v:"¥2.600"},m:"Sunshine Aquarium Ikebukuro",d:"Acquario sul tetto, climatizzato: rifugio dall'afa se serve."}
+  ]},
+  {t:"Pomeriggio — il lato oscuro del collezionismo",x:[
+    {nm:"Nakano Broadway",w:["nerd","shop"],p:"free",m:"Nakano Broadway",d:"La sede storica di Mandarake + decine di negozi di usato su 4 piani. Figure rare, vintage, manga fuori catalogo. Meno turistico di Akiba, più hardcore.",jo:"Qui si trovano i pezzi rari che Akiba non ha. Budget: decidi prima di entrare."}
+  ]},
+  {t:"Sera — ultimi acquisti",x:[
+    {nm:"Souvenir finali e ultime passeggiate",w:["shop"],m:"Shinjuku",d:"Domani partite per Kyoto. Shopping last-call, ramen d'addio a Shinjuku."}
+  ]}
+ ],
+ tips:["A Nakano: <b>contanti</b> e tempo. I negozi piccoli sono quelli con i pezzi più interessanti.",
+       "Shimokitazawa vale una deviazione se amate il vintage: dischi, abbigliamento usato, caffè con gatti.",
+       "Ordinate già i posti del Shinkansen domani (app <b>Smart-EX</b>) se non l'avete fatto."]},
+
+{dc:"11",dm:"LUG",dw:"SAB",tag:"Tokyo → Kyoto",title:"Shinkansen — Benvenuti nell'antica capitale",area:"Partenza mattina · sera a Gion",
+ badge:{t:"Treno ⟶ Kyoto",c:"tr"},
+ blocks:[
+  {t:"Mattina — il treno più iconico del mondo",x:[
+    {nm:"Shinkansen Nozomi · Tokyo → Kyoto",w:["top"],p:{v:"¥14.370 · 2h15"},m:"Tokyo Station",d:"Sedetevi a destra (sud) per vedere il Fuji passare. L'app Smart-EX vi manda il biglietto sul telefono.",an:"Angelo: in 2 ore si passa da Tokyo a un'altra era storica. Goditelo."},
+    {nm:"Check-in Miyako City Kintetsu Kyoto Station",w:[],m:"Miyako City Kintetsu Kyoto Station",d:"Hotel vicino alla stazione: comodo per domani mattina (spedisci i bagagli)."}
+  ]},
+  {t:"Pomeriggio",x:[
+    {nm:"Mercato Nishiki (La cucina di Kyoto)",w:["food","shop"],m:"Nishiki Market Kyoto",d:"480 metri di bancarelle con sottaceti, tofu, cibo di strada, dolci di riso, tè. Stretto e caotico nel modo più bello.",an:"Angelo: qui trovi il dashi (brodo) artigianale che cercavi."},
+    {nm:"Gion · Santuario Yasaka",w:["storia","foto","top"],p:"free",m:"Yasaka Shrine Gion Kyoto",d:"Lanterne illuminate, vicoli storici, prime atmosfere del festival."}
+  ]},
+  {t:"Sera",x:[
+    {nm:"Cena a Pontocho",w:["food","top","fresco"],m:"Pontocho Alley Kyoto",d:"Il vicolo gastronomico più romantico del Giappone. D'estate i ristoranti aprono le terrazze sul fiume Kamo (noryo-yuka): cena fresca sull'acqua.",an:"Questo è il posto dove Angelo si innamora di Kyoto."}
+  ]}
+ ],
+ tips:["Prenotate i posti Nozomi su <b>Smart-EX</b> (app o web) — sabato + estate = treni pieni.",
+       "Geiko e maiko a Gion: è il loro percorso di lavoro. Rispettate la distanza, niente blocchi per la foto.",
+       "A Kyoto i bus sono caotici con il Matsuri — usate metro Karasuma o Keihan dove possibile."]},
+
+{dc:"12",dm:"LUG",dw:"DOM",tag:"Arashiyama",title:"Foresta di Bambù &amp; Ryokan con Onsen 🎋",area:"Spedite i bagagli · zaino leggero · notte in ryokan",
+ badge:{t:"Ryokan + Onsen ✓",c:"bk"},
+ blocks:[
+  {t:"Mattina presto — PRIMA di tutto: bagagli",x:[
+    {nm:"⚠️ Spedisci le valigie col Takkyubin",w:[],p:{v:"~¥2.000 a valigia"},d:"Dalla reception del <b>Miyako City Kintetsu Kyoto Station</b>: fate spedire le valigie al <b>Smart Place Inn Kyoto Shijo Omiya Station</b>. Arrivano il 13 luglio. Costo ~¥1.500–2.500 a bagaglio. Confermate prima che l'hotel riceva i bagagli inoltrati. Vedi sezione Pratica."},
+    {nm:"Foresta di Bambù di Arashiyama 🎋",w:["foto","fresco","top"],p:"free",m:"Arashiyama Bamboo Grove",d:"Prima delle 8:00 è ancora fresca e quasi deserta. Dopo le 9 è piena. Il rumore del vento tra i bambù è una delle cose più belle del viaggio.",an:"Angelo: Arashiyama di mattina è silenziosa e perfetta.",jo:"Joseph: la foresta sembra uscita da un videogioco Studio Ghibli."}
+  ]},
+  {t:"Pomeriggio",x:[
+    {nm:"Tenryu-ji + giardino Sogenchi",w:["storia","fresco"],p:{v:"¥500"},m:"Tenryu-ji Temple Arashiyama",d:"Giardino zen patrimonio UNESCO con vista sulle colline di Arashiyama. Uno dei 10 grandi templi di Kyoto."},
+    {nm:"Villa Okochi-Sanso (chicca nascosta)",w:["fresco","foto","storia"],p:{v:"¥1.000 (include matcha)"},m:"Okochi Sanso Villa Arashiyama",d:"La villa di un grande attore del cinema muto giapponese. Giardino immenso, praticamente sconosciuta dai turisti, con tè incluso nel biglietto. Vale ogni yen.",an:"Angelo: questa è la Arashiyama che nessuno conosce."},
+    {nm:"Ponte Togetsukyo + fiume Hozu",w:["foto","fresco"],p:"free",m:"Togetsukyo Bridge Arashiyama",d:"Il ponte 'che attraversa la luna'. Il fiume porta aria fresca tutto il giorno."}
+  ]},
+  {t:"Sera — la più rilassante del viaggio",x:[
+    {nm:"Check-in ryokan + Onsen 🛁",w:["top","fresco"],p:"book",d:"La sera più bella del viaggio. Yukata, onsen, kaiseki. Staccate i telefoni.",an:"Angelo impazzirà felicemente.",jo:"Joseph: anche la parte 'contemplativa' vale la pena."}
+  ]}
+ ],
+ tips:["<b>Onsen:</b> lavatevi seduti alla postazione PRIMA di entrare in vasca. Niente costume. Capelli legati. Se avete tatuaggi chiedete al ryokan se è necessario coprirli.",
+       "Parco delle scimmie Iwatayama (¥600): salita di 20 minuti ma vista strepitosa su Kyoto.",
+       "Hozugawa River Cruise: 2 ore sulla gola fluviale, molto fresca — ottima se avete margine nel pomeriggio.",
+       "Domani mattina facile: tornate a Kyoto rilassati."]},
+
+{dc:"13",dm:"LUG",dw:"LUN",tag:"Kyoto",title:"Rientro da Arashiyama — Kyoto easy",area:"Colazione in ryokan · giornata flessibile",
+ blocks:[
+  {t:"Mattina — calma",x:[
+    {nm:"Colazione in ryokan + passeggiatina",w:["food","fresco"],d:"Niente fretta. Sagano, vicoletti, caffè sul fiume. Il ryokan ha già incluso la colazione più buona che mangerete."},
+    {nm:"Treno per Kyoto + check-in Smart Place Inn Shijo Omiya",w:[],m:"Smart Place Inn Kyoto Shijo Omiya Station",d:"I bagagli vi aspettano già lì grazie al takkyubin spedito ieri."}
+  ]},
+  {t:"Pomeriggio — opzioni a scelta",x:[
+    {nm:"Opzione A: Kinkaku-ji (Padiglione d'Oro) + Ryoan-ji",w:["storia","foto","top"],p:{v:"¥500 + ¥600"},m:"Kinkaku-ji",d:"Il padiglione ricoperto d'oro riflesso sul laghetto. Combinatelo con Ryoan-ji (il giardino di pietre più famoso del mondo, ~10 min a piedi). Entrambi a nord-ovest — vicini al rientro da Arashiyama.",an:"Angelo: questi due insieme fanno un pomeriggio storico perfetto."},
+    {nm:"Opzione B: Castello di Nijo",w:["storia"],p:{v:"¥1.300"},m:"Nijo Castle Kyoto",d:"Palazzo shogunale del XVII secolo. I corridoi scricchiolano apposta (pavimenti 'dell'usignolo') per segnalare intrusi. Giardino bellissimo.",an:"Pavimenti che cantano all'Angelo — troppo bello."},
+    {nm:"Opzione C: giornata soft",w:["fresco","food"],d:"Nishiki Market, gelato al matcha, riposo in hotel prima dei giorni intensi che arrivano."}
+  ]}
+ ],
+ tips:["Kinkaku-ji e Ryoan-ji sono entrambi a nord-ovest: comodo rientro da Arashiyama senza tornare in centro.",
+       "Giornata jolly prima del Nara + Gion + Higashiyama. Non sovraccaricate."]},
+
+{dc:"14",dm:"LUG",dw:"MAR",tag:"Gita a Nara",title:"Cervi, Grande Buddha &amp; Lanterne 🦌",area:"Nara day trip · sera Yoiyama a Kyoto",
+ badge:{t:"Inizia lo Yoiyama 🏮",c:"fe"},
+ blocks:[
+  {t:"Mattina presto — treno Kintetsu",x:[
+    {nm:"Parco di Nara · cervi che si inchinano 🦌",w:["top","foto"],p:"free",m:"Nara Park",d:"I cervi di Nara sono considerati messaggeri divini scintoisti. Vendono crackers a ¥200 (~10 pz). I cervi si inchinano per chiedervi i crackers. Andate presto: cervi più calmi, meno caldo.",an:"Angelo: questi cervi hanno 1300 anni di storia sacra — è surreale."},
+    {nm:"Todai-ji (Grande Buddha) 🏛️",w:["storia","top"],p:{v:"¥800"},m:"Todaiji Temple Nara",d:"La più grande struttura di legno del mondo. Il Buddha di bronzo è alto 15 metri. Una delle cose più impressionanti che vedrete in tutto il viaggio.",an:"Angelo, questo è IL museo/tempio del viaggio. Rimani senza parole."}
+  ]},
+  {t:"Pomeriggio",x:[
+    {nm:"Kasuga Taisha (sentiero delle lanterne)",w:["storia","fresco","foto"],p:"free",m:"Kasuga Taisha Nara",d:"Santuario nel bosco con 3.000 lanterne di pietra lungo il sentiero — all'ombra degli alberi è freschissimo. Goshuin qui.",an:"Angelo: goshuin indispensabile. Il posto è straordinario."},
+    {nm:"Naramachi (quartiere storico)",w:["storia","foto","food"],p:"free",m:"Naramachi Nara",d:"Vicoli di ex botteghe mercantili del periodo Edo. Caffè nascosti, case storiche, kakigori (ghiaccio al matcha) per il caldo."}
+  ]},
+  {t:"Sera — rientro a Kyoto per lo Yoiyama",x:[
+    {nm:"Gion Matsuri · Yoiyama (prima sera) 🏮",w:["top","food","foto"],p:"free",m:"Shijo Karasuma Kyoto Gion Matsuri",d:"Da stasera il centro di Kyoto cambia volto: strade chiuse, carri Yamahoko illuminati, centinaia di bancarelle. Yoiyama dura 3 sere (14–16) e ogni sera è più intensa.",an:"Angelo: questo festival esiste dal 869 d.C. ininterrottamente."}
+  ]}
+ ],
+ tips:["<b>Dai da mangiare ai cervi lontano dal Todai-ji</b>: lì sono fanatici e vi assaltano. Lontano sono dolcissimi.",
+       "Treno più veloce: Kintetsu → Kintetsu-Nara (più vicino al parco rispetto a JR Nara).",
+       "Kakinoha-zushi (sushi nelle foglie di cachi): il piatto tipico di Nara, non è in nessun posto d'Italia.",
+       "Rientrate a Kyoto entro le 18 per godervi lo Yoiyama in serenità."]},
+
+{dc:"15",dm:"LUG",dw:"MER",tag:"Kyoto · Prenotato",title:"Fushimi Inari + Uji + Nintendo Museum 🎮",area:"Alba di torii · tè · videogiochi",
+ badge:{t:"Nintendo Museum 16:00 ✓",c:"bk"},
+ blocks:[
+  {t:"Albissima (5:00–6:00)",x:[
+    {nm:"Fushimi Inari Taisha all'alba ⛩️🌅",w:["storia","foto","top","fresco"],p:"free",m:"Fushimi Inari Taisha",d:"Migliaia di torii arancioni in sequenza. Aperto 24 ore, gratis. All'alba di luglio (sole alle 5) è fresco, quasi vuoto e la luce è magica. Salite al belvedere Yotsutsuji (~30–45 min di cammino) per la vista su Kyoto.",an:"Angelo: uno dei santuari più importanti del Giappone — goshuin qui.",jo:"Joseph: sembra uscito da un videogioco. Per davvero."}
+  ]},
+  {t:"Mattina/Pranzo · Uji (stessa linea a sud)",x:[
+    {nm:"Byodo-in (Tempio della Fenice)",w:["storia","foto","top"],p:{v:"¥700"},m:"Byodoin Temple Uji",d:"Il tempio sulla moneta da ¥10. Costruito nel 1053. Riflesso perfetto sul laghetto. Patrimonio UNESCO.",an:"Angelo: è esattamente come sulla moneta, ma ancora più bello."},
+    {nm:"Matcha e cerimonia del tè a Uji ☕",w:["food","storia","fresco","top"],p:{v:"¥1.000+"},m:"Nakamura Tokichi Honten Uji",d:"Uji è la capitale del matcha. Casa da tè Nakamura Tokichi (dal 1854): soft-serve al matcha leggendario. Se volete la cerimonia vera: prenotate Fukujuen o Taiho-an.",an:"Angelo: qui il tè è arte antica. Questo è il posto."}
+  ]},
+  {t:"Pomeriggio · 16:00 — finalmente",x:[
+    {nm:"Nintendo Museum 🎮 (Ogura, Uji)",w:["nerd","top"],p:"book",m:"Nintendo Museum Uji Ogura",d:"L'ex fabbrica Nintendo convertita in museo. Dal 2024. Dal 1889 (carte hanafuda) a Switch. 10 monete-gioco incluse, console giganti su cui giocare. Shop esclusivo, caffè interno. A 1 fermata JR da Uji.",jo:"Joseph: questo momento è TUTTO. Arrivi puntuale."}
+  ]}
+ ],
+ tips:["Fushimi Inari <b>all'alba</b> = nessuna folla, frescura, luce oro. Alle 9:00 è già un inferno di turisti.",
+       "Uji e Ogura (Nintendo Museum) sono sulla stessa linea JR Nara: incastro perfetto.",
+       "Arrivate al museo 15 minuti prima. Lockers a ¥100 per zaini grandi. Solo mezzi pubblici (no auto).",
+       "Sera: terza e penultima sera di Yoiyama — le strade di Gion sono di nuovo chiuse e festose."]},
+
+{dc:"16",dm:"LUG",dw:"GIO",tag:"Kyoto",title:"Higashiyama &amp; Grande Yoiyama 🏮",area:"Colline est · clou del festival",
+ badge:{t:"Yoiyama Clou!",c:"fe"},
+ blocks:[
+  {t:"Mattina presto",x:[
+    {nm:"Kiyomizu-dera all'apertura",w:["storia","foto","top"],p:{v:"¥500"},m:"Kiyomizu-dera",d:"Il tempio del palco di legno sospeso sulla colline: nessun chiodo. Vista su Kyoto, cedri, nebbia mattutina. Uno dei posti più belli del Giappone.",an:"Angelo: goshuin qui, poi scendi lentamente a piedi."},
+    {nm:"Sannenzaka &amp; Ninenzaka",w:["foto","shop","food","storia"],p:"free",m:"Sannenzaka Ninenzaka Kyoto",d:"Le due vie storiche più belle di Kyoto: machiya (case in legno), botteghe artigiane, dolci tradizionali. Leggenda vuole che inciampare su Ninenzaka porti sfortuna.",jo:"Joseph: c'è un negozio di amuleti Pokémon nascosto tra i vicoli."},
+    {nm:"Pagoda Yasaka (Hokan-ji) 📷",w:["foto","storia"],p:"free",m:"Yasaka Pagoda Hokanji Kyoto",d:"La pagoda che appare in fondo a ogni vicolo di Higashiyama. La foto iconica di Kyoto."}
+  ]},
+  {t:"Pomeriggio · a scelta",x:[
+    {nm:"Ginkaku-ji + Sentiero della Filosofia 🌿",w:["storia","fresco","foto"],p:{v:"¥500"},m:"Ginkakuji Silver Pavilion Kyoto",d:"Il Padiglione d'Argento + il Sentiero della Filosofia: 2 km lungo un canale ombreggiato di ciliegi. Fresco e bellissimo.",an:"Il Sentiero della Filosofia è il posto dove i monaci buddhisti meditano camminando."},
+    {nm:"Noleggio kimono (opzionale)",w:["top","foto"],p:{v:"¥3.000+"},m:"kimono rental Higashiyama Kyoto",d:"Qualche ora in kimono tra i vicoli di Higashiyama. Le foto valgono tutto."}
+  ]},
+  {t:"Sera — clou assoluto",x:[
+    {nm:"Gion Matsuri Yoiyama del 16 🏮🌟",w:["top","food","foto"],p:"free",m:"Gion Matsuri Yamahoko Kyoto",d:"La sera più grande del festival: il centro di Kyoto è chiuso al traffico, i carri Yamahoko sono illuminati, centinaia di bancarelle. Folla enorme ma atmosfera magica. Ultima sera prima della parata.",an:"Angelo: festival dall'869 d.C. Ininterrotto. Pensaci.",jo:"Joseph: ci sono bancarelle di Pokémon card vintage ogni tanto — cercale."}
+  ]}
+ ],
+ tips:["Kiyomizu <b>appena apre</b> (6:00): frescho, poca gente, nebbia sulle colline.",
+       "Stasera è lo Yoiyama clou: folla enorme ma merita ogni secondo. Comprate cibo di strada e camminate.",
+       "Acqua, ventaglio, cappello: la sera di Yoiyama è calda e affollata.",
+       "Bevi kakigori (ghiaccio tritato al matcha): il dessert della sopravvivenza estiva giapponese."]},
+
+{dc:"17",dm:"LUG",dw:"VEN",tag:"Festival → Osaka",title:"Parata di Gion + Osaka 🎏",area:"Yamahoko Junko · poi Dotonbori",
+ badge:{t:"GION MATSURI 🏮",c:"fe"},
+ blocks:[
+  {t:"Mattina · 9:00–13:00 — la parata",x:[
+    {nm:"Yamahoko Junko (Grande Parata) 🎏",w:["storia","top","foto"],p:"free",m:"Shijo Karasuma Kyoto Parade",d:"Carri sacri alti fino a 25 m, trainati a mano da decine di persone in costume storico. Inizia alle 9:00 da Shijo-Karasuma. Il momento clou è la 'tsuji-mawashi': il carro che gira lentamente all'incrocio.",an:"Angelo: questo è il top del viaggio. Festival dall'869. Il tsuji-mawashi è incredibile.",jo:"Joseph: lo schema di navigazione dei carri sembra quello di un dungeon boss fight."}
+  ]},
+  {t:"Pomeriggio — Osaka!",x:[
+    {nm:"Treno Kyoto → Osaka",w:[],p:{v:"~¥570"},m:"Osaka Namba Station",d:"~25–45 minuti. Lasciate i bagagli in hotel o in locker."},
+    {nm:"Castello di Osaka (se c'è il tempo)",w:["storia","foto","fresco"],p:{v:"¥600"},m:"Osaka Castle",d:"Il castello più iconico di Osaka. Parco verde intorno — fresco. Vale una visita veloce nel pomeriggio.",an:"Angelo: Castello di Osaka è il contrappunto storico perfetto dopo Gion."}
+  ]},
+  {t:"Sera — benvenuti a Osaka",x:[
+    {nm:"Dotonbori · prima sera 🦀",w:["food","foto","top"],p:"free",m:"Dotonbori Osaka",d:"Neon, l'uomo Glico che corre, takoyaki, okonomiyaki, il granchio animatonico. Osaka è pura energia.",an:"Per Angelo: la cultura gastronomica di Osaka è diversa da tutto. Mangia TUTTO."}
+  ]}
+ ],
+ tips:["<b>Arriva presto per la parata</b> (8:30–8:45): posti buoni su Oike-dori (più spaziosa di Shijo).",
+       "Posti a sedere a pagamento per la parata (~¥4.100+): si prenotano mesi prima. Se non li avete, vista da in piedi va benissimo.",
+       "A Osaka si sta sulla <b>destra</b> delle scale mobili (opposto a Tokyo!)."]},
+
+{dc:"18",dm:"LUG",dw:"SAB",tag:"Osaka · Prenotato",title:"Universal Studios Japan 🍄🎢",area:"Super Nintendo World · una giornata intera",
+ badge:{t:"USJ · Pagato ✓ 🎢",c:"bk"},
+ blocks:[
+  {t:"Mattina — arriva prima di tutti",x:[
+    {nm:"Ai cancelli 60–90 minuti prima dell'apertura",w:["nerd","top"],m:"Universal Studios Japan",d:"Spesso aprono i cancelli in anticipo. Chi arriva per primo entra in Super Nintendo World prima della coda."}
+  ]},
+  {t:"Strategia di giornata",x:[
+    {nm:"Super Nintendo World 🍄",w:["nerd","top"],p:"book",d:"Mario, Luigi, Toad, Power-Up Band interattiva. Sfida Bowser Jr. e accumula monete.",jo:"Joseph: questo è il posto. Resta quanto vuoi."},
+    {nm:"Donkey Kong Country (Mine-Cart Madness)",w:["nerd","top"],d:"La land più nuova: la montagna russa del carrello da miniera. Falle presto — code enormi."},
+    {nm:"Harry Potter + Forbidden Journey",w:["top","storia"],d:"Il Castello di Hogwarts è incredibile anche per chi non è fan. Falle nel pomeriggio se hai la Power-Up Band."},
+    {nm:"App USJ — Area Timed Entry",w:[],d:"Scaricate l'app prima di entrare e prendete subito l'entrata a tempo per Super Nintendo World — è gratis ma si esaurisce."}
+  ]},
+  {t:"Sopravvivenza",x:[
+    {nm:"Tattica cibo: mangia alle 15:00",w:["food"],d:"Le code ai ristoranti a pranzo (12–14) durano 60+ minuti. A 15:00 si entra senza aspettare."}
+  ]}
+ ],
+ tips:["<b>App USJ</b>: scaricatela la sera prima. Serve per il timed-entry Nintendo e per le code virtuali.",
+       "Power-Up Band (¥3.800): non obbligatoria ma rende l'esperienza Nintendo World molto più divertente.",
+       "Estate + sabato = affollato. Ma con la strategia giusta si fa tutto.",
+       "Portate cibo/snack da fuori — all'interno costa il doppio."]},
+
+{dc:"19",dm:"LUG",dw:"DOM",tag:"Osaka",title:"Osaka Full Day — Città libera",area:"Castello · Den Den · Dotonbori · tramonto",
+ blocks:[
+  {t:"Mattina",x:[
+    {nm:"Castello di Osaka (se non ieri)",w:["storia","foto","fresco"],p:{v:"¥600"},m:"Osaka Castle",d:"Torrione di 8 piani con museo storico e parco verde. Fresco al mattino."},
+    {nm:"Mercato Kuromon 🐟",w:["food"],p:"free",m:"Kuromon Ichiba Market Osaka",d:"Pesce fresco a colazione (sì, in Giappone si mangia pesce a colazione), frutta stagionale, cibo di strada."}
+  ]},
+  {t:"Pomeriggio · nerd di Osaka",x:[
+    {nm:"Den Den Town (Nipponbashi)",w:["nerd","shop"],p:"free",m:"Den Den Town Nipponbashi Osaka",d:"L'equivalente di Akihabara a Osaka: anime, retrogame, cosplay. Pokémon Center Osaka al Daimaru Umeda.",jo:"Joseph: ultima chance per il Pokémon Center di Osaka — prodotti esclusivi diversi da Tokyo."}
+  ]},
+  {t:"Sera — finale di Osaka",x:[
+    {nm:"Umeda Sky Building (Floating Garden) 🌆",w:["foto","top"],p:{v:"~¥2.000"},m:"Umeda Sky Building Floating Garden Observatory",d:"Terrazza panoramica tra due torri collegate da un anello sospeso. Vista al tramonto su Osaka = perfetta."},
+    {nm:"Ultimo giro a Dotonbori 🦀",w:["food","top"],m:"Dotonbori Osaka",d:"Cena finale: kushikatsu (fritto su stecco). Regola ferrea: <b>non intingete due volte nella salsa comune</b>. È una legge non scritta.",an:"Angelo, fai la coda al ristorante Daruma per il kushikatsu autentico."}
+  ]}
+ ],
+ tips:["Comprate gli <b>omiyage</b> (souvenir dolci) stasera: più comodo che in aeroporto.",
+       "Kushikatsu: la regola del 'no double-dip' è seria. Lo fanno rispettare.",
+       "ICOCA funziona su tutto a Osaka. Non prendete taxi se non è emergenza."]},
+
+{dc:"20",dm:"LUG",dw:"LUN",tag:"Ritorno",title:"Osaka → Tokyo → Haneda → Casa ✈️",area:"Shinkansen mattina · volo 16:35",
+ badge:{t:"Shinkansen + Volo",c:"tr"},
+ blocks:[
+  {t:"Mattina presto — non fate tardi",x:[
+    {nm:"Nozomi · Shin-Osaka → Tokyo 🚅",w:["top"],p:{v:"¥14.720 · 2h27"},m:"Shin-Osaka Station",d:"Volo alle <b>16:35</b>: partite da Shin-Osaka entro le <b>10:00–10:30</b>. Arrivate a Tokyo ~12:30–13:00, poi Haneda in 30 min. Siete comodi. Lato destro del treno per l'ultima vista sul Fuji.",an:"Angelo: ultima chance per il Fuji dal finestrino.",jo:"Joseph: conta i minuti al Fuji, lo so già."},
+    {nm:"Tokyo → Haneda (Monorail o Keikyu)",w:[],p:{v:"~¥500"},m:"Haneda Airport",d:"Da Hamamatsucho: Tokyo Monorail ~20 min. Da Shinagawa: Keikyu ~12 min. Siate ad Haneda <b>almeno 2h prima del decollo</b>."}
+  ]},
+  {t:"Aspettando il gate",x:[
+    {nm:"Character Street (Tokyo Station) o negozi Haneda",w:["shop","nerd"],m:"Tokyo Station Character Street",d:"Se avete tempo tra Tokyo Station e Haneda, Character Street under Tokyo Station ha tutto. Oppure il duty-free di Haneda (ottimo per Kit-Kat al matcha).",jo:"Joseph: ultimi acquisti. Per davvero gli ultimi."}
+  ]}
+ ],
+ tips:["<b>Ricontrollate l'orario del volo</b>: se è 16:35 potete partire un po' più tardi, ma comunque al mattino.",
+       "おつかれさまでした — avete fatto un viaggio incredibile.",
+       "Sul volo di ritorno: dormite. Non guardate film. Ripristinate il fuso."]}
+];
+
+/* ════════════════════════════════
+   CITIES DATA
+   ════════════════════════════════ */
+const CITIES=[
+ {name:"Tokyo",jp:"東京",when:"4 – 11 Lug · base Shinjuku",bk:"東",grad:"linear-gradient(135deg,#1e3450,#2c4a6e)",
+  do:["<b>Shinjuku</b>: neon, Omoide Yokocho, Kabukicho, Observatory (gratis).","<b>Shibuya</b>: Crossing, Hachiko, Sky, Nintendo+Pokémon Center Parco.","<b>Harajuku</b>: Meiji Jingu, Takeshita-dori, crepes.","<b>Asakusa</b>: Senso-ji, Nakamise, atmosfera Edo.","<b>Akihabara</b>: Super Potato, Mandarake, Radio Kaikan.","<b>Odaiba</b>: Gundam, Miraikan, teamLab Planets, spiaggia.","<b>Ikebukuro</b>: Pokémon Mega Center. <b>Nakano</b>: Broadway."],
+  eat:["Konbini 24/7: onigiri, sandwiches, ramen cup, gelati.","Ramen: vicoli di Shinjuku (Fuunji per il tsukemen).","Sushi al banco: Tsukiji Outer Market o qualsiasi kaiten-zushi.","Conveyor belt sushi, tonkatsu, tempura."],
+  tips:["Niente mancia mai. Mai.","Contanti per i posti piccoli.","Scale mobili: a Tokyo si sta a sinistra.","Ultimi treni ~mezzanotte: attenzione o taxi caro.","Suica per tutto: treni, bus, konbini."]},
+ {name:"Monte Fuji",jp:"富士",when:"8 Lug · gita in giornata",bk:"富",grad:"linear-gradient(135deg,#3a5080,#6a5090)",
+  do:["Pagoda Chureito (~400 scalini, foto iconica).","Lago Kawaguchi + Oishi Park (fresco, riflesso).","Funivia Kachi Kachi (¥1.000 a/r, vista 360°).","Giro del lago in bici (noleggio ~¥1.000/h)."],
+  eat:["Hoto (zuppa di noodle piatti) — piatto tipico.","Soft-serve al gusto Fuji nelle bancarelle.","Pesce del lago (trota) nei ristoranti locali."],
+  tips:["<b>Estate: Fuji spesso coperto</b> di nuvole dal pomeriggio. Andate presto.","Webcam Fuji la sera prima per decidere.","Prenota il bus Shinjuku→Kawaguchiko su highway-buses.jp.","Fai lo zaino leggero: è solo una giornata."]},
+ {name:"Kyoto",jp:"京都",when:"11 – 17 Lug · cuore del viaggio",bk:"京",grad:"linear-gradient(135deg,#6a2828,#a04040)",
+  do:["Fushimi Inari (alba), Kinkaku-ji, Kiyomizu-dera, Higashiyama.","Gion + Pontocho (serata), Nijo Castle, Ginkaku-ji.","<b>Gion Matsuri</b>: Yoiyama 14–16 lug + Parata 17 lug.","Nintendo Museum 15 lug (già prenotato!).","Cerimonia del tè a Uji + Byodo-in."],
+  eat:["Nishiki Market (snack, sottaceti, tofu).","Kaiseki (alta cucina locale) — concedetevelo almeno una volta.","Matcha in tutte le forme possibili a Uji.","Pontocho: terrazze sul fiume (noryo-yuka) d'estate."],
+  tips:["Templi aprono alle 6:00, chiudono ~17:00: andate al mattino.","Festival: bus intasati → metro Karasuma o Keihan.","Gion: rispettate la privacy delle geiko.","Angelo: goshuincho in ogni tempio. Kyoto ne ha a decine."]},
+ {name:"Arashiyama",jp:"嵐山",when:"12 – 13 Lug · ryokan",bk:"嵐",grad:"linear-gradient(135deg,#386030,#6a8840)",
+  do:["Bambù (prima delle 8 — è fondamentale).","Tenryu-ji giardino, Okochi-Sanso villa, ponte Togetsukyo.","Hozugawa River Cruise (2h tra le gole, freschissimo).","Parco scimmie Iwatayama (vista su Kyoto)."],
+  eat:["Cena kaiseki in ryokan (inclusa).","Matcha + warabi-mochi sul lungolago.","Soba fresca vicino al ponte."],
+  tips:["Viaggiate con lo zaino solo: valigie spedite col takkyubin.","Onsen: lavarsi prima, no costume, capelli legati.","Okochi-Sanso è la chicca nascosta: incluso il tè."]},
+ {name:"Nara",jp:"奈良",when:"14 Lug · gita",bk:"奈",grad:"linear-gradient(135deg,#5a4820,#a07830)",
+  do:["Parco di Nara + cervi (crackers ¥200).","Todai-ji (Grande Buddha, edificio di legno più grande del mondo).","Kasuga Taisha (sentiero delle 3.000 lanterne).","Naramachi (quartiere storico)."],
+  eat:["Kakinoha-zushi (sushi avvolto nelle foglie di cachi).","Mochi pestato a vista da Nakatanidou (un must).","Kakigori per il caldo."],
+  tips:["Andate presto: cervi più calmi e meno folla.","Kintetsu → Kintetsu-Nara è più vicino al parco rispetto a JR.","Angelo: goshuin al Kasuga Taisha è uno dei più belli."]},
+ {name:"Osaka",jp:"大阪",when:"17 – 20 Lug · finale",bk:"阪",grad:"linear-gradient(135deg,#901820,#c03020)",
+  do:["USJ + Super Nintendo World (18 lug, già pagato).","Dotonbori (neon + cibo di strada).","Castello di Osaka + parco.","Den Den Town (nerd); Kuromon Ichiba.","Umeda Sky Building (tramonto)."],
+  eat:["<b>Takoyaki</b>, <b>okonomiyaki</b>, <b>kushikatsu</b>: questa è Osaka.","Osaka è 'kuidaore' (mangiarsi fino a rovinare): prendetela alla lettera.","Konbini di Osaka hanno varianti che non esitono a Tokyo."],
+  tips:["Scala mobili: a Osaka si sta a <b>destra</b> (opposto a Tokyo!).","Kushikatsu: regola del no-double-dip è sacra.","ICOCA per tutto."]}
+];
+
+/* ════════════════════════════════
+   ESPERIENZE
+   ════════════════════════════════ */
+const EXPS=[
+ {ic:"💧",bg:"linear-gradient(135deg,#2c4a6e,#3a7a82)",title:"teamLab Planets",sub:"5 Lug · Toyosu · prenotato",
+  p:"Arte digitale totalmente immersiva. Camminate nell'acqua, entrate in una foresta di fiori vivi, perdetevi negli specchi infiniti. Una delle cose più belle che esiste.",
+  li:["Pavimenti a specchio ovunque: <b>no gonne</b>, pantaloni/shorts arrotolabili.","Acqua alle caviglie. Asciugamani e shorts in prestito all'ingresso.","~90–150 minuti. Arriva 10–15 min prima del vostro slot.","Screenshot del QR sull'app — il segnale può fare i capricci.",
+      "Joseph: la stanza dei fiori digitali è la cosa più bella che tu abbia mai visto. Angelo: concordo."]},
+ {ic:"🎮",bg:"linear-gradient(135deg,#c0402a,#8a4e7a)",title:"Nintendo Museum",sub:"15 Lug 16:00 · Uji · prenotato",
+  p:"La storia di Nintendo dal 1889 (carte hanafuda) a Switch, nell'ex fabbrica di Uji. Giochi interattivi su console giganti. 10 monete incluse nel biglietto.",
+  li:["Stazione Ogura: Kintetsu da Kyoto ~30 min, o JR Nara ~25 min (¥310).","A 1 fermata JR da Uji: perfetto dopo Byodo-in + tè.","Arriva 15 min prima. Lockers ¥100 per zaini grandi.","Shop con merch esclusiva + caffè interno (solo chi ha biglietto).",
+      "Joseph: aspetti questo da anni. Prenditi tutto il tempo che vuoi."]},
+ {ic:"🍄",bg:"linear-gradient(135deg,#9c2f1f,#c49a2a)",title:"Universal Studios Japan",sub:"18 Lug · Osaka · pagato",
+  p:"Super Nintendo World, Donkey Kong Country, Harry Potter, The Forbidden Journey. Il parco a tema più visitato d'Asia.",
+  li:["Arrivate 60–90 min prima dell'apertura per entrare in Nintendo World.","App USJ: scaricatela e prendete il timed-entry per Nintendo World appena dentro (gratis).","Mangia alle 15:00 per saltare le code.","Power-Up Band per i giochi interattivi (~¥3.800)."]},
+ {ic:"🏮",bg:"linear-gradient(135deg,#c0402a,#d99aae)",title:"Gion Matsuri",sub:"14–17 Lug · Kyoto",
+  p:"Il festival più antico del Giappone, ininterrotto dall'869 d.C. Carri sacri, lanterne, bancarelle per tutto il centro di Kyoto.",
+  li:["Yoiyama (14–16): strade chiuse, carri illuminati, centinaia di bancarelle. Ogni sera più intensa.","Parata Yamahoko Junko (17 lug 9:00–13:00): carri alti 25 m, 'tsuji-mawashi' agli incroci.","Vista migliore dalla parata: Oike-dori (più larga di Shijo).","Angelo: è il festival medievale più antico d'Oriente. Nessuna guida rende l'idea davvero."]},
+ {ic:"🗻",bg:"linear-gradient(135deg,#3a5080,#c89ab0)",title:"Gita Monte Fuji",sub:"8 Lug · Fujikawaguchiko",
+  p:"Laghi, pagoda Chureito, aria di montagna. Una pausa di respiro dal caldo di Tokyo.",
+  li:["Partite presto: il Fuji si copre di nuvole nel pomeriggio.","Bus Shinjuku (¥2.200) prenota su highway-buses.jp.","Chureito (~400 gradini) + Oishi Park + funivia (¥1.000 a/r).",
+      "Piano B se è nuvoloso: il lago è bellissimo lo stesso."]},
+ {ic:"🍵",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Cerimonia del Tè",sub:"Kyoto / Uji · ~¥3.000–6.000",
+  p:"Un'ora di calma, gesti antichi e matcha fresco. La cosa più distante dal caos di Akihabara — ed è per questo che è perfetta.",
+  li:["A Kyoto: Camellia Tea Experience (Higashiyama), Maikoya (anche con kimono).","A Uji: Nakamura Tokichi (1854), Fukujuen, Taiho-an (sulla riva del fiume).","Prenota via sito ufficiale, Klook, Airbnb Experiences.","Angelo: ti insegnano a preparare il tè da soli. Non dimenticare."]}
+];
+
+/* ════════════════════════════════
+   NERD DATA
+   ════════════════════════════════ */
+const NERD=[
+ {ic:"⚡",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Pokémon Center — tutti i templi",sub:"Tokyo · Osaka · e sparsi per il Giappone",
+  p:"La guida definitiva ai Pokémon Center del viaggio. Joseph, questo è il tuo itinerario nell'itinerario.",
+  li:["<b>DX + Café</b> (Nihonbashi/Tokyo): il più grande. Caffè da prenotare con settimane di anticipo dal sito ufficiale.",
+      "<b>Mega Tokyo</b> (Sunshine City, Ikebukuro): due piani + Pikachu Sweets + carte. Il più fornito.",
+      "<b>Shibuya Parco</b> (6° piano): di fianco a Nintendo Tokyo. Prodotti esclusivi 'Shibuya edition'.",
+      "<b>Osaka Daimaru Umeda</b>: prodotti city-exclusive solo qui.",
+      "Cerca i <b>Poké Lid</b> (tombini decorati) in ogni città: sono una caccia al tesoro vera."]},
+ {ic:"🕹️",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Retrogaming &amp; Figure",sub:"Akihabara · Nakano Broadway",
+  p:"Il paradiso del collezionista. Porta un budget separato e rispettalo (o non rispettarlo, è il Giappone).",
+  li:["<b>Super Potato</b> (Akihabara): 3 piani di Famicom, cartucce, cabinati. Il retrogaming perfetto.",
+      "<b>Mandarake Complex</b> (Akihabara, 8 piani) + <b>casa madre Nakano Broadway</b>: usato, vintage, pezzi rari.",
+      "<b>Radio Kaikan</b> (Akihabara): figure, model kit, gunpla. 10 piani.",
+      "<b>Surugaya</b>: per amiibo, giochi, figure a prezzo onesto.",
+      "Nakano Broadway: più tranquillo di Akiba, pezzi più rari, prezzi migliori sul vintage."]},
+ {ic:"🤖",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Gundam, Anime &amp; Gachapon",sub:"In giro per Tokyo",
+  p:"Oltre i Pokémon, il vasto universo nerd giapponese.",
+  li:["<b>Gundam Unicorn</b> + Gundam Base (DiverCity Odaiba): statua di 19,7 m che si trasforma.",
+      "<b>Animate</b> (Ikebukuro + Akiba): multi-piano di anime, manga, light novel.",
+      "<b>Sale gachapon</b> (capsule): vicino a Radio Kaikan o Yodobashi Akiba — ci si perde per ore.",
+      "<b>Jump Shop</b> + <b>Capcom Store</b> + <b>Square Enix Café</b>: tutti al 6° piano di Shibuya Parco.",
+      "Don Quijote: souvenir nerd, costumi, elettronica a prezzi competitivi. Aperto fino a tardi."]},
+ {ic:"💜",bg:"linear-gradient(135deg,#1e3450,#8a4e7a)",title:"Chicche Nerd Poco Note",sub:"Che quasi nessuno sa",
+  p:"I posti che Joseph cercherà anche nelle guide più oscure di Reddit.",
+  li:["<b>Poké Lid</b>: i tombini Pokémon regionali — caccia in ogni città del Giappone.",
+      "<b>Warner Bros. Studio Tour Tokyo</b> (Harry Potter): aperto da 2023 a Toshimaen. Vale una mezza giornata.",
+      "<b>Ghibli Museum</b> (Mitaka, ~30 min da Tokyo): biglietti lotteria con mesi di anticipo. Se non li avete, Ghibli al Solamachi (Sky Tree).",
+      "<b>Pokémon Center in aeroporto di Haneda</b>: perfetto per ultimi acquisti prima del volo.",
+      "TeamLab Borderless (Azabudai Hills): diverso dai Planets — immersivo ma meno 'fisico'. Se vi appassionate."]}
+];
+
+/* ════════════════════════════════
+   CULTURA DATA
+   ════════════════════════════════ */
+const CULT=[
+ {ic:"🏯",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Castelli &amp; Palazzi",sub:"Storia samurai e shogun",
+  p:"Angelo, questa sezione è cucinata per te. Joseph ti seguirà annuendo.",
+  li:["<b>Castello di Nijo</b> (Kyoto, ¥1.300): palazzo shogunale del 1603. I corridoi scricchiolano di proposito.",
+      "<b>Castello di Osaka</b> (¥600): 8 piani, museo ricco, parco verde.",
+      "<b>Palazzo Imperiale di Kyoto</b> + giardini: ingresso gratuito.",
+      "<b>Giardini Est del Palazzo Imperiale</b> (Tokyo): gratuito, centrale e bellissimo."]},
+ {ic:"🖼️",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Musei da non perdere",sub:"Climatizzati · ottimi col caldo",
+  p:"I musei migliori del percorso — anche utili per la pausa dal caldo di luglio.",
+  li:["<b>Tokyo National Museum</b> (¥1.000): armature samurai, katane, arte buddhista. Il meglio.",
+      "<b>Sanjusangen-do</b> (Kyoto, ¥600): 1.001 statue dorate di Kannon in fila. Da brividi.",
+      "<b>Miraikan</b> (Odaiba, ¥630): scienza, robot, spazio. Anche per Joseph.",
+      "<b>Kyoto National Museum</b>: arte classica dell'antica capitale.",
+      "Joseph: il National Museum di Tokyo è storico <i>e</i> visivamente incredibile."]},
+ {ic:"⛩️",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Templi &amp; Santuari Top",sub:"Goshuincho in mano",
+  p:"La guida al goshuin — il timbro-sigillo che ogni santuario ti offre in segno di visita. Angelo, prendi il libretto.",
+  li:["<b>Senso-ji</b> (Asakusa) · <b>Meiji Jingu</b> (Harajuku) · <b>Kanda Myojin</b> (Akihabara) — Tokyo.",
+      "<b>Fushimi Inari</b> · <b>Kinkaku-ji</b> · <b>Kiyomizu-dera</b> · <b>Tenryu-ji</b> · <b>Yasaka</b> — Kyoto.",
+      "<b>Todai-ji</b> · <b>Kasuga Taisha</b> — Nara. <b>Byodo-in</b> — Uji.",
+      "Il goshuincho si compra al primo tempio (Senso-ji o Meiji Jingu). Costa ~¥1.500.",
+      "Ogni goshuin è unico: calligrafia a mano + timbro rosso. Angelo tornerà con un libro pieno."]},
+ {ic:"🍵",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Cerimonie, Tè &amp; Kimono",sub:"Dove prenotare",
+  p:"La parte immersiva della storia giapponese: non solo da guardare, da vivere.",
+  li:["<b>Cerimonia del tè a Kyoto</b>: <a href='https://mai-ko.com/what-to-do-in-japan/kyoto/tea-ceremony-kyoto/' target='_blank'><b>Mai-Ko</b></a> (esperienza con maiko, molto consigliata), Camellia Tea Experience (Higashiyama), Maikoya (include kimono), En.",
+      "<b>Cerimonia a Uji</b>: Taiho-an (sull'isola del fiume), Nakamura Tokichi, Fukujuen.",
+      "<b>Kimono rental</b> (Higashiyama): ¥3.000+ per una mezza giornata. Le foto tra i vicoli sono fantastiche.",
+      "Prenota da: sito ufficiale / <b>Klook</b> / <b>Viator</b> / <b>Airbnb Experiences</b> — almeno una settimana prima.",
+      "Angelo: la cerimonia del tè è culturalmente centrale, non turistica. Preparatevi entrambi.",
+      "Joseph: promettiamo che finisce in meno di un'ora."]}
+];
+
+/* ════════════════════════════════
+   SECRET / SUMMER
+   ════════════════════════════════ */
+const SECRET=[
+ {ic:"🌊",bg:"linear-gradient(135deg,#3a7a82,#2c4a6e)",title:"Fresco a Tokyo",sub:"Quando è un forno",
+  p:"Luglio a Tokyo: 32°C, umidità alle stelle, ogni marciapiede è un sauna. Questi sono i posti dove sopravvivere.",
+  li:["<b>Todoroki Valley</b> (Setagaya): un canyon verde dentro Tokyo, ruscello, ombra densa. Quasi nessun turista. È come uscire dalla città senza uscirci.",
+      "<b>Parco Inokashira</b> (Kichijoji): laghetto, barchette, alberi enormi. A 2 minuti: il Museo Ghibli (se avete biglietti).",
+      "<b>Rikugien Garden</b> / <b>Koishikawa Korakuen</b>: giardini storici con stagni e sentieri ombreggiati.",
+      "Lungofiume <b>Nakameguro</b>: caffè all'ombra, canale, molto meno caotico di Shibuya.",
+      "Qualsiasi <b>depachika</b> (piano gastronomico dei grandi magazzini): freschissimi e pieni di cibo."]},
+ {ic:"🎐",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Fresco a Kyoto",sub:"L'estate giapponese come la vivono i locali",
+  p:"Kyoto d'estate è calda quanto Tokyo ma ha qualcosa che Tokyo non ha: l'acqua.",
+  li:["<b>Kawadoko / Noryo-yuka</b>: le terrazze dei ristoranti di Pontocho sospese sul fiume Kamo. Si cena sull'acqua. Tradizione estiva da secoli.",
+      "<b>Kibune</b> (nord di Kyoto, ~45 min): tavolate letteralmente nell'acqua del torrente. Temperatura diversa dal pianeta. Abbinabile a Kurama onsen.",
+      "<b>Crociera sul fiume Hozu</b> da Arashiyama: 2 ore tra le gole, barca tradizionale, aria freschissima.",
+      "<b>Shimogamo Shrine + bosco Tadasu no Mori</b>: santuario nella foresta primaria, ombroso, silenzioso.",
+      "Angelo: la kawadoko è l'esperienza culinaria estiva per eccellenza a Kyoto."]},
+ {ic:"🔮",bg:"linear-gradient(135deg,#2c4a6e,#8a4e7a)",title:"Gemme Nascoste",sub:"Dove vanno i locals",
+  p:"Posti che non trovi nelle guide normali — ma che i travel blogger di Reddit conoscono bene.",
+  li:["<b>Yanaka</b> (Tokyo): quartiere sopravvissuto alle bombe, pieno di gatti, botteghe artigiane, cimitero-parco. Il Tokyo che non esiste più altrove.",
+      "<b>Golden Gai</b> (Shinjuku): 200 micro-bar in vicoli larghi mezzo metro. Ogni bar ha 6 posti. Atmosfera incredibile.",
+      "<b>Shimokitazawa</b>: dischi vintage, caffè indie, teatro. L'area hipster/artistica di Tokyo.",
+      "<b>Pontocho di giorno</b>: deserta e silenziosa. Di sera è un'altra cosa, ma di giorno è fotogenicissima.",
+      "Kyoto: <b>Fushimi Inari di notte</b> — aperto 24h, le lanterne accese sono surreali."]},
+ {ic:"🍧",bg:"linear-gradient(135deg,#c89ab0,#c0402a)",title:"Sopravvivenza Estiva",sub:"Come i giapponesi gestiscono luglio",
+  p:"Piccoli segreti locali che cambiano la giornata quando fa caldo.",
+  li:["<b>Kakigori</b>: ghiaccio finissimo con sciroppo (matcha, fragola, azuki). Il dessert dell'estate giapponese. Cercatelo ovunque.",
+      "<b>Asciugamano refrigerante</b> + <b>ventaglio giapponese</b> (uchiwa): comprateli al konbini il primo giorno.",
+      "<b>Magliette cooling di Uniqlo</b>: le più leggere che esistono. Vale il ¥1.000.",
+      "Bevande fredde al <b>konbini</b> e ai distributori automatici ogni 50 metri — spendete liberamente.",
+      "Templi la mattina, riposo in hotel a metà giornata, festival e uscite di sera. La routine giapponese di luglio."]}
+];
+
+/* ════════════════════════════════
+   ESSENTIALS
+   ════════════════════════════════ */
+const ESS=[
+ {ic:"💴",bg:"var(--green)",h:"Soldi, contanti e carte",p:"Il Giappone usa ancora molto i contanti. Non fatevi cogliere impreparati.",
+  li:["Bancomat <b>7-Bank</b> o <b>Japan Post</b>: accettano carte estere, Revolut, Wise senza problemi.",
+      "Tenete sempre ¥3.000–5.000 in tasca: molti localini, templi e mercati non accettano carta.",
+      "IC card <b>Suica</b> (Tokyo) / <b>ICOCA</b> (Kansai): funzionano su quasi tutti i trasporti e nei konbini. Ricaricabili ovunque.",
+      "Cambio indicativo: €1 ≈ ¥165 — ma usate il convertitore live qui sopra.",
+      "Niente mancia — mai, da nessuna parte, per nessun motivo."]},
+ {ic:"🚆",bg:"var(--blue)",h:"Treni, metro e Shinkansen",p:"Il sistema di trasporto più puntuale del mondo. Imparatelo una volta e va da sé.",
+  li:["<b>Shinkansen Tokyo→Kyoto</b>: Nozomi, ~¥14.370, 2h15. Prenotate su <b>Smart-EX</b> (app ufficiale JR) o alle macchinette in stazione.",
+      "<b>Shinkansen Shin-Osaka→Tokyo</b>: Nozomi, ~¥14.720, 2h27. Prenota con anticipo.",
+      "Lato destro (sud) del Nozomi per la vista sul Fuji: chiedetelo alla prenotazione.",
+      "Metro Tokyo: usate Google Maps per i percorsi. Suica funziona ovunque senza comprare biglietti separati.",
+      "Klook / Viator vendono biglietti Shinkansen con piccola commissione ma in italiano — alternativa comoda."]},
+ {ic:"🧳",bg:"var(--gold)",h:"Takkyubin — spedire i bagagli",p:"Il sistema giapponese che cambia la vita: spedite le valigie da hotel a hotel mentre voi girate leggeri.",
+  li:["<b>12 luglio mattina</b>: alla reception del <b>Miyako City Kintetsu Kyoto Station</b> chiedete di spedire i bagagli (takkyubin, Yamato/Kuroneko) al <b>Smart Place Inn Kyoto Shijo Omiya Station</b>.",
+      "Costo: ~¥1.500–2.500 a valigia. Consegna il giorno successivo → arrivano il <b>13 luglio</b>.",
+      "<b>Prima di partire</b>: contattate lo Smart Place Inn (email o telefono) per confermare che ricevono e tengono i bagagli in arrivo il 13 lug.",
+      "Voi andate ad Arashiyama con uno zaino soltanto. Notte in ryokan leggeri.",
+      "Il servizio si chiama takkyubin (宅配便). Ogni konbini può farvi spedire — alternative alla reception dell'hotel."]},
+ {ic:"🌡️",bg:"var(--red)",h:"Luglio: caldo pazzesco",p:"30–34°C, umidità 70–80%, possibili temporali improvvisi. Non sottovalutatelo.",
+  li:["<b>Asciugamano refrigerante</b> + <b>ventaglio</b>: comprateli il primo giorno al konbini o a Uniqlo.",
+      "Crema solare alta protezione + cappello: obbligatori fuori dal mezzogiorno.",
+      "Ombrello compatto: sole + pioggia improvvisa — serve entrambe le cose.",
+      "Scarpe già rodate: 15.000–25.000 passi al giorno sono normali.",
+      "Powerbank: Google Maps + foto + app varie svuotano il telefono in 4 ore.",
+      "Ritmo estivo: templi di mattina, riposo a metà giornata, uscite la sera."]},
+ {ic:"⛩️",bg:"var(--blue2)",h:"Etichetta &amp; galateo",p:"Un po' di garbo fa sempre una differenza enorme in Giappone.",
+  li:["Inchino leggero al posto della stretta di mano. 'Arigatou gozaimasu' e 'sumimasen' bastano per tutto.",
+      "Ai santuari: inchino al torii, lavate le mani alla fontana (temizuya), non camminate al centro del sentiero.",
+      "Silenzio sui treni. Non mangiate camminando (tranne nei matsuri). Non parlate al telefono ad alta voce.",
+      "Niente foto alle geiko senza consenso. Rispettate la distanza.",
+      "Portate un sacchettino per i rifiuti: cestini quasi inesistenti in strada — una stranezza per noi ma la norma lì."]},
+ {ic:"📱",bg:"var(--green)",h:"App &amp; preparativi digitali",p:"Cinque app che valgono tutto il viaggio.",
+  li:["<b>Google Maps</b>: scaricate Tokyo + Kyoto + Osaka offline prima di partire.",
+      "<b>Google Translate</b>: modalità fotocamera per i menu in giapponese. Salva la vita.",
+      "<b>Smart-EX</b>: acquisto posti Shinkansen. Fatelo la settimana prima.",
+      "<b>App USJ</b>: essenziale per il timed-entry di Nintendo World.",
+      "Salvate gli indirizzi degli hotel in giapponese per mostrare al taxista / alla reception.",
+      "eSIM: acquistatela prima in Italia (es. Airalo) — costa meno e funziona meglio del pocket wifi."]}
+];
+
+/* ════════════════════════════════
+   CHECKLIST
+   ════════════════════════════════ */
+const BOOKING=[
+ {t:"Posti Shinkansen: Tokyo→Kyoto (11 lug) + Shin-Osaka→Tokyo (20 lug)",s:"App Smart-EX o macchinette JR"},
+ {t:"Shinkansen 20 lug: Shin-Osaka → Tokyo entro le 10:30",s:"Volo 16:35 da Haneda — ampio margine"},
+ {t:"Bus Shinjuku → Kawaguchiko (8 lug)",s:"highway-buses.jp — prenota in anticipo"},
+ {t:"Confermare hotel + ryokan Arashiyama"},
+ {t:"Organizzare takkyubin 12 lug",s:"Conferma che Smart Place Inn riceve i bagagli il 13 lug"},
+ {t:"Scaricare app USJ (per timed-entry 18 lug)"},
+ {t:"Pokémon Café (Nihonbashi): prenotare se volete andarci",s:"Si prenota settimane prima dal sito"},
+ {t:"Prenotare cerimonia del tè (Kyoto o Uji)",s:"Klook / Viator / sito diretto"},
+ {t:"Shibuya Sky: prenotare slot tramonto online"},
+ {t:"Maikoya / Camellia se volete il kimono+tè"},
+ {t:"eSIM (es. Airalo) da acquistare prima"},
+ {t:"Avvisare banca / controllare limiti Revolut per yen"},
+ {t:"Assicurazione viaggio"},
+ {t:"Mappe offline Google Maps (Tokyo, Kyoto, Osaka)"},
+ {t:"Google Translate con pacchetto giapponese offline"}
+];
+const PACKING=[
+ {t:"Asciugamano refrigerante"},
+ {t:"Ventaglio (uchiwa o sensu)"},
+ {t:"Borraccia ricaricabile"},
+ {t:"Crema solare SPF50+ + cappello"},
+ {t:"Ombrello compatto (pioggia + sole)"},
+ {t:"Scarpe già rodate e comode"},
+ {t:"Vestiti leggeri e traspiranti (sintetici meglio del cotone)"},
+ {t:"Powerbank + cavi"},
+ {t:"Adattatore (Giappone = Tipo A, 100V)"},
+ {t:"Goshuincho se lo comprate in Italia",s:"Altrimenti al Senso-ji il giorno 2"},
+ {t:"Shorts ad asciugatura rapida per teamLab",s:"Pavimenti a specchio — no gonne"},
+ {t:"Zainetto per la notte in ryokan",s:"I bagagli grandi vanno spediti il 12 lug"},
+ {t:"Sacchettino richiudibile per i rifiuti",s:"I cestini in Giappone non esistono"},
+ {t:"Cerottini anti-vesciche",s:"25.000 passi al giorno fanno danni"},
+ {t:"Gel mani + salviette umide"},
+ {t:"Cash starter kit: almeno €50 in yen prima di atterrare",s:"O preleva subito a Haneda"}
+];
+
+/* ════════════════════════════════
+   RENDER FUNCTIONS
+   ════════════════════════════════ */
+
+// Days
+const dayList=document.getElementById('dayList');
+DAYS.forEach(d=>{
+  const badge=d.badge?`<span class="badge ${d.badge.c}">${d.badge.t}</span>`:'';
+  const body=d.blocks.map(b=>`<div class="slot"><div class="slot-hd">${b.t}</div>${b.x.map(itH).join('')}</div>`).join('');
+  const tips=d.tips.map(t=>`<li>${t}</li>`).join('');
+  dayList.appendChild(el(`<article class="day">
+    <div class="day-hd">
+      <div class="day-cal">
+        <div class="dc-w">${d.dw}</div>
+        <div class="dc-d">${d.dc}</div>
+        <div class="dc-m">${d.dm}</div>
+      </div>
+      <div class="day-info">
+        <div class="dtag">${d.dw} · ${d.tag}</div>
+        <h3>${d.title}</h3>
+        <div class="darea">${d.area}</div>
+      </div>
+      <div class="day-arrow">⌄</div>
+    </div>
+    <div class="day-body"><div class="day-in">
+      ${badge}${body}
+      <div class="tips"><div class="th">💡 Consigli del giorno</div><ul>${tips}</ul></div>
+    </div></div>
+  </article>`));
+});
+dayList.addEventListener('click',e=>{
+  const h=e.target.closest('.day-hd');
+  if(!h||e.target.closest('a')) return;
+  h.parentElement.classList.toggle('open');
+});
+
+// Cities
+const cityList=document.getElementById('cityList');
+CITIES.forEach(c=>{
+  const blk=(arr,title,ic,bg)=>`<div class="blk"><h4><span class="bic" style="background:${bg}">${ic}</span>${title}</h4><ul>${arr.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;
+  cityList.appendChild(el(`<article class="city-card">
+    <div class="city-band" style="background:${c.grad}">
+      <span class="cjp">${c.jp}</span>
+      <h3>${c.name}</h3>
+      <div class="cwhen">${c.when}</div>
+      <span class="cbg">${c.bk}</span>
+    </div>
+    <div class="city-body">
+      ${blk(c.do,'Da vedere','◎',c.grad.split(',')[0].replace('linear-gradient(135deg,',''))}
+      ${blk(c.eat,'Dove mangiare','🍜','var(--green)')}
+      ${blk(c.tips,'Da sapere','✦','var(--blue)')}
+    </div>
+  </article>`));
+});
+
+// Feat grids
+function renderFeat(id,arr){
+  const node=document.getElementById(id);
+  arr.forEach(f=>node.appendChild(el(`<article class="feat">
+    <div class="feat-hd">
+      <div class="feat-ic" style="background:${f.bg}">${f.ic}</div>
+      <div><div class="fsub">${f.sub}</div><h3>${f.title}</h3></div>
+    </div>
+    <div class="feat-bd"><p>${f.p}</p><ul>${f.li.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+  </article>`)));
+}
+renderFeat('expList',EXPS);
+renderFeat('nerdList',NERD);
+renderFeat('cultList',CULT);
+renderFeat('secretList',SECRET);
+
+// Essentials
+const essList=document.getElementById('essList');
+ESS.forEach(e=>essList.appendChild(el(`<div class="ess">
+  <h3><span class="ic" style="background:${e.bg}">${e.ic}</span>${e.h}</h3>
+  <p>${e.p}</p>
+  <ul>${e.li.map(x=>`<li>${x}</li>`).join('')}</ul>
+</div>`)));
+
+// Checklist
+const store={
+  get(k){try{return localStorage.getItem(k)}catch(e){return(this._m=this._m||{})[k]||null}},
+  set(k,v){try{localStorage.setItem(k,v)}catch(e){(this._m=this._m||{})[k]=v}}
+};
+function buildCl(nodeId,items,prefix,title){
+  const node=document.getElementById(nodeId);
+  node.innerHTML=`<h4>${title}</h4>`;
+  items.forEach((it,i)=>{
+    const id=`${prefix}-${i}`;
+    const checked=store.get(id)==='1';
+    node.appendChild(el(`<label class="ci${checked?' done':''}">
+      <input type="checkbox" data-id="${id}"${checked?' checked':''}>
+      <span><label>${it.t}</label>${it.s?`<small>${it.s}</small>`:''}</span>
+    </label>`));
+  });
+}
+buildCl('cl-bk',BOOKING,'bk','📋 Prenotazioni & logistica');
+buildCl('cl-pk',PACKING,'pk','🎒 Valigia di Joseph & Angelo');
+function refreshCl(){
+  const all=document.querySelectorAll('.ci input');
+  const done=[...all].filter(x=>x.checked).length;
+  document.getElementById('cl-n').textContent=`${done} / ${all.length}`;
+  document.getElementById('cl-b').style.width=all.length?`${done/all.length*100}%`:'0%';
+}
+document.getElementById('check').addEventListener('change',e=>{
+  if(e.target.type!=='checkbox') return;
+  store.set(e.target.dataset.id,e.target.checked?'1':'0');
+  e.target.closest('.ci').classList.toggle('done',e.target.checked);
+  refreshCl();
+});
+refreshCl();
 </script>
 </body>
 </html>

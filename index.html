@@ -499,7 +499,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="legend" style="margin-top:22px">
     <span class="lc">🎮 Nerd</span>
     <span class="lc">⛩️ Storia</span>
-    <span class="lc">❤️ Top</span>
+    <span class="lc">⭐ Must See</span>
     <span class="lc">🍜 Cibo</span>
     <span class="lc">🛍️ Shopping</span>
     <span class="lc">🧊 Fresco</span>
@@ -525,7 +525,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <h2 class="pg-title">Giorno per Giorno</h2>
   <p class="pg-sub">Ogni giorno si apre con mattina, pomeriggio e sera. Ci sono sempre più opzioni — scegliete in base all'umore, al meteo, all'energia. Se volete fare ramen per 3 ore invece di un museo, fate ramen per 3 ore.</p>
   <div class="legend">
-    <span class="lc">🎮 Nerd</span><span class="lc">⛩️ Storia</span><span class="lc">❤️ Top</span><span class="lc">🍜 Cibo</span><span class="lc">🛍️ Shop</span><span class="lc">🧊 Fresco</span><span class="lc">📷 Foto</span>
+    <span class="lc">🎮 Nerd</span><span class="lc">⛩️ Storia</span><span class="lc">⭐ Must See</span><span class="lc">🍜 Cibo</span><span class="lc">🛍️ Shop</span><span class="lc">🧊 Fresco</span><span class="lc">📷 Foto</span>
   </div>
   <div class="grid" id="dayList"></div>
 </section>
@@ -674,7 +674,6 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="seal">旅</div>
   <p>Giappone 2026 · 3–20 Luglio · いってきます! ✈</p>
   <p style="margin-top:6px;opacity:.75">Apri sul telefono → "Aggiungi a schermata Home" per averlo sempre con voi.</p>
-  <p style="margin-top:4px;opacity:.6;font-size:.76rem">Hostabile gratis su GitHub Pages · Netlify · Cloudflare Pages · basta caricare questo file.</p>
 </footer>
 
 <script>
@@ -1033,8 +1032,8 @@ function tick(){
 tick(); setInterval(tick,1000);
 
 /* ── WHO CHIPS ── */
-const W={nerd:"🎮",storia:"⛩️",top:"❤️",food:"🍜",shop:"🛍️",fresco:"🧊",foto:"📷"};
-const WT={nerd:"Da fare per i fan nerd",storia:"Imperdibile per gli amanti della storia",top:"Da non perdere assolutamente",food:"Cibo",shop:"Shopping",fresco:"Fresco/relax",foto:"Foto epica"};
+const W={nerd:"🎮",storia:"⛩️",top:"⭐",food:"🍜",shop:"🛍️",fresco:"🧊",foto:"📷"};
+const WT={nerd:"Da fare per i fan nerd",storia:"Imperdibile per gli amanti della storia",top:"Must See — da non perdere assolutamente",food:"Cibo",shop:"Shopping",fresco:"Fresco/relax",foto:"Foto epica"};
 function whoH(arr){ return arr.length?'<span class="who">'+arr.map(c=>`<span class="wc" title="${WT[c]||c}">${W[c]||c}</span>`).join('')+'</span>':''; }
 function priceH(p){
   if(!p) return '';
@@ -1101,12 +1100,12 @@ const DAYS=[
   ]},
   {t:"Pomeriggio — Odaiba",x:[
     {nm:"Statua Gundam Unicorn (DiverCity)",w:["nerd","foto"],p:"free",m:"Unicorn Gundam Statue DiverCity Tokyo Plaza",d:"19,7 m di Gundam RX-0 che si trasforma ogni ora. Dentro DiverCity: il Gundam Base (modellini, gunpla, figure).",jo:"Nerd mode ON — portate borse extra."},
-    {nm:"Miraikan — Museo della Scienza",w:["nerd","fresco"],p:{v:"¥630"},m:"Miraikan National Museum of Emerging Science",d:"Il museo di scienza più bello del Giappone: robot ASIMO, modello della Terra in tempo reale, IA, spazio. Climatizzato — ottimo rifugio dal caldo."},
+    {nm:"Miraikan — Museo della Scienza",w:["storia","fresco"],p:{v:"¥630"},m:"Miraikan National Museum of Emerging Science",d:"Il museo di scienza più bello del Giappone: robot ASIMO, modello della Terra in tempo reale, IA, spazio. Climatizzato — ottimo rifugio dal caldo."},
     {nm:"Odaiba Seaside Park · tramonto",w:["fresco","foto","top"],p:"free",m:"Odaiba Seaside Park",d:"Spiaggia urbana con vista sul Rainbow Bridge e sullo skyline di Tokyo. Brezza di mare, replica della Statua della Libertà. Rilassatevi qui dalle 18:00 al tramonto prima di teamLab.",an:"Vista sul Rainbow Bridge al tramonto — una delle scene più belle di tutta Tokyo."}
   ]},
   {t:"Cena e Sera · 20:30",x:[
     {nm:"Cena leggera ad Aqua City o Venus Fort",w:["food","fresco"],m:"Aqua City Odaiba",d:"Centro commerciale con ristoranti, A/C. Mangiate qualcosa di leggero ~18:30–19:30. Da Odaiba a Toyosu (teamLab): Yurikamome → Shijo-mae, ~10 min."},
-    {nm:"teamLab Planets TOKYO 🌊",w:["top","foto","nerd"],p:"book",m:"teamLab Planets TOKYO",d:"Arte digitale immersiva a piedi nudi. Acqua alle caviglie, foresta di fiori, specchi infiniti. Uno dei posti più belli al mondo — nessuna foto rende l'idea. Durata reale: 90–150 min.",jo:"Uno dei must assoluti del viaggio — fiori digitali, specchi e acqua ovunque."}
+    {nm:"teamLab Planets TOKYO 🌊",w:["top","foto"],p:"book",m:"teamLab Planets TOKYO",d:"Arte digitale immersiva a piedi nudi. Acqua alle caviglie, foresta di fiori, specchi infiniti. Uno dei posti più belli al mondo — nessuna foto rende l'idea. Durata reale: 90–150 min.",jo:"Uno dei must assoluti del viaggio — fiori digitali, specchi e acqua ovunque."}
   ]}
  ],
  tips:["<b>teamLab pratico:</b> no gonne, shorts o pantaloni arrotolabili. L'acqua arriva alle caviglie.",
@@ -1127,14 +1126,16 @@ const DAYS=[
     {nm:"Ameyoko Market",w:["food","shop"],m:"Ameyoko Market Ueno",d:"Mercato storico sotto i binari della metro: street food, frutta fresca tagliata, abbigliamento sportivo a prezzi bassi."}
   ]},
   {t:"Sera — due opzioni",x:[
-    {nm:"Tokyo Skytree + Solamachi",w:["foto","nerd"],p:{v:"¥2.100+"},m:"Tokyo Skytree",d:"La torre più alta del Giappone (634 m). Al piano terra del Solamachi trovate negozi tematici: Pokémon, Ghibli, Character Street.",jo:"Character Street sotto lo Skytree: Pokémon, Ghibli, One Piece — tutto in un posto."},
+    {nm:"Tokyo Skytree + Solamachi",w:["foto","shop","top"],p:{v:"¥2.100+"},m:"Tokyo Skytree",d:"La torre più alta del Giappone (634 m). Al piano terra del Solamachi trovate negozi tematici: Pokémon, Ghibli, Character Street.",jo:"Character Street sotto lo Skytree: Pokémon, Ghibli, One Piece — tutto in un posto."},
     {nm:"Shinjuku Ni-chome 🏳️‍🌈",w:["top"],p:{v:"¥500–1.000 cover"},m:"Ni-chome Shinjuku Tokyo",d:"Il distretto gay più iconico dell'Asia — centinaia di micro-bar in pochi isolati. <b>Advocates Café</b> è il punto di partenza perfetto: terrazza aperta, super welcoming. Poi esplorate AiiRO, Arty Farty, Eagle. Si anima dalle 21:00. <b>~15 min a piedi dall'hotel</b>.",an:"Uscita Shinjuku-3chome C7 o C8. Contanti, tante risate, nessun giudizio."}
   ]}
  ],
  tips:["Senso-ji <b>all'alba</b> è un'altra cosa rispetto alle 10:00 con 500 pullman.",
        "Il National Museum la domenica ha file: lunedì è perfetto e tranquillo.",
        "Il goshuincho (libretto per i timbri dei templi) si compra qui al Senso-ji se non ce l'avete già.",
-       "A Ueno c'è anche il museo zoo con i panda giganti se volete qualcosa di diverso."]},
+       "A Ueno c'è anche il museo zoo con i panda giganti se volete qualcosa di diverso.",
+       "🗺️ <b>Percorso consigliato</b>: da Asakusa a Ueno sono ~20 min a piedi verso nord-ovest. Passate da <b>Kappabashi-dori</b> (la via degli utensili da cucina — souvenir insoliti e molto giapponesi).",
+       "🕳️ <b>Pokémon Manhole (PokéLid)</b>: il quartiere Taito (Asakusa) ha diversi tombini ufficiali. Cercate su <b>pokemonmanholes.pokemon.jp</b> la mappa interattiva — una mini-quest a piedi gratis."]},
 
 {dc:"7",dm:"LUG",dw:"MAR",tag:"Tokyo · Tanabata ☆",title:"Akihabara — Electric Town",area:"Il cuore nerd di Tokyo",
  badge:{t:"Tanabata oggi ★",c:"fe"},
@@ -1156,6 +1157,7 @@ const DAYS=[
   ]}
  ],
  tips:["Ad Akiba i prezzi sono fissi: niente trattativa, non si fa.",
+       "🗺️ <b>Percorso</b>: da Kanda Myojin ad Akihabara sono 10 min a piedi verso sud. Lungo la strada, <b>Yushima Seido</b> (tempio confuciano del 1690, gratis, 2 min a piedi dal santuario) — una deviazione veloce in un posto quasi deserto dai turisti.",
        "<b>Poké Lid</b>: in tutto il Giappone ci sono tombini decorati con i Pokémon locali — cacciateli come se fosse una quest.",
        "Tanabata è il 7 luglio: troverete bambù e decorazioni speciali.",
        "Sale di gachapon: cercate quelle vicino a Radio Kaikan — ci si perde.",
@@ -1219,6 +1221,8 @@ const DAYS=[
   ]}
  ],
  tips:["A Nakano: <b>contanti</b> e tempo. I negozi piccoli sono quelli con i pezzi più interessanti.",
+       "🕳️ <b>Pokémon Manhole</b>: Ikebukuro e Toshima ward hanno tombini ufficiali vicino al Pokémon Center Mega Tokyo. Controllate <b>pokemonmanholes.pokemon.jp</b> prima di uscire.",
+       "🗺️ <b>Percorso</b>: Ikebukuro → Nakano sono 15 min con la Seibu o JR Chuo. Se avete energia, Shimokitazawa è altri 10 min verso sud con la Keio — vibe indie, vinile, caffè — completamente diverso da Akiba.",
        "Ultime ore a Tokyo — fate il punto sugli acquisti: il peso del bagaglio conta per domani.",
        "Ordinate già i posti del Shinkansen (app <b>Smart-EX</b>) se non l'avete fatto — sabato estate = sold out."]},
 
@@ -1319,6 +1323,8 @@ const DAYS=[
   ]}
  ],
  tips:["Fushimi Inari <b>all'alba</b> = nessuna folla, frescura, luce oro. Alle 9:00 è già un inferno di turisti.",
+       "🍶 <b>Sake Tasting — prenotazione</b>: il <b>Gekkeikan Okura Museum</b> è <b>walk-in</b>, nessuna prenotazione. Apre alle 9:30, ¥600 incluso gettone degustazione. Arrivate appena apre mentre siete ancora freschi dopo l'Inari.",
+       "🗺️ <b>Percorso Fushimi</b>: Fushimi Inari → (10 min a piedi verso sud) → Gekkeikan Museum → (15 min treno Kintetsu o JR) → Uji → (1 fermata JR) → Ogura (Nintendo Museum). Tutto su una retta.",
        "Uji e Ogura (Nintendo Museum) sono sulla stessa linea JR Nara: incastro perfetto.",
        "Arrivate al museo 15 minuti prima. Lockers a ¥100 per zaini grandi. Solo mezzi pubblici (no auto).",
        "Sera: terza e penultima sera di Yoiyama — le strade di Gion sono di nuovo chiuse e festose."]},
@@ -1369,12 +1375,12 @@ const DAYS=[
  badge:{t:"USJ · Pagato ✓ 🎢",c:"bk"},
  blocks:[
   {t:"Mattina — arriva prima di tutti",x:[
-    {nm:"Ai cancelli 60–90 minuti prima dell'apertura",w:["nerd","top"],m:"Universal Studios Japan",d:"Spesso aprono i cancelli in anticipo. Chi arriva per primo entra in Super Nintendo World prima della coda."}
+    {nm:"Ai cancelli 60–90 minuti prima dell'apertura",w:["top"],m:"Universal Studios Japan",d:"Spesso aprono i cancelli in anticipo. Chi arriva per primo entra in Super Nintendo World prima della coda."}
   ]},
   {t:"Strategia di giornata",x:[
     {nm:"Super Nintendo World 🍄",w:["nerd","top"],p:"book",d:"Mario, Luigi, Toad, Power-Up Band interattiva. Sfida Bowser Jr. e accumula monete.",jo:"Il pezzo forte del parco — Power-Up Band per i giochi interattivi, sfida Bowser Jr."},
     {nm:"Donkey Kong Country (Mine-Cart Madness)",w:["nerd","top"],d:"La land più nuova: la montagna russa del carrello da miniera. Falle presto — code enormi."},
-    {nm:"Harry Potter + Forbidden Journey",w:["top","storia"],d:"Il Castello di Hogwarts è incredibile anche per chi non è fan. Falle nel pomeriggio se hai la Power-Up Band."},
+    {nm:"Harry Potter + Forbidden Journey",w:["top","nerd"],d:"Il Castello di Hogwarts è incredibile anche per chi non è fan. Falle nel pomeriggio se hai la Power-Up Band."},
     {nm:"App USJ — Area Timed Entry",w:[],d:"Scaricate l'app prima di entrare e prendete subito l'entrata a tempo per Super Nintendo World — è gratis ma si esaurisce."}
   ]},
   {t:"Sopravvivenza",x:[

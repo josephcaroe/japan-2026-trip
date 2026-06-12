@@ -260,6 +260,28 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   .price{margin-left:0}
   .hd{gap:8px}
 }
+/* ── HOTEL CARDS ── */
+.hotel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.hotel-band{padding:16px 20px;color:#f5ede0;position:relative;overflow:hidden}
+.hotel-band h3{font-family:"Shippori Mincho";font-size:1.2rem;font-weight:800;margin:0 0 2px;position:relative;z-index:1}
+.hotel-band .hbg{position:absolute;right:10px;top:-10px;font-size:4rem;opacity:.12;font-family:"Shippori Mincho";font-weight:800}
+.hotel-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;position:relative;z-index:1}
+.hchip{font-size:.72rem;font-weight:700;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 10px}
+.hotel-body{padding:15px 20px 18px}
+.hotel-body .hrow{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.hotel-body .hcol{flex:1;min-width:120px}
+.hotel-body .hcol .hl{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px}
+.hotel-body .hcol .hv{font-size:.88rem;font-weight:600;color:var(--ink)}
+.hotel-body .hdesc{font-size:.86rem;color:var(--soft);margin:10px 0 8px;line-height:1.55}
+.hotel-body .hlinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.hlink{font-size:.76rem;font-weight:700;padding:5px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper2);color:var(--ink);text-decoration:none;transition:.15s}
+.hlink:hover{border-color:var(--blue);color:var(--blue)}
+.hlink.primary{background:var(--blue);color:#f5ede0;border-color:var(--blue)}
+.htransport{margin-top:12px;background:rgba(44,74,110,.06);border:1px solid rgba(44,74,110,.18);border-radius:13px;padding:12px 14px}
+.htransport .htt{font-family:"Shippori Mincho";font-weight:700;font-size:.82rem;color:var(--blue);margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.htransport ul{margin:0;padding-left:16px}
+.htransport li{font-size:.84rem;color:var(--soft);margin:4px 0}
+.htransport li b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -286,6 +308,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <button class="tb" data-v="secret">🧊 Segreti</button>
     <button class="tb" data-v="ricorda">📌 Ricorda</button>
     <button class="tb" data-v="cambio">💱 Cambio</button>
+    <button class="tb" data-v="hotels">🏨 Hotel</button>
     <button class="tb" data-v="prat">🎒 Pratica</button>
     <button class="tb" data-v="check">✓ Lista</button>
   </nav>
@@ -401,6 +424,14 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 </section>
 
 <!-- PRATICA -->
+<!-- HOTELS -->
+<section class="view" id="hotels">
+  <div class="eyebrow">Dove dormiamo</div>
+  <h2 class="pg-title">🏨 Hotel &amp; Alloggi</h2>
+  <p class="pg-sub">Tutte le prenotazioni con indirizzi, check-in/out, e come arrivare da ogni hotel alla tappa successiva.</p>
+  <div class="grid" id="hotelList"></div>
+</section>
+
 <section class="view" id="prat">
   <div class="eyebrow">Prima di partire e in loco</div>
   <h2 class="pg-title">🎒 Info Pratiche</h2>
@@ -792,6 +823,136 @@ function renderHotels(){
   });
 }
 renderHotels();
+
+/* ════════ HOTELS ════════ */
+const HOTELS=[
+ {
+  name:"HUJI Shinjuku House",
+  city:"Tokyo",
+  icon:"東",
+  grad:"linear-gradient(135deg,#1e3450,#2c4a6e)",
+  checkin:"Sab 4 Lug · dalle 15:00",
+  checkout:"Sab 11 Lug · entro 09:00–10:00",
+  nights:"7 notti",
+  address:"11-15 Sumiyoshichō, Shinjuku City, Tokyo 162-0065",
+  booking:"https://www.booking.com/hotel/jp/huji-shinjuku-house.it.html",
+  maps:"https://www.google.com/maps/search/?api=1&query=11-15+Sumiyoshicho+Shinjuku+City+Tokyo",
+  desc:"Base per tutta la settimana tokyota. Shinjuku è il nodo di trasporti perfetto: metro, JR, Shinkansen e bus tutto a portata di mano.",
+  transport:[
+   "<b>Dall'aeroporto di Haneda:</b> Keikyu Line diretta fino a Shinjuku (~50 min, ~¥640) oppure Tokyo Monorail → Hamamatsucho → JR Yamanote fino a Shinjuku (~40 min, ~¥620). IC card, tap & go.",
+   "<b>Partenza per Kyoto (11 lug):</b> da Shinjuku prendete la JR Chuo/Sobu fino a Tokyo Station (~30 min, IC card), poi Nozomi da Tokyo Station. Oppure partite direttamente da Shinjuku Station con lo Shinkansen (pochi Nozomi partono da Shinagawa — verificate su Smart-EX).",
+   "<b>Check-out alle 09:00:</b> lasciate i bagagli in deposito se il Shinkansen è più tardi."
+  ]
+ },
+ {
+  name:"Miyako City Kintetsu Kyoto Station",
+  city:"Kyoto — 1 notte",
+  icon:"京",
+  grad:"linear-gradient(135deg,#6a2828,#a04040)",
+  checkin:"Sab 11 Lug · dalle 15:00",
+  checkout:"Dom 12 Lug · entro 11:00",
+  nights:"1 notte",
+  address:"Shimogyo-ku, Higashishiokoji Kamadonocho 1-9, Kyoto",
+  booking:"https://www.booking.com/hotel/jp/hoterujin-tie-jing-du-yi-kyoto.it.html",
+  maps:"https://www.google.com/maps/search/?api=1&query=Miyako+City+Kintetsu+Kyoto+Station",
+  desc:"Attaccato alla stazione di Kyoto — comodissimo per il giorno di arrivo e per spedire i bagagli la mattina dopo. Una notte sola, poi si va ad Arashiyama.",
+  transport:[
+   "<b>Arrivo da Tokyo (Shinkansen):</b> scendete a Kyoto Station, l'hotel è nell'edificio collegato alla stazione (lato Kintetsu). A piedi, 3 minuti.",
+   "<b>Mattina del 12 — TAKKYUBIN:</b> prima di partire, portate le valigie grandi alla reception e chiedete di spedirle con Yamato Takkyubin allo Smart Place Inn Kyoto Shijo Omiya Station (arrivo 13 lug). Costo ~¥1.500–2.500 a valigia. Confermate con lo Smart Place Inn via email che le ricevono.",
+   "<b>Partenza per Arashiyama (12 lug mattina):</b> da Kyoto Station binario 33–34, JR Sagano Line → Saga-Arashiyama. ~15 min, ~¥240. IC card, tap & go. Oppure tram Randen da Shijo-Omiya (ma da qui non siete vicini)."
+  ]
+ },
+ {
+  name:"Ryokan Togetsutei — Arashiyama Onsen",
+  city:"Arashiyama — 1 notte",
+  icon:"嵐",
+  grad:"linear-gradient(135deg,#386030,#6a8840)",
+  checkin:"Dom 12 Lug · 16:00–19:00",
+  checkout:"Lun 13 Lug · 07:30–10:00",
+  nights:"1 notte + onsen",
+  address:"Nakaoshitachyou, Arashiyama, Nishikyo-ku, Kyoto",
+  booking:"https://www.booking.com/hotel/jp/kyoto-arashiyama-onsen-ryokan-togetsutei-syuzakaku.it.html",
+  maps:"https://www.google.com/maps/search/?api=1&query=Ryokan+Togetsutei+Arashiyama+Kyoto",
+  desc:"La notte più bella del viaggio. Yukata, kaiseki, onsen naturale. Arrivate con solo uno zaino — le valigie sono già in viaggio verso il prossimo hotel.",
+  transport:[
+   "<b>Da Kyoto Station (12 lug):</b> JR Sagano Line da binario 33–34 → Saga-Arashiyama (~15 min, ~¥240, IC card). Dal ryokan probabilmente mandano indicazioni via email — controllatele.",
+   "<b>Check-in 16:00–19:00:</b> mattina libera per la foresta di bambù e Tenryu-ji, poi check-in nel pomeriggio.",
+   "<b>Ritorno a Kyoto (13 lug):</b> JR Sagano da Saga-Arashiyama → Kyoto Station (~15 min, IC card). Oppure tram Randen fino a Shijo-Omiya se volete scendere vicino allo Smart Place Inn (la fermata finale è Shijo-Omiya, stessa area dell'hotel)."
+  ]
+ },
+ {
+  name:"Smart Place Inn Kyoto Shijo Omiya",
+  city:"Kyoto — 4 notti",
+  icon:"京",
+  grad:"linear-gradient(135deg,#7a2f2a,#b0503f)",
+  checkin:"Lun 13 Lug · dalle 15:00",
+  checkout:"Ven 17 Lug · 06:00–11:00",
+  nights:"4 notti",
+  address:"Nakagyo-ku, Fujiokacho 494, Kyoto",
+  booking:"https://www.booking.com/hotel/jp/grand-japaning-central-da-gong.it.html",
+  maps:"https://www.google.com/maps/search/?api=1&query=Smart+Place+Inn+Kyoto+Shijo+Omiya+Station",
+  desc:"Base per il cuore di Kyoto: Gion Matsuri, Higashiyama, Nara, Fushimi Inari e Nintendo Museum. Vicino alla fermata Shijo-Omiya (tram Randen e bus). Le valigie arrivano qui il 13 grazie al takkyubin.",
+  transport:[
+   "<b>Arrivo (13 lug da Arashiyama):</b> tram Randen fino a Shijo-Omiya (fermata finale, ~20 min, ~¥250) oppure JR Sagano → Kyoto Station poi bus/metro verso Shijo-Omiya. L'hotel è vicinissimo alla fermata.",
+   "<b>Per Nara (14 lug day trip):</b> da Shijo-Omiya prendete il bus o metro fino a Kyoto Station, poi Kintetsu Line → Kintetsu-Nara (~35 min, ~¥760, IC card). La Kintetsu è più vicina al parco dei cervi rispetto a JR Nara.",
+   "<b>Per Uji/Nintendo Museum (15 lug):</b> da Kyoto Station, JR Nara Line → Uji (~18 min, ~¥240) poi JR → Ogura (2 min). IC card, tutto tap & go.",
+   "<b>Partenza per Osaka (17 lug pomeriggio):</b> dopo la parata di Gion, da Kyoto Station JR Shinkaisoku → Osaka (~28 min, ~¥560, IC card). Oppure Hankyu da Kawaramachi → Osaka Umeda (~40 min, ~¥400). Arrivate all'Apartment Namba Daikoku a Naniwa-ku: da Osaka Station prendete metro Midosuji → Namba, poi a piedi."
+  ]
+ },
+ {
+  name:"Apartment Namba Daikoku",
+  city:"Osaka — 3 notti",
+  icon:"阪",
+  grad:"linear-gradient(135deg,#901820,#c03020)",
+  checkin:"Ven 17 Lug · 16:00–22:00",
+  checkout:"Lun 20 Lug · entro 10:00",
+  nights:"3 notti",
+  address:"Naniwa-ku, Shikitsunishi 1-1-28, Osaka",
+  booking:"https://www.booking.com/hotel/jp/apatomentow-k.it.html",
+  maps:"https://www.google.com/maps/search/?api=1&query=Naniwa-ku+Shikitsunishi+1-1-28+Osaka",
+  desc:"Appartamento a Namba — il cuore di Osaka. Dotonbori è a piedi, USJ è raggiungibile in metro, e il check-out alle 10:00 del 20 vi dà tutto il tempo per prendere il Nozomi delle 10:30.",
+  transport:[
+   "<b>Arrivo da Kyoto (17 lug):</b> JR Shinkaisoku Kyoto → Osaka (~28 min, IC card) → scendete a Osaka o Namba. Da Namba Station l'appartamento è nel quartiere Naniwa-ku, verificate l'indirizzo preciso su Google Maps.",
+   "<b>Per USJ (18 lug):</b> metro o JR fino a Nishikujo, poi JR Yumesaki Line → Universal City (~20 min totali, ~¥380, IC card).",
+   "<b>Osaka in giro:</b> metro Midosuji è la linea principale. IC card ovunque.",
+   "<b>Partenza per Tokyo (20 lug mattina):</b> check-out entro le 10:00. Metro fino a Shin-Osaka Station (metro Midosuji direzione nord, ~15 min, IC card). Nozomi da Shin-Osaka → Tokyo entro le 10:30 (~¥14.720, Smart-EX). Arrivate a Tokyo ~13:00, poi Keikyu/Monorail verso Haneda per il volo delle 16:35."
+  ]
+ }
+];
+
+/* render hotels */
+const hotelList=document.getElementById('hotelList');
+HOTELS.forEach(h=>{
+  const tli=h.transport.map(t=>`<li>${t}</li>`).join('');
+  hotelList.appendChild(el(`<article class="hotel">
+    <div class="hotel-band" style="background:${h.grad}">
+      <span class="hbg">${h.icon}</span>
+      <h3>${h.name}</h3>
+      <div class="hotel-meta">
+        <span class="hchip">📍 ${h.city}</span>
+        <span class="hchip">🌙 ${h.nights}</span>
+      </div>
+    </div>
+    <div class="hotel-body">
+      <div class="hrow">
+        <div class="hcol"><div class="hl">Check-in</div><div class="hv">${h.checkin}</div></div>
+        <div class="hcol"><div class="hl">Check-out</div><div class="hv">${h.checkout}</div></div>
+      </div>
+      <div class="hrow">
+        <div class="hcol"><div class="hl">Indirizzo</div><div class="hv">${h.address}</div></div>
+      </div>
+      <div class="hdesc">${h.desc}</div>
+      <div class="hlinks">
+        <a class="hlink primary" href="${h.booking}" target="_blank" rel="noopener">📋 Prenotazione</a>
+        <a class="hlink" href="${h.maps}" target="_blank" rel="noopener">📍 Google Maps</a>
+      </div>
+      <div class="htransport">
+        <div class="htt">🚆 Come arrivare e come ripartire</div>
+        <ul>${tli}</ul>
+      </div>
+    </div>
+  </article>`));
+});
 
 /* ════════ RICORDA ════════ */
 const RICORDA=[
@@ -1394,7 +1555,7 @@ const ESS=[
   li:["<b>Haneda → Shinjuku</b> — IC card. Keikyu Line o Tokyo Monorail + JR. ~¥650, ~40 min. Tap & go.",
       "<b>Tokyo (metro e treni locali)</b> — IC card sempre. Google Maps per il percorso, la Suica fa il resto.",
       "<b>Shinjuku → Kawaguchiko (Fuji, 8 lug)</b> — Bus espresso. Si compra su <b>highway-buses.jp</b> o alle biglietterie di Busta Shinjuku (piano 4). ~¥2.200. Non accetta IC card.",
-      "<b>Tokyo → Kyoto (11 lug, Shinkansen Nozomi)</b> — biglietto separato. App <b>Smart-EX</b> oppure macchinette JR in stazione (cercate 'Shinkansen'). ~¥14.370.",
+      "<b>Tokyo → Kyoto (11 lug, Shinkansen Nozomi)</b> — <u>NON basta la IC card</u>. Biglietto separato obbligatorio. App <b>Smart-EX</b> (scaricatela ora, registrate carta di credito) oppure macchinette JR in stazione (cerca 'Shinkansen'). Binari 14–19 a Tokyo Station. Nozomi ogni ~10 min. ~¥14.370. Prenotate posto numerato (+¥530) — sabato d'estate i treni sono pieni. Lato D (destra guardando la direzione di marcia) per il Fuji.",
       "<b>Kyoto → Arashiyama (12 lug)</b> — IC card. Due opzioni: JR Sagano Line (Kyoto → Saga-Arashiyama, ~¥240, 15 min) oppure Randen tram (Shijo-Omiya → Arashiyama, ~¥250, 20 min). Tap & go.",
       "<b>Arashiyama → Kyoto (13 lug)</b> — stesso di sopra, IC card, tap & go.",
       "<b>Kyoto → Nara (14 lug)</b> — due opzioni: <b>Kintetsu</b> (Kyoto → Kintetsu-Nara, ~¥760, 35 min) oppure JR (Kyoto → JR Nara, ~¥720, 45 min). La Kintetsu vi porta più vicino al parco dei cervi. <b>La IC card funziona su entrambe.</b> Tap & go.",

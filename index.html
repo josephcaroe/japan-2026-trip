@@ -233,6 +233,23 @@ header{position:sticky;top:0;z-index:80;backdrop-filter:blur(14px) saturate(180%
 
 .note{background:rgba(192,64,42,.07);border:1px solid rgba(192,64,42,.28);border-radius:15px;padding:14px 18px;font-size:.88rem;color:var(--soft);margin:18px 0}
 .note b{color:var(--red2)}
+.hotel-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.hotel-band{padding:16px 20px;color:#f6efe0;position:relative;overflow:hidden;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.hotel-band h3{font-family:"Shippori Mincho";font-size:1.2rem;font-weight:800;margin:0 0 3px;position:relative;z-index:1}
+.hotel-band .hbk{position:absolute;right:-4px;bottom:-20px;font-family:"Shippori Mincho";font-weight:800;font-size:5rem;opacity:.12;line-height:.8}
+.hotel-dates{font-size:.78rem;opacity:.9;margin-top:2px;position:relative;z-index:1}
+.hotel-link{flex:0 0 auto;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:5px 13px;font-size:.75rem;font-weight:700;text-decoration:none;white-space:nowrap;position:relative;z-index:1;transition:.15s}
+.hotel-link:hover{background:rgba(255,255,255,.25);color:#fff}
+.hotel-body{padding:15px 20px 18px}
+.hotel-row{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;font-size:.87rem}
+.hotel-row .hi{flex:0 0 20px;font-size:1rem}
+.hotel-row .ht{color:var(--soft)}
+.hotel-row .ht b{color:var(--ink)}
+.transport-block{margin-top:14px;background:linear-gradient(160deg,rgba(44,74,110,.07),rgba(44,74,110,.02));border:1px solid rgba(44,74,110,.2);border-radius:14px;padding:13px 16px}
+.transport-block .th{font-family:"Shippori Mincho";font-weight:700;font-size:.85rem;color:var(--blue);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.transport-block ul{padding-left:18px;margin:0}
+.transport-block li{font-size:.85rem;color:var(--soft);margin:5px 0}
+.transport-block li b{color:var(--ink)}
 footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;color:var(--muted);font-size:.83rem}
 .seal{font-family:"Shippori Mincho";color:var(--red);font-size:1.5rem;display:inline-block;
   border:2px solid var(--red);border-radius:11px;padding:5px 11px;margin-bottom:10px}
@@ -265,6 +282,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <button class="tb" data-v="cult">⛩️ Cultura</button>
     <button class="tb" data-v="templi">🏯 Templi</button>
     <button class="tb" data-v="quartieri">🏘 Quartieri</button>
+    <button class="tb" data-v="hotel">🏨 Hotel</button>
     <button class="tb" data-v="secret">🧊 Segreti</button>
     <button class="tb" data-v="ricorda">📌 Ricorda</button>
     <button class="tb" data-v="cambio">💱 Cambio</button>
@@ -397,6 +415,14 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <p class="pg-sub">Prenotazioni, valigia e cose da fare. Le spunte si salvano su questo dispositivo.</p>
   <div class="prog-wrap"><div class="ptop"><b>Pronti a partire!</b><span id="cl-n">0 / 0</span></div><div class="bar"><i id="cl-b"></i></div></div>
   <div class="grid g2"><div class="cl" id="cl-bk"></div><div class="cl" id="cl-pk"></div></div>
+</section>
+
+<!-- HOTEL -->
+<section class="view" id="hotel">
+  <div class="eyebrow">Dove dormiamo</div>
+  <h2 class="pg-title">🏨 Hotel &amp; Trasporti</h2>
+  <p class="pg-sub">Tutti gli alloggi con date, indirizzi e come arrivarci. Per ogni cambio di hotel c'è il dettaglio del trasporto.</p>
+  <div class="grid" id="hotelList"></div>
 </section>
 
 <!-- RICORDA -->
@@ -600,6 +626,172 @@ const QUARTIERI=[
 
 renderFeat('templiList',TEMPLI);
 renderFeat('quartieriList',QUARTIERI);
+
+/* ════════ HOTEL ════════ */
+const HOTELS=[
+ {
+  name:"HUJI Shinjuku House",
+  url:"https://www.booking.com/hotel/jp/huji-shinjuku-house.it.html",
+  grad:"linear-gradient(135deg,#1e3450,#2c4a6e)",
+  bk:"東",
+  checkin:"Sab 4 Lug · dalle 15:00",
+  checkout:"Sab 11 Lug · entro 09:00–10:00",
+  nights:"7 notti",
+  addr:"11-15 Sumiyoshichō, Shinjuku City, Tokyo 162-0065",
+  maps:"HUJI Shinjuku House Tokyo",
+  notes:[
+   {i:"📍",t:"<b>Zona:</b> Shinjuku — cuore di Tokyo, ottima posizione per muoversi ovunque con la metro."},
+   {i:"🧳",t:"<b>Check-in:</b> la struttura manda le istruzioni via email. Leggete prima di atterrare."},
+   {i:"⏰",t:"<b>Check-out sabato 11:</b> lasciate i bagagli in reception e andate a esplorare — il treno per Kyoto è il pomeriggio."}
+  ],
+  transport:{
+   title:"🚅 Come arrivarci da Haneda (4 Lug)",
+   li:["<b>Opzione consigliata:</b> Keikyu Line da Haneda Terminal 3 → Shinjuku (cambio a Sengakuji o Shinagawa). ~50 min, ~¥640. <b>IC card, tap & go.</b>",
+       "Oppure: Tokyo Monorail → Hamamatsucho → JR Yamanote → Shinjuku. ~45 min, ~¥650. Sempre IC card.",
+       "Taxi da Haneda: ~¥6.000–8.000. Solo se avete bagagli enormi e siete distrutti.",
+       "In stazione cercate i cartelli Keikyu (rossi) — la linea parte dal sotterraneo di Haneda T3."]
+  },
+  next:{
+   title:"🚅 Shinjuku → Kyoto (11 Lug, Shinkansen)",
+   li:["<b>Treno:</b> Nozomi, Tokyo Station → Kyoto. ~2h15, ~¥14.370 a testa.",
+       "<b>Come comprare:</b> app <b>Smart-EX</b> (scaricatela prima, registrate la carta). Il biglietto è sul telefono.",
+       "Da Shinjuku a Tokyo Station: JR Chuo o Sobu Line, ~12 min, IC card.",
+       "<b>Sedetevi a destra</b> (lato sud, finestrino D) per vedere il Fuji dopo Shin-Yokohama.",
+       "Prenotate il posto appena potete — sabato d'estate i treni sono pieni.",
+       "<b>NON basta la Suica</b> per lo Shinkansen. Biglietto separato obbligatorio."]
+  }
+ },
+ {
+  name:"Miyako City Kintetsu Kyoto Station",
+  url:"https://www.booking.com/hotel/jp/hoterujin-tie-jing-du-yi-kyoto.it.html",
+  grad:"linear-gradient(135deg,#6a2828,#a04040)",
+  bk:"京",
+  checkin:"Sab 11 Lug · dalle 15:00",
+  checkout:"Dom 12 Lug · entro 11:00",
+  nights:"1 notte",
+  addr:"Shimogyo-ku Higashishiokoji Kamadonocho 1-9, Kyoto",
+  maps:"Miyako City Kintetsu Kyoto Station Hotel",
+  notes:[
+   {i:"📍",t:"<b>Zona:</b> attaccato alla stazione di Kyoto. Comodissimo per arrivare col Nozomi e per spedire i bagagli il giorno dopo."},
+   {i:"🧳",t:"<b>12 luglio mattina:</b> prima di partire per Arashiyama, chiedete in reception di spedire le valigie grandi al prossimo hotel (Smart Place Inn) con il takkyubin Yamato. Costo ~¥1.500–2.500 a valigia, arrivano il 13."},
+   {i:"📞",t:"<b>Da fare prima:</b> contattate lo Smart Place Inn per confermare che ricevono i bagagli il 13 luglio."}
+  ],
+  transport:{
+   title:"🚃 Kyoto → Arashiyama (12 Lug mattina)",
+   li:["<b>Opzione 1 — JR Sagano Line (consigliata):</b> Kyoto Station → Saga-Arashiyama. ~15 min, ~¥240. <b>IC card, tap & go.</b> Uscita direttamente vicino al bambù.",
+       "<b>Opzione 2 — Tram Randen:</b> Shijo-Omiya → Arashiyama. ~20 min, ~¥250. IC card. Più pittoresco ma più lento.",
+       "Partite <b>entro le 7:30–8:00</b> per arrivare alla foresta di bambù prima della folla.",
+       "Portate solo uno zaino per la notte — le valigie grandi le avete già spedite."]
+  }
+ },
+ {
+  name:"Ryokan Togetsutei (Arashiyama Onsen)",
+  url:"https://www.booking.com/hotel/jp/kyoto-arashiyama-onsen-ryokan-togetsutei-syuzakaku.it.html",
+  grad:"linear-gradient(135deg,#386030,#6a8840)",
+  bk:"嵐",
+  checkin:"Dom 12 Lug · 16:00–19:00",
+  checkout:"Lun 13 Lug · 07:30–10:00",
+  nights:"1 notte",
+  addr:"Nakaoshitachyou, Arashiyama, Nishikyo-ku, Kyoto",
+  maps:"Togetsutei Ryokan Arashiyama Kyoto",
+  notes:[
+   {i:"🛁",t:"<b>Onsen:</b> lavatevi seduti alla postazione PRIMA di entrare in vasca. No costume. Capelli legati. Se avete tatuaggi chiedete alla reception."},
+   {i:"👘",t:"<b>Yukata:</b> la trovate in camera — indossatela per la cena e per la sera. È normale girarsi nel ryokan in yukata."},
+   {i:"🍽️",t:"<b>Cena kaiseki:</b> inclusa (verificate la prenotazione). Di solito si mangia in camera o in sala dedicata. Orario concordato al check-in."},
+   {i:"⏰",t:"<b>Check-out 07:30–10:00:</b> colazione inclusa, poi si parte per Kyoto con lo zaino."}
+  ],
+  transport:{
+   title:"🚃 Arashiyama → Kyoto (13 Lug)",
+   li:["<b>JR Sagano:</b> Saga-Arashiyama → Kyoto Station. ~15 min, ~¥240. IC card.",
+       "Arrivate a Kyoto Station, poi metro Karasuma o autobus per Shijo-Omiya (Smart Place Inn).",
+       "<b>Check-in Smart Place Inn è dalle 15:00</b> — se arrivate prima lasciate i bagagli (che erano già stati consegnati dal takkyubin) e uscite.",
+       "Giornata 13 luglio: facile e senza programma fisso. Kinkaku-ji o Nijo Castle se avete voglia, oppure riposo."]
+  }
+ },
+ {
+  name:"Smart Place Inn Kyoto Shijo Omiya Station",
+  url:"https://www.booking.com/hotel/jp/grand-japaning-central-da-gong.it.html",
+  grad:"linear-gradient(135deg,#7a2f2a,#b0503f)",
+  bk:"都",
+  checkin:"Lun 13 Lug · dalle 15:00",
+  checkout:"Ven 17 Lug · 06:00–11:00",
+  nights:"4 notti",
+  addr:"Nakagyo-ku, Fujiokacho 494, Kyoto",
+  maps:"Smart Place Inn Kyoto Shijo Omiya",
+  notes:[
+   {i:"📍",t:"<b>Zona:</b> vicino a Shijo-Omiya — ottima base per Higashiyama, Gion, Nishiki. Metro Karasuma + Hankyu a due passi."},
+   {i:"🧳",t:"<b>I bagagli arrivano il 13:</b> spediti il 12 mattina dal Miyako City con il takkyubin Yamato. Confermate prima con l'hotel che li tengono."},
+   {i:"📅",t:"<b>Base per:</b> Nara (14), Uji + Nintendo Museum (15), Higashiyama + Yoiyama (16), Gion Matsuri parata (17 mattina)."}
+  ],
+  transport:{
+   title:"🦌 Kyoto → Nara day trip (14 Lug) e 🍵 Kyoto → Uji (15 Lug)",
+   li:["<b>Kyoto → Nara:</b> Kintetsu da Kyoto Station → Kintetsu-Nara. ~35 min, ~¥760. <b>IC card, tap & go.</b> Più vicino al parco rispetto a JR.",
+       "Alternativa JR: Kyoto → JR Nara. ~45 min, ~¥720. IC card. Fermata un po' più lontana dal parco.",
+       "Partite <b>entro le 8:00–8:30</b> per Nara — cervi più calmi, meno caldo, meno folla.",
+       "<b>Kyoto → Uji (15 lug):</b> JR Nara Line da Kyoto → Uji. ~18 min, ~¥240. IC card. Poi JR Uji → Ogura (2 min, ~¥150) per il Nintendo Museum.",
+       "Fushimi Inari (15 lug all'alba) è sulla stessa JR Nara Line — scendete a Inari, poi riprendete il treno verso Uji. Tutto IC card."]
+  },
+  next:{
+   title:"🚃 Kyoto → Osaka (17 Lug pomeriggio, dopo la parata)",
+   li:["<b>JR Shinkaisoku:</b> Kyoto Station → Osaka Station. ~28 min, ~¥560. <b>IC card, tap & go.</b> Nessuna prenotazione.",
+       "Oppure <b>Hankyu:</b> Kyoto-Karasuma → Osaka-Umeda. ~40 min, ~¥400. IC card. Più economica, utile se siete già a Shijo.",
+       "Il 17 la parata finisce ~13:00. Pranzo a Kyoto, poi treno per Osaka nel pomeriggio — arrivate per le 16:00 in hotel.",
+       "Dall'hotel Smart Place Inn a Kyoto Station: bus 26 o 207, ~20 min. Oppure Hankyu da Omiya direttamente."]
+  }
+ },
+ {
+  name:"Apartment Namba Daikoku",
+  url:"https://www.booking.com/hotel/jp/apatomentow-k.it.html",
+  grad:"linear-gradient(135deg,#901820,#c03020)",
+  bk:"阪",
+  checkin:"Ven 17 Lug · 16:00–22:00",
+  checkout:"Lun 20 Lug · entro 10:00",
+  nights:"3 notti",
+  addr:"Naniwa-ku, Shikitsunishi 1-1-28, Osaka",
+  maps:"Namba Daikoku Apartment Osaka Naniwa",
+  notes:[
+   {i:"📍",t:"<b>Zona:</b> Naniwa-ku, vicinissimo a Namba e Dotonbori. A piedi per la serata."},
+   {i:"🔑",t:"<b>Check-in:</b> appartamento — concordate l'orario con l'host dopo la prenotazione. Arrivate entro le 22:00."},
+   {i:"📅",t:"<b>Base per:</b> USJ (18), Osaka full day (19), partenza per Haneda (20 mattina)."},
+   {i:"⚠️",t:"<b>Check-out 20 luglio entro le 10:00:</b> lasciate i bagagli in deposito se serve, o portateli alla stazione con locker (Shin-Osaka ha locker 24h)."}
+  ],
+  transport:{
+   title:"🚅 Osaka → Tokyo → Haneda (20 Lug)",
+   li:["<b>Partenza consigliata da Shin-Osaka: entro le 10:00–10:30</b> per il volo delle 16:35.",
+       "<b>Appartamento → Shin-Osaka:</b> metro Midosuji da Namba → Shin-Osaka. ~10 min, ~¥280. IC card.",
+       "<b>Nozomi Shin-Osaka → Tokyo:</b> ~2h27, ~¥14.720. Biglietto su Smart-EX (non basta la Suica).",
+       "<b>Tokyo → Haneda:</b> Tokyo Monorail da Hamamatsucho (~¥500, 18 min) o Keikyu da Shinagawa (~¥300, 12 min). IC card.",
+       "Arrivate ad Haneda ~2h prima del decollo — col margine del treno siete comodi.",
+       "⚠️ Il treno è il <b>20 luglio</b>, non il 21 — il volo è il 20 alle 16:35 da Haneda."]
+  }
+ }
+];
+
+function renderHotels(){
+  const node=document.getElementById('hotelList');
+  HOTELS.forEach(h=>{
+    const rows=h.notes.map(n=>`<div class="hotel-row"><span class="hi">${n.i}</span><span class="ht">${n.t}</span></div>`).join('');
+    const transBlock=(t,label)=>t?`<div class="transport-block"><div class="th">🚃 ${label||t.title}</div><ul>${t.li.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:'';
+    const mapUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(h.maps);
+    node.appendChild(el(`<article class="hotel-card">
+      <div class="hotel-band" style="background:${h.grad}">
+        <div>
+          <h3>${h.name}</h3>
+          <div class="hotel-dates">📅 ${h.checkin} → ${h.checkout} · ${h.nights}</div>
+        </div>
+        <a class="hotel-link" href="${h.url}" target="_blank" rel="noopener">Booking →</a>
+        <span class="hbk">${h.bk}</span>
+      </div>
+      <div class="hotel-body">
+        <div class="hotel-row"><span class="hi">📍</span><span class="ht"><b>Indirizzo:</b> ${h.addr} · <a href="${mapUrl}" target="_blank">Maps</a></span></div>
+        ${rows}
+        ${transBlock(h.transport, h.transport&&h.transport.title)}
+        ${h.next?transBlock(h.next, h.next.title):''}
+      </div>
+    </article>`));
+  });
+}
+renderHotels();
 
 /* ════════ RICORDA ════════ */
 const RICORDA=[

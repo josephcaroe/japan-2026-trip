@@ -1271,7 +1271,8 @@ const DAYS=[
   {t:"Pomeriggio — opzioni a scelta",x:[
     {nm:"Opzione A: Kinkaku-ji (Padiglione d'Oro) + Ryoan-ji",w:["storia","foto","top"],p:{v:"¥500 + ¥600"},m:"Kinkaku-ji",d:"Il padiglione ricoperto d'oro riflesso sul laghetto. Combinatelo con Ryoan-ji (il giardino di pietre più famoso del mondo, ~10 min a piedi). Entrambi a nord-ovest — vicini al rientro da Arashiyama.",an:"Questi due insieme fanno un pomeriggio storico perfetto — vicini, entrambi a nord-ovest."},
     {nm:"Opzione B: Castello di Nijo",w:["storia"],p:{v:"¥1.300"},m:"Nijo Castle Kyoto",d:"Palazzo shogunale del XVII secolo. I corridoi scricchiolano apposta (pavimenti 'dell'usignolo') per segnalare intrusi. Giardino bellissimo.",an:"I corridoi scricchiolano apposta per rivelare intrusi — una delle cose più surreali del Giappone."},
-    {nm:"Opzione C: giornata soft",w:["fresco","food"],d:"Nishiki Market, gelato al matcha, riposo in hotel prima dei giorni intensi che arrivano."}
+    {nm:"Opzione C: Heian Jingu + Sentiero della Filosofia",w:["storia","fresco","foto"],p:{v:"¥600 giardino"},m:"Heian Jingu Kyoto",d:"Il grande torii arancione che sovrasta l'intero quartiere è uno dei simboli di Kyoto. Costruito nel 1895, il giardino Jingu-en (¥600) è bellissimo in estate con fiori di loto e iris. Dal giardino: 10 min a piedi al Sentiero della Filosofia → Ginkaku-ji.",an:"Heian Jingu è spesso saltato dai tour — ma il giardino estivo è uno dei più belli di Kyoto."},
+    {nm:"Opzione D: giornata soft",w:["fresco","food"],d:"Nishiki Market, gelato al matcha, riposo in hotel prima dei giorni intensi che arrivano."}
   ]}
  ],
  tips:["Kinkaku-ji e Ryoan-ji sono entrambi a nord-ovest: comodo rientro da Arashiyama senza tornare in centro.",
@@ -1505,10 +1506,11 @@ const NERD=[
 const CULT=[
  {ic:"🏯",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Castelli &amp; Palazzi",sub:"Storia samurai e shogun",
   p:"L'architettura militare giapponese è tra le più spettacolari al mondo — nessun castello europeo regge il confronto.",
-  li:["<b>Castello di Nijo</b> (Kyoto, ¥1.300): palazzo shogunale del 1603. I corridoi scricchiolano di proposito.",
-      "<b>Castello di Osaka</b> (¥600): 8 piani, museo ricco, parco verde.",
-      "<b>Palazzo Imperiale di Kyoto</b> + giardini: ingresso gratuito.",
-      "<b>Giardini Est del Palazzo Imperiale</b> (Tokyo): gratuito, centrale e bellissimo."]},
+  li:["<b>Castello di Nijo</b> (Kyoto) — ¥1.300 · 8:45–17:00 (chiuso mar). Palazzo shogunale del 1603. I corridoi scricchiolano di proposito per rivelare intrusi ('pavimento dell'usignolo'). Giardino Ninomaru spettacolare.",
+      "<b>Castello di Osaka</b> — ¥600 · 9:00–17:00. 8 piani con museo storico. Il parco circostante è fresco e ottimo per passeggiare.",
+      "<b>Palazzo Imperiale di Kyoto</b> — gratuito · 9:00–17:00. L'antico cuore dell'impero. Giardini immensi.",
+      "<b>Giardini Est del Palazzo Imperiale</b> (Tokyo) — gratuito · 9:00–16:30 (chiuso lun/ven). 5 minuti da Tokyo Station. Fossati, bastioni, silenzio nel centro della città.",
+      "<b>Consiglio pratico:</b> visitateli di mattina presto — castelli e palazzi diventano roventi dopo le 10. Nijo è il più ricco storicamente: non saltarlo."]},
  {ic:"🖼️",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Musei da non perdere",sub:"Climatizzati · ottimi col caldo",
   p:"I musei migliori del percorso — anche utili per la pausa dal caldo di luglio.",
   li:["<b>Tokyo National Museum</b> (¥1.000): armature samurai, katane, arte buddhista. Il meglio.",
@@ -1516,13 +1518,15 @@ const CULT=[
       "<b>Miraikan</b> (Odaiba, ¥630): scienza, robot, spazio. Climatizzato e avvincente.",
       "<b>Kyoto National Museum</b>: arte classica dell'antica capitale.",
       "Il National Museum di Tokyo è storico <i>e</i> visivamente spettacolare — vale anche per chi non è appassionato di musei."]},
- {ic:"⛩️",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Templi &amp; Santuari Top",sub:"Goshuincho in mano",
-  p:"La guida al goshuin — il timbro-sigillo che ogni santuario offre come segno di visita. Comprate il libretto al primo tempio.",
-  li:["<b>Senso-ji</b> (Asakusa) · <b>Meiji Jingu</b> (Harajuku) · <b>Kanda Myojin</b> (Akihabara) — Tokyo.",
-      "<b>Fushimi Inari</b> · <b>Kinkaku-ji</b> · <b>Kiyomizu-dera</b> · <b>Tenryu-ji</b> · <b>Yasaka</b> — Kyoto.",
-      "<b>Todai-ji</b> · <b>Kasuga Taisha</b> — Nara. <b>Byodo-in</b> — Uji.",
-      "Il goshuincho si compra al primo tempio (Senso-ji o Meiji Jingu). Costa ~¥1.500.",
-      "Ogni goshuin è unico: calligrafia a mano + timbro rosso. Si torna a casa con un libro pieno."]},
+ {ic:"⛩️",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Templi &amp; Santuari Must-See",sub:"Goshuincho in mano",
+  p:"La guida completa ai siti religiosi del viaggio — con orari, prezzi e il momento migliore per visitarli.",
+  li:["<b>🗼 TOKYO</b> — <b>Senso-ji</b> (Asakusa, gratis, alba = perfetto) · <b>Meiji Jingu</b> (Harajuku, gratis, 5:00–18:00, bosco fresco) · <b>Kanda Myojin</b> (Akihabara, gratis, amuleti per pc e giochi)",
+      "<b>⛩️ KYOTO</b> — <b>Fushimi Inari</b> (gratis, aperto 24h — vai all'alba) · <b>Kinkaku-ji</b> (¥500, 9:00–17:00) · <b>Kiyomizu-dera</b> (¥500, 6:00–17:30) · <b>Tenryu-ji</b> (¥500, 8:30–17:00, giardino UNESCO) · <b>Ryoan-ji</b> (¥600, 8:00–17:00 — il giardino di rocce più famoso al mondo) · <b>Yasaka</b> (gratis, Gion)",
+      "<b>🏮 KYOTO extra</b> — <b>Heian Jingu</b> (¥600 giardino, 6:00–18:00): il grande torii arancione che sovrasta un intero quartiere. Giardino stile Meiji con laghetto e fiori d'estate. Tra i più belli del viaggio. · <b>Ninna-ji</b> (¥500, vicino a Kinkaku-ji e Ryoan-ji — stesso giro)",
+      "<b>🦌 NARA</b> — <b>Todai-ji</b> (¥800, 7:30–17:00 — Grande Buddha 15 m) · <b>Kasuga Taisha</b> (gratis, 6:30–17:30, 3.000 lanterne nel bosco)",
+      "<b>🍵 UJI</b> — <b>Byodo-in</b> (¥700, 8:30–17:30 — il tempio sulla moneta da ¥10)",
+      "<b>Regola d'oro:</b> visitate TUTTI i grandi siti prima delle 9:00 o dopo le 16:00. Tra le 10 e le 14 sono roventi e affollatissimi.",
+      "Goshuincho: compratelo al Senso-ji (primo tempio del viaggio, ~¥1.500). Ogni timbro è calligrafia a mano — tornate a casa con un libro unico."]},
 ];
 
 /* ════════════════════════════════

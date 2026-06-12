@@ -29,18 +29,38 @@ a{color:var(--red2);text-decoration:none}
 /* ── HEADER ── */
 header{position:sticky;top:0;z-index:80;backdrop-filter:blur(14px) saturate(180%);
   background:rgba(245,237,224,.88);border-bottom:1px solid var(--line)}
-.hd{max-width:1100px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hd{max-width:1100px;margin:0 auto;padding:10px 22px;display:flex;align-items:center;gap:14px}
 .logo{display:flex;align-items:center;gap:10px;margin-right:auto;text-decoration:none}
 .logo-jp{font-family:"Shippori Mincho";font-size:1.65rem;font-weight:800;color:var(--red);line-height:1}
 .logo-txt{line-height:1.1}
 .logo-txt strong{font-family:"Shippori Mincho";font-size:1rem;display:block;color:var(--ink)}
 .logo-txt small{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
-.nav{display:flex;gap:3px;overflow-x:auto;scrollbar-width:none}
-.nav::-webkit-scrollbar{display:none}
-.tb{border:0;background:none;cursor:pointer;font-family:"Manrope";font-weight:700;font-size:.8rem;
-  padding:7px 13px;border-radius:999px;color:var(--soft);letter-spacing:.3px;transition:.15s;white-space:nowrap}
-.tb:hover{background:rgba(44,74,110,.09);color:var(--ink)}
-.tb.on{background:var(--blue);color:#f5ede0}
+.burger{border:0;background:none;cursor:pointer;width:40px;height:40px;border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;flex:0 0 auto;transition:.15s}
+.burger:hover{background:rgba(44,74,110,.09)}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* sidebar */
+.overlay{position:fixed;inset:0;background:rgba(20,24,40,.45);z-index:89;opacity:0;pointer-events:none;transition:opacity .25s}
+.overlay.show{opacity:1;pointer-events:all}
+.sidebar{position:fixed;top:0;left:-290px;bottom:0;width:270px;background:var(--card);
+  border-right:1px solid var(--line);z-index:90;transition:left .28s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;display:flex;flex-direction:column;box-shadow:4px 0 30px rgba(20,24,40,.12)}
+.sidebar.open{left:0}
+.sb-head{padding:20px 20px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.sb-head .kanji{font-family:"Shippori Mincho";font-size:1.4rem;font-weight:800;color:var(--red)}
+.sb-head strong{font-family:"Shippori Mincho";font-size:.95rem}
+.sb-head small{font-size:.6rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);display:block}
+.sb-group{padding:10px 12px 2px;font-size:.63rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--muted);font-weight:700}
+.sb-item{display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:12px;margin:1px 8px;
+  cursor:pointer;font-size:.88rem;font-weight:600;color:var(--soft);border:0;background:none;
+  width:calc(100% - 16px);text-align:left;transition:.14s;font-family:"Manrope"}
+.sb-item:hover{background:rgba(44,74,110,.08);color:var(--ink)}
+.sb-item.on{background:var(--blue);color:#f5ede0}
+.sb-item .ic{font-size:1rem;width:22px;text-align:center;flex:0 0 auto}
 
 /* ── VIEWS ── */
 .view{display:none;padding:30px 0 72px;animation:up .45s ease both}
@@ -286,32 +306,44 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 </head>
 <body>
 
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+<nav class="sidebar" id="sidebar">
+  <div class="sb-head">
+    <span class="kanji">旅</span>
+    <div><strong>Giappone 2026</strong><small>Joseph &amp; Angelo</small></div>
+  </div>
+  <div class="sb-group">Il viaggio</div>
+  <button class="sb-item on" data-v="home"><span class="ic">🏠</span>Home</button>
+  <button class="sb-item" data-v="days"><span class="ic">📅</span>Itinerario</button>
+  <button class="sb-item" data-v="hotels"><span class="ic">🏨</span>Hotel</button>
+  <div class="sb-group">Destinazioni</div>
+  <button class="sb-item" data-v="cities"><span class="ic">🗺</span>Città</button>
+  <button class="sb-item" data-v="quartieri"><span class="ic">🏘</span>Quartieri</button>
+  <button class="sb-item" data-v="templi"><span class="ic">⛩️</span>Templi</button>
+  <button class="sb-item" data-v="secret"><span class="ic">🧊</span>Segreti</button>
+  <div class="sb-group">Da fare</div>
+  <button class="sb-item" data-v="exp"><span class="ic">✨</span>Esperienze</button>
+  <button class="sb-item" data-v="nerd"><span class="ic">🎮</span>Nerd</button>
+  <button class="sb-item" data-v="cult"><span class="ic">⛩️</span>Cultura</button>
+  <div class="sb-group">Utile</div>
+  <button class="sb-item" data-v="ricorda"><span class="ic">📌</span>Ricorda</button>
+  <button class="sb-item" data-v="prat"><span class="ic">🎒</span>Pratica</button>
+  <button class="sb-item" data-v="cambio"><span class="ic">💱</span>Cambio €/¥</button>
+  <button class="sb-item" data-v="check"><span class="ic">✓</span>Checklist</button>
+</nav>
+
 <header>
 <div class="hd">
-  <a class="logo" href="#" onclick="go('home');return false">
+  <button class="burger" id="burger" onclick="toggleSidebar()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="logo" href="#" onclick="go('home');closeSidebar();return false">
     <span class="logo-jp">旅</span>
     <span class="logo-txt">
-      <strong>Joseph &amp; Angelo 🇯🇵</strong>
-      <small>Giappone Luglio 2026</small>
+      <strong>Giappone 2026</strong>
+      <small>Joseph &amp; Angelo</small>
     </span>
   </a>
-  <nav class="nav" id="nav">
-    <button class="tb on" data-v="home">🏠 Home</button>
-    <button class="tb" data-v="days">📅 Giorni</button>
-    <button class="tb" data-v="cities">🗺 Città</button>
-    <button class="tb" data-v="exp">✨ Esperienze</button>
-    <button class="tb" data-v="nerd">🎮 Nerd</button>
-    <button class="tb" data-v="cult">⛩️ Cultura</button>
-    <button class="tb" data-v="templi">🏯 Templi</button>
-    <button class="tb" data-v="quartieri">🏘 Quartieri</button>
-    <button class="tb" data-v="hotel">🏨 Hotel</button>
-    <button class="tb" data-v="secret">🧊 Segreti</button>
-    <button class="tb" data-v="ricorda">📌 Ricorda</button>
-    <button class="tb" data-v="cambio">💱 Cambio</button>
-    <button class="tb" data-v="hotels">🏨 Hotel</button>
-    <button class="tb" data-v="prat">🎒 Pratica</button>
-    <button class="tb" data-v="check">✓ Lista</button>
-  </nav>
 </div>
 </header>
 
@@ -448,13 +480,6 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="grid g2"><div class="cl" id="cl-bk"></div><div class="cl" id="cl-pk"></div></div>
 </section>
 
-<!-- HOTEL -->
-<section class="view" id="hotel">
-  <div class="eyebrow">Dove dormiamo</div>
-  <h2 class="pg-title">🏨 Hotel &amp; Trasporti</h2>
-  <p class="pg-sub">Tutti gli alloggi con date, indirizzi e come arrivarci. Per ogni cambio di hotel c'è il dettaglio del trasporto.</p>
-  <div class="grid" id="hotelList"></div>
-</section>
 
 <!-- RICORDA -->
 <section class="view" id="ricorda">
@@ -545,12 +570,26 @@ let FX_RATE = 165;
 function M(q){ return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q); }
 function el(h){ const t=document.createElement('template'); t.innerHTML=h.trim(); return t.content.firstChild; }
 function go(v){
-  document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  document.querySelectorAll('.sb-item').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id===v));
   window.scrollTo({top:0,behavior:'smooth'});
 }
-document.getElementById('nav').addEventListener('click',e=>{
-  const b=e.target.closest('.tb'); if(b) go(b.dataset.v);
+function toggleSidebar(){
+  const s=document.getElementById('sidebar');
+  const o=document.getElementById('overlay');
+  const b=document.getElementById('burger');
+  const open=s.classList.toggle('open');
+  o.classList.toggle('show',open);
+  b.classList.toggle('open',open);
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('burger').classList.remove('open');
+}
+document.getElementById('sidebar').addEventListener('click',e=>{
+  const b=e.target.closest('.sb-item'); if(!b) return;
+  go(b.dataset.v); closeSidebar();
 });
 
 /* ── LIVE FX ── */
@@ -825,135 +864,6 @@ function renderHotels(){
 renderHotels();
 
 /* ════════ HOTELS ════════ */
-const HOTELS=[
- {
-  name:"HUJI Shinjuku House",
-  city:"Tokyo",
-  icon:"東",
-  grad:"linear-gradient(135deg,#1e3450,#2c4a6e)",
-  checkin:"Sab 4 Lug · dalle 15:00",
-  checkout:"Sab 11 Lug · entro 09:00–10:00",
-  nights:"7 notti",
-  address:"11-15 Sumiyoshichō, Shinjuku City, Tokyo 162-0065",
-  booking:"https://www.booking.com/hotel/jp/huji-shinjuku-house.it.html",
-  maps:"https://www.google.com/maps/search/?api=1&query=11-15+Sumiyoshicho+Shinjuku+City+Tokyo",
-  desc:"Base per tutta la settimana tokyota. Shinjuku è il nodo di trasporti perfetto: metro, JR, Shinkansen e bus tutto a portata di mano.",
-  transport:[
-   "<b>Dall'aeroporto di Haneda:</b> Keikyu Line diretta fino a Shinjuku (~50 min, ~¥640) oppure Tokyo Monorail → Hamamatsucho → JR Yamanote fino a Shinjuku (~40 min, ~¥620). IC card, tap & go.",
-   "<b>Partenza per Kyoto (11 lug):</b> da Shinjuku prendete la JR Chuo/Sobu fino a Tokyo Station (~30 min, IC card), poi Nozomi da Tokyo Station. Oppure partite direttamente da Shinjuku Station con lo Shinkansen (pochi Nozomi partono da Shinagawa — verificate su Smart-EX).",
-   "<b>Check-out alle 09:00:</b> lasciate i bagagli in deposito se il Shinkansen è più tardi."
-  ]
- },
- {
-  name:"Miyako City Kintetsu Kyoto Station",
-  city:"Kyoto — 1 notte",
-  icon:"京",
-  grad:"linear-gradient(135deg,#6a2828,#a04040)",
-  checkin:"Sab 11 Lug · dalle 15:00",
-  checkout:"Dom 12 Lug · entro 11:00",
-  nights:"1 notte",
-  address:"Shimogyo-ku, Higashishiokoji Kamadonocho 1-9, Kyoto",
-  booking:"https://www.booking.com/hotel/jp/hoterujin-tie-jing-du-yi-kyoto.it.html",
-  maps:"https://www.google.com/maps/search/?api=1&query=Miyako+City+Kintetsu+Kyoto+Station",
-  desc:"Attaccato alla stazione di Kyoto — comodissimo per il giorno di arrivo e per spedire i bagagli la mattina dopo. Una notte sola, poi si va ad Arashiyama.",
-  transport:[
-   "<b>Arrivo da Tokyo (Shinkansen):</b> scendete a Kyoto Station, l'hotel è nell'edificio collegato alla stazione (lato Kintetsu). A piedi, 3 minuti.",
-   "<b>Mattina del 12 — TAKKYUBIN:</b> prima di partire, portate le valigie grandi alla reception e chiedete di spedirle con Yamato Takkyubin allo Smart Place Inn Kyoto Shijo Omiya Station (arrivo 13 lug). Costo ~¥1.500–2.500 a valigia. Confermate con lo Smart Place Inn via email che le ricevono.",
-   "<b>Partenza per Arashiyama (12 lug mattina):</b> da Kyoto Station binario 33–34, JR Sagano Line → Saga-Arashiyama. ~15 min, ~¥240. IC card, tap & go. Oppure tram Randen da Shijo-Omiya (ma da qui non siete vicini)."
-  ]
- },
- {
-  name:"Ryokan Togetsutei — Arashiyama Onsen",
-  city:"Arashiyama — 1 notte",
-  icon:"嵐",
-  grad:"linear-gradient(135deg,#386030,#6a8840)",
-  checkin:"Dom 12 Lug · 16:00–19:00",
-  checkout:"Lun 13 Lug · 07:30–10:00",
-  nights:"1 notte + onsen",
-  address:"Nakaoshitachyou, Arashiyama, Nishikyo-ku, Kyoto",
-  booking:"https://www.booking.com/hotel/jp/kyoto-arashiyama-onsen-ryokan-togetsutei-syuzakaku.it.html",
-  maps:"https://www.google.com/maps/search/?api=1&query=Ryokan+Togetsutei+Arashiyama+Kyoto",
-  desc:"La notte più bella del viaggio. Yukata, kaiseki, onsen naturale. Arrivate con solo uno zaino — le valigie sono già in viaggio verso il prossimo hotel.",
-  transport:[
-   "<b>Da Kyoto Station (12 lug):</b> JR Sagano Line da binario 33–34 → Saga-Arashiyama (~15 min, ~¥240, IC card). Dal ryokan probabilmente mandano indicazioni via email — controllatele.",
-   "<b>Check-in 16:00–19:00:</b> mattina libera per la foresta di bambù e Tenryu-ji, poi check-in nel pomeriggio.",
-   "<b>Ritorno a Kyoto (13 lug):</b> JR Sagano da Saga-Arashiyama → Kyoto Station (~15 min, IC card). Oppure tram Randen fino a Shijo-Omiya se volete scendere vicino allo Smart Place Inn (la fermata finale è Shijo-Omiya, stessa area dell'hotel)."
-  ]
- },
- {
-  name:"Smart Place Inn Kyoto Shijo Omiya",
-  city:"Kyoto — 4 notti",
-  icon:"京",
-  grad:"linear-gradient(135deg,#7a2f2a,#b0503f)",
-  checkin:"Lun 13 Lug · dalle 15:00",
-  checkout:"Ven 17 Lug · 06:00–11:00",
-  nights:"4 notti",
-  address:"Nakagyo-ku, Fujiokacho 494, Kyoto",
-  booking:"https://www.booking.com/hotel/jp/grand-japaning-central-da-gong.it.html",
-  maps:"https://www.google.com/maps/search/?api=1&query=Smart+Place+Inn+Kyoto+Shijo+Omiya+Station",
-  desc:"Base per il cuore di Kyoto: Gion Matsuri, Higashiyama, Nara, Fushimi Inari e Nintendo Museum. Vicino alla fermata Shijo-Omiya (tram Randen e bus). Le valigie arrivano qui il 13 grazie al takkyubin.",
-  transport:[
-   "<b>Arrivo (13 lug da Arashiyama):</b> tram Randen fino a Shijo-Omiya (fermata finale, ~20 min, ~¥250) oppure JR Sagano → Kyoto Station poi bus/metro verso Shijo-Omiya. L'hotel è vicinissimo alla fermata.",
-   "<b>Per Nara (14 lug day trip):</b> da Shijo-Omiya prendete il bus o metro fino a Kyoto Station, poi Kintetsu Line → Kintetsu-Nara (~35 min, ~¥760, IC card). La Kintetsu è più vicina al parco dei cervi rispetto a JR Nara.",
-   "<b>Per Uji/Nintendo Museum (15 lug):</b> da Kyoto Station, JR Nara Line → Uji (~18 min, ~¥240) poi JR → Ogura (2 min). IC card, tutto tap & go.",
-   "<b>Partenza per Osaka (17 lug pomeriggio):</b> dopo la parata di Gion, da Kyoto Station JR Shinkaisoku → Osaka (~28 min, ~¥560, IC card). Oppure Hankyu da Kawaramachi → Osaka Umeda (~40 min, ~¥400). Arrivate all'Apartment Namba Daikoku a Naniwa-ku: da Osaka Station prendete metro Midosuji → Namba, poi a piedi."
-  ]
- },
- {
-  name:"Apartment Namba Daikoku",
-  city:"Osaka — 3 notti",
-  icon:"阪",
-  grad:"linear-gradient(135deg,#901820,#c03020)",
-  checkin:"Ven 17 Lug · 16:00–22:00",
-  checkout:"Lun 20 Lug · entro 10:00",
-  nights:"3 notti",
-  address:"Naniwa-ku, Shikitsunishi 1-1-28, Osaka",
-  booking:"https://www.booking.com/hotel/jp/apatomentow-k.it.html",
-  maps:"https://www.google.com/maps/search/?api=1&query=Naniwa-ku+Shikitsunishi+1-1-28+Osaka",
-  desc:"Appartamento a Namba — il cuore di Osaka. Dotonbori è a piedi, USJ è raggiungibile in metro, e il check-out alle 10:00 del 20 vi dà tutto il tempo per prendere il Nozomi delle 10:30.",
-  transport:[
-   "<b>Arrivo da Kyoto (17 lug):</b> JR Shinkaisoku Kyoto → Osaka (~28 min, IC card) → scendete a Osaka o Namba. Da Namba Station l'appartamento è nel quartiere Naniwa-ku, verificate l'indirizzo preciso su Google Maps.",
-   "<b>Per USJ (18 lug):</b> metro o JR fino a Nishikujo, poi JR Yumesaki Line → Universal City (~20 min totali, ~¥380, IC card).",
-   "<b>Osaka in giro:</b> metro Midosuji è la linea principale. IC card ovunque.",
-   "<b>Partenza per Tokyo (20 lug mattina):</b> check-out entro le 10:00. Metro fino a Shin-Osaka Station (metro Midosuji direzione nord, ~15 min, IC card). Nozomi da Shin-Osaka → Tokyo entro le 10:30 (~¥14.720, Smart-EX). Arrivate a Tokyo ~13:00, poi Keikyu/Monorail verso Haneda per il volo delle 16:35."
-  ]
- }
-];
-
-/* render hotels */
-const hotelList=document.getElementById('hotelList');
-HOTELS.forEach(h=>{
-  const tli=h.transport.map(t=>`<li>${t}</li>`).join('');
-  hotelList.appendChild(el(`<article class="hotel">
-    <div class="hotel-band" style="background:${h.grad}">
-      <span class="hbg">${h.icon}</span>
-      <h3>${h.name}</h3>
-      <div class="hotel-meta">
-        <span class="hchip">📍 ${h.city}</span>
-        <span class="hchip">🌙 ${h.nights}</span>
-      </div>
-    </div>
-    <div class="hotel-body">
-      <div class="hrow">
-        <div class="hcol"><div class="hl">Check-in</div><div class="hv">${h.checkin}</div></div>
-        <div class="hcol"><div class="hl">Check-out</div><div class="hv">${h.checkout}</div></div>
-      </div>
-      <div class="hrow">
-        <div class="hcol"><div class="hl">Indirizzo</div><div class="hv">${h.address}</div></div>
-      </div>
-      <div class="hdesc">${h.desc}</div>
-      <div class="hlinks">
-        <a class="hlink primary" href="${h.booking}" target="_blank" rel="noopener">📋 Prenotazione</a>
-        <a class="hlink" href="${h.maps}" target="_blank" rel="noopener">📍 Google Maps</a>
-      </div>
-      <div class="htransport">
-        <div class="htt">🚆 Come arrivare e come ripartire</div>
-        <ul>${tli}</ul>
-      </div>
-    </div>
-  </article>`));
-});
-
 /* ════════ RICORDA ════════ */
 const RICORDA=[
  {ic:"🚇",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Treni e metro",sub:"Come funziona davvero",

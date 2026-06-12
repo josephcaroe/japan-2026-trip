@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Joseph &amp; Angelo in Giappone 🇯🇵</title>
+<title>Giappone 2026 🇯🇵</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,15 +35,16 @@ header{position:sticky;top:0;z-index:80;backdrop-filter:blur(14px) saturate(180%
 .logo-txt{line-height:1.1}
 .logo-txt strong{font-family:"Shippori Mincho";font-size:1rem;display:block;color:var(--ink)}
 .logo-txt small{font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
-.burger{border:1.5px solid var(--line);background:var(--card);cursor:pointer;height:38px;border-radius:10px;
-  display:flex;align-items:center;gap:8px;padding:0 12px;transition:.15s;box-shadow:var(--shadow)}
+.burger{border:1.5px solid var(--line);background:var(--card);cursor:pointer;
+  width:40px;height:40px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:.15s}
 .burger:hover{background:var(--paper2);border-color:var(--blue)}
-.burger-lines{display:flex;flex-direction:column;gap:4px}
+.burger-lines{display:flex;flex-direction:column;gap:5px;align-items:center}
 .burger span{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
-.burger .menu-label{font-family:"Manrope";font-size:.78rem;font-weight:700;color:var(--ink)}
-.burger.open .burger-lines span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.burger.open .burger-lines span:nth-child(2){opacity:0;transform:scaleX(0)}
-.burger.open .burger-lines span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.burger .menu-label{display:none}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 /* sidebar */
 .overlay{position:fixed;inset:0;background:rgba(20,24,40,.45);z-index:89;opacity:0;pointer-events:none;transition:opacity .25s}
 .overlay.show{opacity:1;pointer-events:all}
@@ -275,12 +276,120 @@ header{position:sticky;top:0;z-index:80;backdrop-filter:blur(14px) saturate(180%
 footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;color:var(--muted);font-size:.83rem}
 .seal{font-family:"Shippori Mincho";color:var(--red);font-size:1.5rem;display:inline-block;
   border:2px solid var(--red);border-radius:11px;padding:5px 11px;margin-bottom:10px}
-@media(max-width:640px){
-  .hero{padding:36px 22px}
-  .hero-sun{width:60px;height:60px;top:22px;right:22px}
+@media(max-width:768px){
+  .g2,.g3{grid-template-columns:1fr}
   .flights{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  /* Layout */
+  .wrap{padding:0 13px}
+  .view{padding:20px 0 90px}
+
+  /* Header */
+  .hd{gap:6px;padding:8px 13px}
+  .logo-jp{font-size:1.35rem}
+  .logo-txt strong{font-size:.88rem}
+  .logo-txt small{display:none}
+  .burger{height:36px;padding:0 10px;gap:6px}
+  .burger .menu-label{font-size:.72rem}
+
+  /* Hero */
+  .hero{padding:24px 16px 20px;border-radius:20px}
+  .hero-sun{width:48px;height:48px;top:16px;right:16px}
+  .hero h1{font-size:clamp(1.7rem,7.5vw,2.4rem)}
+  .hero .sub{font-size:.86rem}
+  .hero .dates{font-size:.78rem;padding:7px 13px;gap:7px}
+
+  /* Countdown */
+  .cd{gap:6px;margin-top:16px}
+  .cdb{min-width:52px;padding:8px 8px;border-radius:12px}
+  .cdb b{font-size:1.3rem}
+  .cdb s{font-size:.52rem;letter-spacing:2px}
+
+  /* Route */
+  .route{gap:4px;margin:18px 0 4px}
+  .stop{font-size:.74rem;padding:5px 10px}
+  .arr{font-size:.8rem}
+
+  /* Facts */
+  .facts{grid-template-columns:repeat(2,1fr);gap:9px;margin:16px 0}
+  .fact{padding:13px}
+  .fact b{font-size:1.6rem}
+
+  /* Flights */
+  .flights{grid-template-columns:1fr;gap:10px}
+  .fl{padding:13px 15px}
+
+  /* FX converter */
+  .fx-card{padding:16px 15px}
+  .fx-rate{font-size:1.9rem}
+  .fx-conv{flex-wrap:wrap;gap:8px;margin-top:13px}
+  .fx-inp{width:100%;max-width:none}
+  .fx-eq{display:none}
+  .fx-out{font-size:1.2rem;width:100%;padding:8px 0}
+
+  /* Price table */
+  .ptable{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ptable thead,.ptable tbody,.ptable tr{display:table;width:100%;table-layout:fixed}
+  .ptable{min-width:340px}
+
+  /* Grids */
+  .g2,.g3{grid-template-columns:1fr}
+  .grid{gap:11px}
+
+  /* Day cards */
+  .day-hd{padding:12px 13px;gap:10px}
+  .day-cal{width:50px;border-radius:11px;padding:8px 4px}
+  .day-cal .dc-d{font-size:1.3rem}
+  .day-cal .dc-m{font-size:.58rem}
+  .day-info h3{font-size:1.05rem}
+  .day-info .darea{font-size:.76rem}
+  .day-in{padding:2px 13px 16px}
+  .it{padding:9px 11px}
+  .it .nm{font-size:.88rem}
+
+  /* Hotel band */
+  .hotel-band{flex-wrap:wrap;gap:8px}
+  .hotel-link{align-self:flex-start;font-size:.7rem;padding:4px 10px}
+  .hotel-body{padding:12px 15px 16px}
+
+  /* Feat cards */
+  .feat-hd{padding:14px 15px;gap:10px}
+  .feat-ic{width:42px;height:42px;font-size:1.25rem}
+  .feat-bd{padding:12px 15px 15px}
+
+  /* Ess cards */
+  .ess{padding:14px}
+
+  /* Checklist */
+  .ci{padding:10px 11px}
+  .ci input{width:20px;height:20px}
+
+  /* City cards */
+  .city-band{padding:16px 16px}
+  .city-body{padding:12px 16px 16px}
+
+  /* Tips */
+  .tips{padding:11px 13px}
+
+  /* Sidebar */
+  .sb-item{padding:10px 13px;font-size:.84rem}
+
+  /* Misc */
   .price{margin-left:0}
-  .hd{gap:8px}
+  .pg-title{font-size:clamp(1.4rem,5.5vw,1.9rem)}
+  .pg-sub{font-size:.88rem;margin-bottom:18px}
+  .legend{gap:5px;margin-bottom:14px}
+  .lc{font-size:.72rem;padding:4px 10px}
+  .note{padding:11px 14px;font-size:.84rem;border-radius:12px}
+
+  /* Transport blocks */
+  .transport-block{padding:11px 13px}
+  .htransport{padding:10px 12px}
+
+  /* Footer */
+  footer{padding:24px 0 40px}
 }
 /* ── HOTEL CARDS ── */
 .hotel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
@@ -312,7 +421,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <nav class="sidebar" id="sidebar">
   <div class="sb-head">
     <span class="kanji">旅</span>
-    <div><strong>Giappone 2026</strong><small>Joseph &amp; Angelo</small></div>
+    <div><strong>Giappone 2026</strong><small>Luglio 2026</small></div>
   </div>
   <div class="sb-group">Il viaggio</div>
   <button class="sb-item on" data-v="home"><span class="ic">🏠</span>Home</button>
@@ -340,7 +449,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <span class="logo-jp">旅</span>
     <span class="logo-txt">
       <strong>Giappone 2026</strong>
-      <small>Joseph &amp; Angelo</small>
+      <small>Luglio 2026</small>
     </span>
   </a>
   <button class="burger" id="burger" onclick="toggleSidebar()" aria-label="Menu">
@@ -385,9 +494,9 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   </div>
 
   <div class="legend" style="margin-top:22px">
-    <span class="lc">🎮 Joseph</span>
-    <span class="lc">⛩️ Angelo</span>
-    <span class="lc">❤️ Entrambi</span>
+    <span class="lc">🎮 Nerd</span>
+    <span class="lc">⛩️ Storia</span>
+    <span class="lc">❤️ Top</span>
     <span class="lc">🍜 Cibo</span>
     <span class="lc">🛍️ Shopping</span>
     <span class="lc">🧊 Fresco</span>
@@ -438,7 +547,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="nerd">
   <div class="eyebrow">Modalità Joseph: ATTIVATA</div>
   <h2 class="pg-title">🎮 Pokémon, Retrogaming &amp; Cose Nerd</h2>
-  <p class="pg-sub">Joseph lo sa già tutto. Angelo si accolla e poi non vuole andare via.</p>
+  <p class="pg-sub">Akihabara, Nakano Broadway, Pokémon Center, Nintendo Museum. La guida completa alla parte nerd del viaggio.</p>
   <div class="grid g2" id="nerdList"></div>
 </section>
 
@@ -446,7 +555,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="cult">
   <div class="eyebrow">Modalità Angelo: ATTIVATA</div>
   <h2 class="pg-title">⛩️ Templi, Castelli, Tè &amp; Cerimonie</h2>
-  <p class="pg-sub">Templi, cerimonie, musei, storia. Angelo nel suo elemento. Joseph fa finta di non emozionarsi.</p>
+  <p class="pg-sub">Templi, cerimonie del tè, musei, castelli shogunali. La parte più ricca di storia del viaggio — niente risulta uguale dopo averla vista dal vivo.</p>
   <div class="grid g2" id="cultList"></div>
 </section>
 
@@ -477,7 +586,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <!-- CHECKLIST -->
 <section class="view" id="check">
   <div class="eyebrow">Prima di partire</div>
-  <h2 class="pg-title">✓ Checklist Joseph &amp; Angelo</h2>
+  <h2 class="pg-title">✓ Checklist di Viaggio</h2>
   <p class="pg-sub">Prenotazioni, valigia e cose da fare. Le spunte si salvano su questo dispositivo.</p>
   <div class="prog-wrap"><div class="ptop"><b>Pronti a partire!</b><span id="cl-n">0 / 0</span></div><div class="bar"><i id="cl-b"></i></div></div>
   <div class="grid g2"><div class="cl" id="cl-bk"></div><div class="cl" id="cl-pk"></div></div>
@@ -560,7 +669,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 
 <footer class="wrap">
   <div class="seal">旅</div>
-  <p>Fatto con amore per Joseph &amp; Angelo ❤️ · いってきます!</p>
+  <p>Giappone 2026 · 3–20 Luglio · いってきます! ✈</p>
   <p style="margin-top:6px;opacity:.75">Apri sul telefono → "Aggiungi a schermata Home" per averlo sempre con voi.</p>
   <p style="margin-top:4px;opacity:.6;font-size:.76rem">Hostabile gratis su GitHub Pages · Netlify · Cloudflare Pages · basta caricare questo file.</p>
 </footer>
@@ -922,7 +1031,7 @@ tick(); setInterval(tick,1000);
 
 /* ── WHO CHIPS ── */
 const W={nerd:"🎮",storia:"⛩️",top:"❤️",food:"🍜",shop:"🛍️",fresco:"🧊",foto:"📷"};
-const WT={nerd:"Joseph ci tiene tantissimo",storia:"Angelo ci tiene tantissimo",top:"Per entrambi, da non perdere",food:"Cibo",shop:"Shopping",fresco:"Fresco/relax",foto:"Foto epica"};
+const WT={nerd:"Da fare per i fan nerd",storia:"Imperdibile per gli amanti della storia",top:"Da non perdere assolutamente",food:"Cibo",shop:"Shopping",fresco:"Fresco/relax",foto:"Foto epica"};
 function whoH(arr){ return arr.length?'<span class="who">'+arr.map(c=>`<span class="wc" title="${WT[c]||c}">${W[c]||c}</span>`).join('')+'</span>':''; }
 function priceH(p){
   if(!p) return '';
@@ -934,8 +1043,8 @@ function priceH(p){
 function itH(it){
   const ml=it.m?`<a class="maplink" href="${M(it.m)}" target="_blank" rel="noopener">📍 Maps</a>`:'';
   const nm=it.m?`<a href="${M(it.m)}" target="_blank" rel="noopener">${it.nm}</a>`:it.nm;
-  const jo=it.jo?`<span class="callout cj">🎮 Joseph: ${it.jo}</span>`:'';
-  const an=it.an?`<span class="callout ca">⛩️ Angelo: ${it.an}</span>`:'';
+  const jo=it.jo?`<span class="callout cj">🎮 ${it.jo}</span>`:'';
+  const an=it.an?`<span class="callout ca">⛩️ ${it.an}</span>`:'';
   return `<div class="it">
     <div class="row"><span class="nm">${nm}</span>${whoH(it.w||[])}${priceH(it.p)}</div>
     ${it.d?`<div class="desc">${it.d}${jo?'<br>'+jo:''}${an?'<br>'+an:''}</div>`:''}
@@ -958,49 +1067,56 @@ const DAYS=[
  tips:["Powerbank e cuffie nel bagaglio a mano — le tasche del sedile non bastano mai.","Caricate le mappe offline (Google Maps → area → Scarica) prima di perdere il WiFi.",
        "Scaricate già: Google Translate (con pacchetto giapponese offline), Google Maps (Tokyo offline).","Joseph, il goshuincho lo compri al primo tempio — non portartelo da casa, in Italia si trovano brutti."]},
 
-{dc:"4",dm:"LUG",dw:"SAB",tag:"Arrivo · Tokyo",title:"Haneda → Shinjuku · Prima notte",area:"Atterraggio 15:05 · base a Shinjuku",
+{dc:"4",dm:"LUG",dw:"SAB",tag:"Arrivo · Tokyo",title:"Haneda → Shinjuku · Prima serata easy",area:"Atterraggio 15:05 · tutto a piedi dall'hotel",
  blocks:[
-  {t:"Pomeriggio (15:05+) — logistica first",x:[
-    {nm:"Welcome Suica",w:[],p:{v:"~¥5.000 da ricaricare"},m:"Haneda Airport Terminal 3",d:"Compra la Welcome Suica all'aeroporto (carta IC prepagata). Funziona su treni, metro, bus, konbini, distributori. Tienila fino all'ultimo giorno."},
-    {nm:"Preleva yen al bancomat 7-Bank / Japan Post",w:[],d:"Revolut e Wise funzionano benissimo. Prendi ¥30.000–50.000 subito: i primi giorni si spende in contanti.",an:"prendi qualche mancia in banconote piccole per il ryokan."},
-    {nm:"Check-in a Shinjuku · lascia i bagagli e respira",w:[],m:"Shinjuku Station",d:"Se l'hotel non fa check-in prima delle 15, lasciate i bagagli e uscite subito."}
+  {t:"Pomeriggio — logistica all'aeroporto",x:[
+    {nm:"Welcome Suica ad Haneda",w:[],p:{v:"~¥5.000 da ricaricare"},m:"Haneda Airport Terminal 3",d:"Subito fuori dal gate, prima di tutto: Suica al chiosco IC Card (o Apple/Google Pay). Funziona su treni, metro, bus, konbini, distributori. Tienila fino all'ultimo giorno."},
+    {nm:"Preleva yen al bancomat 7-Bank / Japan Post",w:[],d:"Revolut e Wise funzionano benissimo. Preleva ¥30.000–50.000 subito: i primi giorni si spende in contanti. I bancomat sono nell'area arrivi e in ogni 7-Eleven."},
+    {nm:"🚃 Haneda → Shinjuku · Keikyu Line",w:[],p:{v:"~¥640 · ~50 min"},m:"Haneda Airport Terminal 3 Station",d:"Keikyu Line da Haneda T3 → Shinjuku (cambio a Sengakuji). IC card, tap & go. Oppure Tokyo Monorail → Hamamatsucho → JR Yamanote → Shinjuku (~¥650, 45 min). <b>Arrivate in hotel, lasciate i bagagli, respirate.</b>"}
   ]},
-  {t:"Sera — prima impressione di Tokyo",x:[
-    {nm:"Tokyo Metropolitan Government Observatory",w:["foto","fresco"],p:"free",m:"Tokyo Metropolitan Government Building",d:"Vista panoramica GRATIS sulla città a 202 m. Spesso si vede anche il Fuji al tramonto. Climatizzato.",jo:"La Tocho è la vista più sottovalutata di Tokyo — tutti vanno allo Skytree, voi risparmiate."},
-    {nm:"Omoide Yokocho (Vicolo dei Ricordi)",w:["food","foto","top"],m:"Omoide Yokocho Shinjuku",d:"Vicoli stretti di bar minuscoli e yakitori al carbone. Fumo, risate, atmosfera Showa anni '50. Uno dei posti più caratteristici di Tokyo.",an:"Perfetto per lui: storico, atmosferico, pazzesco."},
-    {nm:"Kabukicho · la statua di Godzilla",w:["foto","nerd"],m:"Godzilla Head Shinjuku Toho Cinema",d:"Neon a manetta, Godzilla sul tetto del cinema Toho. Camminate senza meta."}
+  {t:"Sera — tutto a piedi dall'hotel · niente metro",x:[
+    {nm:"🚶 Passeggiata verso la Tocho Observatory",w:["foto","fresco"],p:"free",m:"Tokyo Metropolitan Government Building Shinjuku",d:"<b>~15 min a piedi dall'hotel.</b> Vista panoramica GRATIS sulla città a 202 m — si vedono i grattacieli di Shinjuku illuminati e spesso anche il Fuji al tramonto. Climatizzato: ottimo per riprendersi dal volo.",jo:"Vista gratuita e meno affollata dello Skytree — il primo impatto su Tokyo da lassù è memorabile."},
+    {nm:"Omoide Yokocho · yakitori al carbone 🍢",w:["food","foto","top"],m:"Omoide Yokocho Shinjuku",d:"<b>~12 min a piedi dall'hotel</b>, subito a nord di Shinjuku Station. Vicoli stretti di bar minuscoli, fumo di yakitori, atmosfera Showa anni '50. Cena informale e autentica — basta indicare col dito, niente inglese necessario.",an:"Storico, atmosferico, economico — l'unico posto al mondo così."},
+    {nm:"Passeggiata Kabukicho · Godzilla sul tetto",w:["foto","nerd"],m:"Godzilla Head Shinjuku Toho Cinema",d:"<b>~10 min a piedi dall'hotel.</b> Neon a manetta, il Godzilla animatonico sul tetto del cinema Toho, la fontana di Kabukicho. Camminate senza meta — è tutto intorno a voi. Niente da spendere, solo da assorbire."}
   ]}
  ],
- tips:["Non pianificate nulla di serio il primo giorno: sono 12h di volo e il jet-lag arriva.",
-       "I konbini (7-Eleven, Lawson, FamilyMart) sono letteralmente i migliori d'Italia — mangiate lì senza vergogna, h24.",
-       "Il WiFi in metro non esiste: scaricate le mappe offline sul telefono adesso.",
-       "Regola d'oro del Giappone: <b>niente mancia mai</b>. Offendete la gente."]},
+ hotel:{name:"🏨 HUJI Shinjuku House",addr:"11-15 Sumiyoshichō, Shinjuku City, Tokyo 162-0065",note:"Check-in dalle 15:00. Tutto il programma serale è raggiungibile a piedi (10–15 min). Nessuna metro necessaria stasera."},
+ tips:["Questa sera <b>non pianificate nulla di serio</b>: sono 12h di volo + jet-lag + nuovo fuso. Easy è la parola d'ordine.",
+       "L'Omoide Yokocho è a 5 minuti a piedi da Kabukicho — fateli entrambi nella stessa passeggiata.",
+       "I konbini (7-Eleven, Lawson, FamilyMart) sono ovunque e aperti 24h — onigiri, ramen, gelati: perfetti per un secondo giro notturno.",
+       "Regola d'oro: <b>niente mancia mai</b>. In nessun posto, per nessun motivo."]},
 
-{dc:"5",dm:"LUG",dw:"DOM",tag:"Tokyo · Prenotato",title:"Odaiba + teamLab Planets 💧",area:"Baia di Tokyo · slot 20:30",
+{dc:"5",dm:"LUG",dw:"DOM",tag:"Tokyo · Prenotato",title:"Shinjuku · Odaiba · teamLab Planets 💧",area:"Mattina vicino all'hotel · poi la baia · slot 20:30",
+ hotel:{name:"🏨 HUJI Shinjuku House",addr:"Sumiyoshichō, Shinjuku — 7 notti",note:"Base Tokyo fino all'11 luglio."},
  badge:{t:"teamLab 20:30 ✓",c:"bk"},
  blocks:[
-  {t:"Mattina — lato nerd della baia",x:[
-    {nm:"Statua Gundam Unicorn (DiverCity)",w:["nerd","foto"],p:"free",m:"Unicorn Gundam Statue DiverCity Tokyo Plaza",d:"19,7 m di Gundam RX-0 che si trasforma ogni ora. Dentro DiverCity: il Gundam Base (negozio modellini, gunpla, figure).",jo:"Porta borse extra. Seriamente."},
-    {nm:"Miraikan — Museo della Scienza",w:["nerd","fresco"],p:{v:"¥630"},m:"Miraikan National Museum of Emerging Science",d:"Il museo di scienza più bello del Giappone: robot, IA, spazio. Climatizzato e fantastico."}
+  {t:"Mattina — vicino all'hotel (Shinjuku)",x:[
+    {nm:"Shinjuku Gyoen 🌿",w:["fresco","foto","top"],p:{v:"¥500"},m:"Shinjuku Gyoen National Garden",d:"<b>~10 min a piedi dall'hotel.</b> Il giardino nazionale di Shinjuku: 58 ettari tra stile giapponese, francese e inglese. Laghetti, pini, stagni con carpe. Apre alle 9:00. Fresco, tranquillo, bellissimo di mattina — la pausa perfetta prima di una giornata piena. Chiude alle 17:30.",an:"Il giardino più bello di Tokyo, spesso ignorato dai turisti. Luglio: i loti sono in fiore."},
+    {nm:"Takashimaya Times Square (facoltativo)",w:["shop","fresco"],m:"Takashimaya Times Square Shinjuku",d:"<b>~12 min a piedi dall'hotel.</b> Il grande magazzino di Shinjuku — ottimo per vedere la culture dei depachika (piani gastronomici al B1/B2). A/C e ampio."}
   ]},
-  {t:"Pomeriggio — brezza di mare",x:[
-    {nm:"Odaiba Seaside Park",w:["fresco","foto","top"],p:"free",m:"Odaiba Seaside Park",d:"Spiaggia urbana con vista Rainbow Bridge. C'è la (piccola) replica della Statua della Libertà. Brezza di mare = pausa dall'afa.",an:"Perfetto: tramonto, vista, romantico."},
-    {nm:"Aqua City Odaiba · cena anticipata",w:["food","fresco"],m:"Aqua City Odaiba",d:"Centro commerciale con ristoranti e A/C. Mangiate qualcosa di leggero prima di teamLab."}
+  {t:"Mezzogiorno — verso la baia: il percorso scenico",x:[
+    {nm:"🚢 Via Hamarikyu Gardens + water bus per Odaiba",w:["fresco","foto","top"],p:{v:"¥300 giardino + ~¥480 barca"},m:"Hamarikyu Gardens Tokyo",d:"Invece della metro, prendetevi il percorso più bello: Shinjuku → Shimbashi (JR Yamanote, ~20 min, IC card), poi a piedi ai <b>Giardini Hamarikyu</b> (¥300, 10 min a piedi). Giardino storico sull'acqua. Poi il <b>water bus</b> da Hamarikyu → Odaiba Marine Park (~¥480, 25 min di navigazione sulla baia). Vista sul Rainbow Bridge dall'acqua. Molto più bello di qualsiasi metro.",jo:"Il water bus per Odaiba è uno dei trasferimenti più belli di Tokyo — consigliatissimo."}
   ]},
-  {t:"Sera · 20:30 — questo è il motivo per cui siete qui",x:[
-    {nm:"teamLab Planets TOKYO 🌊",w:["top","foto","nerd"],p:"book",m:"teamLab Planets TOKYO",d:"Arte digitale immersiva a piedi nudi. Attraversate l'acqua, entrate nella foresta di fiori, camminate su specchi infiniti. Una delle esperienze più belle del mondo.",jo:"finalmente!",an:"vedrai, ti stupisce davvero."}
+  {t:"Pomeriggio — Odaiba",x:[
+    {nm:"Statua Gundam Unicorn (DiverCity)",w:["nerd","foto"],p:"free",m:"Unicorn Gundam Statue DiverCity Tokyo Plaza",d:"19,7 m di Gundam RX-0 che si trasforma ogni ora. Dentro DiverCity: il Gundam Base (modellini, gunpla, figure).",jo:"Nerd mode ON — portate borse extra."},
+    {nm:"Miraikan — Museo della Scienza",w:["nerd","fresco"],p:{v:"¥630"},m:"Miraikan National Museum of Emerging Science",d:"Il museo di scienza più bello del Giappone: robot ASIMO, modello della Terra in tempo reale, IA, spazio. Climatizzato — ottimo rifugio dal caldo."},
+    {nm:"Odaiba Seaside Park · tramonto",w:["fresco","foto","top"],p:"free",m:"Odaiba Seaside Park",d:"Spiaggia urbana con vista sul Rainbow Bridge e sullo skyline di Tokyo. Brezza di mare, replica della Statua della Libertà. Rilassatevi qui dalle 18:00 al tramonto prima di teamLab.",an:"Vista sul Rainbow Bridge al tramonto — una delle scene più belle di tutta Tokyo."}
+  ]},
+  {t:"Cena e Sera · 20:30",x:[
+    {nm:"Cena leggera ad Aqua City o Venus Fort",w:["food","fresco"],m:"Aqua City Odaiba",d:"Centro commerciale con ristoranti, A/C. Mangiate qualcosa di leggero ~18:30–19:30. Da Odaiba a Toyosu (teamLab): Yurikamome → Shijo-mae, ~10 min."},
+    {nm:"teamLab Planets TOKYO 🌊",w:["top","foto","nerd"],p:"book",m:"teamLab Planets TOKYO",d:"Arte digitale immersiva a piedi nudi. Acqua alle caviglie, foresta di fiori, specchi infiniti. Uno dei posti più belli al mondo — nessuna foto rende l'idea. Durata reale: 90–150 min.",jo:"Uno dei must assoluti del viaggio — fiori digitali, specchi e acqua ovunque."}
   ]}
  ],
- tips:["<b>teamLab pratico:</b> i pavimenti sono a specchio — no gonne, mettete shorts o pantaloni arrotolabili. L'acqua è alta fino alle caviglie.",
-       "Arrivate 15 minuti prima del vostro slot. App teamLab sul telefono con lo screenshot del QR (non si sa mai con il segnale).",
+ tips:["<b>teamLab pratico:</b> no gonne, shorts o pantaloni arrotolabili. L'acqua arriva alle caviglie.",
+       "Arrivate 15 min prima del vostro slot — screenshot del QR sull'app teamLab (il segnale può fare i capricci).",
        "Asciugamani e shorts in prestito gratuiti all'ingresso. Borse impermeabili per il telefono.",
-       "Odaiba e Toyosu sono nella stessa zona est/baia: l'incastro è perfetto senza ore di metro.",
-       "Durata reale: 90–150 minuti. Uscite verso le 22:00, cena ramen notturna a Shinjuku."]},
+       "Water bus: cercate 'Hamarikyu water bus Odaiba' su Google Maps — prenota sul sito Tokyo Cruise o comprate al pontile di Hamarikyu.",
+       "Uscite da teamLab verso le 22:00 — cena ramen a Shinjuku o konbini in hotel."]},
 
 {dc:"6",dm:"LUG",dw:"LUN",tag:"Tokyo",title:"Asakusa, Ueno &amp; storia vecchia Tokyo",area:"Il lato più antico della città",
  blocks:[
   {t:"Mattina presto — prima di chiunque altro",x:[
-    {nm:"Senso-ji (Tempio d'Asakusa)",w:["storia","foto","top"],p:"free",m:"Senso-ji Temple Asakusa",d:"Il tempio più antico di Tokyo, fondato 628 d.C. All'alba (prima delle 8:00) è quasi deserto e c'è una luce pazzesca. Primo <b>goshuin</b> per Angelo. Omikuji (fortuna) per tutti e due.",an:"Goshuin obbligatorio. Il primo è sempre il più speciale."},
+    {nm:"Senso-ji (Tempio d'Asakusa)",w:["storia","foto","top"],p:"free",m:"Senso-ji Temple Asakusa",d:"Il tempio più antico di Tokyo, fondato 628 d.C. All'alba (prima delle 8:00) è quasi deserto e c'è una luce pazzesca. Primo <b>goshuin</b> per Angelo. Omikuji (fortuna) per tutti e due.",an:"Goshuin obbligatorio — il primo è sempre il più speciale."},
     {nm:"Nakamise-dori · snack e souvenir",w:["food","shop"],m:"Nakamise-dori Asakusa",d:"200+ bancarelle: ningyo-yaki (dolcetti a forma di samurai), senbei, souvenir artigianali. Apre alle 9:00."}
   ]},
   {t:"Pomeriggio — scegliete in base all'energia",x:[
@@ -1009,7 +1125,7 @@ const DAYS=[
     {nm:"Ameyoko Market",w:["food","shop"],m:"Ameyoko Market Ueno",d:"Mercato storico sotto i binari della metro: street food, frutta fresca tagliata, abbigliamento sportivo a prezzi bassi."}
   ]},
   {t:"Sera",x:[
-    {nm:"Tokyo Skytree + Solamachi",w:["foto","nerd"],p:{v:"¥2.100+"},m:"Tokyo Skytree",d:"La torre più alta del Giappone (634 m). Al piano terra del Solamachi trovate negozi tematici: Pokémon, Ghibli, Character Street.",jo:"Character Street sotto lo Skytree: tutto in un posto."}
+    {nm:"Tokyo Skytree + Solamachi",w:["foto","nerd"],p:{v:"¥2.100+"},m:"Tokyo Skytree",d:"La torre più alta del Giappone (634 m). Al piano terra del Solamachi trovate negozi tematici: Pokémon, Ghibli, Character Street.",jo:"Character Street sotto lo Skytree: Pokémon, Ghibli, One Piece — tutto in un posto."}
   ]}
  ],
  tips:["Senso-ji <b>all'alba</b> è un'altra cosa rispetto alle 10:00 con 500 pullman.",
@@ -1066,11 +1182,11 @@ const DAYS=[
   {t:"Mattina presto — foresta e silenzio",x:[
     {nm:"Meiji Jingu (Santuario)",w:["storia","fresco"],p:"free",m:"Meiji Jingu",d:"Il grande santuario scintoista di Tokyo, costruito nel 1920 in onore dell'Imperatore Meiji. Immerso in 700.000 alberi. Fresco, silenzioso, bellissimo all'alba.",an:"questo è uno dei migliori santuari di Tokyo. Goshuin qui."},
     {nm:"Parco Yoyogi",w:["fresco"],p:"free",m:"Yoyogi Park",d:"Accanto a Meiji Jingu: grande prato ombreggiato. Relaxare, riposarsi, sentire il vento."},
-    {nm:"Takeshita-dori — Harajuku",w:["shop","foto","food"],m:"Takeshita Street Harajuku",d:"Crepes giapponesi, moda kawaii assurda, negozi di abbigliamento anni '90. Harajuku è caotica e divertente.",jo:"La via più fotogenica di tutto il viaggio? Probabile."}
+    {nm:"Takeshita-dori — Harajuku",w:["shop","foto","food"],m:"Takeshita Street Harajuku",d:"Crepes giapponesi, moda kawaii assurda, negozi di abbigliamento anni '90. Harajuku è caotica e divertente.",jo:"La via più fotogenica del viaggio — ogni scatto sembra preso da un anime."}
   ]},
   {t:"Pomeriggio — mecca del nerd",x:[
-    {nm:"Nintendo Tokyo (Shibuya Parco, 6° piano)",w:["nerd","shop"],p:"free",m:"Nintendo Tokyo Shibuya Parco",d:"Negozio ufficiale Nintendo con merch esclusiva Tokyo. Stesso piano: Pokémon Center Shibuya, Jump Shop, Capcom Store.",jo:"6° piano di Parco è TUTTO IL TUO MONDO in un piano."},
-    {nm:"Statua Hachiko + Shibuya Crossing",w:["foto","top"],p:"free",m:"Hachiko Statue Shibuya",d:"L'incrocio più trafficato del mondo. Fotografatelo dall'alto (Starbucks Tsutaya al 2° piano, o la terrazza Mag's Park) — ma attraversatelo anche a piedi.",an:"la statua di Hachiko ha una storia che fa venire i brividi."}
+    {nm:"Nintendo Tokyo (Shibuya Parco, 6° piano)",w:["nerd","shop"],p:"free",m:"Nintendo Tokyo Shibuya Parco",d:"Negozio ufficiale Nintendo con merch esclusiva Tokyo. Stesso piano: Pokémon Center Shibuya, Jump Shop, Capcom Store.",jo:"6° piano di Parco: Nintendo + Pokémon + Jump Shop + Capcom. Tutto lo stesso piano."},
+    {nm:"Statua Hachiko + Shibuya Crossing",w:["foto","top"],p:"free",m:"Hachiko Statue Shibuya",d:"L'incrocio più trafficato del mondo. Fotografatelo dall'alto (Starbucks Tsutaya al 2° piano, o la terrazza Mag's Park) — ma attraversatelo anche a piedi.",an:"La storia di Hachiko fa venire i brividi — cercatela prima di arrivarci."}
   ]},
   {t:"Sera — tramonto su Tokyo",x:[
     {nm:"Shibuya Sky 🌅",w:["foto","top"],p:{v:"¥2.500 online"},m:"Shibuya Sky",d:"Terrazza panoramica all'aperto con vista a 360° su Tokyo. Prenotate lo slot del tramonto sul sito — si esaurisce. Vale ogni yen.",top:"La foto di copertina del viaggio."}
@@ -1084,11 +1200,11 @@ const DAYS=[
 {dc:"10",dm:"LUG",dw:"VEN",tag:"Tokyo",title:"Ikebukuro &amp; Nakano",area:"Ultimo giorno a Tokyo · nerd finale",
  blocks:[
   {t:"Mattina — il Pokémon Center più grande",x:[
-    {nm:"Pokémon Center Mega Tokyo (Sunshine City, Ikebukuro)",w:["nerd","shop"],p:"free",m:"Pokemon Center Mega Tokyo Sunshine City Ikebukuro",d:"Il Mega Center: il più grande e fornito di Tokyo. Stesso complesso: Pikachu Sweets by Pokémon Café, negozio di carte, peluche, merch esclusiva.",jo:"questo è il boss finale di Tokyo. Goditi ogni piano."},
+    {nm:"Pokémon Center Mega Tokyo (Sunshine City, Ikebukuro)",w:["nerd","shop"],p:"free",m:"Pokemon Center Mega Tokyo Sunshine City Ikebukuro",d:"Il Mega Center: il più grande e fornito di Tokyo. Stesso complesso: Pikachu Sweets by Pokémon Café, negozio di carte, peluche, merch esclusiva.",jo:"Il Pokémon Center più grande di Tokyo — ogni piano è diverso, non abbiate fretta."},
     {nm:"Sunshine Aquarium (facoltativo)",w:["fresco"],p:{v:"¥2.600"},m:"Sunshine Aquarium Ikebukuro",d:"Acquario sul tetto, climatizzato: rifugio dall'afa se serve."}
   ]},
   {t:"Pomeriggio — il lato oscuro del collezionismo",x:[
-    {nm:"Nakano Broadway",w:["nerd","shop"],p:"free",m:"Nakano Broadway",d:"La sede storica di Mandarake + decine di negozi di usato su 4 piani. Figure rare, vintage, manga fuori catalogo. Meno turistico di Akiba, più hardcore.",jo:"Qui si trovano i pezzi rari che Akiba non ha. Budget: decidi prima di entrare."}
+    {nm:"Nakano Broadway",w:["nerd","shop"],p:"free",m:"Nakano Broadway",d:"La sede storica di Mandarake + decine di negozi di usato su 4 piani. Figure rare, vintage, manga fuori catalogo. Meno turistico di Akiba, più hardcore.",jo:"I pezzi rari che Akihabara non ha — decidete il budget prima di entrare."}
   ]},
   {t:"Sera — ultimi acquisti",x:[
     {nm:"Souvenir finali e ultime passeggiate",w:["shop"],m:"Shinjuku",d:"Domani partite per Kyoto. Shopping last-call, ramen d'addio a Shinjuku."}
@@ -1099,18 +1215,19 @@ const DAYS=[
        "Ordinate già i posti del Shinkansen domani (app <b>Smart-EX</b>) se non l'avete fatto."]},
 
 {dc:"11",dm:"LUG",dw:"SAB",tag:"Tokyo → Kyoto",title:"Shinkansen — Benvenuti nell'antica capitale",area:"Partenza mattina · sera a Gion",
+ hotel:{name:"🏨 Miyako City Kintetsu Kyoto Station",addr:"Shimogyo-ku Higashishiokoji Kamadonocho 1-9, Kyoto",note:"Check-in dalle 15:00. 1 notte. ⚠️ Domani mattina spedire i bagagli col takkyubin prima di partire per Arashiyama."},
  badge:{t:"Treno ⟶ Kyoto",c:"tr"},
  blocks:[
-  {t:"Mattina — il treno più iconico del mondo",x:[
-    {nm:"Shinkansen Nozomi · Tokyo → Kyoto",w:["top"],p:{v:"¥14.370 · 2h15"},m:"Tokyo Station",d:"Sedetevi a destra (sud) per vedere il Fuji passare. L'app Smart-EX vi manda il biglietto sul telefono.",an:"in 2 ore si passa da Tokyo a un'altra era storica. Goditelo."},
-    {nm:"Check-in Miyako City Kintetsu Kyoto Station",w:[],m:"Miyako City Kintetsu Kyoto Station",d:"Hotel vicino alla stazione: comodo per domani mattina (spedisci i bagagli)."}
+  {t:"🚅 Da Shinjuku: Shinkansen Nozomi (¥14.370 · 2h15)",x:[
+    {nm:"Shinkansen Nozomi · Tokyo → Kyoto",w:["top"],p:{v:"¥14.370 · 2h15"},m:"Tokyo Station",d:"Da Shinjuku: JR Chuo ~12 min fino a Tokyo Station (IC card). Poi Nozomi lato D (destra) per vedere il Fuji. App Smart-EX per il biglietto — <b>non basta la Suica</b>.",an:"In 2 ore si passa da Tokyo a un'altra era storica — guardate fuori dal finestrino."},
+    {nm:"Check-in Miyako City Kintetsu Kyoto Station",w:[],m:"Miyako City Kintetsu Kyoto Station",d:"Hotel attaccato alla stazione di Kyoto — comodo per arrivare e per spedire i bagagli domani mattina."}
   ]},
   {t:"Pomeriggio",x:[
-    {nm:"Mercato Nishiki (La cucina di Kyoto)",w:["food","shop"],m:"Nishiki Market Kyoto",d:"480 metri di bancarelle con sottaceti, tofu, cibo di strada, dolci di riso, tè. Stretto e caotico nel modo più bello.",an:"qui trovi il dashi (brodo) artigianale che cercavi."},
+    {nm:"Mercato Nishiki (La cucina di Kyoto)",w:["food","shop"],m:"Nishiki Market Kyoto",d:"480 metri di bancarelle con sottaceti, tofu, cibo di strada, dolci di riso, tè. Stretto e caotico nel modo più bello.",an:"Qui si trova il dashi artigianale — il cuore della cucina di Kyoto."},
     {nm:"Gion · Santuario Yasaka",w:["storia","foto","top"],p:"free",m:"Yasaka Shrine Gion Kyoto",d:"Lanterne illuminate, vicoli storici, prime atmosfere del festival."}
   ]},
   {t:"Sera",x:[
-    {nm:"Cena a Pontocho",w:["food","top","fresco"],m:"Pontocho Alley Kyoto",d:"Il vicolo gastronomico più romantico del Giappone. D'estate i ristoranti aprono le terrazze sul fiume Kamo (noryo-yuka): cena fresca sull'acqua.",an:"Questo è il posto dove Angelo si innamora di Kyoto."}
+    {nm:"Cena a Pontocho",w:["food","top","fresco"],m:"Pontocho Alley Kyoto",d:"Il vicolo gastronomico più romantico del Giappone. D'estate i ristoranti aprono le terrazze sul fiume Kamo (noryo-yuka): cena fresca sull'acqua.",an:"Il vicolo gastronomico più bello del Giappone — si cena sull'acqua d'estate."}
   ]}
  ],
  tips:["Prenotate i posti Nozomi su <b>Smart-EX</b> (app o web) — sabato + estate = treni pieni.",
@@ -1118,19 +1235,20 @@ const DAYS=[
        "A Kyoto i bus sono caotici con il Matsuri — usate metro Karasuma o Keihan dove possibile."]},
 
 {dc:"12",dm:"LUG",dw:"DOM",tag:"Arashiyama",title:"Foresta di Bambù &amp; Ryokan con Onsen 🎋",area:"Spedite i bagagli · zaino leggero · notte in ryokan",
+ hotel:{name:"🏨 Ryokan Togetsutei — Arashiyama Onsen",addr:"Nakaoshitachyou, Arashiyama, Nishikyo-ku, Kyoto",note:"Check-in 16:00–19:00. Da Kyoto Stazione: JR Sagano → Saga-Arashiyama (~¥240, 15 min). IC card."},
  badge:{t:"Ryokan + Onsen ✓",c:"bk"},
  blocks:[
   {t:"Mattina presto — PRIMA di tutto: bagagli",x:[
     {nm:"⚠️ Spedisci le valigie col Takkyubin",w:[],p:{v:"~¥2.000 a valigia"},d:"Dalla reception del <b>Miyako City Kintetsu Kyoto Station</b>: fate spedire le valigie al <b>Smart Place Inn Kyoto Shijo Omiya Station</b>. Arrivano il 13 luglio. Costo ~¥1.500–2.500 a bagaglio. Confermate prima che l'hotel riceva i bagagli inoltrati. Vedi sezione Pratica."},
-    {nm:"Foresta di Bambù di Arashiyama 🎋",w:["foto","fresco","top"],p:"free",m:"Arashiyama Bamboo Grove",d:"Prima delle 8:00 è ancora fresca e quasi deserta. Dopo le 9 è piena. Il rumore del vento tra i bambù è una delle cose più belle del viaggio.",an:"Arashiyama di mattina è silenziosa e perfetta.",jo:"la foresta sembra uscita da un videogioco Studio Ghibli."}
+    {nm:"Foresta di Bambù di Arashiyama 🎋",w:["foto","fresco","top"],p:"free",m:"Arashiyama Bamboo Grove",d:"Prima delle 8:00 è ancora fresca e quasi deserta. Dopo le 9 è piena. Il rumore del vento tra i bambù è una delle cose più belle del viaggio.",an:"Arashiyama di mattina è silenziosa e perfetta — arrivateci prima delle 8.",jo:"Sembra uscita da un videogioco Ghibli."}
   ]},
   {t:"Pomeriggio",x:[
     {nm:"Tenryu-ji + giardino Sogenchi",w:["storia","fresco"],p:{v:"¥500"},m:"Tenryu-ji Temple Arashiyama",d:"Giardino zen patrimonio UNESCO con vista sulle colline di Arashiyama. Uno dei 10 grandi templi di Kyoto."},
-    {nm:"Villa Okochi-Sanso (chicca nascosta)",w:["fresco","foto","storia"],p:{v:"¥1.000 (include matcha)"},m:"Okochi Sanso Villa Arashiyama",d:"La villa di un grande attore del cinema muto giapponese. Giardino immenso, praticamente sconosciuta dai turisti, con tè incluso nel biglietto. Vale ogni yen.",an:"questa è la Arashiyama che nessuno conosce."},
+    {nm:"Villa Okochi-Sanso (chicca nascosta)",w:["fresco","foto","storia"],p:{v:"¥1.000 (include matcha)"},m:"Okochi Sanso Villa Arashiyama",d:"La villa di un grande attore del cinema muto giapponese. Giardino immenso, praticamente sconosciuta dai turisti, con tè incluso nel biglietto. Vale ogni yen.",an:"La Arashiyama che nessuno conosce — tè incluso nel biglietto."},
     {nm:"Ponte Togetsukyo + fiume Hozu",w:["foto","fresco"],p:"free",m:"Togetsukyo Bridge Arashiyama",d:"Il ponte 'che attraversa la luna'. Il fiume porta aria fresca tutto il giorno."}
   ]},
   {t:"Sera — la più rilassante del viaggio",x:[
-    {nm:"Check-in ryokan + Onsen 🛁",w:["top","fresco"],p:"book",d:"La sera più bella del viaggio. Yukata, onsen, kaiseki. Staccate i telefoni.",an:"impazzirà felicemente.",jo:"anche la parte 'contemplativa' vale la pena."}
+    {nm:"Check-in ryokan + Onsen 🛁",w:["top","fresco"],p:"book",d:"La sera più bella del viaggio. Yukata, onsen, kaiseki. Staccate i telefoni.",an:"Yukata, onsen, kaiseki: la sera più bella del viaggio.",jo:"Anche la parte 'contemplativa' vale ogni minuto."}
   ]}
  ],
  tips:["<b>Onsen:</b> lavatevi seduti alla postazione PRIMA di entrare in vasca. Niente costume. Capelli legati. Se avete tatuaggi chiedete al ryokan se è necessario coprirli.",
@@ -1139,14 +1257,15 @@ const DAYS=[
        "Domani mattina facile: tornate a Kyoto rilassati."]},
 
 {dc:"13",dm:"LUG",dw:"LUN",tag:"Kyoto",title:"Rientro da Arashiyama — Kyoto easy",area:"Colazione in ryokan · giornata flessibile",
+ hotel:{name:"🏨 Smart Place Inn Kyoto Shijo Omiya Station",addr:"Nakagyo-ku, Fujiokacho 494, Kyoto",note:"Check-in dalle 15:00. 4 notti (base 13–17 lug). I bagagli arrivano già col takkyubin spedito ieri."},
  blocks:[
-  {t:"Mattina — calma",x:[
-    {nm:"Colazione in ryokan + passeggiatina",w:["food","fresco"],d:"Niente fretta. Sagano, vicoletti, caffè sul fiume. Il ryokan ha già incluso la colazione più buona che mangerete."},
-    {nm:"Treno per Kyoto + check-in Smart Place Inn Shijo Omiya",w:[],m:"Smart Place Inn Kyoto Shijo Omiya Station",d:"I bagagli vi aspettano già lì grazie al takkyubin spedito ieri."}
+  {t:"🚃 Da Arashiyama: JR Sagano → Kyoto (~¥240, 15 min) · IC card",x:[
+    {nm:"Colazione in ryokan + passeggiatina",w:["food","fresco"],d:"Niente fretta. Sagano, vicoletti, caffè sul fiume. Il ryokan ha già incluso la colazione più buona del viaggio."},
+    {nm:"Treno per Kyoto + check-in Smart Place Inn Shijo Omiya",w:[],m:"Smart Place Inn Kyoto Shijo Omiya Station",d:"I bagagli vi aspettano già grazie al takkyubin spedito ieri. Sede ideale per Gion, Higashiyama, Nishiki."}
   ]},
   {t:"Pomeriggio — opzioni a scelta",x:[
-    {nm:"Opzione A: Kinkaku-ji (Padiglione d'Oro) + Ryoan-ji",w:["storia","foto","top"],p:{v:"¥500 + ¥600"},m:"Kinkaku-ji",d:"Il padiglione ricoperto d'oro riflesso sul laghetto. Combinatelo con Ryoan-ji (il giardino di pietre più famoso del mondo, ~10 min a piedi). Entrambi a nord-ovest — vicini al rientro da Arashiyama.",an:"questi due insieme fanno un pomeriggio storico perfetto."},
-    {nm:"Opzione B: Castello di Nijo",w:["storia"],p:{v:"¥1.300"},m:"Nijo Castle Kyoto",d:"Palazzo shogunale del XVII secolo. I corridoi scricchiolano apposta (pavimenti 'dell'usignolo') per segnalare intrusi. Giardino bellissimo.",an:"Pavimenti che cantano all'Angelo — troppo bello."},
+    {nm:"Opzione A: Kinkaku-ji (Padiglione d'Oro) + Ryoan-ji",w:["storia","foto","top"],p:{v:"¥500 + ¥600"},m:"Kinkaku-ji",d:"Il padiglione ricoperto d'oro riflesso sul laghetto. Combinatelo con Ryoan-ji (il giardino di pietre più famoso del mondo, ~10 min a piedi). Entrambi a nord-ovest — vicini al rientro da Arashiyama.",an:"Questi due insieme fanno un pomeriggio storico perfetto — vicini, entrambi a nord-ovest."},
+    {nm:"Opzione B: Castello di Nijo",w:["storia"],p:{v:"¥1.300"},m:"Nijo Castle Kyoto",d:"Palazzo shogunale del XVII secolo. I corridoi scricchiolano apposta (pavimenti 'dell'usignolo') per segnalare intrusi. Giardino bellissimo.",an:"I corridoi scricchiolano apposta per rivelare intrusi — una delle cose più surreali del Giappone."},
     {nm:"Opzione C: giornata soft",w:["fresco","food"],d:"Nishiki Market, gelato al matcha, riposo in hotel prima dei giorni intensi che arrivano."}
   ]}
  ],
@@ -1157,15 +1276,15 @@ const DAYS=[
  badge:{t:"Inizia lo Yoiyama 🏮",c:"fe"},
  blocks:[
   {t:"Mattina presto — treno Kintetsu",x:[
-    {nm:"Parco di Nara · cervi che si inchinano 🦌",w:["top","foto"],p:"free",m:"Nara Park",d:"I cervi di Nara sono considerati messaggeri divini scintoisti. Vendono crackers a ¥200 (~10 pz). I cervi si inchinano per chiedervi i crackers. Andate presto: cervi più calmi, meno caldo.",an:"questi cervi hanno 1300 anni di storia sacra — è surreale."},
-    {nm:"Todai-ji (Grande Buddha) 🏛️",w:["storia","top"],p:{v:"¥800"},m:"Todaiji Temple Nara",d:"La più grande struttura di legno del mondo. Il Buddha di bronzo è alto 15 metri. Una delle cose più impressionanti che vedrete in tutto il viaggio.",an:"questo è IL museo/tempio del viaggio. Rimani senza parole."}
+    {nm:"Parco di Nara · cervi che si inchinano 🦌",w:["top","foto"],p:"free",m:"Nara Park",d:"I cervi di Nara sono considerati messaggeri divini scintoisti. Vendono crackers a ¥200 (~10 pz). I cervi si inchinano per chiedervi i crackers. Andate presto: cervi più calmi, meno caldo.",an:"1300 anni di storia sacra: i cervi sono messaggeri divini per la tradizione shintoista."},
+    {nm:"Todai-ji (Grande Buddha) 🏛️",w:["storia","top"],p:{v:"¥800"},m:"Todaiji Temple Nara",d:"La più grande struttura di legno del mondo. Il Buddha di bronzo è alto 15 metri. Una delle cose più impressionanti che vedrete in tutto il viaggio.",an:"Il sito più monumentale di tutto il viaggio — si rimane senza parole."}
   ]},
   {t:"Pomeriggio",x:[
-    {nm:"Kasuga Taisha (sentiero delle lanterne)",w:["storia","fresco","foto"],p:"free",m:"Kasuga Taisha Nara",d:"Santuario nel bosco con 3.000 lanterne di pietra lungo il sentiero — all'ombra degli alberi è freschissimo. Goshuin qui.",an:"goshuin indispensabile. Il posto è straordinario."},
+    {nm:"Kasuga Taisha (sentiero delle lanterne)",w:["storia","fresco","foto"],p:"free",m:"Kasuga Taisha Nara",d:"Santuario nel bosco con 3.000 lanterne di pietra lungo il sentiero — all'ombra degli alberi è freschissimo. Goshuin qui.",an:"Goshuin da non perdere — uno dei santuari più suggestivi del Kansai."},
     {nm:"Naramachi (quartiere storico)",w:["storia","foto","food"],p:"free",m:"Naramachi Nara",d:"Vicoli di ex botteghe mercantili del periodo Edo. Caffè nascosti, case storiche, kakigori (ghiaccio al matcha) per il caldo."}
   ]},
   {t:"Sera — rientro a Kyoto per lo Yoiyama",x:[
-    {nm:"Gion Matsuri · Yoiyama (prima sera) 🏮",w:["top","food","foto"],p:"free",m:"Shijo Karasuma Kyoto Gion Matsuri",d:"Da stasera il centro di Kyoto cambia volto: strade chiuse, carri Yamahoko illuminati, centinaia di bancarelle. Yoiyama dura 3 sere (14–16) e ogni sera è più intensa.",an:"questo festival esiste dal 869 d.C. ininterrottamente."}
+    {nm:"Gion Matsuri · Yoiyama (prima sera) 🏮",w:["top","food","foto"],p:"free",m:"Shijo Karasuma Kyoto Gion Matsuri",d:"Da stasera il centro di Kyoto cambia volto: strade chiuse, carri Yamahoko illuminati, centinaia di bancarelle. Yoiyama dura 3 sere (14–16) e ogni sera è più intensa.",an:"Festival ininterrotto dall'869 d.C. — il più antico del Giappone."}
   ]}
  ],
  tips:["<b>Dai da mangiare ai cervi lontano dal Todai-ji</b>: lì sono fanatici e vi assaltano. Lontano sono dolcissimi.",
@@ -1177,14 +1296,14 @@ const DAYS=[
  badge:{t:"Nintendo Museum 16:00 ✓",c:"bk"},
  blocks:[
   {t:"Albissima (5:00–6:00)",x:[
-    {nm:"Fushimi Inari Taisha all'alba ⛩️🌅",w:["storia","foto","top","fresco"],p:"free",m:"Fushimi Inari Taisha",d:"Migliaia di torii arancioni in sequenza. Aperto 24 ore, gratis. All'alba di luglio (sole alle 5) è fresco, quasi vuoto e la luce è magica. Salite al belvedere Yotsutsuji (~30–45 min di cammino) per la vista su Kyoto.",an:"uno dei santuari più importanti del Giappone — goshuin qui.",jo:"sembra uscito da un videogioco. Per davvero."}
+    {nm:"Fushimi Inari Taisha all'alba ⛩️🌅",w:["storia","foto","top","fresco"],p:"free",m:"Fushimi Inari Taisha",d:"Migliaia di torii arancioni in sequenza. Aperto 24 ore, gratis. All'alba di luglio (sole alle 5) è fresco, quasi vuoto e la luce è magica. Salite al belvedere Yotsutsuji (~30–45 min di cammino) per la vista su Kyoto.",an:"Uno dei santuari più importanti del Giappone — goshuin da prendere qui.",jo:"Sembra uscito da un videogioco — per davvero."}
   ]},
   {t:"Mattina/Pranzo · Uji (stessa linea a sud)",x:[
-    {nm:"Byodo-in (Tempio della Fenice)",w:["storia","foto","top"],p:{v:"¥700"},m:"Byodoin Temple Uji",d:"Il tempio sulla moneta da ¥10. Costruito nel 1053. Riflesso perfetto sul laghetto. Patrimonio UNESCO.",an:"è esattamente come sulla moneta, ma ancora più bello."},
-    {nm:"Matcha e cerimonia del tè a Uji ☕",w:["food","storia","fresco","top"],p:{v:"¥1.000+"},m:"Nakamura Tokichi Honten Uji",d:"Uji è la capitale del matcha. Casa da tè Nakamura Tokichi (dal 1854): soft-serve al matcha leggendario. Se volete la cerimonia vera: prenotate Fukujuen o Taiho-an.",an:"qui il tè è arte antica. Questo è il posto."}
+    {nm:"Byodo-in (Tempio della Fenice)",w:["storia","foto","top"],p:{v:"¥700"},m:"Byodoin Temple Uji",d:"Il tempio sulla moneta da ¥10. Costruito nel 1053. Riflesso perfetto sul laghetto. Patrimonio UNESCO.",an:"Esattamente come sulla moneta da ¥10 — ma dal vivo è ancora più bello."},
+    {nm:"Matcha e cerimonia del tè a Uji ☕",w:["food","storia","fresco","top"],p:{v:"¥1.000+"},m:"Nakamura Tokichi Honten Uji",d:"Uji è la capitale del matcha. Casa da tè Nakamura Tokichi (dal 1854): soft-serve al matcha leggendario. Se volete la cerimonia vera: prenotate Fukujuen o Taiho-an.",an:"Uji è la capitale mondiale del matcha — assaggiatelo in tutte le forme possibili."}
   ]},
   {t:"Pomeriggio · 16:00 — finalmente",x:[
-    {nm:"Nintendo Museum 🎮 (Ogura, Uji)",w:["nerd","top"],p:"book",m:"Nintendo Museum Uji Ogura",d:"L'ex fabbrica Nintendo convertita in museo. Dal 2024. Dal 1889 (carte hanafuda) a Switch. 10 monete-gioco incluse, console giganti su cui giocare. Shop esclusivo, caffè interno. A 1 fermata JR da Uji.",jo:"questo momento è TUTTO. Arrivi puntuale."}
+    {nm:"Nintendo Museum 🎮 (Ogura, Uji)",w:["nerd","top"],p:"book",m:"Nintendo Museum Uji Ogura",d:"L'ex fabbrica Nintendo convertita in museo. Dal 2024. Dal 1889 (carte hanafuda) a Switch. 10 monete-gioco incluse, console giganti su cui giocare. Shop esclusivo, caffè interno. A 1 fermata JR da Uji.",jo:"Il museo più atteso del viaggio — arrivate puntuali al vostro slot, non si può aspettare fuori."}
   ]}
  ],
  tips:["Fushimi Inari <b>all'alba</b> = nessuna folla, frescura, luce oro. Alle 9:00 è già un inferno di turisti.",
@@ -1196,16 +1315,16 @@ const DAYS=[
  badge:{t:"Yoiyama Clou!",c:"fe"},
  blocks:[
   {t:"Mattina presto",x:[
-    {nm:"Kiyomizu-dera all'apertura",w:["storia","foto","top"],p:{v:"¥500"},m:"Kiyomizu-dera",d:"Il tempio del palco di legno sospeso sulla colline: nessun chiodo. Vista su Kyoto, cedri, nebbia mattutina. Uno dei posti più belli del Giappone.",an:"goshuin qui, poi scendi lentamente a piedi."},
-    {nm:"Sannenzaka &amp; Ninenzaka",w:["foto","shop","food","storia"],p:"free",m:"Sannenzaka Ninenzaka Kyoto",d:"Le due vie storiche più belle di Kyoto: machiya (case in legno), botteghe artigiane, dolci tradizionali. Leggenda vuole che inciampare su Ninenzaka porti sfortuna.",jo:"c'è un negozio di amuleti Pokémon nascosto tra i vicoli."},
+    {nm:"Kiyomizu-dera all'apertura",w:["storia","foto","top"],p:{v:"¥500"},m:"Kiyomizu-dera",d:"Il tempio del palco di legno sospeso sulla colline: nessun chiodo. Vista su Kyoto, cedri, nebbia mattutina. Uno dei posti più belli del Giappone.",an:"Goshuin qui — poi scendete lentamente attraverso i vicoli di Higashiyama."},
+    {nm:"Sannenzaka &amp; Ninenzaka",w:["foto","shop","food","storia"],p:"free",m:"Sannenzaka Ninenzaka Kyoto",d:"Le due vie storiche più belle di Kyoto: machiya (case in legno), botteghe artigiane, dolci tradizionali. Leggenda vuole che inciampare su Ninenzaka porti sfortuna.",jo:"Tra i vicoli ci sono botteghe artigiane inaspettate — tenetevi il tempo per girarle."},
     {nm:"Pagoda Yasaka (Hokan-ji) 📷",w:["foto","storia"],p:"free",m:"Yasaka Pagoda Hokanji Kyoto",d:"La pagoda che appare in fondo a ogni vicolo di Higashiyama. La foto iconica di Kyoto."}
   ]},
   {t:"Pomeriggio · a scelta",x:[
-    {nm:"Ginkaku-ji + Sentiero della Filosofia 🌿",w:["storia","fresco","foto"],p:{v:"¥500"},m:"Ginkakuji Silver Pavilion Kyoto",d:"Il Padiglione d'Argento + il Sentiero della Filosofia: 2 km lungo un canale ombreggiato di ciliegi. Fresco e bellissimo.",an:"Il Sentiero della Filosofia è il posto dove i monaci buddhisti meditano camminando."},
+    {nm:"Ginkaku-ji + Sentiero della Filosofia 🌿",w:["storia","fresco","foto"],p:{v:"¥500"},m:"Ginkakuji Silver Pavilion Kyoto",d:"Il Padiglione d'Argento + il Sentiero della Filosofia: 2 km lungo un canale ombreggiato di ciliegi. Fresco e bellissimo.",an:"2 km lungo un canale dove i monaci Zen meditavano camminando — uno dei percorsi più belli di Kyoto."},
     {nm:"Noleggio kimono (opzionale)",w:["top","foto"],p:{v:"¥3.000+"},m:"kimono rental Higashiyama Kyoto",d:"Qualche ora in kimono tra i vicoli di Higashiyama. Le foto valgono tutto."}
   ]},
   {t:"Sera — clou assoluto",x:[
-    {nm:"Gion Matsuri Yoiyama del 16 🏮🌟",w:["top","food","foto"],p:"free",m:"Gion Matsuri Yamahoko Kyoto",d:"La sera più grande del festival: il centro di Kyoto è chiuso al traffico, i carri Yamahoko sono illuminati, centinaia di bancarelle. Folla enorme ma atmosfera magica. Ultima sera prima della parata.",an:"festival dall'869 d.C. Ininterrotto. Pensaci.",jo:"ci sono bancarelle di Pokémon card vintage ogni tanto — cercale."}
+    {nm:"Gion Matsuri Yoiyama del 16 🏮🌟",w:["top","food","foto"],p:"free",m:"Gion Matsuri Yamahoko Kyoto",d:"La sera più grande del festival: il centro di Kyoto è chiuso al traffico, i carri Yamahoko sono illuminati, centinaia di bancarelle. Folla enorme ma atmosfera magica. Ultima sera prima della parata.",an:"Ininterrotto dall'869 d.C. — il festival medievale più antico d'Oriente.",jo:"Tra le bancarelle si trovano anche card vintage e rarità — teneteli d'occhio."}
   ]}
  ],
  tips:["Kiyomizu <b>appena apre</b> (6:00): frescho, poca gente, nebbia sulle colline.",
@@ -1214,17 +1333,18 @@ const DAYS=[
        "Bevi kakigori (ghiaccio tritato al matcha): il dessert della sopravvivenza estiva giapponese."]},
 
 {dc:"17",dm:"LUG",dw:"VEN",tag:"Festival → Osaka",title:"Parata di Gion + Osaka 🎏",area:"Yamahoko Junko · poi Dotonbori",
+ hotel:{name:"🏨 Apartment Namba Daikoku — Osaka",addr:"Naniwa-ku, Shikitsunishi 1-1-28, Osaka",note:"Check-in 16:00–22:00. Da Kyoto: JR Shinkaisoku → Osaka (~¥560, 28 min) o Hankyu (~¥400, 40 min). IC card."},
  badge:{t:"GION MATSURI 🏮",c:"fe"},
  blocks:[
   {t:"Mattina · 9:00–13:00 — la parata",x:[
-    {nm:"Yamahoko Junko (Grande Parata) 🎏",w:["storia","top","foto"],p:"free",m:"Shijo Karasuma Kyoto Parade",d:"Carri sacri alti fino a 25 m, trainati a mano da decine di persone in costume storico. Inizia alle 9:00 da Shijo-Karasuma. Il momento clou è la 'tsuji-mawashi': il carro che gira lentamente all'incrocio.",an:"questo è il top del viaggio. Festival dall'869. Il tsuji-mawashi è incredibile.",jo:"lo schema di navigazione dei carri sembra quello di un dungeon boss fight."}
+    {nm:"Yamahoko Junko (Grande Parata) 🎏",w:["storia","top","foto"],p:"free",m:"Shijo Karasuma Kyoto Parade",d:"Carri sacri alti fino a 25 m, trainati a mano da decine di persone in costume storico. Inizia alle 9:00 da Shijo-Karasuma. Il momento clou è la 'tsuji-mawashi': il carro che gira lentamente all'incrocio.",an:"Il tsuji-mawashi (giro del carro all'incrocio) è il momento clou — non perdetelo.",jo:"I carri alti 25 m vengono girati a mano agli incroci — uno spettacolo unico al mondo."}
   ]},
   {t:"Pomeriggio — Osaka!",x:[
-    {nm:"Treno Kyoto → Osaka",w:[],p:{v:"~¥570"},m:"Osaka Namba Station",d:"~25–45 minuti. Lasciate i bagagli in hotel o in locker."},
-    {nm:"Castello di Osaka (se c'è il tempo)",w:["storia","foto","fresco"],p:{v:"¥600"},m:"Osaka Castle",d:"Il castello più iconico di Osaka. Parco verde intorno — fresco. Vale una visita veloce nel pomeriggio.",an:"Castello di Osaka è il contrappunto storico perfetto dopo Gion."}
+    {nm:"🚃 Treno Kyoto → Osaka",w:[],p:{v:"~¥560"},m:"Osaka Namba Station",d:"JR Shinkaisoku da Kyoto Station → Osaka, ~28 min. IC card. Oppure Hankyu da Shijo (~¥400, 40 min). Check-in Apartment Namba Daikoku dalle 16:00."},
+    {nm:"Castello di Osaka (se c'è il tempo)",w:["storia","foto","fresco"],p:{v:"¥600"},m:"Osaka Castle",d:"Il castello più iconico di Osaka. Parco verde intorno — fresco. Vale una visita veloce nel pomeriggio.",an:"Ottimo contrappunto storico dopo il festival — il parco è fresco e il museo vale una visita."}
   ]},
   {t:"Sera — benvenuti a Osaka",x:[
-    {nm:"Dotonbori · prima sera 🦀",w:["food","foto","top"],p:"free",m:"Dotonbori Osaka",d:"Neon, l'uomo Glico che corre, takoyaki, okonomiyaki, il granchio animatonico. Osaka è pura energia.",an:"la cultura gastronomica di Osaka è diversa da tutto. Mangia TUTTO."}
+    {nm:"Dotonbori · prima sera 🦀",w:["food","foto","top"],p:"free",m:"Dotonbori Osaka",d:"Neon, l'uomo Glico che corre, takoyaki, okonomiyaki, il granchio animatonico. Osaka è pura energia.",an:"La cultura gastronomica di Osaka è diversa da tutto il Giappone — mangiate tutto quello che vedete."}
   ]}
  ],
  tips:["<b>Arriva presto per la parata</b> (8:30–8:45): posti buoni su Oike-dori (più spaziosa di Shijo).",
@@ -1238,7 +1358,7 @@ const DAYS=[
     {nm:"Ai cancelli 60–90 minuti prima dell'apertura",w:["nerd","top"],m:"Universal Studios Japan",d:"Spesso aprono i cancelli in anticipo. Chi arriva per primo entra in Super Nintendo World prima della coda."}
   ]},
   {t:"Strategia di giornata",x:[
-    {nm:"Super Nintendo World 🍄",w:["nerd","top"],p:"book",d:"Mario, Luigi, Toad, Power-Up Band interattiva. Sfida Bowser Jr. e accumula monete.",jo:"questo è il posto. Resta quanto vuoi."},
+    {nm:"Super Nintendo World 🍄",w:["nerd","top"],p:"book",d:"Mario, Luigi, Toad, Power-Up Band interattiva. Sfida Bowser Jr. e accumula monete.",jo:"Il pezzo forte del parco — Power-Up Band per i giochi interattivi, sfida Bowser Jr."},
     {nm:"Donkey Kong Country (Mine-Cart Madness)",w:["nerd","top"],d:"La land più nuova: la montagna russa del carrello da miniera. Falle presto — code enormi."},
     {nm:"Harry Potter + Forbidden Journey",w:["top","storia"],d:"Il Castello di Hogwarts è incredibile anche per chi non è fan. Falle nel pomeriggio se hai la Power-Up Band."},
     {nm:"App USJ — Area Timed Entry",w:[],d:"Scaricate l'app prima di entrare e prendete subito l'entrata a tempo per Super Nintendo World — è gratis ma si esaurisce."}
@@ -1259,11 +1379,11 @@ const DAYS=[
     {nm:"Mercato Kuromon 🐟",w:["food"],p:"free",m:"Kuromon Ichiba Market Osaka",d:"Pesce fresco a colazione (sì, in Giappone si mangia pesce a colazione), frutta stagionale, cibo di strada."}
   ]},
   {t:"Pomeriggio · nerd di Osaka",x:[
-    {nm:"Den Den Town (Nipponbashi)",w:["nerd","shop"],p:"free",m:"Den Den Town Nipponbashi Osaka",d:"L'equivalente di Akihabara a Osaka: anime, retrogame, cosplay. Pokémon Center Osaka al Daimaru Umeda.",jo:"ultima chance per il Pokémon Center di Osaka — prodotti esclusivi diversi da Tokyo."}
+    {nm:"Den Den Town (Nipponbashi)",w:["nerd","shop"],p:"free",m:"Den Den Town Nipponbashi Osaka",d:"L'equivalente di Akihabara a Osaka: anime, retrogame, cosplay. Pokémon Center Osaka al Daimaru Umeda.",jo:"Prodotti esclusivi che si trovano solo qui — diversi da quelli dei Center di Tokyo."}
   ]},
   {t:"Sera — finale di Osaka",x:[
     {nm:"Umeda Sky Building (Floating Garden) 🌆",w:["foto","top"],p:{v:"~¥2.000"},m:"Umeda Sky Building Floating Garden Observatory",d:"Terrazza panoramica tra due torri collegate da un anello sospeso. Vista al tramonto su Osaka = perfetta."},
-    {nm:"Ultimo giro a Dotonbori 🦀",w:["food","top"],m:"Dotonbori Osaka",d:"Cena finale: kushikatsu (fritto su stecco). Regola ferrea: <b>non intingete due volte nella salsa comune</b>. È una legge non scritta.",an:"fai la coda al ristorante Daruma per il kushikatsu autentico."}
+    {nm:"Ultimo giro a Dotonbori 🦀",w:["food","top"],m:"Dotonbori Osaka",d:"Cena finale: kushikatsu (fritto su stecco). Regola ferrea: <b>non intingete due volte nella salsa comune</b>. È una legge non scritta.",an:"Vale la coda al ristorante Daruma per il kushikatsu autentico — la regola del no-double-dip è sacra."}
   ]}
  ],
  tips:["Comprate gli <b>omiyage</b> (souvenir dolci) stasera: più comodo che in aeroporto.",
@@ -1273,12 +1393,12 @@ const DAYS=[
 {dc:"20",dm:"LUG",dw:"LUN",tag:"Ritorno",title:"Osaka → Tokyo → Haneda → Casa ✈️",area:"Shinkansen mattina · volo 16:35",
  badge:{t:"Shinkansen + Volo",c:"tr"},
  blocks:[
-  {t:"Mattina presto — non fate tardi",x:[
-    {nm:"Nozomi · Shin-Osaka → Tokyo 🚅",w:["top"],p:{v:"¥14.720 · 2h27"},m:"Shin-Osaka Station",d:"Volo alle <b>16:35</b>: partite da Shin-Osaka entro le <b>10:00–10:30</b>. Arrivate a Tokyo ~12:30–13:00, poi Haneda in 30 min. Siete comodi. Lato destro del treno per l'ultima vista sul Fuji.",an:"ultima chance per il Fuji dal finestrino.",jo:"conta i minuti al Fuji, lo so già."},
+  {t:"🚅 Shin-Osaka → Tokyo → Haneda · partenza entro le 10:30",x:[
+    {nm:"Nozomi · Shin-Osaka → Tokyo 🚅",w:["top"],p:{v:"¥14.720 · 2h27"},m:"Shin-Osaka Station",d:"Volo alle <b>16:35</b>: partite da Shin-Osaka entro le <b>10:00–10:30</b>. Arrivate a Tokyo ~12:30–13:00, poi Haneda in 30 min. Siete comodi. Lato destro del treno per l'ultima vista sul Fuji.",an:"Ultima chance per vedere il Fuji dal finestrino — lato destro del treno.",jo:"Ultimi istanti del viaggio filtrati da un finestrino — godetevi la vista."},
     {nm:"Tokyo → Haneda (Monorail o Keikyu)",w:[],p:{v:"~¥500"},m:"Haneda Airport",d:"Da Hamamatsucho: Tokyo Monorail ~20 min. Da Shinagawa: Keikyu ~12 min. Siate ad Haneda <b>almeno 2h prima del decollo</b>."}
   ]},
   {t:"Aspettando il gate",x:[
-    {nm:"Character Street (Tokyo Station) o negozi Haneda",w:["shop","nerd"],m:"Tokyo Station Character Street",d:"Se avete tempo tra Tokyo Station e Haneda, Character Street under Tokyo Station ha tutto. Oppure il duty-free di Haneda (ottimo per Kit-Kat al matcha).",jo:"ultimi acquisti. Per davvero gli ultimi."}
+    {nm:"Character Street (Tokyo Station) o negozi Haneda",w:["shop","nerd"],m:"Tokyo Station Character Street",d:"Se avete tempo tra Tokyo Station e Haneda, Character Street under Tokyo Station ha tutto. Oppure il duty-free di Haneda (ottimo per Kit-Kat al matcha).",jo:"Ultimi acquisti — il duty-free di Haneda ha Kit-Kat al matcha e souvenir esclusivi."}
   ]}
  ],
  tips:["<b>Ricontrollate l'orario del volo</b>: se è 16:35 potete partire un po' più tardi, ma comunque al mattino.",
@@ -1301,7 +1421,7 @@ const CITIES=[
  {name:"Kyoto",jp:"京都",when:"11 – 17 Lug · cuore del viaggio",bk:"京",grad:"linear-gradient(135deg,#6a2828,#a04040)",
   do:["Fushimi Inari (alba), Kinkaku-ji, Kiyomizu-dera, Higashiyama.","Gion + Pontocho (serata), Nijo Castle, Ginkaku-ji.","<b>Gion Matsuri</b>: Yoiyama 14–16 lug + Parata 17 lug.","Nintendo Museum 15 lug (già prenotato!).","Cerimonia del tè a Uji + Byodo-in."],
   eat:["Nishiki Market (snack, sottaceti, tofu).","Kaiseki (alta cucina locale) — concedetevelo almeno una volta.","Matcha in tutte le forme possibili a Uji.","Pontocho: terrazze sul fiume (noryo-yuka) d'estate."],
-  tips:["Templi aprono alle 6:00, chiudono ~17:00: andate al mattino.","Festival: bus intasati → metro Karasuma o Keihan.","Gion: rispettate la privacy delle geiko.","Angelo: goshuincho in ogni tempio. Kyoto ne ha a decine."]},
+  tips:["Templi aprono alle 6:00, chiudono ~17:00: andate al mattino.","Festival: bus intasati → metro Karasuma o Keihan.","Gion: rispettate la privacy delle geiko.","Goshuincho in ogni tempio — Kyoto ne ha a decine."]},
  {name:"Arashiyama",jp:"嵐山",when:"12 – 13 Lug · ryokan",bk:"嵐",grad:"linear-gradient(135deg,#386030,#6a8840)",
   do:["Bambù (prima delle 8 — è fondamentale).","Tenryu-ji giardino, Okochi-Sanso villa, ponte Togetsukyo.","Hozugawa River Cruise (2h tra le gole, freschissimo).","Parco scimmie Iwatayama (vista su Kyoto)."],
   eat:["Cena kaiseki in ryokan (inclusa).","Matcha + warabi-mochi sul lungolago.","Soba fresca vicino al ponte."],
@@ -1309,7 +1429,7 @@ const CITIES=[
  {name:"Nara",jp:"奈良",when:"14 Lug · gita",bk:"奈",grad:"linear-gradient(135deg,#5a4820,#a07830)",
   do:["Parco di Nara + cervi (crackers ¥200).","Todai-ji (Grande Buddha, edificio di legno più grande del mondo).","Kasuga Taisha (sentiero delle 3.000 lanterne).","Naramachi (quartiere storico)."],
   eat:["Kakinoha-zushi (sushi avvolto nelle foglie di cachi).","Mochi pestato a vista da Nakatanidou (un must).","Kakigori per il caldo."],
-  tips:["Andate presto: cervi più calmi e meno folla.","Kintetsu → Kintetsu-Nara è più vicino al parco rispetto a JR.","Angelo: goshuin al Kasuga Taisha è uno dei più belli."]},
+  tips:["Andate presto: cervi più calmi e meno folla.","Kintetsu → Kintetsu-Nara è più vicino al parco rispetto a JR.","Il goshuin al Kasuga Taisha è uno dei più belli del viaggio."]},
  {name:"Osaka",jp:"大阪",when:"17 – 20 Lug · finale",bk:"阪",grad:"linear-gradient(135deg,#901820,#c03020)",
   do:["USJ + Super Nintendo World (18 lug, già pagato).","Dotonbori (neon + cibo di strada).","Castello di Osaka + parco.","Den Den Town (nerd); Kuromon Ichiba.","Umeda Sky Building (tramonto)."],
   eat:["<b>Takoyaki</b>, <b>okonomiyaki</b>, <b>kushikatsu</b>: questa è Osaka.","Osaka è 'kuidaore' (mangiarsi fino a rovinare): prendetela alla lettera.","Konbini di Osaka hanno varianti che non esitono a Tokyo."],
@@ -1323,24 +1443,24 @@ const EXPS=[
  {ic:"💧",bg:"linear-gradient(135deg,#2c4a6e,#3a7a82)",title:"teamLab Planets",sub:"5 Lug · Toyosu · prenotato",
   p:"Arte digitale totalmente immersiva. Camminate nell'acqua, entrate in una foresta di fiori vivi, perdetevi negli specchi infiniti. Una delle cose più belle che esiste.",
   li:["Pavimenti a specchio ovunque: <b>no gonne</b>, pantaloni/shorts arrotolabili.","Acqua alle caviglie. Asciugamani e shorts in prestito all'ingresso.","~90–150 minuti. Arriva 10–15 min prima del vostro slot.","Screenshot del QR sull'app — il segnale può fare i capricci.",
-      "Joseph: la stanza dei fiori digitali è la cosa più bella che tu abbia mai visto. Angelo: concordo."]},
+      "La stanza dei fiori digitali è tra le cose più belle al mondo. Nessuna foto rende l'idea davvero."]},
  {ic:"🎮",bg:"linear-gradient(135deg,#c0402a,#8a4e7a)",title:"Nintendo Museum",sub:"15 Lug 16:00 · Uji · prenotato",
   p:"La storia di Nintendo dal 1889 (carte hanafuda) a Switch, nell'ex fabbrica di Uji. Giochi interattivi su console giganti. 10 monete incluse nel biglietto.",
   li:["Stazione Ogura: Kintetsu da Kyoto ~30 min, o JR Nara ~25 min (¥310).","A 1 fermata JR da Uji: perfetto dopo Byodo-in + tè.","Arriva 15 min prima. Lockers ¥100 per zaini grandi.","Shop con merch esclusiva + caffè interno (solo chi ha biglietto).",
-      "Joseph: aspetti questo da anni. Prenditi tutto il tempo che vuoi."]},
+      "Meritate ogni minuto qui dentro. Non abbiate fretta."]},
  {ic:"🍄",bg:"linear-gradient(135deg,#9c2f1f,#c49a2a)",title:"Universal Studios Japan",sub:"18 Lug · Osaka · pagato",
   p:"Super Nintendo World, Donkey Kong Country, Harry Potter, The Forbidden Journey. Il parco a tema più visitato d'Asia.",
   li:["Arrivate 60–90 min prima dell'apertura per entrare in Nintendo World.","App USJ: scaricatela e prendete il timed-entry per Nintendo World appena dentro (gratis).","Mangia alle 15:00 per saltare le code.","Power-Up Band per i giochi interattivi (~¥3.800)."]},
  {ic:"🏮",bg:"linear-gradient(135deg,#c0402a,#d99aae)",title:"Gion Matsuri",sub:"14–17 Lug · Kyoto",
   p:"Il festival più antico del Giappone, ininterrotto dall'869 d.C. Carri sacri, lanterne, bancarelle per tutto il centro di Kyoto.",
-  li:["Yoiyama (14–16): strade chiuse, carri illuminati, centinaia di bancarelle. Ogni sera più intensa.","Parata Yamahoko Junko (17 lug 9:00–13:00): carri alti 25 m, 'tsuji-mawashi' agli incroci.","Vista migliore dalla parata: Oike-dori (più larga di Shijo).","Angelo: è il festival medievale più antico d'Oriente. Nessuna guida rende l'idea davvero."]},
+  li:["Yoiyama (14–16): strade chiuse, carri illuminati, centinaia di bancarelle. Ogni sera più intensa.","Parata Yamahoko Junko (17 lug 9:00–13:00): carri alti 25 m, 'tsuji-mawashi' agli incroci.","Vista migliore dalla parata: Oike-dori (più larga di Shijo).","Il festival medievale più antico d'Oriente — nessuna guida rende l'idea davvero."]},
  {ic:"🗻",bg:"linear-gradient(135deg,#3a5080,#c89ab0)",title:"Gita Monte Fuji",sub:"8 Lug · Fujikawaguchiko",
   p:"Laghi, pagoda Chureito, aria di montagna. Una pausa di respiro dal caldo di Tokyo.",
   li:["Partite presto: il Fuji si copre di nuvole nel pomeriggio.","Bus Shinjuku (¥2.200) prenota su highway-buses.jp.","Chureito (~400 gradini) + Oishi Park + funivia (¥1.000 a/r).",
       "Piano B se è nuvoloso: il lago è bellissimo lo stesso."]},
  {ic:"🍵",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Cerimonia del Tè",sub:"Kyoto / Uji · ~¥3.000–6.000",
   p:"Un'ora di calma, gesti antichi e matcha fresco. La cosa più distante dal caos di Akihabara — ed è per questo che è perfetta.",
-  li:["A Kyoto: Camellia Tea Experience (Higashiyama), Maikoya (anche con kimono).","A Uji: Nakamura Tokichi (1854), Fukujuen, Taiho-an (sulla riva del fiume).","Prenota via sito ufficiale, Klook, Airbnb Experiences.","Angelo: ti insegnano a preparare il tè da soli. Non dimenticare."]}
+  li:["A Kyoto: Camellia Tea Experience (Higashiyama), Maikoya (anche con kimono).","A Uji: Nakamura Tokichi (1854), Fukujuen, Taiho-an (sulla riva del fiume).","Prenota via sito ufficiale, Klook, Airbnb Experiences.","Vi insegnano a preparare il tè da soli — un'esperienza che resta."]}
 ];
 
 /* ════════════════════════════════
@@ -1348,7 +1468,7 @@ const EXPS=[
    ════════════════════════════════ */
 const NERD=[
  {ic:"⚡",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Pokémon Center — tutti i templi",sub:"Tokyo · Osaka · e sparsi per il Giappone",
-  p:"La guida definitiva ai Pokémon Center del viaggio. Joseph, questo è il tuo itinerario nell'itinerario.",
+  p:"La guida definitiva ai Pokémon Center del viaggio — l'itinerario nell'itinerario per i fan.",
   li:["<b>DX + Café</b> (Nihonbashi/Tokyo): il più grande. Caffè da prenotare con settimane di anticipo dal sito ufficiale.",
       "<b>Mega Tokyo</b> (Sunshine City, Ikebukuro): due piani + Pikachu Sweets + carte. Il più fornito.",
       "<b>Shibuya Parco</b> (6° piano): di fianco a Nintendo Tokyo. Prodotti esclusivi 'Shibuya edition'.",
@@ -1369,7 +1489,7 @@ const NERD=[
       "<b>Jump Shop</b> + <b>Capcom Store</b> + <b>Square Enix Café</b>: tutti al 6° piano di Shibuya Parco.",
       "Don Quijote: souvenir nerd, costumi, elettronica a prezzi competitivi. Aperto fino a tardi."]},
  {ic:"💜",bg:"linear-gradient(135deg,#1e3450,#8a4e7a)",title:"Chicche Nerd Poco Note",sub:"Che quasi nessuno sa",
-  p:"I posti che Joseph cercherà anche nelle guide più oscure di Reddit.",
+  p:"I posti che si trovano solo nelle guide più oscure di Reddit e nei thread di r/JapanTravel.",
   li:["<b>Poké Lid</b>: i tombini Pokémon regionali — caccia in ogni città del Giappone.",
       "<b>Warner Bros. Studio Tour Tokyo</b> (Harry Potter): aperto da 2023 a Toshimaen. Vale una mezza giornata.",
       "<b>Ghibli Museum</b> (Mitaka, ~30 min da Tokyo): biglietti lotteria con mesi di anticipo. Se non li avete, Ghibli al Solamachi (Sky Tree).",
@@ -1382,7 +1502,7 @@ const NERD=[
    ════════════════════════════════ */
 const CULT=[
  {ic:"🏯",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Castelli &amp; Palazzi",sub:"Storia samurai e shogun",
-  p:"Angelo, questa sezione è cucinata per te. Joseph ti seguirà annuendo.",
+  p:"L'architettura militare giapponese è tra le più spettacolari al mondo — nessun castello europeo regge il confronto.",
   li:["<b>Castello di Nijo</b> (Kyoto, ¥1.300): palazzo shogunale del 1603. I corridoi scricchiolano di proposito.",
       "<b>Castello di Osaka</b> (¥600): 8 piani, museo ricco, parco verde.",
       "<b>Palazzo Imperiale di Kyoto</b> + giardini: ingresso gratuito.",
@@ -1391,24 +1511,24 @@ const CULT=[
   p:"I musei migliori del percorso — anche utili per la pausa dal caldo di luglio.",
   li:["<b>Tokyo National Museum</b> (¥1.000): armature samurai, katane, arte buddhista. Il meglio.",
       "<b>Sanjusangen-do</b> (Kyoto, ¥600): 1.001 statue dorate di Kannon in fila. Da brividi.",
-      "<b>Miraikan</b> (Odaiba, ¥630): scienza, robot, spazio. Anche per Joseph.",
+      "<b>Miraikan</b> (Odaiba, ¥630): scienza, robot, spazio. Climatizzato e avvincente.",
       "<b>Kyoto National Museum</b>: arte classica dell'antica capitale.",
-      "Joseph: il National Museum di Tokyo è storico <i>e</i> visivamente incredibile."]},
+      "Il National Museum di Tokyo è storico <i>e</i> visivamente spettacolare — vale anche per chi non è appassionato di musei."]},
  {ic:"⛩️",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Templi &amp; Santuari Top",sub:"Goshuincho in mano",
-  p:"La guida al goshuin — il timbro-sigillo che ogni santuario ti offre in segno di visita. Angelo, prendi il libretto.",
+  p:"La guida al goshuin — il timbro-sigillo che ogni santuario offre come segno di visita. Comprate il libretto al primo tempio.",
   li:["<b>Senso-ji</b> (Asakusa) · <b>Meiji Jingu</b> (Harajuku) · <b>Kanda Myojin</b> (Akihabara) — Tokyo.",
       "<b>Fushimi Inari</b> · <b>Kinkaku-ji</b> · <b>Kiyomizu-dera</b> · <b>Tenryu-ji</b> · <b>Yasaka</b> — Kyoto.",
       "<b>Todai-ji</b> · <b>Kasuga Taisha</b> — Nara. <b>Byodo-in</b> — Uji.",
       "Il goshuincho si compra al primo tempio (Senso-ji o Meiji Jingu). Costa ~¥1.500.",
-      "Ogni goshuin è unico: calligrafia a mano + timbro rosso. Angelo tornerà con un libro pieno."]},
+      "Ogni goshuin è unico: calligrafia a mano + timbro rosso. Si torna a casa con un libro pieno."]},
  {ic:"🍵",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Cerimonie, Tè &amp; Kimono",sub:"Dove prenotare",
   p:"La parte immersiva della storia giapponese: non solo da guardare, da vivere.",
   li:["<b>Cerimonia del tè a Kyoto</b>: <a href='https://mai-ko.com/what-to-do-in-japan/kyoto/tea-ceremony-kyoto/' target='_blank'><b>Mai-Ko</b></a> (esperienza con maiko, molto consigliata), Camellia Tea Experience (Higashiyama), Maikoya (include kimono), En.",
       "<b>Cerimonia a Uji</b>: Taiho-an (sull'isola del fiume), Nakamura Tokichi, Fukujuen.",
       "<b>Kimono rental</b> (Higashiyama): ¥3.000+ per una mezza giornata. Le foto tra i vicoli sono fantastiche.",
       "Prenota da: sito ufficiale / <b>Klook</b> / <b>Viator</b> / <b>Airbnb Experiences</b> — almeno una settimana prima.",
-      "Angelo: la cerimonia del tè è culturalmente centrale, non turistica. Preparatevi entrambi.",
-      "Joseph: promettiamo che finisce in meno di un'ora."]}
+      "La cerimonia del tè è culturalmente centrale, non turistica — preparatevi.",
+      "Dura circa un'ora e vale ogni minuto."]}
 ];
 
 /* ════════════════════════════════
@@ -1428,7 +1548,7 @@ const SECRET=[
       "<b>Kibune</b> (nord di Kyoto, ~45 min): tavolate letteralmente nell'acqua del torrente. Temperatura diversa dal pianeta. Abbinabile a Kurama onsen.",
       "<b>Crociera sul fiume Hozu</b> da Arashiyama: 2 ore tra le gole, barca tradizionale, aria freschissima.",
       "<b>Shimogamo Shrine + bosco Tadasu no Mori</b>: santuario nella foresta primaria, ombroso, silenzioso.",
-      "Angelo: la kawadoko è l'esperienza culinaria estiva per eccellenza a Kyoto."]},
+      "La kawadoko è l'esperienza culinaria estiva per eccellenza a Kyoto — cenare sull'acqua è un'altra cosa."]},
  {ic:"🔮",bg:"linear-gradient(135deg,#2c4a6e,#8a4e7a)",title:"Gemme Nascoste",sub:"Dove vanno i locals",
   p:"Posti che non trovi nelle guide normali — ma che i travel blogger di Reddit conoscono bene.",
   li:["<b>Yanaka</b> (Tokyo): quartiere sopravvissuto alle bombe, pieno di gatti, botteghe artigiane, cimitero-parco. Il Tokyo che non esiste più altrove.",
@@ -1554,6 +1674,10 @@ DAYS.forEach(d=>{
   const badge=d.badge?`<span class="badge ${d.badge.c}">${d.badge.t}</span>`:'';
   const body=d.blocks.map(b=>`<div class="slot"><div class="slot-hd">${b.t}</div>${b.x.map(itH).join('')}</div>`).join('');
   const tips=d.tips.map(t=>`<li>${t}</li>`).join('');
+  const hotelBlock=d.hotel?`<div class="htransport" style="margin-bottom:14px">
+    <div class="htt">🏨 ${d.hotel.name}</div>
+    <ul><li><b>Indirizzo:</b> ${d.hotel.addr}</li><li>${d.hotel.note}</li></ul>
+  </div>`:'';
   dayList.appendChild(el(`<article class="day">
     <div class="day-hd">
       <div class="day-cal">
@@ -1569,7 +1693,7 @@ DAYS.forEach(d=>{
       <div class="day-arrow">⌄</div>
     </div>
     <div class="day-body"><div class="day-in">
-      ${badge}${body}
+      ${badge}${hotelBlock}${body}
       <div class="tips"><div class="th">💡 Consigli del giorno</div><ul>${tips}</ul></div>
     </div></div>
   </article>`));
@@ -1641,7 +1765,7 @@ function buildCl(nodeId,items,prefix,title){
   });
 }
 buildCl('cl-bk',BOOKING,'bk','📋 Prenotazioni & logistica');
-buildCl('cl-pk',PACKING,'pk','🎒 Valigia di Joseph & Angelo');
+buildCl('cl-pk',PACKING,'pk','🎒 Valigia');
 function refreshCl(){
   const all=document.querySelectorAll('.ci input');
   const done=[...all].filter(x=>x.checked).length;

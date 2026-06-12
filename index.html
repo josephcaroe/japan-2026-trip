@@ -1147,6 +1147,7 @@ const DAYS=[
     {nm:"Mandarake Complex",w:["nerd","shop"],p:"free",m:"Mandarake Complex Akihabara",d:"8 piani di second-hand: manga rari, toy vintage, doujinshi, cosplay. Prezzi da usato giapponese (ottimi).",jo:"Mandarake è il vero Akiba. Fatti 4-5 piani."},
     {nm:"Super Potato (retrogaming leggendario)",w:["nerd"],p:"free",m:"Super Potato Retro-kan Akihabara",d:"Famicom, Super Nintendo, Sega Saturn, cabinati arcade. Tre piani di nostalgia assoluta.",jo:"metti il budget prima di entrare. Non scherzare."},
     {nm:"Yodobashi Camera Akiba",w:["nerd","shop"],p:"free",m:"Yodobashi Camera Akiba",d:"Mega-store di elettronica: anche gachapon, amiibo, modellini, reparto figure."},
+    {nm:"Maid Café — @home o Maidreamin 🎀",w:["nerd","food"],p:{v:"~¥2.500–3.500"},m:"at-home cafe Akihabara",d:"Il locale più iconico di Akihabara dopo Super Potato. Cameriere in costume da maid, omurice con disegno personalizzato, giochi-mini e canzoni. Kitsch, teatrale, surreale — e completamente unico al mondo. <b>@home café</b> nel Don Quijote è il più famoso. Prenotazione online o walk-in.",jo:"Questo posto va vissuto almeno una volta. Portate le borse grandi — non serve, ma l'atmosfera vale tutto."},
     {nm:"Square Enix Café + Shop 🟦",w:["nerd","food"],p:{v:"~¥3.000–5.000 con cibo"},m:"Square Enix Cafe Akihabara",d:"Pasela Resorts Akihabara, 6° piano. Menù a tema su FF, Dragon Quest, NieR, Kingdom Hearts. <b>Prenotazione obbligatoria</b> — andate subito su cafe.jp.square-enix.com appena arrivate a Tokyo. Il negozio adiacente è accessibile anche senza prenotazione.",jo:"Questo posto è puro fan-service nel senso migliore — ogni piatto è un riferimento. Non saltarlo."}
   ]},
   {t:"Sera · Tanabata",x:[
@@ -1304,6 +1305,9 @@ const DAYS=[
  blocks:[
   {t:"Albissima (5:00–6:00)",x:[
     {nm:"Fushimi Inari Taisha all'alba ⛩️🌅",w:["storia","foto","top","fresco"],p:"free",m:"Fushimi Inari Taisha",d:"Migliaia di torii arancioni in sequenza. Aperto 24 ore, gratis. All'alba di luglio (sole alle 5) è fresco, quasi vuoto e la luce è magica. Salite al belvedere Yotsutsuji (~30–45 min di cammino) per la vista su Kyoto.",an:"Uno dei santuari più importanti del Giappone — goshuin da prendere qui.",jo:"Sembra uscito da un videogioco — per davvero."}
+  ]},
+  {t:"Mattina · Fushimi — sake tasting (9:30–10:30)",x:[
+    {nm:"Sake Tasting — Fushimi 🍶",w:["food","storia"],p:{v:"¥600 museo"},m:"Gekkeikan Okura Sake Museum Fushimi",d:"Il distretto sake più famoso del Giappone è a 10 min a piedi da Fushimi Inari. <b>Gekkeikan Okura Sake Museum</b> (1637): museo con botti storiche + degustazione inclusa nel biglietto. Apre alle 9:30. Combinazione perfetta: Inari all'alba → sake a colazione → treno per Uji.",an:"Fushimi ha l'acqua più pura del Giappone — dà al sake un profilo dolce impossibile altrove."}
   ]},
   {t:"Mattina/Pranzo · Uji (stessa linea a sud)",x:[
     {nm:"Byodo-in (Tempio della Fenice)",w:["storia","foto","top"],p:{v:"¥700"},m:"Byodoin Temple Uji",d:"Il tempio sulla moneta da ¥10. Costruito nel 1053. Riflesso perfetto sul laghetto. Patrimonio UNESCO.",an:"Esattamente come sulla moneta da ¥10 — ma dal vivo è ancora più bello."},
@@ -1470,7 +1474,29 @@ const EXPS=[
       "Piano B se è nuvoloso: il lago è bellissimo lo stesso."]},
  {ic:"🍵",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Cerimonia del Tè",sub:"Kyoto / Uji · ~¥3.000–6.000",
   p:"Un'ora di calma, gesti antichi e matcha fresco. La cosa più distante dal caos di Akihabara — ed è per questo che è perfetta.",
-  li:["A Kyoto: Camellia Tea Experience (Higashiyama), Maikoya (anche con kimono).","A Uji: Nakamura Tokichi (1854), Fukujuen, Taiho-an (sulla riva del fiume).","Prenota via sito ufficiale, Klook, Airbnb Experiences.","Vi insegnano a preparare il tè da soli — un'esperienza che resta."]}
+  li:["A Kyoto: Camellia Tea Experience (Higashiyama), Maikoya (anche con kimono).","A Uji: Nakamura Tokichi (1854), Fukujuen, Taiho-an (sulla riva del fiume).","Prenota via sito ufficiale, Klook, Airbnb Experiences.","Vi insegnano a preparare il tè da soli — un'esperienza che resta."]},
+ {ic:"🍶",bg:"linear-gradient(135deg,#2c3e50,#8a6a3a)",title:"Sake Tasting a Fushimi",sub:"15 Lug · Kyoto · stesso giorno di Fushimi Inari",
+  p:"Fushimi è il distretto dei sake più famoso del Giappone — acqua purissima dalle sorgenti sotterranee, una dozzina di brewery attive, vicoli di pietra color ocra. Dopo l'alba a Fushimi Inari, scendete qui.",
+  li:["<b>Gekkeikan Okura Sake Museum</b> (¥600): la più antica brewery di Fushimi (1637). Museo con botti storiche + degustazione inclusa. 10 min a piedi da Fushimi Inari.",
+      "<b>Kizakura Kappa Country</b>: beer garden + sake tasting su un canale. Atmosfera ottima.",
+      "<b>Momentoban</b>: enoteca sake moderna con bar — decine di sake in mescita a bicchiere, ottimo per provarne diversi.",
+      "L'acqua di Fushimi è 'nansui' (morbida) — dà al sake un profilo dolce e delicato, diverso da quello di Nada (Kobe).",
+      "Perfetto da abbinare: Fushimi Inari all'alba (Day 15, 5:00) → sake tasting alle 9:30–10:00 → treno per Uji e Nintendo Museum."]},
+ {ic:"🕹️",bg:"linear-gradient(135deg,#1a1a2e,#e94560)",title:"Game Center — Arcade Giapponese",sub:"Round1 · GIGO · Taito Station",
+  p:"Gli arcade giapponesi non hanno niente a che fare con quelli italiani degli anni '90. Sono palazzi di 6 piani con taiko, DDR, cabinati di tutto, UFO catcher, e le purikura (foto adesive). Un'ora qui è un documento culturale.",
+  li:["<b>Taiko no Tatsujin</b>: tamburo giapponese ritmico — il gioco più iconico degli arcade. Non richiede esperienza. Impossibile non divertirsi.",
+      "<b>DDR / maimai / CHUNITHM / beatmania IIDX</b>: i rhythm game giapponesi che non esistono altrove. Guardate chi li gioca prima, poi provateli.",
+      "<b>UFO Catcher</b> (gru): le macchinette giapponesi hanno prize fisici (figure, peluche, merch) — e i premi valgono. La difficoltà è vera, non imbrogliata.",
+      "<b>Purikura</b> (プリクラ): cabine foto-adesive con filtri assurdi, scritte, sfondi. Obbligatorio. Portate gli adesivi a casa come souvenir.",
+      "<b>Round1 Shinjuku</b> o <b>GIGO Akihabara</b>: i due più vicini al vostro percorso. Anche Round1 Ikebukuro (stesso palazzo del Pokémon Center)."]},
+ {ic:"🎀",bg:"linear-gradient(135deg,#c0405a,#8a3a6e)",title:"Maid Café — Akihabara",sub:"Day 7 · l'esperienza più wtf-Japan",
+  p:"Un maid café è un locale in cui le cameriere vestite da domestiche (maid) vi trattano come 'padroni di casa' con giochi, canzoni e cibo decorato. Non è quello che pensate — è kitsch, teatrale, surreale e completamente unico.",
+  li:["<b>@home café</b> (Akihabara, 4°–7° piano del Don Quijote): il più famoso e accessibile. Atmosfera pulita, gestione professionale.",
+      "<b>Maidreamin</b>: catena con più sedi ad Akihabara — buon livello, prenotazione online possibile.",
+      "Il cibo ha presentazioni elaborate (ketchup disegnato sulla omurice) — ordinate la omurice con disegno personalizzato.",
+      "Regola base: non fate foto alle maid senza permesso. Non chiedete dati personali. È un ruolo teatrale — rispettatelo.",
+      "Costo: ~¥2.000–3.000 con consumazione obbligatoria + eventuali giochi (~¥500 ciascuno). Non è economico ma è un'ora che non dimenticate.",
+      "Non è per tutti — ma se avete il minimo senso dell'umorismo per l'assurdo giapponese, fatelo."]}
 ];
 
 /* ════════════════════════════════

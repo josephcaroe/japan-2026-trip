@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5ede0">
+<meta name="description" content="Itinerario Giappone 2026 · 3–20 Luglio · Tokyo, Fuji, Kyoto, Nara, Osaka. Giorno per giorno, hotel, trasporti, prenotazioni e consigli.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Giappone 2026">
 <title>Giappone 2026 🇯🇵</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -391,6 +395,21 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   /* Footer */
   footer{padding:24px 0 40px}
 }
+/* ── TOOLBAR (espandi/comprimi) ── */
+.daybar{display:flex;justify-content:flex-end;margin:0 0 12px}
+.toggle-all{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1.5px solid var(--line);
+  border-radius:999px;padding:7px 15px;font-family:"Manrope";font-size:.8rem;font-weight:700;color:var(--soft);
+  cursor:pointer;box-shadow:var(--shadow);transition:.15s}
+.toggle-all:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ── BACK TO TOP ── */
+.totop{position:fixed;right:18px;bottom:18px;z-index:70;width:46px;height:46px;border-radius:50%;
+  border:1.5px solid var(--line);background:var(--card);color:var(--blue);font-size:1.2rem;cursor:pointer;
+  box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transform:translateY(10px);transition:.22s}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+.totop:hover{background:var(--blue);color:#f5ede0;border-color:var(--blue)}
+
 /* ── HOTEL CARDS ── */
 .hotel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
 .hotel-band{padding:16px 20px;color:#f5ede0;position:relative;overflow:hidden}
@@ -468,7 +487,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view on" id="home">
   <div class="hero">
     <div class="hero-sun"></div>
-    <div class="ey">3 – 21 Luglio 2026 · Tokyo · Fuji · Kyoto · Nara · Osaka</div>
+    <div class="ey">3 – 20 Luglio 2026 · Tokyo · Fuji · Kyoto · Nara · Osaka</div>
     <h1><span>わたしたちの旅</span>Viaggio in Giappone</h1>
     <p class="sub">17 giorni tra templi, neon, ramen e Pokémon Center. Dalla frenesia di Tokyo alla quiete di Kyoto, passando per il Monte Fuji e il festival di Gion.</p>
     <div class="dates">✈ Malpensa 3 Lug → Haneda · Ritorno 20 Lug 16:35</div>
@@ -527,6 +546,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="legend">
     <span class="lc">🎮 Nerd</span><span class="lc">⛩️ Storia</span><span class="lc">⭐ Must See</span><span class="lc">🍜 Cibo</span><span class="lc">🛍️ Shop</span><span class="lc">🧊 Fresco</span><span class="lc">📷 Foto</span>
   </div>
+  <div class="daybar"><button class="toggle-all" id="toggleAll">⊕ Espandi tutti</button></div>
   <div class="grid" id="dayList"></div>
 </section>
 
@@ -542,7 +562,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="exp">
   <div class="eyebrow">Il cuore del viaggio</div>
   <h2 class="pg-title">Le Esperienze che Aspettate</h2>
-  <p class="pg-sub">Le cose per cui vale il viaggio. Quattro già prenotate, le altre da non lasciarsi scappare.</p>
+  <p class="pg-sub">Le cose per cui vale il viaggio. Le grandi prenotazioni sono già fatte, le altre da non lasciarsi scappare.</p>
   <div class="grid g2" id="expList"></div>
 </section>
 
@@ -669,6 +689,8 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 </section>
 
 </main>
+
+<button class="totop" id="totop" aria-label="Torna su" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <footer class="wrap">
   <div class="seal">旅</div>
@@ -1627,7 +1649,8 @@ const ESS=[
       "Niente mancia — mai, da nessuna parte, per nessun motivo."]},
  {ic:"🚆",bg:"var(--blue)",h:"IC Card, metro e Shinkansen — come funziona tutto",p:"La cosa più importante da capire prima di arrivare. Due minuti di lettura e non avrete più dubbi.",
   li:["<b>IC Card (Suica o ICOCA)</b> — compratela subito ad Haneda. È una carta prepagata: la caricate con yen e la toccate ai tornelli entrando e uscendo. Scala automaticamente la tariffa giusta. Niente biglietti, niente code.",
-      "<b>Suica</b> (Tokyo) e <b>ICOCA</b> (Kansai) sono intercambiabili su tutto il territorio — una sola basta per tutto il viaggio. Prendete la <b>Welcome Suica</b> per turisti (niente deposito, scade dopo 28 giorni).",
+      "<b>Suica</b> (Tokyo) e <b>ICOCA</b> (Kansai) sono intercambiabili su tutto il territorio — una sola basta per tutto il viaggio. Prendete la <b>Welcome Suica</b> per turisti alle macchinette di Haneda Terminal 3 (niente deposito, scade dopo 28 giorni).",
+      "<b>Su iPhone:</b> potete usare la <b>Suica digitale in Apple Wallet</b> (o l'app Welcome Suica Mobile, valida 180 giorni) e saltare del tutto la coda alle macchinette — ricarica con la carta direttamente dal telefono. Su Android serve la carta fisica.",
       "<b>Dove si usa la IC card:</b> metro Tokyo, treni locali JR, bus urbani, konbini (7-Eleven ecc.), distributori automatici, alcuni ristoranti. Praticamente ovunque tranne lo Shinkansen.",
       "<b>Come si ricarica:</b> a qualsiasi macchinetta in stazione (cercate 'Charge' o チャージ), nei konbini, o con carta di credito alle macchinette JR. Caricate ¥5.000–10.000 per cominciare.",
       "<b>Shinkansen: NO, la IC card non basta.</b> Il Nozomi richiede biglietto separato. Compratelo sull'app <b>Smart-EX</b> (registrate una carta europea, il biglietto arriva sul telefono) oppure alle macchinette JR in stazione.",
@@ -1748,7 +1771,8 @@ const PACKING=[
 const dayList=document.getElementById('dayList');
 const SECRET_LINKS={
   tokyo:[{l:"🌊 Fresco a Tokyo",id:"sec-fresco-to"},{l:"🔮 Gemme Nascoste",id:"sec-gemme"},{l:"🏳️‍🌈 Ni-chome",id:"sec-nichome"}],
-  kyoto:[{l:"🎐 Fresco a Kyoto",id:"sec-fresco-ky"},{l:"🔮 Gemme Nascoste",id:"sec-gemme"}]
+  kyoto:[{l:"🎐 Fresco a Kyoto",id:"sec-fresco-ky"},{l:"🔮 Gemme Nascoste",id:"sec-gemme"}],
+  osaka:[{l:"🏳️‍🌈 Doyamacho",id:"sec-nichome"}]
 };
 function goSecret(id){go('secret');setTimeout(()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},200);}
 DAYS.forEach(d=>{
@@ -1760,7 +1784,7 @@ DAYS.forEach(d=>{
     <ul><li><b>Indirizzo:</b> ${d.hotel.addr}</li><li>${d.hotel.note}</li></ul>
   </div>`:'';
   const dcNum=parseInt(d.dc);
-  const secKey=dcNum>=5&&dcNum<=10?'tokyo':dcNum>=11&&dcNum<=16?'kyoto':null;
+  const secKey=dcNum>=4&&dcNum<=10?'tokyo':dcNum>=11&&dcNum<=16?'kyoto':dcNum>=17&&dcNum<=19?'osaka':null;
   const secretChips=secKey?`<div class="secret-links">${SECRET_LINKS[secKey].map(s=>`<a class="secret-chip" href="#" onclick="goSecret('${s.id}');return false">${s.l} →</a>`).join('')}</div>`:'';
   dayList.appendChild(el(`<article class="day">
     <div class="day-hd">
@@ -1786,6 +1810,14 @@ dayList.addEventListener('click',e=>{
   const h=e.target.closest('.day-hd');
   if(!h||e.target.closest('a')) return;
   h.parentElement.classList.toggle('open');
+});
+// Espandi / comprimi tutti
+const toggleAllBtn=document.getElementById('toggleAll');
+toggleAllBtn.addEventListener('click',()=>{
+  const days=[...dayList.querySelectorAll('.day')];
+  const anyClosed=days.some(d=>!d.classList.contains('open'));
+  days.forEach(d=>d.classList.toggle('open',anyClosed));
+  toggleAllBtn.textContent=anyClosed?'⊖ Comprimi tutti':'⊕ Espandi tutti';
 });
 
 // Cities
@@ -1863,6 +1895,11 @@ document.getElementById('check').addEventListener('change',e=>{
   refreshCl();
 });
 refreshCl();
+
+// Back-to-top + Escape chiude la sidebar
+const totop=document.getElementById('totop');
+window.addEventListener('scroll',()=>{totop.classList.toggle('show',window.scrollY>520)},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSidebar()});
 </script>
 </body>
 </html>

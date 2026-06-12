@@ -266,6 +266,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <button class="tb" data-v="templi">🏯 Templi</button>
     <button class="tb" data-v="quartieri">🏘 Quartieri</button>
     <button class="tb" data-v="secret">🧊 Segreti</button>
+    <button class="tb" data-v="ricorda">📌 Ricorda</button>
     <button class="tb" data-v="cambio">💱 Cambio</button>
     <button class="tb" data-v="prat">🎒 Pratica</button>
     <button class="tb" data-v="check">✓ Lista</button>
@@ -334,7 +335,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="days">
   <div class="eyebrow">Il programma</div>
   <h2 class="pg-title">Giorno per Giorno</h2>
-  <p class="pg-sub">Cliccate su ogni giorno per aprire il piano completo: mattina, pomeriggio, sera — con tante opzioni, prezzi, consigli da Reddit/blog e i link a Google Maps per ogni posto. Rimanete flessibili: se fuori piove o avete voglia di ramen per 3 ore, fate ramen per 3 ore.</p>
+  <p class="pg-sub">Ogni giorno si apre con mattina, pomeriggio e sera. Ci sono sempre più opzioni — scegliete in base all'umore, al meteo, all'energia. Se volete fare ramen per 3 ore invece di un museo, fate ramen per 3 ore.</p>
   <div class="legend">
     <span class="lc">🎮 Joseph</span><span class="lc">⛩️ Angelo</span><span class="lc">❤️ Entrambi</span><span class="lc">🍜 Cibo</span><span class="lc">🛍️ Shop</span><span class="lc">🧊 Fresco</span><span class="lc">📷 Foto</span>
   </div>
@@ -353,7 +354,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="exp">
   <div class="eyebrow">Il cuore del viaggio</div>
   <h2 class="pg-title">Le Esperienze che Aspettate</h2>
-  <p class="pg-sub">Le 6 esperienze attorno a cui ruota tutto il resto, incluse le 4 già prenotate.</p>
+  <p class="pg-sub">Le cose per cui vale il viaggio. Quattro già prenotate, le altre da non lasciarsi scappare.</p>
   <div class="grid g2" id="expList"></div>
 </section>
 
@@ -361,7 +362,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="nerd">
   <div class="eyebrow">Modalità Joseph: ATTIVATA</div>
   <h2 class="pg-title">🎮 Pokémon, Retrogaming &amp; Cose Nerd</h2>
-  <p class="pg-sub">Tutto quello che Joseph ha in mente da anni. Angelo si accolla volentieri (e in segreto si diverte pure lui).</p>
+  <p class="pg-sub">Joseph lo sa già tutto. Angelo si accolla e poi non vuole andare via.</p>
   <div class="grid g2" id="nerdList"></div>
 </section>
 
@@ -369,7 +370,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="cult">
   <div class="eyebrow">Modalità Angelo: ATTIVATA</div>
   <h2 class="pg-title">⛩️ Templi, Castelli, Tè &amp; Cerimonie</h2>
-  <p class="pg-sub">La parte storica e culturale che Angelo insegue da quando ha prenotato i biglietti. Joseph vuole tutto questo quanto lui, giura.</p>
+  <p class="pg-sub">Templi, cerimonie, musei, storia. Angelo nel suo elemento. Joseph fa finta di non emozionarsi.</p>
   <div class="grid g2" id="cultList"></div>
 </section>
 
@@ -377,7 +378,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 <section class="view" id="secret">
   <div class="eyebrow">Cose che non trovi su Google</div>
   <h2 class="pg-title">🧊 Fresco d'Estate &amp; Gemme Nascoste</h2>
-  <p class="pg-sub">Luglio in Giappone: 32°C, umidità alle stelle, folla ovunque. Ecco come sopravvivere (e trovare i posti che la gente non conosce).</p>
+  <p class="pg-sub">Luglio è caldo, umido e affollato. Questi sono i posti dove si respira — e quelli che quasi nessuno conosce.</p>
   <div class="grid g2" id="secretList"></div>
 </section>
 
@@ -396,6 +397,14 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <p class="pg-sub">Prenotazioni, valigia e cose da fare. Le spunte si salvano su questo dispositivo.</p>
   <div class="prog-wrap"><div class="ptop"><b>Pronti a partire!</b><span id="cl-n">0 / 0</span></div><div class="bar"><i id="cl-b"></i></div></div>
   <div class="grid g2"><div class="cl" id="cl-bk"></div><div class="cl" id="cl-pk"></div></div>
+</section>
+
+<!-- RICORDA -->
+<section class="view" id="ricorda">
+  <div class="eyebrow">Prima di partire e durante</div>
+  <h2 class="pg-title">📌 Cose da Ricordare</h2>
+  <p class="pg-sub">Le cose che sembrano ovvie ma che in Giappone funzionano diversamente. Meglio saperle prima.</p>
+  <div class="grid g2" id="ricordaList"></div>
 </section>
 
 <!-- CAMBIO -->
@@ -591,6 +600,49 @@ const QUARTIERI=[
 
 renderFeat('templiList',TEMPLI);
 renderFeat('quartieriList',QUARTIERI);
+
+/* ════════ RICORDA ════════ */
+const RICORDA=[
+ {ic:"🚇",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Treni e metro",sub:"Come funziona davvero",
+  p:"Il sistema ferroviario giapponese è la cosa più puntuale che esiste. Zero ritardi, zero incertezze — ma ci vuole un attimo per capire la logica.",
+  li:["Caricate la <b>Suica</b> (Tokyo) o <b>ICOCA</b> (Kansai) subito ad Haneda. Funziona come un portafoglio: la toccate all'entrata e all'uscita, su qualsiasi linea, senza comprare biglietti.",
+      "Il <b>Shinkansen NON accetta IC card</b>: serve biglietto separato (app Smart-EX o macchinette in stazione). Prenotatelo prima, soprattutto il sabato.",
+      "Ultimi treni <b>intorno a mezzanotte</b>. Dopo: taxi cari. Controllate gli orari prima di uscire la sera.",
+      "Google Maps per i percorsi in treno — più affidabile di qualsiasi altra app."]},
+ {ic:"💴",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Soldi e pagamenti",sub:"Il Giappone usa ancora i contanti",
+  p:"Tanti piccoli ristoranti, templi e mercati non accettano carta. Non è arretratezza — è cultura. Portatene sempre.",
+  li:["Bancomat affidabili per carte estere: <b>7-Eleven</b> e <b>Japan Post</b>. Revolut e Wise funzionano.",
+      "Prelevate subito ad Haneda: ¥30.000–40.000 per cominciare.",
+      "<b>Zero mancia</b> — mai, in nessun posto. In Giappone non esiste come concetto e può mettere in imbarazzo.",
+      "Monete da ¥100 e ¥500: armadietti, distributori, offerte ai templi."]},
+ {ic:"🗣️",bg:"linear-gradient(135deg,#c0402a,#8a4e7a)",title:"Lingua",sub:"L'inglese non è scontato",
+  p:"Nei localini veri fuori dai circuiti turistici, l'inglese non c'è. Si sopravvive benissimo con tre strumenti.",
+  li:["<b>Google Translate fotocamera</b> per i menu: scaricatelo offline prima di partire.",
+      "Tre frasi utili: <b>Sumimasen</b> (scusi), <b>Arigatou gozaimasu</b> (grazie), <b>Kore wa ikura?</b> (quanto costa?).",
+      "Salvate gli indirizzi degli hotel in giapponese sul telefono — i tassisti non leggono i romani.",
+      "I menu spesso hanno foto — indicare col dito funziona benissimo."]},
+ {ic:"🏯",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Etichetta ai templi",sub:"Cose che non si fanno",
+  p:"Nessuno si aspetta la perfezione — ma qualche gesto di rispetto cambia l'esperienza.",
+  li:["Al <b>torii</b>: piccolo inchino prima di passare. Non camminate al centro del vialetto (è riservato alla divinità).",
+      "<b>Temizuya</b> (fontana all'ingresso): sciacquate le mani — prima sinistra, poi destra.",
+      "I <b>goshuin</b> costano ¥300–500 e si chiedono all'ufficio apposito. Angelo: timbrateli tutti.",
+      "Voce bassa, niente cibo mentre si cammina nel recinto del tempio."]},
+ {ic:"🌡️",bg:"linear-gradient(135deg,#c0402a,#c49a2a)",title:"Luglio: il caldo",sub:"Non sottovalutatelo",
+  p:"30–34°C con umidità all'80%. Non è come l'estate italiana — è più simile alla sauna. Ci si adatta, ma ci vuole un piano.",
+  li:["Comprate subito un <b>asciugamano refrigerante</b> e un <b>ventaglio</b> al primo konbini.",
+      "Templi: <b>prima delle 9</b> — meno folla, più fresco, luce migliore.",
+      "12–15: cercate il condizionato. Ogni museo, konbini e centro commerciale è refrigerato.",
+      "<b>Kakigori</b> (ghiaccio tritato con sciroppo) — il dessert che salva la vita d'estate.",
+      "Vestiti tecnici/sintetici o Uniqlo AIRism — asciugano molto più in fretta del cotone."]},
+ {ic:"📋",bg:"linear-gradient(135deg,#3a7a82,#2c4a6e)",title:"Varie ed eventuali",sub:"Cose che nessuno dice finché non le scopri",
+  p:"",
+  li:["<b>Niente cestini per strada</b> — portate un sacchettino. È normalissimo lì.",
+      "<b>Scale mobili</b>: a Tokyo si sta a sinistra, a Osaka a destra.",
+      "I bagni pubblici sono ovunque e sono puliti. Usateli senza pensieri.",
+      "I <b>gachapon</b> (capsule) costano ¥300–500 — tenete monete.",
+      "Se vi perdete: entrate in un konbini o in una stazione. Il personale riesce sempre a capirsi."]}
+];
+renderFeat('ricordaList',RICORDA);
 
 function tick(){
   const diff=DEPART-new Date();

@@ -409,6 +409,9 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
 .hlink:hover{border-color:var(--blue);color:var(--blue)}
 .hlink.primary{background:var(--blue);color:#f5ede0;border-color:var(--blue)}
 .htransport{margin-top:12px;background:rgba(44,74,110,.06);border:1px solid rgba(44,74,110,.18);border-radius:13px;padding:12px 14px}
+.secret-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.secret-chip{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border-radius:20px;background:rgba(138,78,122,.1);border:1px solid rgba(138,78,122,.25);color:var(--blue2);font-size:.78rem;font-weight:600;text-decoration:none;transition:.15s}
+.secret-chip:hover{background:rgba(138,78,122,.18);border-color:rgba(138,78,122,.45)}
 .htransport .htt{font-family:"Shippori Mincho";font-weight:700;font-size:.82rem;color:var(--blue);margin-bottom:7px;display:flex;align-items:center;gap:6px}
 .htransport ul{margin:0;padding-left:16px}
 .htransport li{font-size:.84rem;color:var(--soft);margin:4px 0}
@@ -1087,7 +1090,6 @@ const DAYS=[
        "Regola d'oro: <b>niente mancia mai</b>. In nessun posto, per nessun motivo."]},
 
 {dc:"5",dm:"LUG",dw:"DOM",tag:"Tokyo · Prenotato",title:"Shinjuku · Odaiba · teamLab Planets 💧",area:"Mattina vicino all'hotel · poi la baia · slot 20:30",
- hotel:{name:"🏨 HUJI Shinjuku House",addr:"Sumiyoshichō, Shinjuku — 7 notti",note:"Base Tokyo fino all'11 luglio."},
  badge:{t:"teamLab 20:30 ✓",c:"bk"},
  blocks:[
   {t:"Mattina — vicino all'hotel (Shinjuku)",x:[
@@ -1391,6 +1393,7 @@ const DAYS=[
        "ICOCA funziona su tutto a Osaka. Non prendete taxi se non è emergenza."]},
 
 {dc:"20",dm:"LUG",dw:"LUN",tag:"Ritorno",title:"Osaka → Tokyo → Haneda → Casa ✈️",area:"Shinkansen mattina · volo 16:35",
+ hotel:{name:"🏨 Apartment Namba Daikoku — Osaka",addr:"Naniwa-ku, Shikitsunishi 1-1-28, Osaka",note:"⚠️ Check-out entro le 11:00. Preparate i bagagli la sera prima. Partite in tempo per Shin-Osaka."},
  badge:{t:"Shinkansen + Volo",c:"tr"},
  blocks:[
   {t:"🚅 Shin-Osaka → Tokyo → Haneda · partenza entro le 10:30",x:[
@@ -1520,21 +1523,21 @@ const CULT=[
    SECRET / SUMMER
    ════════════════════════════════ */
 const SECRET=[
- {ic:"🌊",bg:"linear-gradient(135deg,#3a7a82,#2c4a6e)",title:"Fresco a Tokyo",sub:"Quando è un forno",
+ {id:"sec-fresco-to",ic:"🌊",bg:"linear-gradient(135deg,#3a7a82,#2c4a6e)",title:"Fresco a Tokyo",sub:"Quando è un forno",
   p:"Luglio a Tokyo: 32°C, umidità alle stelle, ogni marciapiede è un sauna. Questi sono i posti dove sopravvivere.",
   li:["<b>Todoroki Valley</b> (Setagaya): un canyon verde dentro Tokyo, ruscello, ombra densa. Quasi nessun turista. È come uscire dalla città senza uscirci.",
       "<b>Parco Inokashira</b> (Kichijoji): laghetto, barchette, alberi enormi. A 2 minuti: il Museo Ghibli (se avete biglietti).",
       "<b>Rikugien Garden</b> / <b>Koishikawa Korakuen</b>: giardini storici con stagni e sentieri ombreggiati.",
       "Lungofiume <b>Nakameguro</b>: caffè all'ombra, canale, molto meno caotico di Shibuya.",
       "Qualsiasi <b>depachika</b> (piano gastronomico dei grandi magazzini): freschissimi e pieni di cibo."]},
- {ic:"🎐",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Fresco a Kyoto",sub:"L'estate giapponese come la vivono i locali",
+ {id:"sec-fresco-ky",ic:"🎐",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Fresco a Kyoto",sub:"L'estate giapponese come la vivono i locali",
   p:"Kyoto d'estate è calda quanto Tokyo ma ha qualcosa che Tokyo non ha: l'acqua.",
   li:["<b>Kawadoko / Noryo-yuka</b>: le terrazze dei ristoranti di Pontocho sospese sul fiume Kamo. Si cena sull'acqua. Tradizione estiva da secoli.",
       "<b>Kibune</b> (nord di Kyoto, ~45 min): tavolate letteralmente nell'acqua del torrente. Temperatura diversa dal pianeta. Abbinabile a Kurama onsen.",
       "<b>Crociera sul fiume Hozu</b> da Arashiyama: 2 ore tra le gole, barca tradizionale, aria freschissima.",
       "<b>Shimogamo Shrine + bosco Tadasu no Mori</b>: santuario nella foresta primaria, ombroso, silenzioso.",
       "La kawadoko è l'esperienza culinaria estiva per eccellenza a Kyoto — cenare sull'acqua è un'altra cosa."]},
- {ic:"🔮",bg:"linear-gradient(135deg,#2c4a6e,#8a4e7a)",title:"Gemme Nascoste",sub:"Dove vanno i locals",
+ {id:"sec-gemme",ic:"🔮",bg:"linear-gradient(135deg,#2c4a6e,#8a4e7a)",title:"Gemme Nascoste",sub:"Dove vanno i locals",
   p:"Posti che non trovi nelle guide normali — ma che i travel blogger di Reddit conoscono bene.",
   li:["<b>Yanaka</b> (Tokyo): quartiere sopravvissuto alle bombe, pieno di gatti, botteghe artigiane, cimitero-parco. Il Tokyo che non esiste più altrove.",
       "<b>Golden Gai</b> (Shinjuku): 200 micro-bar in vicoli larghi mezzo metro. Ogni bar ha 6 posti. Atmosfera incredibile.",
@@ -1654,6 +1657,11 @@ const PACKING=[
 
 // Days
 const dayList=document.getElementById('dayList');
+const SECRET_LINKS={
+  tokyo:[{l:"🌊 Fresco a Tokyo",id:"sec-fresco-to"},{l:"🔮 Gemme Nascoste",id:"sec-gemme"}],
+  kyoto:[{l:"🎐 Fresco a Kyoto",id:"sec-fresco-ky"},{l:"🔮 Gemme Nascoste",id:"sec-gemme"}]
+};
+function goSecret(id){go('secret');setTimeout(()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},200);}
 DAYS.forEach(d=>{
   const badge=d.badge?`<span class="badge ${d.badge.c}">${d.badge.t}</span>`:'';
   const body=d.blocks.map(b=>`<div class="slot"><div class="slot-hd">${b.t}</div>${b.x.map(itH).join('')}</div>`).join('');
@@ -1662,6 +1670,9 @@ DAYS.forEach(d=>{
     <div class="htt">🏨 ${d.hotel.name}</div>
     <ul><li><b>Indirizzo:</b> ${d.hotel.addr}</li><li>${d.hotel.note}</li></ul>
   </div>`:'';
+  const dcNum=parseInt(d.dc);
+  const secKey=dcNum>=5&&dcNum<=10?'tokyo':dcNum>=11&&dcNum<=16?'kyoto':null;
+  const secretChips=secKey?`<div class="secret-links">${SECRET_LINKS[secKey].map(s=>`<a class="secret-chip" href="#" onclick="goSecret('${s.id}');return false">${s.l} →</a>`).join('')}</div>`:'';
   dayList.appendChild(el(`<article class="day">
     <div class="day-hd">
       <div class="day-cal">
@@ -1677,7 +1688,7 @@ DAYS.forEach(d=>{
       <div class="day-arrow">⌄</div>
     </div>
     <div class="day-body"><div class="day-in">
-      ${badge}${hotelBlock}${body}
+      ${badge}${hotelBlock}${body}${secretChips}
       <div class="tips"><div class="th">💡 Consigli del giorno</div><ul>${tips}</ul></div>
     </div></div>
   </article>`));
@@ -1710,7 +1721,7 @@ CITIES.forEach(c=>{
 // Feat grids
 function renderFeat(id,arr){
   const node=document.getElementById(id);
-  arr.forEach(f=>node.appendChild(el(`<article class="feat">
+  arr.forEach(f=>node.appendChild(el(`<article class="feat"${f.id?` id="${f.id}"`:''}>
     <div class="feat-hd">
       <div class="feat-ic" style="background:${f.bg}">${f.ic}</div>
       <div><div class="fsub">${f.sub}</div><h3>${f.title}</h3></div>

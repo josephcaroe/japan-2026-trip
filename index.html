@@ -511,7 +511,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="facts">
     <div class="fact"><b>17</b><small>Giorni</small></div>
     <div class="fact"><b>6</b><small>Città</small></div>
-    <div class="fact"><b>4</b><small>Prenotazioni fisse</small></div>
+    <div class="fact"><b>5</b><small>Prenotazioni fisse</small></div>
     <div class="fact"><b>3 Lug</b><small>Partenza</small></div>
   </div>
 
@@ -1291,22 +1291,31 @@ const DAYS=[
        "Hozugawa River Cruise: 2 ore sulla gola fluviale, molto fresca — ottima se avete margine nel pomeriggio.",
        "Domani mattina facile: tornate a Kyoto rilassati."]},
 
-{dc:"13",dm:"LUG",dw:"LUN",tag:"Kyoto",title:"Rientro da Arashiyama — Kyoto easy",area:"Colazione in ryokan · giornata flessibile",
+{dc:"13",dm:"LUG",dw:"LUN",tag:"Kyoto · Prenotato",title:"Rientro da Arashiyama + Cerimonia del Tè 🍵",area:"Mattina libera · posa le valigie · tè in kimono alle 16:30",
  hotel:{name:"🏨 Smart Place Inn Kyoto Shijo Omiya Station",addr:"Nakagyo-ku, Fujiokacho 494, Kyoto",note:"Check-in dalle 15:00. 4 notti (base 13–17 lug). I bagagli arrivano già col takkyubin spedito ieri."},
+ badge:{t:"Cerimonia del tè 16:30 ✓",c:"bk"},
  blocks:[
   {t:"🚃 Da Arashiyama: JR Sagano → Kyoto (~¥240, 15 min) · IC card",x:[
     {nm:"Colazione in ryokan + passeggiatina",w:["food","fresco"],d:"Niente fretta. Sagano, vicoletti, caffè sul fiume. Il ryokan ha già incluso la colazione più buona del viaggio."},
     {nm:"Treno per Kyoto + check-in Smart Place Inn Shijo Omiya",w:[],m:"Smart Place Inn Kyoto Shijo Omiya Station",d:"I bagagli vi aspettano già grazie al takkyubin spedito ieri. Sede ideale per Gion, Higashiyama, Nishiki."}
   ]},
-  {t:"Pomeriggio — opzioni a scelta",x:[
-    {nm:"Opzione A: Kinkaku-ji (Padiglione d'Oro) + Ryoan-ji",w:["storia","foto","top"],p:{v:"¥500 + ¥600"},m:"Kinkaku-ji",d:"Il padiglione ricoperto d'oro riflesso sul laghetto. Combinatelo con Ryoan-ji (il giardino di pietre più famoso del mondo, ~10 min a piedi). Entrambi a nord-ovest — vicini al rientro da Arashiyama.",an:"Questi due insieme fanno un pomeriggio storico perfetto — vicini, entrambi a nord-ovest."},
-    {nm:"Opzione B: Castello di Nijo",w:["storia"],p:{v:"¥1.300"},m:"Nijo Castle Kyoto",d:"Palazzo shogunale del XVII secolo. I corridoi scricchiolano apposta (pavimenti 'dell'usignolo') per segnalare intrusi. Giardino bellissimo.",an:"I corridoi scricchiolano apposta per rivelare intrusi — una delle cose più surreali del Giappone."},
-    {nm:"Opzione C: Heian Jingu + Sentiero della Filosofia",w:["storia","fresco","foto"],p:{v:"¥600 giardino"},m:"Heian Jingu Kyoto",d:"Il grande torii arancione che sovrasta l'intero quartiere è uno dei simboli di Kyoto. Costruito nel 1895, il giardino Jingu-en (¥600) è bellissimo in estate con fiori di loto e iris. Dal giardino: 10 min a piedi al Sentiero della Filosofia → Ginkaku-ji.",an:"Heian Jingu è spesso saltato dai tour — ma il giardino estivo è uno dei più belli di Kyoto."},
-    {nm:"Opzione D: giornata soft",w:["fresco","food"],d:"Nishiki Market, gelato al matcha, riposo in hotel prima dei giorni intensi che arrivano."}
+  {t:"Mattina/primo pomeriggio — UNA cosa leggera (liberi entro le 15:00)",x:[
+    {nm:"Opzione A: Kinkaku-ji (Padiglione d'Oro) + Ryoan-ji",w:["storia","foto","top"],p:{v:"¥500 + ¥600"},m:"Kinkaku-ji",d:"Il padiglione ricoperto d'oro riflesso sul laghetto. Combinatelo con Ryoan-ji (il giardino di pietre più famoso del mondo, ~10 min a piedi). Entrambi a nord-ovest — vicini al rientro da Arashiyama. Perfetti da fare al mattino e rientrare in centro per le 15:00.",an:"Questi due insieme fanno una mattina storica perfetta — vicini, entrambi a nord-ovest."},
+    {nm:"Opzione B: Castello di Nijo",w:["storia"],p:{v:"¥1.300"},m:"Nijo Castle Kyoto",d:"Palazzo shogunale del XVII secolo. I corridoi scricchiolano apposta (pavimenti 'dell'usignolo') per segnalare intrusi. Giardino bellissimo. È a metà strada tra Arashiyama e il centro — comodo prima della cerimonia.",an:"I corridoi scricchiolano apposta per rivelare intrusi — una delle cose più surreali del Giappone."},
+    {nm:"Opzione C: giornata soft",w:["fresco","food"],d:"Colazione lunga in ryokan, Nishiki Market, gelato al matcha, riposo. Arrivare riposati alla cerimonia è la scelta migliore dopo i giorni intensi che arrivano."}
+  ]},
+  {t:"15:00–16:15 · posa le valigie, poi verso Nishiki",x:[
+    {nm:"Check-in / deposito bagagli — Smart Place Inn",w:[],m:"Smart Place Inn Kyoto Shijo Omiya Station",d:"Check-in dalle 15:00 (i bagagli grandi vi aspettano già dal takkyubin di ieri). Lasciate tutto in camera o in deposito e uscite leggeri verso Nishiki — la cerimonia è alle 16:30.",an:"A MAIKOYA si entra leggeri: meglio posare zaini e valigie prima."}
+  ]},
+  {t:"16:30 · Cerimonia del Tè in kimono — PRENOTATA 🍵",x:[
+    {nm:"MAIKOYA Nishiki · Kimono Tea Ceremony",w:["top","storia"],p:"book",m:"MAIKOYA Nishiki 329 Ebiyacho Nakagyo-ku Kyoto",d:"<b>Order #2973848 · 13 Lug ore 16:30.</b> Indirizzo: <b>329 Ebiyacho, Nakagyo-ku</b> (a un passo dal Mercato Nishiki). Vi vestono in kimono e fate una cerimonia del tè tradizionale completa. <b>Arrivate 10–15 min prima.</b> Da Smart Place Inn (Shijo-Omiya): ~15 min a piedi, oppure Hankyu Omiya → Karasuma (1 fermata) + breve camminata.",an:"L'esperienza culturale più immersiva di Kyoto: kimono + tè in un'unica sessione."}
   ]}
  ],
- tips:["Kinkaku-ji e Ryoan-ji sono entrambi a nord-ovest: comodo rientro da Arashiyama senza tornare in centro.",
-       "Giornata jolly prima del Nara + Gion + Higashiyama. Non sovraccaricate."]},
+ tips:["<b>🍵 MAIKOYA Nishiki — 13 Lug 16:30</b> (Order #2973848): 329 Ebiyacho, Nakagyo-ku. Arrivate 10–15 min prima, lo slot non si recupera.",
+       "<b>Tragitto:</b> da Smart Place Inn ~15 min a piedi verso Nishiki/Shijo, o Hankyu Omiya → Karasuma (1 fermata). <b>Posate prima le valigie in hotel.</b>",
+       "Al mattino fate al massimo UNA visita leggera (Kinkaku-ji + Ryoan-ji a nord-ovest sono comodi dal rientro da Arashiyama) e rientrate per le 15:00.",
+       "In kimono d'estate fa caldo: arrivate idratati. MAIKOYA è climatizzata.",
+       "Dopo la cerimonia siete già in centro: Nishiki Market e Pontocho sono lì vicino — cena perfetta in zona."]},
 
 {dc:"14",dm:"LUG",dw:"MAR",tag:"Gita a Nara",title:"Cervi, Grande Buddha &amp; Lanterne 🦌",area:"Nara day trip · sera Yoiyama a Kyoto",
  badge:{t:"Inizia lo Yoiyama 🏮",c:"fe"},
@@ -1339,7 +1348,7 @@ const DAYS=[
   ]},
   {t:"Mattina/Pranzo · Uji (stessa linea a sud)",x:[
     {nm:"Byodo-in (Tempio della Fenice)",w:["storia","foto","top"],p:{v:"¥700"},m:"Byodoin Temple Uji",d:"Il tempio sulla moneta da ¥10. Costruito nel 1053. Riflesso perfetto sul laghetto. Patrimonio UNESCO.",an:"Esattamente come sulla moneta da ¥10 — ma dal vivo è ancora più bello."},
-    {nm:"Matcha e cerimonia del tè a Uji ☕",w:["food","storia","fresco","top"],p:{v:"¥1.000+"},m:"Nakamura Tokichi Honten Uji",d:"Uji è la capitale del matcha. Casa da tè Nakamura Tokichi (dal 1854): soft-serve al matcha leggendario. Se volete la cerimonia vera: prenotate Fukujuen o Taiho-an.",an:"Uji è la capitale mondiale del matcha — assaggiatelo in tutte le forme possibili."}
+    {nm:"Matcha e cerimonia del tè a Uji ☕",w:["food","storia","fresco","top"],p:{v:"¥1.000+"},m:"Nakamura Tokichi Honten Uji",d:"Uji è la capitale del matcha. Casa da tè Nakamura Tokichi (dal 1854): soft-serve al matcha leggendario. La cerimonia del tè vera l'avete già fatta a MAIKOYA il 13 — qui concentratevi sul gusto.",an:"Uji è la capitale mondiale del matcha — assaggiatelo in tutte le forme possibili."}
   ]},
   {t:"Pomeriggio · 16:00 — finalmente",x:[
     {nm:"Nintendo Museum 🎮 (Ogura, Uji)",w:["nerd","top"],p:"book",m:"Nintendo Museum Uji Ogura",d:"L'ex fabbrica Nintendo convertita in museo. Dal 2024. Dal 1889 (carte hanafuda) a Switch. 10 monete-gioco incluse, console giganti su cui giocare. Shop esclusivo, caffè interno. A 1 fermata JR da Uji.",jo:"Il museo più atteso del viaggio — arrivate puntuali al vostro slot, non si può aspettare fuori."}
@@ -1504,9 +1513,12 @@ const EXPS=[
   p:"Laghi, pagoda Chureito, aria di montagna. Una pausa di respiro dal caldo di Tokyo.",
   li:["Partite presto: il Fuji si copre di nuvole nel pomeriggio.","Bus Shinjuku (¥2.200) prenota su highway-buses.jp.","Chureito (~400 gradini) + Oishi Park + funivia (¥1.000 a/r).",
       "Piano B se è nuvoloso: il lago è bellissimo lo stesso."]},
- {ic:"🍵",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Cerimonia del Tè",sub:"Kyoto / Uji · ~¥3.000–6.000",
-  p:"Un'ora di calma, gesti antichi e matcha fresco. La cosa più distante dal caos di Akihabara — ed è per questo che è perfetta.",
-  li:["A Kyoto: Camellia Tea Experience (Higashiyama), Maikoya (anche con kimono).","A Uji: Nakamura Tokichi (1854), Fukujuen, Taiho-an (sulla riva del fiume).","Prenota via sito ufficiale, Klook, Airbnb Experiences.","Vi insegnano a preparare il tè da soli — un'esperienza che resta."]},
+ {ic:"🍵",bg:"linear-gradient(135deg,#6b8740,#3a7a82)",title:"Cerimonia del Tè in Kimono",sub:"13 Lug 16:30 · MAIKOYA Nishiki · prenotato",
+  p:"Un'ora di calma, gesti antichi e matcha fresco — vestiti in kimono. La cosa più distante dal caos di Akihabara, ed è per questo che è perfetta. Già prenotata per il 13 luglio.",
+  li:["<b>✅ MAIKOYA Nishiki</b> — Order #2973848, 13 Lug ore 16:30. Indirizzo: 329 Ebiyacho, Nakagyo-ku, Kyoto (vicino al Mercato Nishiki).",
+      "Include <b>vestizione in kimono</b> + cerimonia del tè tradizionale completa. Arrivate 10–15 min prima.",
+      "Da Smart Place Inn (Shijo-Omiya): ~15 min a piedi o 1 fermata Hankyu. <b>Posate le valigie prima.</b>",
+      "A Uji (Day 15) potete comunque gustare il matcha da Nakamura Tokichi (1854) — soft-serve leggendario, senza bisogno di un'altra cerimonia."]},
  {ic:"🍶",bg:"linear-gradient(135deg,#2c3e50,#8a6a3a)",title:"Sake Tasting a Fushimi",sub:"15 Lug · Kyoto · stesso giorno di Fushimi Inari",
   p:"Fushimi è il distretto dei sake più famoso del Giappone — acqua purissima dalle sorgenti sotterranee, una dozzina di brewery attive, vicoli di pietra color ocra. Dopo l'alba a Fushimi Inari, scendete qui.",
   li:["<b>Gekkeikan Okura Sake Museum</b> (¥600): la più antica brewery di Fushimi (1637). Museo con botti storiche + degustazione inclusa. 10 min a piedi da Fushimi Inari.",
@@ -1682,7 +1694,7 @@ const ESS=[
       "<b>Osaka (metro e treni locali)</b> — IC card (ICOCA o Suica). Tap & go ovunque.",
       "<b>Shin-Osaka → Tokyo (20 lug, Shinkansen Nozomi)</b> — biglietto separato. App <b>Smart-EX</b>. ~¥14.720.",
       "<b>Tokyo → Haneda (20 lug)</b> — IC card. Tokyo Monorail da Hamamatsucho (~¥500, 18 min) o Keikyu da Shinagawa (~¥300, 12 min). Tap & go."]},
- {ic:"📋",bg:"var(--red)",h:"Prenotazioni — tutto il necessario",p:"Tre già fatte, le altre richiedono azione. Quelle segnate 🔴 si riempiono velocemente.",
+ {ic:"📋",bg:"var(--red)",h:"Prenotazioni — tutto il necessario",p:"Quattro già fatte, le altre richiedono azione. Quelle segnate 🔴 si riempiono velocemente.",
   li:["<b>✅ teamLab Planets</b> — 5 Lug 20:30. Già prenotato. Screenshot QR sull'app.",
       "<b>✅ Nintendo Museum</b> — 15 Lug 16:00. Già prenotato. Arrivate 15 min prima, lockers ¥100.",
       "<b>✅ USJ</b> — 18 Lug. Già pagato. Scaricate l'app USJ — appena dentro prendete il timed-entry Nintendo World (gratis, ma va fatto subito o c'è la coda).",
@@ -1691,7 +1703,7 @@ const ESS=[
       "<b>🔴 Square Enix Café</b> (Akihabara, Day 7): <b>cafe.jp.square-enix.com</b> → prenotate appena arrivate a Tokyo — il calendario apre ~1 mese prima e finisce veloce. Cercate slot serale. Tema luglio: verificate sul sito.",
       "<b>🔴 Pokémon Center DX Café</b> (Nihonbashi, Day 7 o 9): sito ufficiale Pokémon Café → prenotazione con settimane/mesi di anticipo. Molto richiesto.",
       "<b>🌆 Shibuya Sky</b> (Day 9): <b>shibuya-sky.com</b> → slot 17:30–18:00 per il tramonto (~¥2.000). Prenotate online — alla cassa costa di più.",
-      "<b>🍵 Cerimonia del tè</b> (Kyoto, Days 13–16): <b>Klook.com</b> → cerca 'tea ceremony Kyoto' → Mai-Ko Experience (con maiko, consigliata) o Camellia Tea Experience (Higashiyama). Almeno 1 settimana prima.",
+      "<b>✅ Cerimonia del tè in kimono</b> — MAIKOYA Nishiki, 13 Lug 16:30 (Order #2973848). Già prenotata. 329 Ebiyacho, Nakagyo-ku. Arrivate 10–15 min prima, dopo aver posato le valigie in hotel.",
       "<b>👘 Kimono rental</b> (Higashiyama, facoltativo): Klook / Yumeyakata / Kyoto Kimono Rental Wargo. Possibile anche il giorno stesso ma meglio prenotare.",
       "<b>📱 Da fare prima di partire:</b> eSIM Airalo (Italia), registrazione Smart-EX, app USJ + Google Maps offline Tokyo+Kyoto+Osaka + Google Translate pacchetto giapponese offline."]},
  {ic:"🧳",bg:"var(--gold)",h:"Takkyubin — spedire i bagagli (guida completa)",p:"Il corriere giapponese (Yamato Transport, logo del gatto nero 'Kuroneko') porta le valigie da un hotel all'altro in 1 giorno. Voi viaggiate leggeri, le valigie vi aspettano alla tappa successiva. Affidabile al 100% — lo usano tutti.",
@@ -1751,7 +1763,7 @@ const BOOKING=[
  {t:"Square Enix Café Akihabara: prenotare appena arrivati a Tokyo",s:"cafe.jp.square-enix.com — calendario apre ~1 mese prima"},
  {t:"Pokémon Center DX Café (Nihonbashi): prenotare se volete andarci",s:"Sito ufficiale Pokémon Café — settimane prima"},
  {t:"Shibuya Sky: slot tramonto (17:30–18:00)",s:"shibuya-sky.com — ~¥2.000"},
- {t:"Cerimonia del tè (Kyoto o Uji)",s:"Klook → 'tea ceremony Kyoto' · Mai-Ko o Camellia"},
+ {t:"✅ Cerimonia del tè — MAIKOYA Nishiki (13 Lug 16:30)",s:"Order #2973848 · 329 Ebiyacho · già prenotato"},
  {t:"Kimono rental Higashiyama (facoltativo)",s:"Klook / Yumeyakata / Wargo"},
  {t:"eSIM (es. Airalo) da acquistare prima"},
  {t:"Avvisare banca / controllare limiti Revolut per yen"},

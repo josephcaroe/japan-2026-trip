@@ -531,6 +531,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <div class="fl"><div class="la">Ritorno · Lunedì 20 Lug</div><div class="leg"><div class="pt"><b>HND</b><span>Haneda · 16:35</span></div><div class="line"></div><div class="pt" style="text-align:right"><b>MXP</b><span>Malpensa · 07:40 +1g</span></div></div></div>
   </div>
   <div class="note"><b>✅ Volo 20 lug: 16:35 da Haneda.</b> Partite da Shin-Osaka entro le 10:00–10:30 con il Nozomi (~2h27) — siete ad Haneda comodamente per le 14:00.</div>
+  <div class="note"><b>🧳 Bagaglio (a testa):</b> 1 <b>bagaglio a mano</b> max <b>10 kg</b> · ~115 cm (somma dei 3 lati) + 1 <b>bagaglio in stiva</b> max <b>23 kg</b> · 158 cm (somma dei 3 lati). 💡 Partite con la stiva <b>mezza vuota</b>: con UNIQLO e souvenir si torna pieni. Pesate prima del ritorno — l'eccesso bagaglio in aeroporto è caro. <b>Bonus:</b> la stiva da 158 cm è sotto la soglia Shinkansen (160 cm), quindi <b>niente posto bagagli speciale</b> da prenotare.</div>
 
   <p style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
     <button onclick="go('days')" style="background:var(--red);color:#f5ede0;border:0;border-radius:12px;padding:11px 22px;font-family:Manrope;font-size:.9rem;font-weight:700;cursor:pointer">📅 Itinerario →</button>
@@ -868,7 +869,7 @@ const HOTELS=[
        "<b>Mattina presto:</b> uscite da HUJI ~6:45, JR Chuo Shinjuku → Tokyo Station ~14 min (IC card), al gate Shinkansen per le 7:40. Arrivo a Kyoto 10:09 = giornata piena (Nishiki + Gion + Pontocho).",
        "<b>⚠️ Scegliere i posti:</b> se Smart-EX mostra 'posti non ancora definiti' è perché la prenotazione è stata fatta fuori orario giapponese. Una volta finalizzata, andate su <b>My Trips → Change → View Seat Map</b> e scegliete <b>D + E</b> (E = finestrino, lato Fuji). È gratis, quante volte volete prima della partenza.",
        "<b>Posto per il Fuji:</b> il <b>posto E</b> è sempre il lato del Fuji. Si vede ~40 min dopo Tokyo (~8:35, vicino a Shin-Fuji), per ~1 minuto.",
-       "<b>Valigie grandi:</b> avete ancora i trolley con voi (li spedite il 12). Se la somma dei 3 lati supera 160 cm, sul seat map scegliete i <b>posti con 'spazio bagagli extra-large'</b> (ultima fila). Sotto i 160 cm vanno in cappelliera.",
+       "<b>Valigie grandi:</b> avete ancora i trolley con voi (li spedite il 12). Le vostre stive sono <b>158 cm → sotto i 160 cm</b>, quindi nessun posto speciale: vanno in cappelliera o dietro l'ultima fila.",
        "<b>NON basta la Suica</b> per lo Shinkansen — biglietto separato (già fatto)."]
   }
  },
@@ -1696,7 +1697,7 @@ const ESS=[
       "<b>Shinkansen: NO, la IC card non basta.</b> Il Nozomi richiede biglietto separato. Compratelo sull'app <b>Smart-EX</b> (registrate una carta europea, il biglietto arriva sul telefono) oppure alle macchinette JR in stazione.",
       "<b>Prenotate sempre un posto numerato</b> sullo Shinkansen — d'estate, il sabato e nei festivi i treni sono pieni.",
       "<b>Lato Fuji = posto E</b> (finestrino della fila da 2, D + E), in <b>entrambe le direzioni</b>: il Fuji compare ~40–45 min dopo Tokyo (vicino a Shin-Fuji) per circa 1 minuto. In Green Car è il posto D.",
-      "<b>Valigie grandi:</b> se la somma dei 3 lati (alt + largh + prof) supera <b>160 cm</b>, su Smart-EX scegliete un <b>'posto con spazio bagagli extra-large'</b> (特大荷物スペースつき座席): sono le ultime file con spazio dietro, <b>gratis se prenotato</b>, ¥1.000 di sovrapprezzo se salite senza. Sotto i 160 cm vanno in cappelliera.",
+      "<b>Valigie grandi:</b> se la somma dei 3 lati (alt + largh + prof) supera <b>160 cm</b>, su Smart-EX scegliete un <b>'posto con spazio bagagli extra-large'</b> (特大荷物スペースつき座席): sono le ultime file con spazio dietro, <b>gratis se prenotato</b>, ¥1.000 di sovrapprezzo se salite senza. <b>Le vostre valigie in stiva (158 cm) sono sotto i 160 cm → nessun posto speciale necessario</b>, vanno dietro l'ultima fila o in cappelliera.",
       "<b>Quando costa meno:</b> la tariffa base del Nozomi è fissa (non varia come gli aerei). Cambia solo il supplemento posto: −¥200 in bassa stagione, +¥200/+¥400 nei picchi. Il vero risparmio è l'<b>EX早特21</b> (Smart-EX): prenotando 21+ giorni prima ~¥1.000–2.000 in meno a biglietto, posti limitati.",
       "<b>Japan Rail Pass: non vi conviene.</b> Costa ~€500 a testa, voi fate solo 2 tratte Shinkansen (~€175 totali). Il pass conviene solo con 4–5 tratte o se andate a Hiroshima/Hokkaido.",
       "Riepilogo: <b>IC card = tutto il trasporto quotidiano</b>. <b>Smart-EX = i due Shinkansen</b>. Fine."]},
@@ -1809,6 +1810,8 @@ const PACKING=[
  {t:"Gel mani + salviette umide"},
  {t:"Cash starter kit: almeno €50 in yen prima di atterrare",s:"O preleva subito a Haneda"},
  {t:"Borsa pieghevole extra (o valigia mezza vuota)",s:"Per gli acquisti UNIQLO/GU e i souvenir"},
+ {t:"Bagaglio a mano: max 10 kg · ~115 cm (somma lati)",s:"Pesa e misura prima di partire"},
+ {t:"Bagaglio in stiva: max 23 kg · 158 cm (somma lati)",s:"Parti leggero · pesa prima del ritorno (eccesso = caro)"},
  {t:"Passaporto sempre con sé per lo shopping",s:"Serve per il tax-free UNIQLO ecc. (spesa ≥¥5.000)"}
 ];
 

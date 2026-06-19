@@ -658,7 +658,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
     <tr><td>teamLab Planets (prenotato)</td><td class="yen">¥3.800–4.200</td><td class="eur" data-yen="4000">–</td></tr>
     <tr><td>Nintendo Museum (prenotato)</td><td class="yen">¥3.300</td><td class="eur" data-yen="3300">–</td></tr>
     <tr><td>USJ Studio Pass (pagato)</td><td class="yen">¥8.600–10.400</td><td class="eur" data-yen="9500">–</td></tr>
-    <tr><td>Shinkansen Tokyo → Kyoto (Nozomi)</td><td class="yen">¥14.370</td><td class="eur" data-yen="14370">–</td></tr>
+    <tr><td>Shinkansen Tokyo → Kyoto (Nozomi) ✓</td><td class="yen">¥13.970</td><td class="eur" data-yen="13970">–</td></tr>
     <tr><td>Shinkansen Shin-Osaka → Tokyo (Nozomi)</td><td class="yen">¥14.720</td><td class="eur" data-yen="14720">–</td></tr>
     <tr><td>Bus Shinjuku → Kawaguchiko</td><td class="yen">~¥2.200</td><td class="eur" data-yen="2200">–</td></tr>
     <tr><td>Funivia del Fuji (a/r)</td><td class="yen">¥1.000</td><td class="eur" data-yen="1000">–</td></tr>
@@ -848,7 +848,7 @@ const HOTELS=[
   notes:[
    {i:"📍",t:"<b>Zona:</b> Shinjuku — cuore di Tokyo, ottima posizione per muoversi ovunque con la metro."},
    {i:"🧳",t:"<b>Check-in:</b> la struttura manda le istruzioni via email. Leggete prima di atterrare."},
-   {i:"⏰",t:"<b>Check-out sabato 11:</b> lasciate i bagagli in reception e andate a esplorare — il treno per Kyoto è il pomeriggio."}
+   {i:"⏰",t:"<b>Check-out sabato 11 — PRESTO:</b> il treno è il Nozomi delle <b>7:54</b> (ref #2001). Valigie pronte la sera prima, sveglia ~6:00, uscite da HUJI ~6:45 per Tokyo Station. Niente colazione con calma — c'è il konbini in stazione."}
   ],
   transport:{
    title:"🚅 Come arrivarci da Haneda (4 Lug)",
@@ -859,14 +859,12 @@ const HOTELS=[
   },
   next:{
    title:"🚅 Shinjuku → Kyoto (11 Lug, Shinkansen)",
-   li:["<b>Linea:</b> Tokaido Shinkansen, servizio <b>Nozomi</b> (il più veloce), Tokyo Station → Kyoto. ~2h15, ~¥14.370 a testa.",
-       "<b>Orario consigliato:</b> check-out HUJI entro le 9–10, quindi Nozomi da Tokyo Station verso le <b>10:00–10:30</b> (es. 10:03 / 10:33) → Kyoto ~12:15–12:45. Pomeriggio libero per Nishiki + Gion + Pontocho.",
-       "<b>Come comprare:</b> app <b>Smart-EX</b> (registrate la carta). Il biglietto è sul telefono.",
-       "Da Shinjuku a Tokyo Station: JR Chuo o Sobu Line, ~12–15 min, IC card.",
-       "<b>Posto per il Fuji:</b> prenotate <b>D + E con E al finestrino</b> — il posto E è sempre il lato del Fuji. Si vede ~40–45 min dopo Tokyo (vicino a Shin-Fuji), per ~1 minuto.",
-       "<b>Valigie grandi:</b> se la somma dei 3 lati supera 160 cm, su Smart-EX scegliete i <b>posti con 'spazio bagagli extra-large'</b> (ultima fila, gratis se prenotato; ¥1.000 se no). Sotto i 160 cm vanno in cappelliera.",
-       "<b>💰 Risparmio:</b> prenotando <b>21+ giorni prima</b> (EX早特21 su Smart-EX) si risparmiano ~¥1.000–2.000 a biglietto. Posti limitati, non modificabili dopo l'acquisto.",
-       "<b>NON basta la Suica</b> per lo Shinkansen — biglietto separato obbligatorio."]
+   li:["<b>✅ PRENOTATO:</b> Nozomi <b>7:54 → Kyoto 10:09</b>, 2 adulti, ¥27.940 totali (ref #2001, Smart-EX). Tokaido Shinkansen.",
+       "<b>Mattina presto:</b> uscite da HUJI ~6:45, JR Chuo Shinjuku → Tokyo Station ~14 min (IC card), al gate Shinkansen per le 7:40. Arrivo a Kyoto 10:09 = giornata piena (Nishiki + Gion + Pontocho).",
+       "<b>⚠️ Scegliere i posti:</b> se Smart-EX mostra 'posti non ancora definiti' è perché la prenotazione è stata fatta fuori orario giapponese. Una volta finalizzata, andate su <b>My Trips → Change → View Seat Map</b> e scegliete <b>D + E</b> (E = finestrino, lato Fuji). È gratis, quante volte volete prima della partenza.",
+       "<b>Posto per il Fuji:</b> il <b>posto E</b> è sempre il lato del Fuji. Si vede ~40 min dopo Tokyo (~8:35, vicino a Shin-Fuji), per ~1 minuto.",
+       "<b>Valigie grandi:</b> avete ancora i trolley con voi (li spedite il 12). Se la somma dei 3 lati supera 160 cm, sul seat map scegliete i <b>posti con 'spazio bagagli extra-large'</b> (ultima fila). Sotto i 160 cm vanno in cappelliera.",
+       "<b>NON basta la Suica</b> per lo Shinkansen — biglietto separato (già fatto)."]
   }
  },
  {
@@ -1253,12 +1251,12 @@ const DAYS=[
        "Ultime ore a Tokyo — fate il punto sugli acquisti: il peso del bagaglio conta per domani.",
        "Ordinate già i posti del Shinkansen (app <b>Smart-EX</b>) se non l'avete fatto — sabato estate = sold out."]},
 
-{dc:"11",dm:"LUG",dw:"SAB",tag:"Tokyo → Kyoto",title:"Shinkansen — Benvenuti nell'antica capitale",area:"Partenza mattina · sera a Gion",
+{dc:"11",dm:"LUG",dw:"SAB",tag:"Tokyo → Kyoto · Prenotato",title:"Shinkansen — Benvenuti nell'antica capitale",area:"Nozomi 7:54 · arrivo Kyoto 10:09 · sera a Gion",
  hotel:{name:"🏨 Miyako City Kintetsu Kyoto Station",addr:"Shimogyo-ku Higashishiokoji Kamadonocho 1-9, Kyoto",note:"Check-in dalle 15:00. 1 notte. ⚠️ Domani mattina spedire i bagagli col takkyubin prima di partire per Arashiyama."},
- badge:{t:"Treno ⟶ Kyoto",c:"tr"},
+ badge:{t:"Nozomi 7:54 ✓ (ref #2001)",c:"bk"},
  blocks:[
-  {t:"🚅 Da Shinjuku: Shinkansen Nozomi (¥14.370 · 2h15)",x:[
-    {nm:"Shinkansen Nozomi · Tokyo → Kyoto",w:["top"],p:{v:"¥14.370 · 2h15"},m:"Tokyo Station",d:"Da Shinjuku: JR Chuo ~12 min fino a Tokyo Station (IC card). Nozomi consigliato ~10:00–10:30 (Kyoto ~12:30). Prenotate <b>D + E, finestrino E</b>: è il lato del Fuji (visibile ~40 min dopo Tokyo). App Smart-EX — <b>non basta la Suica</b>.",an:"In 2 ore si passa da Tokyo a un'altra era storica — guardate fuori dal finestrino."},
+  {t:"🚅 Nozomi 7:54 → Kyoto 10:09 (prenotato ✓ · ref #2001)",x:[
+    {nm:"Shinkansen Nozomi · Tokyo → Kyoto",w:["top"],p:{v:"¥13.970/pers ✓"},m:"Tokyo Station",d:"<b>Treno confermato: 7:54 → Kyoto 10:09</b> (2 adulti, ref #2001). Sveglia presto: valigie pronte la sera prima, uscite da HUJI ~6:45, JR Chuo Shinjuku→Tokyo Station ~14 min (IC card), al gate Shinkansen per le 7:40. <b>Posti D + E (E = finestrino, lato Fuji)</b>: il Fuji compare ~8:35, vicino a Shin-Fuji. Arrivo a Kyoto la mattina = giornata piena.",an:"In 2 ore si passa da Tokyo a un'altra era storica — guardate fuori dal finestrino."},
     {nm:"Check-in Miyako City Kintetsu Kyoto Station",w:[],m:"Miyako City Kintetsu Kyoto Station",d:"Hotel attaccato alla stazione di Kyoto — comodo per arrivare e per spedire i bagagli domani mattina."}
   ]},
   {t:"Pomeriggio",x:[
@@ -1692,7 +1690,7 @@ const ESS=[
   li:["<b>Haneda → Shinjuku</b> — IC card. Keikyu Line o Tokyo Monorail + JR. ~¥650, ~40 min. Tap & go.",
       "<b>Tokyo (metro e treni locali)</b> — IC card sempre. Google Maps per il percorso, la Suica fa il resto.",
       "<b>Shinjuku → Kawaguchiko (Fuji, 8 lug)</b> — Bus espresso. Si compra su <b>highway-buses.jp</b> o alle biglietterie di Busta Shinjuku (piano 4). ~¥2.200. Non accetta IC card.",
-      "<b>Tokyo → Kyoto (11 lug, Shinkansen Nozomi)</b> — <u>NON basta la IC card</u>. Biglietto separato obbligatorio. App <b>Smart-EX</b> (scaricatela ora, registrate carta di credito) oppure macchinette JR in stazione (cerca 'Shinkansen'). Binari 14–19 a Tokyo Station. Nozomi ogni ~10 min, consigliato ~10:00–10:30. ~¥14.370. <b>Posto E al finestrino (fila D + E) = lato Fuji.</b> Valigie oltre 160 cm: scegliete i posti con 'spazio bagagli extra-large' (ultima fila, gratis se prenotato).",
+      "<b>Tokyo → Kyoto (11 lug, Shinkansen Nozomi)</b> — <u>NON basta la IC card</u>. Biglietto separato obbligatorio. App <b>Smart-EX</b> (scaricatela ora, registrate carta di credito) oppure macchinette JR in stazione (cerca 'Shinkansen'). Binari 14–19 a Tokyo Station. <b>✅ Prenotato: Nozomi 7:54 → Kyoto 10:09</b> (ref #2001, ¥13.970 a testa). <b>Posto E al finestrino (fila D + E) = lato Fuji.</b> Valigie oltre 160 cm: scegliete i posti con 'spazio bagagli extra-large' (ultima fila, gratis se prenotato).",
       "<b>Kyoto → Arashiyama (12 lug)</b> — IC card. Due opzioni: JR Sagano Line (Kyoto → Saga-Arashiyama, ~¥240, 15 min) oppure Randen tram (Shijo-Omiya → Arashiyama, ~¥250, 20 min). Tap & go.",
       "<b>Arashiyama → Kyoto (13 lug)</b> — stesso di sopra, IC card, tap & go.",
       "<b>Kyoto → Nara (14 lug)</b> — due opzioni: <b>Kintetsu</b> (Kyoto → Kintetsu-Nara, ~¥760, 35 min) oppure JR (Kyoto → JR Nara, ~¥720, 45 min). La Kintetsu vi porta più vicino al parco dei cervi. <b>La IC card funziona su entrambe.</b> Tap & go.",
@@ -1705,7 +1703,8 @@ const ESS=[
   li:["<b>✅ teamLab Planets</b> — 5 Lug 20:30. Già prenotato. Screenshot QR sull'app.",
       "<b>✅ Nintendo Museum</b> — 15 Lug 16:00. Già prenotato. Arrivate 15 min prima, lockers ¥100.",
       "<b>✅ USJ</b> — 18 Lug. Già pagato. Scaricate l'app USJ — appena dentro prendete il timed-entry Nintendo World (gratis, ma va fatto subito o c'è la coda).",
-      "<b>🚅 Shinkansen</b> Tokyo→Kyoto (11 lug ~10:00) + Shin-Osaka→Tokyo (20 lug ~09:30): app <b>Smart-EX</b> → cerca Nozomi → prenotate posto numerato. <b>Posto E al finestrino</b> per il Fuji (entrambe le tratte). ~¥14.370 + ¥14.720. <b>Sconto EX早特21</b> se prenotate 21+ giorni prima; il 20 lug è festivo (+¥200 a posto).",
+      "<b>🚅 Shinkansen — ✅ Tokyo→Kyoto fatto</b> (11 lug, Nozomi 7:54 → Kyoto 10:09, ref #2001, ¥27.940 in 2). Restano da scegliere i <b>posti D + E</b> sul seat map (vedi sotto). ⬜ <b>Shin-Osaka→Tokyo (20 lug)</b> ancora da prenotare: consigliato ~09:30, posto E lato Fuji; il 20 è festivo (+¥200 a posto).",
+      "<b>📲 Scegliere/cambiare i posti su Smart-EX:</b> se vedete 'posti non definiti', la prenotazione è stata fatta fuori orario giapponese (servizio chiuso 23:30–05:30 JST ≈ 16:30–22:30 in Italia) → si finalizza da sola alla riapertura. Poi: <b>My Trips → Change → View Seat Map → scegliete D + E</b> (E = finestrino, lato Fuji). Gratis, quante volte volete prima della partenza.",
       "<b>🚌 Bus Shinjuku → Kawaguchiko</b> (8 lug): <b>highway-buses.jp</b> → Shinjuku → Kawaguchiko → 8 luglio. ~¥2.200 a/r. Prima corsa ~8:00. Si riempie nei weekend.",
       "<b>🔴 Square Enix Café</b> (Akihabara, Day 7): <b>cafe.jp.square-enix.com</b> → prenotate appena arrivate a Tokyo — il calendario apre ~1 mese prima e finisce veloce. Cercate slot serale. Tema luglio: verificate sul sito.",
       "<b>🔴 Pokémon Center DX Café</b> (Nihonbashi, Day 7 o 9): sito ufficiale Pokémon Café → prenotazione con settimane/mesi di anticipo. Molto richiesto.",
@@ -1761,7 +1760,7 @@ const ESS=[
    CHECKLIST
    ════════════════════════════════ */
 const BOOKING=[
- {t:"Posti Shinkansen: Tokyo→Kyoto (11 lug ~10:00) + Shin-Osaka→Tokyo (20 lug ~09:30)",s:"Smart-EX · posto E lato Fuji · EX早特21 se 21+ gg prima · bagagli >160cm = posto extra-large"},
+ {t:"Shinkansen: ✅ Tokyo→Kyoto 11 lug 7:54 (#2001) · ⬜ Shin-Osaka→Tokyo 20 lug ~09:30",s:"Scegli i posti D+E sul seat map (E = finestrino, lato Fuji) · bagagli >160cm = posto extra-large"},
  {t:"Shinkansen 20 lug: Shin-Osaka → Tokyo entro le 10:30",s:"Volo 16:35 da Haneda — ampio margine"},
  {t:"Bus Shinjuku → Kawaguchiko (8 lug)",s:"highway-buses.jp — prenota in anticipo"},
  {t:"Confermare hotel + ryokan Arashiyama"},

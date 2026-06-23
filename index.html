@@ -455,6 +455,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <button class="sb-item" data-v="templi"><span class="ic">⛩️</span>Templi</button>
   <button class="sb-item" data-v="secret"><span class="ic">🧊</span>Segreti</button>
   <div class="sb-group">Da fare</div>
+  <button class="sb-item" data-v="alt"><span class="ic">🧭</span>Attività per zona</button>
   <button class="sb-item" data-v="exp"><span class="ic">✨</span>Esperienze</button>
   <button class="sb-item" data-v="nerd"><span class="ic">🎮</span>Nerd</button>
   <button class="sb-item" data-v="cult"><span class="ic">⛩️</span>Cultura</button>
@@ -689,6 +690,17 @@ footer{border-top:1px solid var(--line);padding:34px 0 56px;text-align:center;co
   <div class="grid g2" id="quartieriList"></div>
 </section>
 
+<!-- ATTIVITÀ PER ZONA -->
+<section class="view" id="alt">
+  <div class="eyebrow">Se avete tempo libero</div>
+  <h2 class="pg-title">🧭 Attività Alternative per Zona</h2>
+  <p class="pg-sub">Per ogni quartiere, un menù di cose da fare oltre l'itinerario: sightseeing, templi, spettacoli di geishe e kabuki, relax, nerd, cibo e vita notturna. Quando avete un buco o volete cambiare programma, guardate la zona in cui siete e scegliete.</p>
+  <div class="legend" style="margin-bottom:18px">
+    <span class="lc">📷 Sightseeing</span><span class="lc">⛩️ Templi</span><span class="lc">🎭 Spettacoli</span><span class="lc">🌳 Relax</span><span class="lc">🎮 Nerd</span><span class="lc">🍜 Cibo</span><span class="lc">🌃 Sera</span>
+  </div>
+  <div class="grid g2" id="altList"></div>
+</section>
+
 </main>
 
 <button class="totop" id="totop" aria-label="Torna su" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -838,6 +850,134 @@ const QUARTIERI=[
 
 renderFeat('templiList',TEMPLI);
 renderFeat('quartieriList',QUARTIERI);
+
+/* ════════ ATTIVITÀ PER ZONA ════════ */
+const ALT=[
+ {ic:"🌃",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Shinjuku",sub:"Tokyo · la vostra base",
+  p:"Il quartiere dove dormite: c'è da fare a ogni ora, e tutto è a piedi dall'hotel.",
+  li:["📷 <b>Tocho Observatory</b> — osservatorio gratis a 202 m, aperto fino a sera.",
+      "📷 <b>Kabukicho</b>: testa di Godzilla sul Toho, neon, Kabukicho Tower.",
+      "🎭 <b>Samurai Restaurant</b> (eredità del Robot Restaurant): cena-spettacolo kitsch di robot, neon e tamburi.",
+      "⛩️ <b>Hanazono Shrine</b> — santuario nascosto tra i grattacieli; mercatino delle pulci in alcuni giorni.",
+      "🌳 <b>Shinjuku Gyoen</b> — giardino nazionale (¥500), loto in fiore a luglio.",
+      "🌃 <b>Golden Gai</b> (200 micro-bar) + <b>Ni-chome</b> (quartiere gay) per la sera.",
+      "🍜 <b>Omoide Yokocho</b> yakitori, <b>Fuunji</b> per il tsukemen."]},
+ {ic:"🛍️",bg:"linear-gradient(135deg,#2c4a6e,#3a7a82)",title:"Shibuya · Harajuku · Omotesando",sub:"Tokyo · pop e tendenze",
+  p:"Tre quartieri attaccati con anime diverse: si fanno a piedi uno dopo l'altro.",
+  li:["📷 <b>Shibuya Sky</b> (tramonto), <b>Crossing</b> e statua di <b>Hachiko</b>.",
+      "🎮 <b>Shibuya Parco 6°</b>: Nintendo Tokyo, Pokémon Center, Jump Shop, Capcom.",
+      "⛩️ <b>Meiji Jingu</b> nel bosco sacro + <b>Parco Yoyogi</b>.",
+      "🛍️ <b>Takeshita-dori</b> (kawaii), <b>Omotesando</b> (design), <b>Cat Street</b> (vintage).",
+      "🎭 <b>Nezu Museum</b> (Aoyama): arte orientale + uno dei giardini più belli di Tokyo.",
+      "🌃 <b>Nonbei Yokocho</b>: vicolo di micro-izakaya accanto al Crossing."]},
+ {ic:"⛩️",bg:"linear-gradient(135deg,#3a5080,#6a5090)",title:"Asakusa · Sumida",sub:"Tokyo · la città vecchia",
+  p:"Il lato Edo di Tokyo, sulle rive del fiume Sumida sotto lo Skytree.",
+  li:["⛩️ <b>Senso-ji</b> + <b>Nakamise</b> (all'alba è deserto).",
+      "📷 <b>Risciò</b> (jinrikisha) con guida in costume; terrazza gratis del Culture Center.",
+      "🚢 <b>Crociera sul Sumida</b> col battello futuristico Himiko verso Odaiba.",
+      "📷 <b>Tokyo Skytree</b> + Solamachi (Pokémon, Ghibli).",
+      "🥋 <b>Ryogoku</b>: Museo del Sumo / stadio Kokugikan + <b>chanko-nabe</b> (la zuppa dei lottatori).",
+      "🎭 Laboratori: vestizione in kimono, calligrafia, carta washi.",
+      "🍜 <b>Monjayaki</b> a Tsukishima, tempura storica da Daikokuya."]},
+ {ic:"🌳",bg:"linear-gradient(135deg,#386030,#6a8840)",title:"Ueno · Yanaka",sub:"Tokyo · musei e Tokyo nascosta",
+  p:"La cultura e la Tokyo di una volta, a due passi da Asakusa.",
+  li:["📷 <b>Tokyo National Museum</b> (samurai), Museo della Scienza, Museo d'Arte Occidentale.",
+      "🌳 <b>Parco di Ueno</b> + laghetto Shinobazu (loto), <b>zoo</b> coi panda.",
+      "🍜 <b>Ameyoko</b>: street food sotto i binari (kaisendon, kushiyaki, frutta).",
+      "⛩️ <b>Yanaka</b>: vicoli, gatti, botteghe, cimitero-parco, Yanaka Ginza al tramonto.",
+      "⛩️ <b>Nezu Shrine</b>: piccolo tunnel di torii rossi — la Fushimi Inari di Tokyo, senza folla."]},
+ {ic:"🎮",bg:"linear-gradient(135deg,#c0402a,#8a4e7a)",title:"Akihabara · Kanda",sub:"Tokyo · nerd + sorprese",
+  p:"Non solo elettronica: anche storia e cultura a sorpresa.",
+  li:["🎮 <b>Super Potato</b>, <b>Mandarake</b>, Radio Kaikan, Yodobashi, sale gachapon.",
+      "🎀 <b>Maid café</b> (@home), <b>Square Enix Café</b>, Gundam goods.",
+      "⛩️ <b>Kanda Myojin</b> (protettore di Akiba) + <b>Yushima Seido</b> (tempio confuciano, quasi deserto).",
+      "🎭 <b>AKB48 Theater</b> per gli idol; arcade <b>GiGO/Taito</b> aperti fino a tardi.",
+      "🍜 Curry CoCo Ichibanya, soba storica di Kanda."]},
+ {ic:"🌊",bg:"linear-gradient(135deg,#2c4a6e,#3a7a82)",title:"Odaiba · Baia di Tokyo",sub:"Tokyo · mare, arte, robot",
+  p:"Isola artificiale nella baia: famiglie, arte digitale e viste sul Rainbow Bridge.",
+  li:["🎮 <b>Gundam Unicorn</b> (DiverCity) + Gundam Base.",
+      "📷 <b>teamLab Planets</b> (Toyosu), <b>Miraikan</b> (scienza e robot).",
+      "🌳 <b>Odaiba Seaside Park</b> + spiaggia, Rainbow Bridge al tramonto.",
+      "🍣 <b>Toyosu Market</b>: il nuovo mercato del pesce, terrazze sulle aste del tonno (mattina).",
+      "🛍️ Aqua City, DiverCity per A/C e ristoranti."]},
+ {ic:"🎭",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Ginza · Tsukiji · Marunouchi",sub:"Tokyo · eleganza, teatro, pesce",
+  p:"Il centro raffinato: lusso, kabuki e il mercato del pesce a pochi minuti.",
+  li:["🎭 <b>Teatro Kabukiza</b>: per i kabuki ci sono i biglietti <b>'hitomaku-mi'</b> (un solo atto), economici e senza prenotare.",
+      "🛍️ <b>Ginza Six</b> (rooftop panoramico gratis), Mitsukoshi, Wako; domenica Chuo-dori pedonale 12–17.",
+      "🍣 <b>Tsukiji Outer Market</b>: street food di pesce la mattina (meglio feriale, chiuso domenica).",
+      "🌳 <b>Hamarikyu Gardens</b> + casa da tè su un'isola nello stagno.",
+      "📷 Stazione di Tokyo (Marunouchi) + <b>Giardini Est del Palazzo Imperiale</b> (gratis)."]},
+ {ic:"🖼️",bg:"linear-gradient(135deg,#3a5080,#6a5090)",title:"Roppongi · Azabudai",sub:"Tokyo · arte e viste dall'alto",
+  p:"Musei d'arte, grattacieli panoramici e la nightlife più internazionale.",
+  li:["🖼️ <b>Mori Art Museum</b> + <b>Tokyo City View</b>: vista notturna dal 52° piano.",
+      "📷 <b>teamLab Borderless</b> (Azabudai Hills) + <b>Tokyo Tower</b> illuminata di rosso.",
+      "🌳 Roppongi Hills e Tokyo Midtown coi loro giardini.",
+      "🌃 Bar e club: la zona della movida internazionale.",
+      "🍜 Ristoranti d'autore e izakaya eleganti."]},
+ {ic:"🎮",bg:"linear-gradient(135deg,#1e3450,#2c4a6e)",title:"Ikebukuro · Nakano",sub:"Tokyo · otaku + collezionismo",
+  p:"Il versante nerd alternativo ad Akihabara, più verticale e più hardcore.",
+  li:["🎮 <b>Pokémon Mega Center</b> (Sunshine City), <b>Animate</b> (8 piani).",
+      "🎮 <b>Nakano Broadway</b>: la casa madre di Mandarake, pezzi rari e vintage.",
+      "🌳 <b>Sunshine Aquarium</b> sul tetto + planetario.",
+      "🍜 Ikebukuro è zona ramen: tante insegne storiche.",
+      "🌃 <b>Otome Road</b>: il regno del fandom femminile (doujinshi, cosplay)."]},
+ {ic:"⛩️",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Gion · Higashiyama",sub:"Kyoto · geishe e colline est",
+  p:"Il cuore tradizionale di Kyoto: templi, vicoli di legno e il mondo delle maiko.",
+  li:["🎭 <b>Gion Corner</b> (Yasaka Hall): spettacolo serale con <b>danza delle maiko</b>, cerimonia del tè, koto, kyogen, bunraku — l'introduzione perfetta alle arti tradizionali.",
+      "🎭 Avvistamento <b>maiko e geiko</b> a Hanamikoji al tramonto (rispettate la distanza, niente foto invadenti).",
+      "⛩️ <b>Kiyomizu-dera</b>, <b>Yasaka Shrine</b>, Kodai-ji, Kennin-ji (il più antico tempio zen di Kyoto).",
+      "📷 <b>Sannenzaka/Ninenzaka</b>, Pagoda Yasaka, vicolo Ishibei-koji.",
+      "🎭 <b>Noleggio kimono</b> tra i vicoli; 🌳 <b>Maruyama Park</b> per una pausa."]},
+ {ic:"🎋",bg:"linear-gradient(135deg,#386030,#6a8840)",title:"Arashiyama",sub:"Kyoto · bambù, fiume, natura",
+  p:"L'angolo verde e fresco di Kyoto, a ovest — ottimo contro il caldo.",
+  li:["🎋 <b>Foresta di bambù</b> (prima delle 8) + <b>Tenryu-ji</b> (giardino UNESCO).",
+      "🐒 <b>Parco delle scimmie Iwatayama</b>: salita di 20 min, vista su tutta Kyoto.",
+      "🚢 <b>Crociera sul fiume Hozu</b>: 2 ore tra le gole, freschissima.",
+      "🌳 <b>Villa Okochi-Sanso</b> (tè incluso), ponte <b>Togetsukyo</b>.",
+      "⛩️ <b>Otagi Nenbutsu-ji</b>: 1.200 statue rakan buffe, una chicca quasi deserta."]},
+ {ic:"🍵",bg:"linear-gradient(135deg,#a04040,#c49a2a)",title:"Centro Kyoto · Pontocho · Nishiki",sub:"Kyoto · città e fiume Kamo",
+  p:"Il centro vivo di Kyoto, tra mercato, castello e terrazze sul fiume.",
+  li:["🏯 <b>Castello di Nijo</b>: i pavimenti 'dell'usignolo' che cantano sotto i piedi.",
+      "🍜 <b>Mercato Nishiki</b>: 'la cucina di Kyoto', 480 m di bancarelle.",
+      "🌃 <b>Pontocho</b> + terrazze sul fiume Kamo (kawadoko d'estate); vicolo Kiyamachi.",
+      "🎮 <b>Kyoto International Manga Museum</b> (50.000 manga consultabili).",
+      "⛩️ <b>Palazzo Imperiale</b> + giardini (gratis); 🛍️ arcade Teramachi/Shinkyogoku, Pokémon Center."]},
+ {ic:"🏯",bg:"linear-gradient(135deg,#6a2828,#a04040)",title:"Kyoto NW + Fushimi/Sud",sub:"Kyoto · i grandi templi",
+  p:"I templi-icona, sparsi a nord-ovest e a sud — da incastrare in mezza giornata.",
+  li:["⛩️ <b>Kinkaku-ji</b> (Padiglione d'Oro), <b>Ryoan-ji</b> (giardino zen di pietre), Ninna-ji.",
+      "⛩️ <b>Fushimi Inari</b> (i mille torii, aperto 24h — magico all'alba e di notte).",
+      "🍶 <b>Distretto del sake di Fushimi</b>: museo Gekkeikan + degustazioni.",
+      "⛩️ <b>Ginkaku-ji</b> + <b>Sentiero della Filosofia</b>, Nanzen-ji (l'acquedotto romano), Heian Jingu (torii gigante).",
+      "🌳 Tofuku-ji ed Eikan-do: giardini zen ombreggiati e tranquilli."]},
+ {ic:"🦀",bg:"linear-gradient(135deg,#901820,#c03020)",title:"Namba · Dotonbori · Shinsaibashi",sub:"Osaka · cibo e neon",
+  p:"Il cuore pulsante di Osaka: si vive di sera, mangiando per strada.",
+  li:["📷 <b>Dotonbori</b> (l'uomo Glico, i neon), <b>Hozenji Yokocho</b> (vicolo di lanterne e pietra).",
+      "🍜 <b>Takoyaki, okonomiyaki, kushikatsu</b>; <b>Kuromon Market</b> per il pesce.",
+      "🛍️ <b>Shinsaibashi-suji</b> (arcade coperto) + UNIQLO/GU flagship.",
+      "🎮 <b>Den Den Town</b> (Nipponbashi): l'Akihabara di Osaka.",
+      "🌃 <b>America-mura</b>: cultura giovane, vintage, street art."]},
+ {ic:"🌆",bg:"linear-gradient(135deg,#b0503f,#c03020)",title:"Umeda · Kita",sub:"Osaka · grattacieli e sera",
+  p:"La Osaka moderna a nord, con viste dall'alto e vita notturna.",
+  li:["📷 <b>Umeda Sky Building</b> (Floating Garden, tramonto) + ruota rossa <b>HEP Five</b>.",
+      "🛍️ <b>Grand Front</b>, <b>Pokémon Center Osaka DX</b>, depachika enormi.",
+      "🌃 <b>Doyamacho</b> (quartiere gay) e gli izakaya di Ohatsu Tenjin.",
+      "⛩️ <b>Ohatsu Tenjin</b> (Tsuyu-no-Ten Shrine): un santuario nascosto tra i palazzi."]},
+ {ic:"🏯",bg:"linear-gradient(135deg,#901820,#a04040)",title:"Castello · Shinsekai · Tennoji",sub:"Osaka · storia e retrò",
+  p:"Il lato storico e quello vintage anni '50 della città.",
+  li:["🏯 <b>Castello di Osaka</b> + parco verde intorno.",
+      "📷 <b>Shinsekai</b> retrò + torre <b>Tsutenkaku</b>; kushikatsu di Janjan Yokocho.",
+      "⛩️ <b>Shitenno-ji</b>: il tempio buddhista più antico del Giappone (593 d.C.).",
+      "♨️ <b>Spa World</b>: terme a tema da tutto il mondo.",
+      "🐬 <b>Kaiyukan Aquarium</b> (baia) + ruota panoramica Tempozan."]},
+ {ic:"🦌",bg:"linear-gradient(135deg,#5a4820,#a07830)",title:"Nara",sub:"Gita · cervi e Grande Buddha",
+  p:"A meno di un'ora da Kyoto: una delle gite più belle del Kansai.",
+  li:["🦌 <b>Parco di Nara</b> coi cervi che si inchinano (crackers ¥200).",
+      "⛩️ <b>Todai-ji</b> (Grande Buddha 15 m), <b>Kasuga Taisha</b> (3.000 lanterne nel bosco).",
+      "🌳 <b>Giardino Isuien</b> + <b>Naramachi</b>: quartiere storico di botteghe.",
+      "🍜 <b>Mochi pestato a vista</b> da Nakatanidou, kakinoha-zushi.",
+      "⛩️ <b>Kofuku-ji</b>: pagoda a 5 piani, simbolo di Nara."]}
+];
+renderFeat('altList',ALT);
 
 /* ════════ HOTEL ════════ */
 const HOTELS=[
@@ -1832,12 +1972,6 @@ const PACKING=[
 
 // Days
 const dayList=document.getElementById('dayList');
-const SECRET_LINKS={
-  tokyo:[{l:"🌊 Fresco a Tokyo",id:"sec-fresco-to"},{l:"🔮 Gemme Nascoste",id:"sec-gemme"},{l:"🏳️‍🌈 Ni-chome",id:"sec-nichome"}],
-  kyoto:[{l:"🎐 Fresco a Kyoto",id:"sec-fresco-ky"},{l:"🔮 Gemme Nascoste",id:"sec-gemme"}],
-  osaka:[{l:"🏳️‍🌈 Doyamacho",id:"sec-nichome"}]
-};
-function goSecret(id){go('secret');setTimeout(()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},200);}
 DAYS.forEach(d=>{
   const badge=d.badge?`<span class="badge ${d.badge.c}">${d.badge.t}</span>`:'';
   const body=d.blocks.map(b=>`<div class="slot"><div class="slot-hd">${b.t}</div>${b.x.map(itH).join('')}</div>`).join('');
@@ -1846,9 +1980,6 @@ DAYS.forEach(d=>{
     <div class="htt">🏨 ${d.hotel.name}</div>
     <ul><li><b>Indirizzo:</b> ${d.hotel.addr}</li><li>${d.hotel.note}</li></ul>
   </div>`:'';
-  const dcNum=parseInt(d.dc);
-  const secKey=dcNum>=4&&dcNum<=10?'tokyo':dcNum>=11&&dcNum<=16?'kyoto':dcNum>=17&&dcNum<=19?'osaka':null;
-  const secretChips=secKey?`<div class="secret-links">${SECRET_LINKS[secKey].map(s=>`<a class="secret-chip" href="#" onclick="goSecret('${s.id}');return false">${s.l} →</a>`).join('')}</div>`:'';
   dayList.appendChild(el(`<article class="day">
     <div class="day-hd">
       <div class="day-cal">
@@ -1864,7 +1995,7 @@ DAYS.forEach(d=>{
       <div class="day-arrow">⌄</div>
     </div>
     <div class="day-body"><div class="day-in">
-      ${badge}${hotelBlock}${body}${secretChips}
+      ${badge}${hotelBlock}${body}
       <div class="tips"><div class="th">💡 Consigli del giorno</div><ul>${tips}</ul></div>
     </div></div>
   </article>`));
